@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { toast } from 'sonner'
 import ActionLink from '@/components/ActionLink'
 import Button from '@/components/Button'
 import { SelectField, TextField, type FieldChangeEvent } from '@/components/FormField'
@@ -9,21 +10,23 @@ import Reveal from '@/components/Reveal'
 import SectionHeader from '@/components/SectionHeader'
 import type { BookingRequest } from '@/types'
 import { useLanguage } from '@/lib/LanguageContext'
+import { isValidEmail, isValidPhone } from '@/lib/utils'
 
 export default function BookingForm() {
-  const { t, list } = useLanguage()
+  const { t, list, locale } = useLanguage()
   const services = list<string>('booking.services')
-  const [formData, setFormData] = useState<BookingRequest>({
+  
+  const [formData, setFormData] = useState<BookingRequest & { honeypot?: string }>({
     name: '',
     phone: '',
     service: '',
     email: '',
     comment: '',
+    honeypot: '',
   })
 
   const [isLoading, setIsLoading] = useState(false)
-  const [success, setSuccess] = useState(false)
-  const [error, setError] = useState('')
+  const [errors, setErrors] = useState<Record<string, string>>({})
 
   const handleChange = (e: FieldChangeEvent) => {
     const { name, value } = e.target
@@ -31,34 +34,49 @@ export default function BookingForm() {
       ...prev,
       [name]: value,
     }))
-    setError('')
+    if (errors[name]) {
+      setErrors((prev) => {
+        const newErrors = { ...prev }
+        delete newErrors[name]
+        return newErrors
+      })
+    }
   }
 
   const validateForm = (): boolean => {
+    const newErrors: Record<string, string> = {}
+    
     if (!formData.name.trim()) {
-      setError(t('booking.validation.name'))
-      return false
+      newErrors.name = t('booking.validation.name')
     }
+    
     if (!formData.phone.trim()) {
-      setError(t('booking.validation.phone'))
-      return false
+      newErrors.phone = t('booking.validation.phone')
+    } else if (!isValidPhone(formData.phone)) {
+      newErrors.phone = t('booking.validation.phoneInvalid') || 'Invalid phone format'
     }
+    
+    if (formData.email && !isValidEmail(formData.email)) {
+      newErrors.email = t('booking.validation.emailInvalid') || 'Invalid email format'
+    }
+    
     if (!formData.service) {
-      setError(t('booking.validation.service'))
-      return false
+      newErrors.service = t('booking.validation.service')
     }
-    return true
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     if (!validateForm()) {
+      toast.error(t('booking.errorTitle'))
       return
     }
 
     setIsLoading(true)
-    setError('')
 
     try {
       const response = await fetch('/api/booking', {
@@ -66,7 +84,7 @@ export default function BookingForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, locale }),
       })
 
       const data = await response.json()
@@ -75,23 +93,23 @@ export default function BookingForm() {
         throw new Error(data.error || t('booking.validation.submit'))
       }
 
-      console.log('Booking successful:', data)
-      setSuccess(true)
+      toast.success(t('booking.successTitle'), {
+        description: t('booking.successDescription'),
+      })
+      
       setFormData({
         name: '',
         phone: '',
         service: '',
         email: '',
         comment: '',
+        honeypot: '',
       })
-
-      setTimeout(() => {
-        setSuccess(false)
-      }, 5000)
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : t('booking.validation.generic')
-      console.error('Booking error:', errorMessage)
-      setError(errorMessage)
+      toast.error(t('booking.errorTitle'), {
+        description: errorMessage,
+      })
     } finally {
       setIsLoading(false)
     }
@@ -112,30 +130,19 @@ export default function BookingForm() {
           delay={0.1}
           className="-mx-4 border-y border-primary/10 bg-ivory p-4 shadow-[0_30px_90px_rgba(23,19,15,0.08)] sm:mx-0 sm:border md:p-12"
         >
-          {success && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="mb-6 border border-green-200 bg-green-50 p-4 text-green-800"
-            >
-              <p className="font-semibold">{t('booking.successTitle')}</p>
-              <p className="text-sm">{t('booking.successDescription')}</p>
-            </motion.div>
-          )}
-
-          {error && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-6 border border-red-200 bg-red-50 p-4 text-red-800"
-            >
-              <p className="font-semibold">{t('booking.errorTitle')}</p>
-              <p className="text-sm">{error}</p>
-            </motion.div>
-          )}
-
           <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Honeypot */}
+            <div className="hidden">
+              <input
+                type="text"
+                name="honeypot"
+                value={formData.honeypot}
+                onChange={(e) => setFormData(prev => ({ ...prev, honeypot: e.target.value }))}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
             <TextField
               label={t('booking.form.name')}
               type="text"
@@ -143,8 +150,10 @@ export default function BookingForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Mara Chen"
+              placeholder={t('booking.form.placeholders.name')}
               required
+              error={errors.name}
+              aria-required="true"
             />
 
             <TextField
@@ -154,8 +163,10 @@ export default function BookingForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="+1 (212) 731-8426"
+              placeholder={t('booking.form.placeholders.phone')}
               required
+              error={errors.phone}
+              aria-required="true"
             />
 
             <TextField
@@ -165,7 +176,8 @@ export default function BookingForm() {
               name="email"
               value={formData.email || ''}
               onChange={handleChange}
-              placeholder="mara@example.com"
+              placeholder={t('booking.form.placeholders.email')}
+              error={errors.email}
             />
 
             <SelectField
@@ -177,6 +189,8 @@ export default function BookingForm() {
               options={services}
               placeholder={t('booking.form.servicePlaceholder')}
               required
+              error={errors.service}
+              aria-required="true"
             />
 
             <TextField
@@ -190,7 +204,7 @@ export default function BookingForm() {
               multiline
             />
 
-            <div className="border border-primary/10 bg-soft-beige p-4 text-sm text-primary/60">
+            <div className="border border-primary/10 bg-soft-beige p-4 text-xs text-primary/60">
               <p>
                 {t('booking.form.consentPrefix')}{' '}
                 <a href="#" className="text-accent hover:underline">
@@ -204,8 +218,13 @@ export default function BookingForm() {
               </p>
             </div>
 
-            <Button type="submit" size="lg" disabled={isLoading} className="min-h-14 w-full">
-              {isLoading ? t('booking.form.submitting') : t('booking.form.submit')}
+            <Button 
+              type="submit" 
+              size="lg" 
+              isLoading={isLoading} 
+              className="min-h-14 w-full"
+            >
+              {t('booking.form.submit')}
             </Button>
           </form>
 

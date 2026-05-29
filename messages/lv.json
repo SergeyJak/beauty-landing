@@ -1,8 +1,8 @@
 {
   "brand": {
-    "name": "Electrolysis NYC",
-    "shortName": "Electrolysis",
-    "footerName": "Electrolysis NYC"
+    "name": "Elektrolīze Rīga",
+    "shortName": "Elektrolīze",
+    "footerName": "Elektrolīze Rīga"
   },
   "common": {
     "benefits": "Benefits",
@@ -21,7 +21,12 @@
     "termsOfService": "Terms of Service",
     "cookiePolicy": "Cookie Policy",
     "language": "Latviešu",
-    "backToHome": "Atpakaļ uz sākumu"
+    "backToHome": "Atpakaļ uz sākumu",
+    "close": "Aizvērt",
+    "cookiesTitle": "Mēs augstu vērtējam jūsu privātumu",
+    "cookiesDescription": "Mēs izmantojam sīkfailus, lai uzlabotu jūsu pārlūkošanas pieredzi, rādītu personalizētas reklāmas vai saturu un analizētu mūsu trafiku. Noklikšķinot uz 'Pieņemt visu', jūs piekrītat mūsu sīkfailu izmantošanai.",
+    "acceptAll": "Pieņemt visu",
+    "decline": "Noraidīt"
   },
   "header": {
     "skipToMain": "Pāriet uz galveno saturu",
@@ -42,8 +47,8 @@
     "description": "Elektrolīze ir vienīgā FDA-apstiprināta metode permanentai matu noņemšanai. Mūsu sertificētie speciālisti izmanto medicīnisko pakāpes tehnoloģiju drošam un efektīvam ārstēšanai uz visiem ādas tipiem un matu krāsām.",
     "primaryCTA": "Rezervēt konsultāciju",
     "secondaryCTA": "Uzziniet, kā tas darbojas",
-    "included": "Free consultation included",
-    "location": "Upper East Side, Manhattan",
+    "included": "Bezmaksas konsultācija • Bez saistībām",
+    "location": "Centrs, Rīga",
     "stats": {
       "experienceNumber": "15+",
       "experience": "15+ gadi pieredzes",
@@ -55,7 +60,7 @@
     "sidecard": {
       "eyebrow": "Medical-Grade",
       "title": "Medicīniskās pakāpes elektrolīze",
-      "location": "Upper East Side",
+      "location": "Rīgas centrs",
       "specialist": "Sertificēts speciālists",
       "imageAlt": "Electrolysis treatment"
     }
@@ -530,31 +535,37 @@
     ]
   },
   "faq": {
-    "eyebrow": "Jautājumi",
+    "eyebrow": "BUJ par elektrolīzi Rīgā",
     "title": "Viss, kas jums jāzina par elektrolīzi.",
     "description": "Atbildes uz izplatītajiem jautājumiem par ārstēšanas procedūru, rezultātiem un permanento matu noņemšanu.",
     "items": [
       {
+        "id": "1",
         "question": "Vai elektrolīze patiesi ir permanenta?",
         "answer": "Jā. Elektrolīze ir FDA-apstiprināta kā vienīgā permanenta matu noņemšanas metode. Kad matu folikuls ir ārstēts un iznīcināts, tas vairs nevar augt mati. Rezultāti ir permanenti."
       },
       {
+        "id": "2",
         "question": "Cik ilgu laiku aizņem elektrolīze?",
         "answer": "Ārstēšanas laiks atšķiras atkarībā no apgabala un matu blīvuma. Mazie apgabali, piemēram, augšējā lūpa, var aizņemt 15-30 minūtes, savukārt lielāki apgabali var aizņemt 1-2 stundas. Jūsu elektrologs sniegs grafiku pēc konsultācijas."
       },
       {
+        "id": "3",
         "question": "Cik sesijas man būs nepieciešamas?",
         "answer": "Lielākā daļa klientu nepieciešams 6-12 sesijas, kas izstiepts pāri 6-12 mēnešiem. Tā ir tāpēc, ka tikai mati aktīvajā izaugsmes fāzē (Anagēns) var tikt ārstēti permanenti. Atstarpe ļauj jauniem matiem iekļūt izaugsmes fāzē."
       },
       {
+        "id": "4",
         "question": "Vai elektrolīze sāp?",
         "answer": "Elektrolīze izraisa minimālu diskomfortu. Lielākā daļa klientu to apraksta kā vieglu drudžošanu vai siltumu. Sāpju mazinošais krēms ir pieejams, ja vēlams. Sajūta atšķiras atkarībā no individuālās tolerance un ārstējamās zonas."
       },
       {
+        "id": "5",
         "question": "Vai būs sarkana vieta vai atzīmes pēc ārstēšanas?",
         "answer": "Lielākā daļa klientu piedzīvo minimālu sarkanu vietu, kas izzūd pēc pāris stundu līdz dažām dienām. Daži var redzēt nelielas atzīmes, kas ātri pazūd. Mēs uzreiz pēc ārstēšanas piesakām mierinošus produktus, lai samazinātu jebkādu reakciju."
       },
       {
+        "id": "6",
         "question": "Vai elektrolīze darbojas uz visiem ādas tipiem un matu krāsām?",
         "answer": "Jā. Atšķirībā no lāzera matu noņemšanas, elektrolīze darbojas uz visiem ādas tipiem (gaiša līdz ļoti tumša) un visām matu krāsām (tostarp blonda, sarkana, pelēka un balta). Tas padara to par vispievilcīgāko permanento matu noņemšanas metodi."
       }
@@ -567,26 +578,44 @@
   },
   "contact": {
     "eyebrow": "Atrašanās vieta",
-    "title": "Upper East Side medicīniskās klases elektrolīzes studija",
+    "title": "Medicīniskās klases elektrolīzes studija Rīgā",
     "description": "Apmeklējiet mūs sertificēta elektrologa un medicīniskās klases ārstēšanas vidē.",
-    "follow": "Follow",
+    "follow": "Sekojiet mums",
+    "whatsappMessage": "Sveiki! Vēlos uzzināt par permanento matu noņemšanu ar elektrolīzi Rīgā.",
+    "social": [
+      {
+        "id": "instagram",
+        "label": "Instagram",
+        "href": "https://instagram.com/electrolizeriga"
+      },
+      {
+        "id": "tiktok",
+        "label": "TikTok",
+        "href": "https://tiktok.com/@electrolizeriga"
+      },
+      {
+        "id": "whatsapp",
+        "label": "WhatsApp",
+        "href": "https://wa.me/37126123456"
+      }
+    ],
     "methods": [
       {
         "title": "Address",
         "label": "AD",
-        "content": "157 E 86th St, New York, NY 10028"
+        "content": "Elizabetes iela 45, Centrs, Rīga, LV-1010"
       },
       {
         "title": "Phone",
         "label": "PH",
-        "content": "+1 (212) 555-0123",
-        "action": "tel:+12125550123"
+        "content": "+371 26 123 456",
+        "action": "tel:+37126123456"
       },
       {
         "title": "Email",
         "label": "EM",
-        "content": "hello@electrolysisnyc.com",
-        "action": "mailto:hello@electrolysisnyc.com"
+        "content": "info@elektrolizeriga.lv",
+        "action": "mailto:info@elektrolizeriga.lv"
       },
       {
         "title": "Hours",
@@ -594,12 +623,12 @@
         "content": "Otrdiena-piektdiena: 10:00-18:00 | Sestdiena: 10:00-16:00 | Svētdiena-pirmdiena: Slēgts"
       }
     ],
-    "address": "157 E 86th St, New York, NY 10028",
-    "phone": "+1 (212) 555-0123",
-    "email": "hello@electrolysisnyc.com",
+    "address": "Elizabetes iela 45, Centrs, Rīga, LV-1010",
+    "phone": "+371 26 123 456",
+    "email": "info@elektrolizeriga.lv",
     "hours": "Otrdiena-piektdiena: 10:00-18:00 | Sestdiena: 10:00-16:00 | Svētdiena-pirmdiena: Slēgts",
     "directions": "Iegūt norādes",
-    "social": {
+    "socialAria": {
       "instagram": "Instagram",
       "tiktok": "TikTok",
       "whatsapp": "WhatsApp"
@@ -614,8 +643,10 @@
     "errorTitle": "Error",
     "validation": {
       "name": "Please enter your name",
-      "phone": "Please enter your phone number",
-      "service": "Please select a service",
+      "phone": "Lūdzu, ievadiet savu tālruņa numuru",
+      "phoneInvalid": "Lūdzu, ievadiet derīgu tālruņa numuru",
+      "emailInvalid": "Lūdzu, ievadiet derīgu e-pasta adresi",
+      "service": "Lūdzu, izvēlieties pakalpojumu",
       "submit": "Failed to submit booking",
       "generic": "Something went wrong"
     },
@@ -626,8 +657,13 @@
       "service": "Select Service",
       "servicePlaceholder": "Select preferred treatment...",
       "comment": "Additional Notes",
-      "commentPlaceholder": "Example: area to treat, skin sensitivity, preferred appointment window, or questions.",
-      "consentPrefix": "By submitting this form, you agree to our",
+      "commentPlaceholder": "Piemēram: ārstējamā zona, ādas jutība, vēlamais laiks vai jautājumi.",
+      "placeholders": {
+        "name": "Māra Čena",
+        "phone": "+371 20 000 000",
+        "email": "mara@piemers.lv"
+      },
+      "consentPrefix": "Iesniedzot šo formu, jūs piekrītat mūsu",
       "consentAnd": "and",
       "submit": "Nosūtīt konsultācijas pieprasījumu",
       "submitting": "Nosūta...",
@@ -651,14 +687,24 @@
       "Bikini līnijas ārstēšana",
       "Kāju elektrolīze",
       "Cits"
-    ]
+    ],
+    "api": {
+      "missingFields": "Trūkst obligāto lauku",
+      "success": "Pieteikums saņemts! Mēs drīz sazināsimies ar jums.",
+      "failed": "Neizdevās apstrādāt pieteikumu"
+    }
   },
   "footer": {
-    "description": "FDA-apstiprināta permanenta matu noņemšana medicīniskās klases elektrolīzē. Sertificēts speciālists, Upper East Side.",
+    "description": "FDA apstiprināta permanenta matu noņemšana Rīgā. Sertificēts elektrologs, medicīniskās klases aprīkojums, privāta studija centrā.",
     "quickLinks": "Ātrās saites",
     "services": "Pakalpojumi",
     "followUs": "Sekojiet mums",
-    "copyright": "© {year} Elektrolīze NYC. Visas tiesības rezervētas.",
+    "copyright": "© {year} Elektrolīze Rīga. Visas tiesības aizsargātas.",
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "pinterest": "Pinterest"
+    },
     "brand": "Elektrolīze NYC",
     "links": {
       "privacy": "Privātuma politika",
@@ -667,28 +713,91 @@
     }
   },
   "floating": {
-    "book": "Book",
-    "call": "Call",
-    "bookAppointment": "Book appointment"
+    "book": "Pieraksts",
+    "call": "Zvanīt",
+    "bookAppointment": "Pierakstīties uz vizīti"
   },
   "stickyCta": {
-    "button": "Schedule Consultation",
-    "note": "Free consultation • No commitment"
+    "button": "Pierakstīties konsultācijai",
+    "note": "Bezmaksas konsultācija • Bez saistībām"
+  },
+  "accessibility": {
+    "mainNavigation": "Galvenā navigācija"
+  },
+  "theme": {
+    "switchToLight": "Pārslēgt uz gaišo režīmu",
+    "switchToDark": "Pārslēgt uz tumšo režīmu",
+    "lightMode": "Gaišais režīms",
+    "darkMode": "Tumšais režīms"
   },
   "languageSwitcher": {
     "label": "Valoda",
-    "selectLanguage": "Izvēlieties valodu"
+    "selectLanguage": "Izvēlieties valodu",
+    "locales": {
+      "lv": {
+        "native": "Latviešu",
+        "name": "Latviešu"
+      },
+      "ru": {
+        "native": "Русский",
+        "name": "Krievu"
+      },
+      "en": {
+        "native": "English",
+        "name": "Angļu"
+      }
+    }
   },
   "metadata": {
-    "title": "Elektrolīze NYC | Medicīniskās klases permanenta matu noņemšana",
-    "description": "FDA-apstiprināta elektrolīze permanentai matu noņemšanai. Sertificēts speciālists sniedz draudzīgu, efektīvu ārstēšanu visiem ādas tipiem. Medicīniskās klases tehnoloģija privātā Upper East Side studijā.",
+    "title": "Elektrolīze Rīgā | Permanenta matu noņemšana",
+    "description": "Sertificēta elektrolīze Rīgā — vienīgā FDA apstiprinātā permanentā matu noņemšana. Bezmaksas konsultācija, privātas telpas, visi ādas tipi un matu krāsas.",
     "keywords": [
-      "elektrolīze",
+      "elektrolīze Rīga",
       "permanenta matu noņemšana",
-      "matu noņemšana",
-      "elektrolīze NYC",
-      "medicīniskā matu noņemšana",
-      "sertificēts elektrologs"
+      "elektrolīze Latvija",
+      "matu noņemšana Rīga",
+      "sertificēts elektrologs",
+      "elektrolīze centrs"
     ]
+  },
+  "trust": {
+    "ariaLabel": "Uzticamības signāli",
+    "badges": [
+      {
+        "id": "certified",
+        "label": "Sertificēts elektrologs"
+      },
+      {
+        "id": "fda",
+        "label": "FDA apstiprināta metode"
+      },
+      {
+        "id": "private",
+        "label": "Privātas procedūru telpas"
+      },
+      {
+        "id": "consult",
+        "label": "Bezmaksas konsultācija"
+      }
+    ]
+  },
+  "schema": {
+    "openingHours": [
+      "Mo-Su closed by appointment",
+      "Tu-Fr 10:00-18:00",
+      "Sa 10:00-16:00"
+    ]
+  },
+  "conversion": {
+    "results": {
+      "eyebrow": "Gatavi sākt?",
+      "title": "Rezervējiet bezmaksas konsultāciju Rīgā",
+      "description": "Pārvērtiet rezultātus ilgtermiņa pārliecībā — mūsu speciālists sagatavos personalizētu plānu."
+    },
+    "reviews": {
+      "eyebrow": "Pievienojieties klientiem",
+      "title": "Jūsu permanents rezultāts sākas ar konsultāciju",
+      "description": "Pierakstieties bez saistībām — mēs izskaidrosim procedūru, ilgumu un izmaksas."
+    }
   }
 }

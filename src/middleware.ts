@@ -1,44 +1,52 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { DEFAULT_LOCALE, LOCALE_COOKIE, LOCALES, isValidLocale } from '@/lib/i18n'
 
+function localeFromPath(pathname: string): string | null {
+  const segment = pathname.split('/')[1]
+  return segment && isValidLocale(segment) ? segment : null
+}
+
+function withLocaleCookie(response: NextResponse, locale: string) {
+  response.cookies.set(LOCALE_COOKIE, locale, {
+    path: '/',
+    maxAge: 60 * 60 * 24 * 365,
+    sameSite: 'lax',
+  })
+  return response
+}
+
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // Skip middleware for static files, API routes, and other non-page routes
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
-    pathname.startsWith('/messages') ||
-    pathname.match(/\.(png|jpg|jpeg|gif|ico|svg|webp)$/)
+    pathname.match(/\.(png|jpg|jpeg|gif|ico|svg|webp|json)$/)
   ) {
     return NextResponse.next()
   }
 
-  const pathnameHasLocale = LOCALES.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  )
+  const pathLocale = localeFromPath(pathname)
 
-  if (pathnameHasLocale) {
-    return NextResponse.next()
+  if (pathLocale) {
+    return withLocaleCookie(NextResponse.next(), pathLocale)
   }
 
   if (pathname === '/' || pathname === '') {
     const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value
-    const locale = cookieLocale && isValidLocale(cookieLocale) ? cookieLocale : DEFAULT_LOCALE
-    return NextResponse.redirect(new URL(`/${locale}`, request.url))
+    const locale =
+      cookieLocale && isValidLocale(cookieLocale) ? cookieLocale : DEFAULT_LOCALE
+    return withLocaleCookie(
+      NextResponse.redirect(new URL(`/${locale}`, request.url)),
+      locale
+    )
   }
 
-  return NextResponse.redirect(new URL(`/${DEFAULT_LOCALE}${pathname}`, request.url))
+  return NextResponse.redirect(
+    new URL(`/${DEFAULT_LOCALE}${pathname}`, request.url)
+  )
 }
 
 export const config = {
-  matcher: [
-    // Match all request paths except for the ones starting with:
-    // - api (API routes)
-    // - _next/static (static files)
-    // - _next/image (image optimization files)
-    // - favicon.ico (favicon file)
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-  ],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 }
-

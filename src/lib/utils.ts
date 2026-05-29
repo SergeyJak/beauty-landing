@@ -1,6 +1,12 @@
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
 /**
- * Utility functions for the application
+ * Merge tailwind classes safely
  */
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 /**
  * Format phone number to a standard format

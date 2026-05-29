@@ -6,6 +6,8 @@ import ActionLink from '@/components/ActionLink'
 import Reveal from '@/components/Reveal'
 import SectionHeader from '@/components/SectionHeader'
 import type { FAQItem } from '@/types'
+import { SOCIAL_LINKS } from '@/lib/constants'
+import { BUSINESS } from '@/lib/business'
 import { useLanguage } from '@/lib/LanguageContext'
 
 const faqItems: FAQItem[] = [
@@ -51,6 +53,12 @@ export default function FAQ() {
   const { t, list } = useLanguage()
   const [activeId, setActiveId] = useState<string | null>(null)
   const localizedFaqItems = list<FAQItem>('faq.items')
+  const faqList = (localizedFaqItems.length ? localizedFaqItems : faqItems).map(
+    (item, index) => ({
+      ...item,
+      id: item.id ?? faqItems[index]?.id ?? String(index + 1),
+    })
+  )
 
   const toggleAccordion = (id: string) => {
     setActiveId(activeId === id ? null : id)
@@ -67,7 +75,7 @@ export default function FAQ() {
         />
 
         <div className="border-y border-primary/10">
-          {(localizedFaqItems.length ? localizedFaqItems : faqItems).map((item, index) => (
+          {faqList.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 10 }}
@@ -127,15 +135,18 @@ export default function FAQ() {
           <p className="mb-6 text-primary/65">
             {t('faq.cta.description')}
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <ActionLink href="https://wa.me/12125550123?text=Hello%20Electrolysis%20NYC%2C%20I%20have%20a%20question%20about%20permanent%20hair%20removal">
+          <div className="flex flex-wrap justify-center gap-4">
+            <ActionLink href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer">
               {t('common.whatsApp')}
             </ActionLink>
-            <ActionLink href="https://t.me/electrolysisnyc">
+            <ActionLink href={SOCIAL_LINKS.telegram} target="_blank" rel="noopener noreferrer">
               {t('common.telegram')}
             </ActionLink>
-            <ActionLink href="mailto:hello@electrolysisnyc.com">
+            <ActionLink href={`mailto:${BUSINESS.email}`}>
               {t('common.email')}
+            </ActionLink>
+            <ActionLink href="#booking" className="border-primary bg-primary text-ivory hover:bg-clay hover:text-ivory">
+              {t('hero.primaryCTA')}
             </ActionLink>
           </div>
         </Reveal>

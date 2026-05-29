@@ -43,8 +43,8 @@ export default function ConversionCTA({
         <p className={`mt-3 max-w-2xl leading-7 ${copyClass}`}>{description}</p>
       </div>
       <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
-        <ActionLink href="#booking" className={`premium-sheen ${primaryClass}`}>
-          {primaryLabel || t('booking.form.submit')}
+        <ActionLink href="#booking" className={`premium-sheen min-h-12 items-center ${primaryClass}`}>
+          {primaryLabel || t('hero.primaryCTA')}
         </ActionLink>
         {secondaryLabel && secondaryHref && (
           <ActionLink

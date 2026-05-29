@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 
+export { useLocaleNavigation } from './useLocaleNavigation'
+
 /**
  * Hook to detect if user is scrolling
  */

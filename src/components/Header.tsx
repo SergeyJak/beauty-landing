@@ -44,7 +44,7 @@ export default function Header() {
         {t('header.skipToMain')}
       </a>
 
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Main navigation">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label={t('accessibility.mainNavigation')}>
         <div className="flex h-16 items-center justify-between md:h-20">
           <Link href={`/${locale}`} className="flex items-center space-x-3">
             <div className="flex h-9 w-9 items-center justify-center border border-accent/70 md:h-10 md:w-10">
@@ -72,7 +72,7 @@ export default function Header() {
             <ThemeToggle />
             <a
               href="#booking"
-              className="bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-ivory transition-colors hover:bg-clay"
+              className="premium-sheen bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-ivory shadow-[0_12px_32px_rgba(23,19,15,0.16)] transition-colors hover:bg-clay"
             >
               {t('header.bookNow')}
             </a>
@@ -126,6 +126,12 @@ export default function Header() {
               >
                 {t('header.bookNow')}
               </a>
+              <div className="col-span-2 mt-3 border-t border-primary/10 pt-4">
+                <p className="eyebrow mb-3 text-center text-primary/45">
+                  {t('languageSwitcher.label')}
+                </p>
+                <LanguageSwitcher variant="inline" />
+              </div>
             </div>
           </motion.div>
         )}

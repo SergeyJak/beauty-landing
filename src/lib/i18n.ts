@@ -4,22 +4,29 @@ export const LOCALES: Locale[] = ['lv', 'ru', 'en']
 export const DEFAULT_LOCALE: Locale = 'lv'
 export const LOCALE_COOKIE = 'preferred-language'
 
-import lv from '../../public/messages/lv.json'
-import ru from '../../public/messages/ru.json'
-import en from '../../public/messages/en.json'
+import lv from '../../messages/lv.json'
+import ru from '../../messages/ru.json'
+import en from '../../messages/en.json'
 
 export function isValidLocale(locale: string): locale is Locale {
   return LOCALES.includes(locale as Locale)
 }
 
+export function resolveLocale(requested?: string | null): Locale {
+  if (requested && isValidLocale(requested)) {
+    return requested
+  }
+  return DEFAULT_LOCALE
+}
+
 export function getLocaleFromPath(path: string): Locale {
   const segments = path.split('/')
   const firstSegment = segments[1]
-  
+
   if (isValidLocale(firstSegment)) {
     return firstSegment
   }
-  
+
   return DEFAULT_LOCALE
 }
 
@@ -30,11 +37,14 @@ export function removeLocaleFromPath(path: string): string {
 
 export function getLocalizedPath(path: string, locale: Locale): string {
   const cleanPath = removeLocaleFromPath(path)
+  if (cleanPath === '/') {
+    return `/${locale}`
+  }
   return `/${locale}${cleanPath}`
 }
 
 interface Translations {
-  [key: string]: any
+  [key: string]: unknown
 }
 
 const translationsByLocale: Record<Locale, Translations> = {
@@ -47,17 +57,45 @@ export function getTranslations(locale: Locale): Translations {
   return translationsByLocale[locale] || translationsByLocale[DEFAULT_LOCALE]
 }
 
+export function getBaseUrl(): string {
+  return process.env.NEXT_PUBLIC_BASE_URL || 'https://elektrolizeriga.lv'
+}
+
+const OPEN_GRAPH_LOCALE: Record<Locale, string> = {
+  lv: 'lv_LV',
+  ru: 'ru_RU',
+  en: 'en_US',
+}
+
+export function getOpenGraphLocale(locale: Locale): string {
+  return OPEN_GRAPH_LOCALE[locale]
+}
+
+/** hreflang map for Next.js metadata alternates.languages */
+export function getHreflangAlternates(pathWithoutLocale = ''): Record<string, string> {
+  const baseUrl = getBaseUrl()
+  const suffix = pathWithoutLocale && pathWithoutLocale !== '/' ? pathWithoutLocale : ''
+
+  const languages = LOCALES.reduce<Record<string, string>>((acc, locale) => {
+    acc[locale] = `${baseUrl}/${locale}${suffix}`
+    return acc
+  }, {})
+
+  languages['x-default'] = `${baseUrl}/${DEFAULT_LOCALE}${suffix}`
+  return languages
+}
+
 export function getNestedValue(
   obj: Translations,
   path: string,
   defaultValue: string = path
 ): string {
   const keys = path.split('.')
-  let current = obj
+  let current: unknown = obj
 
   for (const key of keys) {
     if (current && typeof current === 'object' && key in current) {
-      current = current[key]
+      current = (current as Record<string, unknown>)[key]
     } else {
       return defaultValue
     }

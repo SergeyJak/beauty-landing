@@ -4,11 +4,35 @@ import { motion } from 'framer-motion'
 import ActionLink from '@/components/ActionLink'
 import Reveal from '@/components/Reveal'
 import SectionHeader from '@/components/SectionHeader'
+import { BUSINESS } from '@/lib/business'
 import { useLanguage } from '@/lib/LanguageContext'
+
+type ContactMethod = {
+  title: string
+  label: string
+  content: string
+  action?: string
+}
+
+type SocialLink = {
+  id: string
+  label: string
+  href: string
+}
 
 export default function Contact() {
   const { t, list } = useLanguage()
-  const contactMethods = list<any>('contact.methods')
+  const contactMethods = list<ContactMethod>('contact.methods')
+  const socialLinks = list<SocialLink>('contact.social')
+  const whatsappMessage = encodeURIComponent(t('contact.whatsappMessage'))
+
+  const resolveSocialHref = (link: SocialLink) => {
+    if (link.id === 'whatsapp') {
+      const base = link.href.split('?')[0]
+      return `${base}?text=${whatsappMessage}`
+    }
+    return link.href
+  }
 
   return (
     <section id="contact" className="bg-ivory py-20 md:py-32">
@@ -43,17 +67,13 @@ export default function Contact() {
             <div className="py-8">
               <h3 className="eyebrow mb-4 text-primary/45">{t('contact.follow')}</h3>
               <div className="flex gap-3">
-                {[
-                  ['Instagram', 'https://instagram.com/electrolysisnyc'],
-                  ['TikTok', 'https://tiktok.com/@electrolysisnyc'],
-                  ['WhatsApp', 'https://wa.me/12125550123?text=Hello%20Electrolysis%20NYC%2C%20I%20have%20a%20question%20about%20permanent%20hair%20removal'],
-                ].map(([social, href]) => (
+                {socialLinks.map((link) => (
                   <ActionLink
-                    key={social}
-                    href={href}
+                    key={link.id}
+                    href={resolveSocialHref(link)}
                     compact
                   >
-                    {social}
+                    {link.label}
                   </ActionLink>
                 ))}
               </div>
@@ -74,7 +94,8 @@ export default function Contact() {
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
-              src="https://www.google.com/maps?q=157%20E%2086th%20St%2C%20New%20York%2C%20NY%2010028&output=embed"
+              src={BUSINESS.googleMapsEmbed}
+              title={t('contact.title')}
             />
           </motion.div>
         </div>

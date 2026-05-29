@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useT } from '@/lib/LanguageContext'
 
 type Theme = 'light' | 'dark'
 
@@ -23,6 +24,7 @@ function applyTheme(theme: Theme) {
 }
 
 export default function ThemeToggle() {
+  const t = useT()
   const [theme, setTheme] = useState<Theme>('light')
   const [mounted, setMounted] = useState(false)
 
@@ -47,8 +49,8 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       className="flex h-10 w-10 items-center justify-center border border-primary/15 text-primary transition-colors hover:border-accent hover:text-accent"
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      title={isDark ? 'Light mode' : 'Dark mode'}
+      aria-label={isDark ? t('theme.switchToLight') : t('theme.switchToDark')}
+      title={isDark ? t('theme.lightMode') : t('theme.darkMode')}
     >
       {isDark ? (
         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
