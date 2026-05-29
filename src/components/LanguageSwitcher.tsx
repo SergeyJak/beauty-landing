@@ -2,10 +2,12 @@
 
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { Globe, ChevronDown } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
 import type { Locale } from '@/lib/i18n'
 import { LOCALES } from '@/lib/i18n'
 import { useLocaleNavigation } from '@/hooks/useLocaleNavigation'
+import { cn } from '@/lib/utils'
 
 type LanguageSwitcherProps = {
   variant?: 'dropdown' | 'inline'
@@ -27,7 +29,7 @@ export default function LanguageSwitcher({ variant = 'dropdown' }: LanguageSwitc
   if (variant === 'inline') {
     return (
       <div
-        className="grid grid-cols-3 gap-2"
+        className="flex flex-col gap-2 w-full"
         role="listbox"
         aria-label={t('languageSwitcher.selectLanguage')}
       >
@@ -36,15 +38,20 @@ export default function LanguageSwitcher({ variant = 'dropdown' }: LanguageSwitc
             key={lang}
             type="button"
             onClick={() => handleSelectLanguage(lang)}
-            className={`min-h-12 border px-2 py-3 text-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-              locale === lang
-                ? 'border-accent bg-primary/10 text-primary'
-                : 'border-primary/10 text-primary/70 hover:border-accent hover:text-primary'
-            }`}
+            className={cn(
+              "flex items-center justify-between px-6 py-4 border transition-all",
+              locale === lang 
+                ? "border-accent bg-accent/5 text-primary" 
+                : "border-primary/10 text-primary/60 hover:border-primary/20"
+            )}
             role="option"
             aria-selected={locale === lang}
           >
-            {localeLabel(lang, 'native')}
+            <div className="flex flex-col items-start">
+              <span className="text-[0.6rem] font-bold uppercase tracking-widest opacity-50">{localeLabel(lang, 'name')}</span>
+              <span className="font-serif text-xl">{localeLabel(lang, 'native')}</span>
+            </div>
+            {locale === lang && <div className="h-2 w-2 rounded-full bg-accent" />}
           </button>
         ))}
       </div>
@@ -52,20 +59,21 @@ export default function LanguageSwitcher({ variant = 'dropdown' }: LanguageSwitc
   }
 
   return (
-    <div className="relative">
+    <div className="relative group">
       <button
         type="button"
         onClick={() => setIsOpen((open) => !open)}
-        className="flex items-center gap-2 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        className="flex items-center gap-3 px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-primary/70 transition-all hover:text-accent focus-visible:outline-none"
         aria-label={t('languageSwitcher.selectLanguage')}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
       >
-        <span className="text-sm" aria-hidden="true">
-          ⌘
-        </span>
-        <span className="hidden sm:inline">{localeLabel(locale, 'native')}</span>
-        <span className="sm:hidden">{locale.toUpperCase()}</span>
+        <div className="flex items-center gap-2 border-r border-primary/10 pr-3">
+          <Globe className="h-3.5 w-3.5" />
+          <span>{locale.toUpperCase()}</span>
+        </div>
+        <span className="hidden sm:inline opacity-50 group-hover:opacity-100 transition-opacity">{localeLabel(locale, 'native')}</span>
+        <ChevronDown className={cn("h-3 w-3 transition-transform duration-300", isOpen && "rotate-180")} />
       </button>
 
       <AnimatePresence>
@@ -79,40 +87,49 @@ export default function LanguageSwitcher({ variant = 'dropdown' }: LanguageSwitc
               className="fixed inset-0 z-30"
             />
             <motion.div
-              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+              initial={{ opacity: 0, y: 10, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="absolute right-0 z-40 mt-2 w-48 origin-top-right overflow-hidden border border-primary/10 bg-ivory shadow-lg"
+              exit={{ opacity: 0, y: 10, scale: 0.98 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute right-0 z-40 mt-3 w-56 origin-top-right overflow-hidden bg-white shadow-[0_30px_90px_rgba(23,19,15,0.15)] border border-primary/5"
               role="listbox"
               aria-label={t('languageSwitcher.selectLanguage')}
             >
-              {LOCALES.map((lang) => (
-                <button
-                  key={lang}
-                  type="button"
-                  onClick={() => handleSelectLanguage(lang)}
-                  className={`w-full px-4 py-3 text-left text-sm font-medium transition-colors ${
-                    locale === lang
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-primary/70 hover:bg-soft-beige hover:text-primary'
-                  } focus-visible:outline-none focus-visible:bg-primary/10`}
-                  role="option"
-                  aria-selected={locale === lang}
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-semibold">{localeLabel(lang, 'native')}</div>
-                      <div className="text-xs text-primary/50">{localeLabel(lang, 'name')}</div>
-                    </div>
-                    {locale === lang && (
-                      <span className="text-accent" aria-hidden="true">
-                        ✓
-                      </span>
+              <div className="py-2">
+                {LOCALES.map((lang) => (
+                  <button
+                    key={lang}
+                    type="button"
+                    onClick={() => handleSelectLanguage(lang)}
+                    className={cn(
+                      "w-full px-5 py-4 text-left transition-all relative group/item",
+                      locale === lang ? "bg-accent/5" : "hover:bg-soft-beige"
                     )}
-                  </div>
-                </button>
-              ))}
+                    role="option"
+                    aria-selected={locale === lang}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className={cn(
+                          "text-[0.65rem] font-bold uppercase tracking-widest transition-colors",
+                          locale === lang ? "text-accent" : "text-primary/40 group-hover/item:text-primary/70"
+                        )}>
+                          {localeLabel(lang, 'name')}
+                        </div>
+                        <div className={cn(
+                          "font-serif text-lg transition-colors",
+                          locale === lang ? "text-primary" : "text-primary/60 group-hover/item:text-primary"
+                        )}>
+                          {localeLabel(lang, 'native')}
+                        </div>
+                      </div>
+                      {locale === lang && (
+                        <div className="h-2 w-2 rounded-full bg-accent" />
+                      )}
+                    </div>
+                  </button>
+                ))}
+              </div>
             </motion.div>
           </>
         )}

@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import ThemeToggle from '@/components/ThemeToggle'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { useLanguage } from '@/lib/LanguageContext'
+import { cn } from '@/lib/utils'
+import Button from '@/components/Button'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,8 +34,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-ivory/95 shadow-[0_16px_45px_rgba(23,19,15,0.08)]' : 'bg-ivory/72 backdrop-blur-md'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        isScrolled ? 'h-22 bg-white/95 shadow-[0_15px_60px_rgba(23,19,15,0.05)] backdrop-blur-xl' : 'h-28 bg-transparent'
       }`}
     >
       {/* Skip to main content link */}
@@ -44,97 +46,112 @@ export default function Header() {
         {t('header.skipToMain')}
       </a>
 
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label={t('accessibility.mainNavigation')}>
-        <div className="flex h-16 items-center justify-between md:h-20">
-          <Link href={`/${locale}`} className="flex items-center space-x-3">
-            <div className="flex h-9 w-9 items-center justify-center border border-accent/70 md:h-10 md:w-10">
-              <span className="font-serif text-lg text-primary md:text-xl">E</span>
+      <nav className="section-container h-full" role="navigation" aria-label={t('accessibility.mainNavigation')}>
+        <div className="flex h-full items-center justify-between">
+          <Link href={`/${locale}`} className="flex items-center space-x-4 group">
+            <div className="flex h-12 w-12 items-center justify-center border-2 border-primary/10 transition-all group-hover:border-accent">
+              <span className="font-serif text-2xl text-primary md:text-2xl">E</span>
             </div>
-            <span className="hidden font-serif text-xl text-primary sm:inline">
-              {t('brand.name')}
-            </span>
+            <div className="flex flex-col">
+              <span className="font-serif text-2xl font-semibold text-primary leading-tight">
+                {t('brand.name')}
+              </span>
+              <span className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-accent">Clinical Specialist</span>
+            </div>
           </Link>
 
-          <div className="hidden items-center space-x-8 md:flex">
+          <div className="hidden items-center space-x-10 lg:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="eyebrow text-primary/70 transition-colors hover:text-primary"
+                className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary/60 transition-all hover:text-accent hover:-translate-y-0.5"
               >
                 {t(link.key)}
               </a>
             ))}
           </div>
 
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden items-center gap-6 lg:flex">
             <LanguageSwitcher />
-            <ThemeToggle />
             <a
               href="#booking"
-              className="premium-sheen bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-ivory shadow-[0_12px_32px_rgba(23,19,15,0.16)] transition-colors hover:bg-clay"
+              className="premium-sheen relative h-14 bg-primary px-8 flex items-center justify-center text-[0.7rem] font-bold uppercase tracking-[0.2em] text-ivory shadow-[0_20px_50px_rgba(23,19,15,0.15)] transition-all hover:bg-clay hover:-translate-y-1"
             >
               {t('header.bookNow')}
             </a>
           </div>
 
-          <div className="flex items-center gap-2 md:hidden">
-            <LanguageSwitcher />
-            <ThemeToggle />
+          <div className="flex items-center gap-4 lg:hidden">
             <button
               onClick={toggleMenu}
-              className="touch-manipulation -mr-3 p-3 transition-colors hover:bg-secondary focus-visible:rounded-lg"
+              className="group flex h-14 w-14 flex-col items-center justify-center gap-1.5 transition-all hover:bg-primary/5 active:scale-95"
               aria-label={t('header.toggleMenu')}
               aria-expanded={isOpen}
-              aria-controls="mobile-menu"
             >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              <div className={cn("h-0.5 w-6 bg-primary transition-all duration-500", isOpen ? "translate-y-2 rotate-45" : "")} />
+              <div className={cn("h-0.5 w-6 bg-primary transition-all duration-500", isOpen ? "opacity-0" : "")} />
+              <div className={cn("h-0.5 w-6 bg-primary transition-all duration-500", isOpen ? "-translate-y-2 -rotate-45" : "")} />
             </button>
           </div>
         </div>
 
-        {isOpen && (
-          <motion.div
-            id="mobile-menu"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="border-t border-primary/10 pb-2 md:hidden"
-            role="navigation"
-          >
-            <div className="grid grid-cols-2 gap-2 px-2 py-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="block min-h-12 border border-primary/10 px-3 py-3 text-center text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {t(link.key)}
-                </a>
-              ))}
-              <a
-                href="#booking"
-                className="col-span-2 mt-1 block min-h-12 bg-primary px-6 py-4 text-center text-xs font-semibold uppercase tracking-[0.14em] text-ivory transition-colors hover:bg-clay"
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 onClick={() => setIsOpen(false)}
+                className="fixed inset-0 z-[100] bg-black/20 backdrop-blur-sm"
+              />
+              <motion.div
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                className="fixed inset-y-0 right-0 z-[101] w-full max-w-sm bg-white shadow-[-30px_0_90px_rgba(23,19,15,0.1)] md:max-w-md"
               >
-                {t('header.bookNow')}
-              </a>
-              <div className="col-span-2 mt-3 border-t border-primary/10 pt-4">
-                <p className="eyebrow mb-3 text-center text-primary/45">
-                  {t('languageSwitcher.label')}
-                </p>
-                <LanguageSwitcher variant="inline" />
-              </div>
-            </div>
-          </motion.div>
-        )}
+                <div className="flex flex-col h-full p-8 pt-28">
+                  <nav className="flex-1">
+                    <ul className="space-y-6">
+                      {navLinks.map((link, index) => (
+                        <motion.li
+                          key={link.href}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          <a
+                            href={link.href}
+                            onClick={() => setIsOpen(false)}
+                            className="font-serif text-4xl text-primary hover:text-accent transition-colors"
+                          >
+                            {t(link.key)}
+                          </a>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </nav>
+                  
+                  <div className="mt-auto pt-10 border-t border-primary/10">
+                    <div className="mb-8">
+                      <p className="eyebrow mb-4 opacity-40">{t('languageSwitcher.label')}</p>
+                      <LanguageSwitcher variant="inline" />
+                    </div>
+                    <div className="flex items-center justify-between mb-8">
+                      <ThemeToggle />
+                    </div>
+                    <a href="#booking" onClick={() => setIsOpen(false)}>
+                      <Button size="lg" className="h-18 w-full">{t('header.bookNow')}</Button>
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   )

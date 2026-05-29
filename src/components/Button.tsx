@@ -55,7 +55,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
         disabled={isDisabled}
-        {...props}
+        {...(props as any)}
       >
         {isLoading && (
           <svg className="mr-2 h-4 w-4 animate-spin" viewBox="0 0 24 24">

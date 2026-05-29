@@ -28,6 +28,57 @@
     "acceptAll": "Pieņemt visu",
     "decline": "Noraidīt"
   },
+  "expertise": {
+    "eyebrow": "Klīniskie standarti",
+    "title": "Profesionālā izcilība permanentajā matu noņemšanā",
+    "description": "Mēs apvienojam klīnisko precizitāti ar pacienta interešu prioritāti, lai nodrošinātu augstāko elektrolīzes aprūpes standartu.",
+    "certified": {
+      "title": "Sertificēts elektrologs",
+      "description": "Apmācīts un sertificēts saskaņā ar starptautiskajiem medicīniskās klases elektrolīzes standartiem."
+    },
+    "hygiene": {
+      "title": "Medicīniskā higiēna",
+      "description": "Stingri sterilizācijas protokoli, izmantojot medicīniskās klases aprīkojumu katram pacientam."
+    },
+    "experience": {
+      "title": "Klīniskā pieredze",
+      "description": "Vairāk nekā 15 gadus specializējamies tikai un vienīgi permanentajā matu noņemšanā."
+    },
+    "consultation": {
+      "title": "Eksperta konsultācija",
+      "description": "Padziļināta ādas un matu analīze, lai izveidotu personalizētu ārstēšanas plānu."
+    }
+  },
+  "comparison": {
+    "eyebrow": "Medicīniskā vs Pagaidu",
+    "title": "Klīniskais salīdzinājums: Elektrolīze vs Lāzers",
+    "description": "Izprotiet fundamentālo bioloģisko atšķirību starp permanento noņemšanu un pagaidu samazināšanu.",
+    "electrolysis": {
+      "title": "Elektrolīze",
+      "subtitle": "Zelta standarts",
+      "description": "Vienīgā FDA apstiprinātā metode patiesi permanentai matu noņemšanai.",
+      "points": [
+        "FDA apstiprināts: Permanents",
+        "Visām matu krāsām",
+        "Visiem ādas toņiem",
+        "Precīza individuāla apstrāde",
+        "Bez UV starojuma ietekmes"
+      ]
+    },
+    "laser": {
+      "title": "Lāzerepilācija",
+      "subtitle": "Pagaidu samazināšana",
+      "description": "Populāra metode, kas prasa uzturošas procedūras visu mūžu.",
+      "points": [
+        "FDA apstiprināts: Samazināšana",
+        "Neefektīvs gaišiem/sarkaniem",
+        "Riski tumšākiem ādas toņiem",
+        "Nepieciešama ikgadēja uzturēšana",
+        "Dārgāk ilgtermiņā"
+      ]
+    },
+    "quote": "\"Lai gan lāzerepilācija piedāvā pagaidu matu samazināšanu, tā pilnībā nepārtrauc matu augšanu. Elektrolīze joprojām ir vienīgais medicīniskais risinājums 100% rezultātam.\""
+  },
   "header": {
     "skipToMain": "Pāriet uz galveno saturu",
     "bookNow": "Rezervēt",

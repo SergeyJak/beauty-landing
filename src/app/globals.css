@@ -194,15 +194,46 @@ section[id] {
   animation: lineDraw 1.4s ease-out both;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+@media (max-width: 1023px) {
+  .hero-heading {
+    font-size: clamp(2.75rem, 10vw, 4rem);
+    letter-spacing: -0.03em;
   }
+  
+  .section-heading {
+    font-size: clamp(2.25rem, 8vw, 3.25rem);
+  }
+}
+
+/* Mobile One-Handed Optimizations */
+@media (max-width: 767px) {
+  button, a {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  .safe-bottom {
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* Premium Medical Aesthetic Transitions */
+.smooth-hover {
+  @apply transition-all duration-500 ease-smooth;
+}
+
+.medical-gradient {
+  background: radial-gradient(circle at top left, rgba(var(--color-accent), 0.05), transparent 40%),
+              radial-gradient(circle at bottom right, rgba(var(--color-primary), 0.03), transparent 40%);
+}
+
+.clinical-shadow {
+  @apply shadow-[0_20px_50px_rgba(23,19,15,0.08)];
+}
+
+@keyframes slowZoom {
+  0% { transform: scale(1.02); }
+  100% { transform: scale(1.08); }
 }
 
 /* Enhanced focus states for keyboard navigation */

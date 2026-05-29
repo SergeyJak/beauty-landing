@@ -26,6 +26,58 @@
     "acceptAll": "Accept All",
     "decline": "Decline"
   },
+  "expertise": {
+    "eyebrow": "Clinical Standards",
+    "title": "Professional Excellence in Permanent Hair Removal",
+    "description": "We combine clinical precision with a patient-first approach to deliver the highest standard of electrolysis care.",
+    "certified": {
+      "title": "Certified Electrologist",
+      "description": "Trained and certified by international medical-grade electrolysis standards."
+    },
+    "hygiene": {
+      "title": "Medical Hygiene",
+      "description": "Strict sterilization protocols using medical-grade equipment for every patient."
+    },
+    "experience": {
+      "title": "Clinical Experience",
+      "description": "Over 15 years specializing exclusively in permanent hair removal."
+    },
+    "consultation": {
+      "title": "Expert Consultation",
+      "description": "In-depth skin and hair analysis to create a personalized treatment plan."
+    }
+  },
+  "comparison": {
+    "eyebrow": "Medical vs. Temporary",
+    "title": "Clinical Comparison: Electrolysis vs. Laser",
+    "description": "Understanding the fundamental biological difference between permanent removal and temporary reduction.",
+    "electrolysis": {
+      "title": "Electrolysis",
+      "subtitle": "The Gold Standard",
+      "description": "The only FDA-approved method for truly permanent hair removal. Works by destroying the follicle growth center.",
+      "points": [
+        "FDA-Approved Permanent",
+        "Works on All Hair Colors",
+        "Effective on All Skin Tones",
+        "Precision Individual Treatment",
+        "No UV Radiation Exposure"
+      ]
+    },
+    "laser": {
+      "title": "Laser Hair Removal",
+      "subtitle": "Temporary Reduction",
+      "description": "A popular method that uses light energy to damage follicles. Requires lifelong maintenance sessions.",
+      "points": [
+        "FDA-Approved Reduction",
+        "Ineffective on Light/Red Hair",
+        "Risks on Darker Skin Tones",
+        "Maintenance Required Yearly",
+        "Higher Long-Term Cost"
+      ]
+    },
+    "quote": "\"While Laser Hair Removal offers temporary reduction, it does not permanently stop hair growth. Electrolysis remains the only medical solution for 100% hair-free results across all biological variations.\""
+  },
+
   "header": {
     "skipToMain": "Skip to main content",
     "bookNow": "Book Now",

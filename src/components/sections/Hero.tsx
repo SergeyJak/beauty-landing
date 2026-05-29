@@ -56,40 +56,62 @@ export default function Hero() {
       >
         <div className="max-w-4xl">
           <motion.div variants={itemVariants} className="mb-8 flex items-center gap-4">
-            <span className="eyebrow text-accent">{t('hero.eyebrow')}</span>
-            <span className="reveal-line h-px w-24 bg-accent/35" />
+            <div className="flex -space-x-2">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="h-8 w-8 rounded-full border-2 border-ivory bg-soft-beige ring-1 ring-primary/5 overflow-hidden">
+                  <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Client" className="h-full w-full object-cover grayscale" />
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[0.65rem] font-bold uppercase tracking-wider text-accent">{t('hero.eyebrow')}</span>
+              <span className="text-[0.6rem] text-primary/50">Trusted by 500+ clinical patients</span>
+            </div>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="hero-heading mb-8 max-w-4xl">
+          <motion.h1 variants={itemVariants} className="hero-heading mb-10 max-w-4xl tracking-tighter">
             {t('hero.title')}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="mb-10 max-w-2xl text-base leading-8 text-primary/72 md:text-lg md:leading-9"
+            className="mb-12 max-w-2xl text-lg leading-relaxed text-primary/80 md:text-xl md:leading-relaxed"
           >
             {t('hero.description')}
           </motion.p>
 
-          <motion.div variants={itemVariants} className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-stretch">
-            <a href="#booking" className="w-full sm:w-auto sm:min-w-[14rem]">
-              <Button size="lg" className="min-h-14 w-full shadow-[0_22px_55px_rgba(23,19,15,0.22)]">
+          <motion.div variants={itemVariants} className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-stretch">
+            <a href="#booking" className="group w-full sm:w-auto sm:min-w-[16rem]">
+              <Button size="lg" className="h-16 w-full shadow-[0_25px_60px_rgba(23,19,15,0.25)]">
                 {t('hero.primaryCTA')}
+                <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Button>
             </a>
             <a href="#why-electrolysis" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="min-h-14 w-full bg-ivory/80 backdrop-blur-sm">
+              <Button variant="outline" size="lg" className="h-16 w-full border-primary/20 bg-ivory/40 backdrop-blur-md hover:border-primary/40">
                 {t('hero.secondaryCTA')}
               </Button>
             </a>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="mb-12 flex flex-wrap gap-x-5 gap-y-2 text-sm text-primary/58">
-            <span className="font-medium text-primary/75">{t('hero.included')}</span>
-            <span className="hidden text-accent/70 sm:inline" aria-hidden="true">
-              /
-            </span>
-            <span>{t('hero.location')}</span>
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-primary/10 pt-8"
+          >
+            <div className="flex items-center gap-2">
+              <svg className="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-xs font-bold uppercase tracking-widest text-primary/60">{t('hero.included')}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-xs font-bold uppercase tracking-widest text-primary/60">{t('hero.location')}</span>
+            </div>
           </motion.div>
 
           <motion.div

@@ -1,10 +1,11 @@
 import Hero from '@/components/sections/Hero'
 import TrustStrip from '@/components/TrustStrip'
-import WhyElectrolysis from '@/components/sections/WhyElectrolysis'
+import ClinicalComparison from '@/components/sections/ClinicalComparison'
 import Benefits from '@/components/sections/Benefits'
 import HairGrowthPhases from '@/components/sections/HairGrowthPhases'
 import HowItWorks from '@/components/sections/HowItWorks'
 import BeforeAfter from '@/components/sections/BeforeAfter'
+import Expertise from '@/components/sections/Expertise'
 import Reviews from '@/components/sections/Reviews'
 import FAQ from '@/components/sections/FAQ'
 import Contact from '@/components/sections/Contact'
@@ -17,11 +18,12 @@ export default function Home() {
     <PageTransition>
       <Hero />
       <TrustStrip />
-      <WhyElectrolysis />
+      <BeforeAfter />
+      <Expertise />
+      <ClinicalComparison />
       <Benefits />
       <HairGrowthPhases />
       <HowItWorks />
-      <BeforeAfter />
       <Reviews />
       <FAQ />
       <Contact />
