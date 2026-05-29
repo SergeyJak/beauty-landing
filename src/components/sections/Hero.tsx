@@ -2,8 +2,10 @@
 
 import { motion } from 'framer-motion'
 import Button from '@/components/Button'
+import { useT } from '@/lib/LanguageContext'
 
 export default function Hero() {
+  const t = useT()
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,16 +30,16 @@ export default function Hero() {
     <section className="relative min-h-[94vh] overflow-hidden bg-ivory pt-20 md:min-h-screen md:pt-24">
       <div className="absolute inset-0 z-0">
         <motion.img
-          src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=2100&h=1300&fit=crop"
+          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=2100&h=1300&fit=crop"
           alt=""
-          className="h-full w-full object-cover object-[64%_center] md:object-center"
+          className="h-full w-full object-cover object-center"
           initial={{ scale: 1.02 }}
           animate={{ scale: 1.045 }}
           transition={{ duration: 18, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,250,242,0.98)_0%,rgba(255,250,242,0.88)_38%,rgba(255,250,242,0.26)_68%,rgba(23,19,15,0.2)_100%)] dark:bg-[linear-gradient(90deg,rgba(18,15,13,0.98)_0%,rgba(18,15,13,0.9)_40%,rgba(18,15,13,0.34)_72%,rgba(23,19,15,0.42)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_40%,rgba(255,255,255,0.3)_70%,rgba(45,42,40,0.15)_100%)] dark:bg-[linear-gradient(90deg,rgba(20,19,18,0.98)_0%,rgba(20,19,18,0.94)_40%,rgba(20,19,18,0.36)_72%,rgba(45,42,40,0.42)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ivory via-ivory/60 to-transparent dark:from-ivory dark:via-ivory/58" />
-        <div className="absolute right-[8%] top-28 hidden h-[68%] w-px bg-accent/45 lg:block" />
+        <div className="absolute right-[8%] top-28 hidden h-[68%] w-px bg-accent/35 lg:block" />
       </div>
 
       <motion.div
@@ -48,83 +50,82 @@ export default function Hero() {
       >
         <div className="max-w-4xl">
           <motion.div variants={itemVariants} className="mb-8 flex items-center gap-4">
-            <span className="eyebrow text-accent">Maison Elise Skin Studio</span>
-            <span className="reveal-line h-px w-24 bg-accent/45" />
+            <span className="eyebrow text-accent">{t('hero.eyebrow')}</span>
+            <span className="reveal-line h-px w-24 bg-accent/35" />
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
             className="mb-8 max-w-4xl font-serif text-[clamp(4.25rem,12vw,9.5rem)] leading-[0.82] text-primary"
           >
-            Skin that looks expensive in real light.
+            {t('hero.title')}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="mb-10 max-w-2xl text-base leading-8 text-primary/72 md:text-xl md:leading-9"
           >
-            Private Flatiron appointments for sculpted facials, lymphatic bodywork, gloss
-            treatments, and event preparation with skin-first restraint.
+            {t('hero.description')}
           </motion.p>
 
           <motion.div variants={itemVariants} className="mb-12 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a href="#booking" className="w-full sm:w-auto">
-              <Button size="lg" className="min-h-14 w-full sm:w-auto">Reserve Visit</Button>
+              <Button size="lg" className="min-h-14 w-full sm:w-auto">{t('hero.primaryCTA')}</Button>
             </a>
-            <a href="#services" className="w-full sm:w-auto">
+            <a href="#why-electrolysis" className="w-full sm:w-auto">
               <Button variant="outline" size="lg" className="min-h-14 w-full sm:w-auto">
-                View Treatments
+                {t('hero.secondaryCTA')}
               </Button>
             </a>
           </motion.div>
 
           <motion.div variants={itemVariants} className="-mt-8 mb-12 flex flex-wrap gap-x-5 gap-y-2 text-sm text-primary/58">
-            <span>Response during studio hours</span>
+            <span>{t('hero.included')}</span>
             <span className="hidden text-accent/70 sm:inline">/</span>
-            <span>No deposit until time is confirmed</span>
+            <span>{t('hero.location')}</span>
           </motion.div>
 
           <motion.div
             variants={itemVariants}
             className="grid max-w-2xl grid-cols-3 border-y border-primary/10 bg-ivory/50 py-5 backdrop-blur-sm dark:bg-ivory/45"
-            whileHover={{ borderColor: 'rgba(185, 144, 88, 0.28)' }}
+            whileHover={{ borderColor: 'rgba(172, 145, 110, 0.28)' }}
             transition={{ duration: 0.45 }}
           >
             <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.3 }}>
-              <p className="font-serif text-4xl text-primary">9</p>
-              <p className="eyebrow mt-1 text-primary/50">Years</p>
+              <p className="font-serif text-4xl text-primary">{t('hero.stats.experienceNumber')}</p>
+              <p className="eyebrow mt-1 text-primary/50">{t('hero.stats.experience')}</p>
             </motion.div>
             <motion.div className="border-x border-primary/10 px-6" whileHover={{ y: -3 }} transition={{ duration: 0.3 }}>
-              <p className="font-serif text-4xl text-primary">4.9</p>
-              <p className="eyebrow mt-1 text-primary/50">Rating</p>
+              <p className="font-serif text-4xl text-primary">{t('hero.stats.approvedNumber')}</p>
+              <p className="eyebrow mt-1 text-primary/50">{t('hero.stats.approved')}</p>
             </motion.div>
             <motion.div className="pl-6" whileHover={{ y: -3 }} transition={{ duration: 0.3 }}>
-              <p className="font-serif text-4xl text-primary">1:1</p>
-              <p className="eyebrow mt-1 text-primary/50">Care</p>
+              <p className="font-serif text-4xl text-primary">{t('hero.stats.permanentNumber')}</p>
+              <p className="eyebrow mt-1 text-primary/50">{t('hero.stats.permanent')}</p>
             </motion.div>
           </motion.div>
         </div>
 
         <motion.div variants={itemVariants} className="hidden lg:block">
           <motion.div
-            className="premium-sheen relative ml-auto max-w-sm border border-ivory/70 bg-ivory/78 p-4 shadow-[0_35px_120px_rgba(23,19,15,0.24)] backdrop-blur"
+            className="premium-sheen relative ml-auto max-w-sm border border-ivory/70 bg-ivory/78 p-4 shadow-[0_35px_120px_rgba(45,42,40,0.24)] backdrop-blur"
             whileHover={{ y: -6, rotate: -0.35 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="absolute -left-16 top-12 border border-accent/35 bg-ivory/86 px-5 py-4 shadow-[0_18px_50px_rgba(23,19,15,0.14)] backdrop-blur dark:bg-ivory/86">
-              <p className="eyebrow text-accent">This week</p>
-              <p className="mt-2 font-serif text-3xl text-primary">Event skin prep</p>
+            <div className="absolute -left-16 top-12 border border-accent/35 bg-ivory/86 px-5 py-4 shadow-[0_18px_50px_rgba(45,42,40,0.14)] backdrop-blur dark:bg-ivory/86">
+              <p className="eyebrow text-accent">{t('hero.sidecard.eyebrow')}</p>
+              <p className="mt-2 font-serif text-3xl text-primary">{t('hero.sidecard.title')}</p>
             </div>
             <motion.img
-              src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&h=1200&fit=crop"
-              alt="Maison Elise facial treatment"
+              src="https://images.unsplash.com/photo-1576091160599-112ba8d25d1d?w=900&h=1200&fit=crop"
+              alt={t('hero.sidecard.imageAlt')}
               className="aspect-[4/5] w-full object-cover"
               whileHover={{ scale: 1.025 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             />
             <div className="flex items-center justify-between px-2 pt-4">
-              <p className="eyebrow text-primary/60">Flatiron studio</p>
-              <p className="text-sm text-primary/70">Consultation included</p>
+              <p className="eyebrow text-primary/60">{t('hero.sidecard.location')}</p>
+              <p className="text-sm text-primary/70">{t('hero.sidecard.specialist')}</p>
             </div>
           </motion.div>
         </motion.div>

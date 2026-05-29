@@ -4,18 +4,22 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import ThemeToggle from '@/components/ThemeToggle'
-
-const navLinks = [
-  { name: 'Services', href: '#services' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Reviews', href: '#reviews' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'Contact', href: '#contact' },
-]
+import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const { locale, t } = useLanguage()
+
+  const navLinks = [
+    { key: 'header.navigation.why', href: '#why-electrolysis' },
+    { key: 'header.navigation.benefits', href: '#benefits' },
+    { key: 'header.navigation.howWorks', href: '#how-it-works' },
+    { key: 'header.navigation.results', href: '#gallery' },
+    { key: 'header.navigation.faq', href: '#faq' },
+    { key: 'header.navigation.contact', href: '#contact' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
@@ -37,48 +41,50 @@ export default function Header() {
         href="#main-content"
         className="absolute -top-full left-4 z-50 inline-block bg-primary text-ivory px-4 py-2 rounded-b text-sm font-semibold focus:top-0 transition-top"
       >
-        Skip to main content
+        {t('header.skipToMain')}
       </a>
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between md:h-20">
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href={`/${locale}`} className="flex items-center space-x-3">
             <div className="flex h-9 w-9 items-center justify-center border border-accent/70 md:h-10 md:w-10">
-              <span className="font-serif text-lg text-primary md:text-xl">M</span>
+              <span className="font-serif text-lg text-primary md:text-xl">E</span>
             </div>
             <span className="hidden font-serif text-xl text-primary sm:inline">
-              Maison Elise
+              {t('brand.name')}
             </span>
           </Link>
 
           <div className="hidden items-center space-x-8 md:flex">
             {navLinks.map((link) => (
               <a
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 className="eyebrow text-primary/70 transition-colors hover:text-primary"
               >
-                {link.name}
+                {t(link.key)}
               </a>
             ))}
           </div>
 
           <div className="hidden items-center gap-3 md:flex">
+            <LanguageSwitcher />
             <ThemeToggle />
             <a
               href="#booking"
               className="bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-ivory transition-colors hover:bg-clay"
             >
-              Book Now
+              {t('header.bookNow')}
             </a>
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
+            <LanguageSwitcher />
             <ThemeToggle />
             <button
               onClick={toggleMenu}
               className="touch-manipulation -mr-3 p-3 transition-colors hover:bg-secondary focus-visible:rounded-lg"
-              aria-label="Toggle navigation menu"
+              aria-label={t('header.toggleMenu')}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
             >
@@ -95,20 +101,22 @@ export default function Header() {
 
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             className="border-t border-primary/10 pb-2 md:hidden"
+            role="navigation"
           >
             <div className="grid grid-cols-2 gap-2 px-2 py-3">
               {navLinks.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
                   className="block min-h-12 border border-primary/10 px-3 py-3 text-center text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent"
                   onClick={() => setIsOpen(false)}
                 >
-                  {link.name}
+                  {t(link.key)}
                 </a>
               ))}
               <a
@@ -116,7 +124,7 @@ export default function Header() {
                 className="col-span-2 mt-1 block min-h-12 bg-primary px-6 py-4 text-center text-xs font-semibold uppercase tracking-[0.14em] text-ivory transition-colors hover:bg-clay"
                 onClick={() => setIsOpen(false)}
               >
-                Book Now
+                {t('header.bookNow')}
               </a>
             </div>
           </motion.div>

@@ -5,48 +5,54 @@ import { motion } from 'framer-motion'
 import ConversionCTA from '@/components/ConversionCTA'
 import SectionHeader from '@/components/SectionHeader'
 import type { BeforeAfterImage } from '@/types'
+import { useLanguage } from '@/lib/LanguageContext'
 
 const galleryImages: BeforeAfterImage[] = [
   {
     id: '1',
-    before: 'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=400&fit=crop',
-    after: 'https://images.unsplash.com/photo-1614613535308-eb5fbd8d2c17?w=400&h=400&fit=crop',
-    title: 'Barrier Repair Facial',
-    category: 'Calming + LED',
+    before: 'https://images.unsplash.com/photo-1559056199-641a0ac8b8d5?w=400&h=400&fit=crop',
+    after: 'https://images.unsplash.com/photo-1559056199-641a0ac8b8d5?w=400&h=400&fit=crop',
+    title: 'Facial Hair Removal',
+    category: 'Chin, upper lip, cheeks',
   },
   {
     id: '2',
-    before: 'https://images.unsplash.com/photo-1560264357-8d9766d54612?w=400&h=400&fit=crop',
-    after: 'https://images.unsplash.com/photo-1562393909-c8fbe6231842?w=400&h=400&fit=crop',
-    title: 'Soft Gloss Refresh',
-    category: 'Color + finish',
+    before: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    after: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    title: 'Underarm Hair Removal',
+    category: 'Permanent smoothness',
   },
   {
     id: '3',
-    before: 'https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=400&h=400&fit=crop',
-    after: 'https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?w=400&h=400&fit=crop',
-    title: 'Texture Refinement',
-    category: 'Enzyme polish',
+    before: 'https://images.unsplash.com/photo-1521575215127-fa158febef6f?w=400&h=400&fit=crop',
+    after: 'https://images.unsplash.com/photo-1521575215127-fa158febef6f?w=400&h=400&fit=crop',
+    title: 'Bikini Line Treatment',
+    category: 'Complete hair removal',
   },
   {
     id: '4',
-    before: 'https://images.unsplash.com/photo-1631217336831-e370b39b99d7?w=400&h=400&fit=crop',
-    after: 'https://images.unsplash.com/photo-1631217336831-e370b39b99d7?w=400&h=400&fit=crop',
-    title: 'Sheer Gel Manicure',
-    category: 'Hands',
+    before: 'https://images.unsplash.com/photo-1573496359142-b8d1ff25e828?w=400&h=400&fit=crop',
+    after: 'https://images.unsplash.com/photo-1573496359142-b8d1ff25e828?w=400&h=400&fit=crop',
+    title: 'Full Leg Electrolysis',
+    category: 'Permanent leg smoothness',
   },
 ]
 
 export default function BeforeAfter() {
+  const { t, list } = useLanguage()
   const [selectedImage, setSelectedImage] = useState<BeforeAfterImage | null>(null)
+  const localizedImages = galleryImages.map((image, index) => ({
+    ...image,
+    ...(list<Partial<BeforeAfterImage>>('results.gallery')[index] || {}),
+  }))
 
   return (
     <section id="gallery" className="bg-ink py-20 text-parchment md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow="The work"
-          title="Realistic results, photographed without studio tricks."
-          description="A restrained gallery of barrier repair, gloss, texture refinement, and detailed polish work. Click any treatment study to compare the appointment result."
+          eyebrow={t('results.eyebrow')}
+          title={t('results.title')}
+          description={t('results.description')}
           light
         />
 
@@ -57,7 +63,7 @@ export default function BeforeAfter() {
           viewport={{ once: true }}
           className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4"
         >
-          {galleryImages.map((image) => (
+          {localizedImages.map((image) => (
             <motion.button
               key={image.id}
               whileHover={{ y: -6 }}
@@ -94,7 +100,7 @@ export default function BeforeAfter() {
                 </div>
 
                 <div className="absolute right-3 top-3 border border-parchment/30 bg-ink/55 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-parchment backdrop-blur">
-                  Before / after
+                  {t('common.beforeAfter')}
                 </div>
               </div>
             </motion.button>
@@ -102,12 +108,12 @@ export default function BeforeAfter() {
         </motion.div>
 
         <ConversionCTA
-          eyebrow="Planning for a date?"
-          title="Book skin prep before the calendar gets tight."
-          description="For weddings, travel, shoots, and dinners, share the date when you request. We will recommend timing that avoids irritation and preserves the finish."
-          primaryLabel="Plan My Timeline"
-          secondaryLabel="View Services"
-          secondaryHref="#services"
+          eyebrow={t('results.cta.eyebrow')}
+          title={t('results.cta.title')}
+          description={t('results.cta.description')}
+          primaryLabel={t('results.cta.primary')}
+          secondaryLabel={t('results.cta.secondary')}
+          secondaryHref="#why-electrolysis"
           dark
         />
 
@@ -145,25 +151,25 @@ export default function BeforeAfter() {
               <div className="flex-1 overflow-y-auto p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <p className="eyebrow mb-3 text-primary/50">Before</p>
+                    <p className="eyebrow mb-3 text-primary/50">{t('common.before')}</p>
                     <img
                       src={selectedImage.before}
-                      alt="Before"
+                      alt={t('common.before')}
                       className="h-auto w-full"
                     />
                   </div>
                   <div>
-                    <p className="eyebrow mb-3 text-primary/50">After</p>
+                    <p className="eyebrow mb-3 text-primary/50">{t('common.after')}</p>
                     <img
                       src={selectedImage.after}
-                      alt="After"
+                      alt={t('common.after')}
                       className="h-auto w-full"
                     />
                   </div>
                 </div>
                 <div className="border border-primary/10 bg-soft-beige p-4">
                   <p className="text-primary/65">
-                    Category: <span className="font-semibold text-primary">{selectedImage.category}</span>
+                    {t('common.category')}: <span className="font-semibold text-primary">{selectedImage.category}</span>
                   </p>
                 </div>
               </div>

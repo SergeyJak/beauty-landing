@@ -6,48 +6,51 @@ import ActionLink from '@/components/ActionLink'
 import Reveal from '@/components/Reveal'
 import SectionHeader from '@/components/SectionHeader'
 import type { FAQItem } from '@/types'
+import { useLanguage } from '@/lib/LanguageContext'
 
 const faqItems: FAQItem[] = [
   {
     id: '1',
-    question: 'How do I request an appointment?',
+    question: 'Is electrolysis really permanent?',
     answer:
-      'Send a request through the form, WhatsApp, or phone. We reply during studio hours with available times, treatment fit, and any prep notes for your skin or event timeline.',
+      'Yes. Electrolysis is FDA-approved as the only permanent method of hair removal. Once the hair follicle is treated and destroyed, it cannot produce hair again. Results are permanent.',
   },
   {
     id: '2',
-    question: 'What is your cancellation policy?',
+    question: 'How long does electrolysis take?',
     answer:
-      'Appointments can be moved or cancelled up to 24 hours in advance. Late cancellations and no-shows may be charged 50% of the reserved service.',
+      'Treatment time varies based on the area and hair density. Small areas like the upper lip may take 15-30 minutes, while larger areas can take 1-2 hours. Your electrologist will provide a timeline at your consultation.',
   },
   {
     id: '3',
-    question: 'Do you offer gift cards?',
+    question: 'How many sessions will I need?',
     answer:
-      'Yes. Digital gift cards can be issued for a specific treatment or a custom amount and include a brief note from the sender.',
+      'Most clients need 6-12 sessions spread over 6-12 months. This is because only hair in the active growth phase (Anagen) can be treated permanently. Spacing allows new hairs to enter the growth phase.',
   },
   {
     id: '4',
-    question: 'Can you work with sensitive or reactive skin?',
+    question: 'Does electrolysis hurt?',
     answer:
-      'Yes. Please mention sensitivities, prescriptions, pregnancy, recent peels, retinoid use, or injectables when booking so we can adjust actives and technique.',
+      'Electrolysis causes minimal discomfort. Most clients describe it as slight tingling or warmth. Numbing cream is available if desired. The sensation varies by individual tolerance and area being treated.',
   },
   {
     id: '5',
-    question: 'Do you create event timelines?',
+    question: 'Will there be redness or marks after treatment?',
     answer:
-      'For weddings, shoots, galas, and speaking engagements, we can plan facials, bodywork, brows, nails, hair gloss, and day-of timing around the event date.',
+      'Most clients experience minimal redness that fades within hours to a few days. Some may see slight marks that disappear quickly. We apply soothing products immediately after treatment to minimize any reaction.',
   },
   {
     id: '6',
-    question: 'What should I expect on my first visit?',
+    question: 'Can electrolysis work on all skin types and hair colors?',
     answer:
-      'Your first appointment includes a short intake, skin or service consultation, the treatment, and concise aftercare. Arrive with clean skin when possible and bring product names if you use prescriptions.',
+      'Yes. Unlike laser hair removal, electrolysis works on all skin types (fair to very dark) and all hair colors (including blonde, red, gray, and white). This makes it the most inclusive permanent hair removal method.',
   },
 ]
 
 export default function FAQ() {
+  const { t, list } = useLanguage()
   const [activeId, setActiveId] = useState<string | null>(null)
+  const localizedFaqItems = list<FAQItem>('faq.items')
 
   const toggleAccordion = (id: string) => {
     setActiveId(activeId === id ? null : id)
@@ -57,14 +60,14 @@ export default function FAQ() {
     <section id="faq" className="bg-soft-beige py-20 md:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow="Details"
-          title="Before your appointment."
-          description="The practical details clients ask for before their first studio visit."
+          eyebrow={t('faq.eyebrow')}
+          title={t('faq.title')}
+          description={t('faq.description')}
           align="center"
         />
 
         <div className="border-y border-primary/10">
-          {faqItems.map((item, index) => (
+          {(localizedFaqItems.length ? localizedFaqItems : faqItems).map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 10 }}
@@ -75,7 +78,9 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleAccordion(item.id)}
-                className="flex w-full items-center justify-between px-2 py-6 text-left transition-colors hover:bg-ivory/45 md:px-4"
+                className="flex w-full items-center justify-between px-2 py-6 text-left transition-colors hover:bg-ivory/45 focus-visible:bg-ivory/45 md:px-4"
+                aria-expanded={activeId === item.id}
+                aria-controls={`faq-answer-${item.id}`}
               >
                 <h3 className="pr-4 font-serif text-2xl text-primary">{item.question}</h3>
                 <motion.div
@@ -95,6 +100,7 @@ export default function FAQ() {
               </button>
 
               <motion.div
+                id={`faq-answer-${item.id}`}
                 initial={{ height: 0, opacity: 0 }}
                 animate={{
                   height: activeId === item.id ? 'auto' : 0,
@@ -114,22 +120,22 @@ export default function FAQ() {
         {/* Still have questions? */}
         <Reveal
           delay={0.2}
-          whileHover={{ y: -5, borderColor: 'rgba(185, 144, 88, 0.28)' }}
-          className="premium-sheen mt-16 border border-primary/10 bg-ivory p-8 text-center shadow-[0_24px_70px_rgba(23,19,15,0.06)]"
+          whileHover={{ y: -5, borderColor: 'rgba(172, 145, 110, 0.28)' }}
+          className="premium-sheen mt-16 border border-primary/10 bg-ivory p-8 text-center shadow-[0_24px_70px_rgba(45,42,40,0.06)]"
         >
-          <h3 className="mb-2 font-serif text-3xl text-primary">Still have questions?</h3>
+          <h3 className="mb-2 font-serif text-3xl text-primary">{t('faq.cta.title')}</h3>
           <p className="mb-6 text-primary/65">
-            Contact the studio directly for timing, sensitivities, or event preparation questions.
+            {t('faq.cta.description')}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <ActionLink href="https://wa.me/12127318426?text=Hello%20Maison%20Elise%2C%20I%20have%20a%20question%20about%20booking">
-              WhatsApp
+            <ActionLink href="https://wa.me/12125550123?text=Hello%20Electrolysis%20NYC%2C%20I%20have%20a%20question%20about%20permanent%20hair%20removal">
+              {t('common.whatsApp')}
             </ActionLink>
-            <ActionLink href="https://t.me/maisoneliseskin">
-              Telegram
+            <ActionLink href="https://t.me/electrolysisnyc">
+              {t('common.telegram')}
             </ActionLink>
-            <ActionLink href="mailto:hello@maisonelise.studio">
-              Email
+            <ActionLink href="mailto:hello@electrolysisnyc.com">
+              {t('common.email')}
             </ActionLink>
           </div>
         </Reveal>

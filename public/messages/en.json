@@ -1,0 +1,327 @@
+{
+  "brand": {
+    "name": "Electrolysis NYC",
+    "shortName": "Electrolysis",
+    "footerName": "Electrolysis NYC"
+  },
+  "common": {
+    "benefits": "Benefits",
+    "limitations": "Limitations",
+    "learnMore": "Learn more",
+    "before": "Before",
+    "after": "After",
+    "beforeAfter": "Before / after",
+    "category": "Category",
+    "verifiedClient": "Verified client",
+    "whatsApp": "WhatsApp",
+    "telegram": "Telegram",
+    "email": "Email",
+    "callUs": "Call Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy"
+  },
+  "header": {
+    "skipToMain": "Skip to main content",
+    "bookNow": "Book Now",
+    "toggleMenu": "Toggle navigation menu",
+    "navigation": {
+      "why": "Why Electrolysis",
+      "benefits": "Benefits",
+      "howWorks": "How It Works",
+      "results": "Results",
+      "faq": "FAQ",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "eyebrow": "Certified Electrologist • FDA-Approved Technology",
+    "title": "Permanent hair removal, medically proven.",
+    "description": "Electrolysis is the only FDA-approved method for permanent hair removal. Our certified specialists use medical-grade technology for safe, effective treatment on all skin types and hair colors.",
+    "primaryCTA": "Schedule Consultation",
+    "secondaryCTA": "Learn How It Works",
+    "included": "Free consultation included",
+    "location": "Upper East Side, Manhattan",
+    "stats": {
+      "experienceNumber": "15+",
+      "experience": "Years Experience",
+      "approvedNumber": "FDA",
+      "approved": "Approved",
+      "permanentNumber": "100%",
+      "permanent": "Permanent"
+    },
+    "sidecard": {
+      "eyebrow": "Medical-Grade",
+      "title": "Electrolysis",
+      "location": "Upper East Side",
+      "specialist": "Certified specialist",
+      "imageAlt": "Electrolysis treatment"
+    }
+  },
+  "whyElectrolysis": {
+    "eyebrow": "How It Compares",
+    "title": "Why Electrolysis is the Only Permanent Solution",
+    "description": "Electrolysis is the FDA-approved method for permanent hair removal. Unlike temporary methods, electrolysis destroys the hair follicle completely.",
+    "methods": [
+      {
+        "id": "electrolysis",
+        "name": "Electrolysis",
+        "type": "(This is us)",
+        "permanent": true,
+        "badge": "PERMANENT",
+        "description": "Destroys hair at the root permanently",
+        "benefits": ["FDA-approved permanent method", "Works on all skin types", "Works on all hair colors", "Electrolysis energy destroys follicle"],
+        "limitations": []
+      },
+      {
+        "id": "laser",
+        "name": "Laser Hair Removal",
+        "type": "(Temporary)",
+        "permanent": false,
+        "description": "Requires multiple sessions and maintenance",
+        "benefits": ["Quick treatment times", "Good for large areas"],
+        "limitations": ["Not permanent", "Requires ongoing treatments", "Not effective on light hair", "Risk of skin damage", "Can be expensive long-term"]
+      },
+      {
+        "id": "waxing",
+        "name": "Waxing",
+        "type": "(Temporary)",
+        "permanent": false,
+        "description": "Only removes hair temporarily",
+        "benefits": ["Inexpensive", "Quick appointments"],
+        "limitations": ["Hair regrows every 3-6 weeks", "Painful for sensitive skin", "Risk of ingrown hairs", "Can cause irritation"]
+      },
+      {
+        "id": "sugaring",
+        "name": "Sugaring",
+        "type": "(Temporary)",
+        "permanent": false,
+        "description": "Similar results to waxing",
+        "benefits": ["Gentle on skin", "Natural ingredients"],
+        "limitations": ["Hair regrows every 3-6 weeks", "Can be sticky and messy", "Similar results to waxing"]
+      }
+    ],
+    "explainer": {
+      "title": "The Permanent Difference",
+      "paragraph1": "Electrolysis works by sending a slight electrical current through a fine probe inserted into each hair follicle. This destroys the follicle's ability to produce hair permanently. Once destroyed, that follicle will never regrow hair, not in weeks, months, or years.",
+      "paragraph2": "This is why electrolysis is the only FDA-approved permanent hair removal method. While other methods may reduce hair, only electrolysis offers true permanence."
+    }
+  },
+  "benefits": {
+    "eyebrow": "Advantages",
+    "title": "Benefits of Permanent Hair Removal",
+    "description": "Discover why thousands choose electrolysis for lasting results and medical-grade safety.",
+    "items": [
+      {"id": "permanent", "icon": "✓", "title": "Truly Permanent", "description": "Once a hair follicle is treated, it's gone forever. No more hair in that area."},
+      {"id": "allSkinTypes", "icon": "◎", "title": "All Skin Types", "description": "Works effectively on all skin tones, from very fair to very dark skin."},
+      {"id": "allHairColors", "icon": "◼", "title": "All Hair Colors", "description": "Effective on blonde, red, white, and dark hair, even color that laser can't treat."},
+      {"id": "precision", "icon": "●", "title": "Precise Control", "description": "Target individual hairs with surgical precision. Ideal for facial hair and sensitive areas."},
+      {"id": "safe", "icon": "★", "title": "Medically Safe", "description": "FDA-approved, no UV radiation, minimal risk of side effects when done by certified professionals."},
+      {"id": "costEffective", "icon": "◆", "title": "Long-Term Savings", "description": "While initial cost is higher, permanent results mean no more ongoing treatments or products."}
+    ],
+    "science": {
+      "title": "Science-Based Results",
+      "items": ["No more daily hair removal routines", "Say goodbye to razor burns and ingrown hairs", "Ideal for bikini line, face, and sensitive areas", "Treatment customized to your hair growth cycle"]
+    },
+    "timeline": {
+      "title": "Treatment Timeline",
+      "items": [
+        {"phase": "Initial Consultation", "duration": "Free"},
+        {"phase": "First Treatment", "duration": "Variable (30-90 min)"},
+        {"phase": "Follow-up Sessions", "duration": "Typically 6-12 months"},
+        {"phase": "Results", "duration": "Permanent after final session"}
+      ]
+    }
+  },
+  "hairGrowthPhases": {
+    "eyebrow": "Hair Biology",
+    "title": "Understanding Hair Growth Cycles",
+    "description": "Hair doesn't grow continuously. Understanding these three phases explains why permanent hair removal requires multiple treatments.",
+    "percentageLabel": "Percentage of Hair",
+    "durationLabel": "Phase Duration",
+    "characteristics": "Key Characteristics",
+    "treatableBadge": "✓ TREATABLE PHASE",
+    "treatableNote": "Only treatment during Anagen results in permanent hair removal.",
+    "phases": [
+      {"id": "anagen", "name": "Anagen", "subtitle": "Growth Phase", "percentage": "85%", "duration": "2-7 years", "description": "Hair actively grows from the follicle. This is the only phase when electrolysis can permanently destroy the follicle.", "details": ["Hair is thickest and most pigmented", "Follicle actively produces hair", "Best time for treatment", "Requires direct treatment to be permanent"], "color": "from-accent/20 to-champagne/10"},
+      {"id": "catagen", "name": "Catagen", "subtitle": "Transition Phase", "percentage": "2-3%", "duration": "2-3 weeks", "description": "Hair transitions from growth to rest. The follicle begins to separate from the dermal papilla.", "details": ["Hair detaches from root", "Follicle shrinks slightly", "Hair may feel looser", "Lasts only 2-3 weeks"], "color": "from-primary/10 to-accent/5"},
+      {"id": "telogen", "name": "Telogen", "subtitle": "Resting Phase", "percentage": "10-15%", "duration": "5-14 weeks", "description": "Hair rests in the follicle before being shed. The follicle is dormant and cannot be treated.", "details": ["Hair is no longer attached to root", "Will eventually fall out naturally", "New hair begins forming below", "Cannot be treated during this phase"], "color": "from-primary/5 to-primary/10"}
+    ],
+    "multiple": {
+      "title": "Why Multiple Treatments Are Needed",
+      "paragraph1": "At any given time, only about 85% of hair is in the Anagen growth phase. The remaining 10-15% is in Catagen or Telogen phases and cannot be treated. This means your first appointment can only treat the actively growing hairs.",
+      "paragraph2": "Over the next several weeks, new hairs from Catagen and Telogen phases will enter Anagen and become visible. These are treated in follow-up sessions until all hairs have been permanently removed. This typically takes 6-12 months depending on body area and individual hair growth patterns."
+    },
+    "steps": [
+      {"number": "1", "label": "First Treatment", "desc": "Treats 85% of hairs in Anagen phase"},
+      {"number": "2-3", "label": "Follow-up Sessions", "desc": "Treats newly visible hairs from other phases"},
+      {"number": "∞", "label": "Permanent Result", "desc": "No more hair growth once complete"}
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "The Process",
+    "title": "How Electrolysis Works",
+    "description": "Step-by-step explanation of our treatment process and what to expect during your appointment.",
+    "whatHappens": "What Happens",
+    "steps": [
+      {"number": "01", "title": "Free Consultation", "description": "Meet with our certified electrologist to discuss your hair removal goals, skin type, and treatment expectations. We'll answer all your questions.", "details": ["Review medical history", "Assess hair and skin type", "Create personalized treatment plan", "Discuss timeline and costs"]},
+      {"number": "02", "title": "Skin Preparation", "description": "We cleanse and prepare your skin. You may apply numbing cream if desired. The area is made comfortable for treatment.", "details": ["Gentle cleansing", "Optional numbing cream", "Position for comfort", "Final assessment"]},
+      {"number": "03", "title": "Hair Treatment", "description": "A fine probe is gently inserted into each hair follicle. A quick electrical current destroys the follicle permanently. The probe never pierces the skin.", "details": ["Probe inserted into follicle", "Electrical current applied", "Follicle permanently destroyed", "Hair is gently removed"]},
+      {"number": "04", "title": "Skin Soothing", "description": "After treatment, we apply soothing products to reduce any redness. Most clients see minimal to no visible reaction.", "details": ["Calming serum applied", "Anti-inflammatory treatment", "Aftercare instructions given", "Schedule follow-up session"]}
+    ],
+    "science": {
+      "title": "The Science Behind Electrolysis",
+      "methodTitle": "Galvanic Method",
+      "methodDescription": "A direct electrical current creates a chemical reaction that destroys the follicle. This method is particularly effective and causes minimal discomfort.",
+      "methodItems": ["Deep follicle destruction", "Works on all skin types"],
+      "permanentTitle": "Why It's Permanent",
+      "permanentDescription": "The electrical current destroys the dermal papilla and matrix cells, the biological structures responsible for hair production. Once destroyed, these cannot regenerate.",
+      "permanentItems": ["Biological permanence", "FDA-approved method"]
+    },
+    "timeline": {
+      "title": "Treatment Timeline",
+      "items": [
+        {"time": "Week 1-2", "action": "Schedule first appointment"},
+        {"time": "Week 3-6", "action": "First visible hairs shed"},
+        {"time": "Month 2-3", "action": "Schedule follow-up session"},
+        {"time": "Month 6-12", "action": "Complete remaining sessions"},
+        {"time": "Ongoing", "action": "Permanent hair-free results"}
+      ]
+    },
+    "aftercare": {
+      "title": "Aftercare",
+      "items": [
+        {"tip": "Avoid Sun", "desc": "Keep treated area protected for 48 hours"},
+        {"tip": "Skip Makeup", "desc": "Wait 24 hours before applying cosmetics"},
+        {"tip": "Moisturize", "desc": "Use gentle, fragrance-free moisturizer"},
+        {"tip": "No Picking", "desc": "Let skin heal naturally, don't pick at hairs"},
+        {"tip": "Stay Cool", "desc": "Avoid hot showers and strenuous exercise"}
+      ]
+    }
+  },
+  "results": {
+    "eyebrow": "Results",
+    "title": "Visible, permanent results from electrolysis.",
+    "description": "Real client transformations with medical-grade treatment. Before and after gallery shows treatment results across different body areas.",
+    "gallery": [
+      {"id": "1", "title": "Facial Hair Removal", "category": "Chin, upper lip, cheeks"},
+      {"id": "2", "title": "Underarm Hair Removal", "category": "Permanent smoothness"},
+      {"id": "3", "title": "Bikini Line Treatment", "category": "Complete hair removal"},
+      {"id": "4", "title": "Full Leg Electrolysis", "category": "Permanent leg smoothness"}
+    ],
+    "cta": {
+      "eyebrow": "Ready for permanent results?",
+      "title": "Start your electrolysis journey today.",
+      "description": "Schedule a free consultation with our certified electrologist. We'll assess your hair and skin, discuss treatment timeline, and answer all your questions.",
+      "primary": "Book Consultation",
+      "secondary": "Learn More"
+    }
+  },
+  "reviews": {
+    "eyebrow": "Testimonials",
+    "title": "Real results from our clients.",
+    "description": "Join hundreds of satisfied clients who have achieved permanent hair removal through our FDA-approved electrolysis treatments.",
+    "items": [
+      {"id": "1", "name": "Sarah Martinez", "title": "Facial hair removal", "text": "After years of waxing and plucking, I finally have a permanent solution. My chin is completely hair-free and the results are incredible. The treatment was quick and professional.", "rating": 5},
+      {"id": "2", "name": "Jessica Chen", "title": "Full electrolysis client", "text": "I was nervous before my first appointment, but the specialist was incredibly knowledgeable and put me at ease. The permanence is real, no more waxing appointments or razor bumps.", "rating": 5},
+      {"id": "3", "name": "Amanda Foster", "title": "Regular client", "text": "The clinic is so clean and professional. The specialist is certified and really knows her craft. Each session brings me closer to permanent hair freedom. Highly recommend.", "rating": 5},
+      {"id": "4", "name": "Rebecca Thompson", "title": "Underarm treatment", "text": "Finally permanent results after years of shaving and waxing. The cost is worth it compared to years of temporary hair removal methods. My skin has never been smoother.", "rating": 5}
+    ],
+    "stats": [
+      {"number": "4.9/5", "label": "Client Rating"},
+      {"number": "500+", "label": "Treatments Completed"},
+      {"number": "100%", "label": "Permanent Results"}
+    ],
+    "cta": {
+      "eyebrow": "Ready to start?",
+      "title": "Schedule your free consultation today.",
+      "description": "Meet with our certified electrologist to discuss your hair removal goals, treatment timeline, and answer any questions you may have.",
+      "primary": "Book Consultation",
+      "secondary": "Contact Us"
+    }
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Everything you need to know about electrolysis.",
+    "description": "Answers to common questions about the treatment process, results, and permanent hair removal.",
+    "items": [
+      {"id": "1", "question": "Is electrolysis really permanent?", "answer": "Yes. Electrolysis is FDA-approved as the only permanent method of hair removal. Once the hair follicle is treated and destroyed, it cannot produce hair again. Results are permanent."},
+      {"id": "2", "question": "How long does electrolysis take?", "answer": "Treatment time varies based on the area and hair density. Small areas like the upper lip may take 15-30 minutes, while larger areas can take 1-2 hours. Your electrologist will provide a timeline at your consultation."},
+      {"id": "3", "question": "How many sessions will I need?", "answer": "Most clients need 6-12 sessions spread over 6-12 months. This is because only hair in the active growth phase can be treated permanently. Spacing allows new hairs to enter the growth phase."},
+      {"id": "4", "question": "Does electrolysis hurt?", "answer": "Electrolysis causes minimal discomfort. Most clients describe it as slight tingling or warmth. Numbing cream is available if desired. The sensation varies by individual tolerance and area being treated."},
+      {"id": "5", "question": "Will there be redness or marks after treatment?", "answer": "Most clients experience minimal redness that fades within hours to a few days. Some may see slight marks that disappear quickly. We apply soothing products immediately after treatment to minimize any reaction."},
+      {"id": "6", "question": "Can electrolysis work on all skin types and hair colors?", "answer": "Yes. Unlike laser hair removal, electrolysis works on all skin types and all hair colors, including blonde, red, gray, and white. This makes it the most inclusive permanent hair removal method."}
+    ],
+    "cta": {
+      "title": "Ready to start your journey?",
+      "description": "Contact us for a free consultation or to answer any additional questions about permanent hair removal."
+    }
+  },
+  "contact": {
+    "eyebrow": "Location",
+    "title": "Upper East Side medical-grade electrolysis studio.",
+    "description": "Located on the Upper East Side with comfortable, private treatment rooms. Contact us to schedule your free consultation or ask any questions about permanent hair removal.",
+    "follow": "Follow",
+    "methods": [
+      {"title": "Address", "label": "AD", "content": "157 E 86th St, New York, NY 10028"},
+      {"title": "Phone", "label": "PH", "content": "+1 (212) 555-0123", "action": "tel:+12125550123"},
+      {"title": "Email", "label": "EM", "content": "hello@electrolysisnyc.com", "action": "mailto:hello@electrolysisnyc.com"},
+      {"title": "Hours", "label": "HR", "content": "Tue-Fri: 10am-6pm | Sat: 10am-4pm | Sun-Mon: Closed"}
+    ]
+  },
+  "booking": {
+    "eyebrow": "Reserve",
+    "title": "Request a private appointment.",
+    "description": "Share your preferred treatment, timing, and any skin sensitivities or treatment goals. The studio will confirm availability and preparation notes.",
+    "successTitle": "Booking submitted successfully.",
+    "successDescription": "We'll contact you soon to confirm your appointment.",
+    "errorTitle": "Error",
+    "validation": {
+      "name": "Please enter your name",
+      "phone": "Please enter your phone number",
+      "service": "Please select a service",
+      "submit": "Failed to submit booking",
+      "generic": "Something went wrong"
+    },
+    "form": {
+      "name": "Full Name",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "service": "Select Service",
+      "servicePlaceholder": "Select preferred treatment...",
+      "comment": "Additional Notes",
+      "commentPlaceholder": "Example: area to treat, skin sensitivity, preferred appointment window, or questions.",
+      "consentPrefix": "By submitting this form, you agree to our",
+      "consentAnd": "and",
+      "submit": "Request Appointment",
+      "submitting": "Submitting...",
+      "direct": "Prefer to contact us directly?"
+    },
+    "services": ["Facial Hair Removal", "Underarm Hair Removal", "Bikini Line Treatment", "Full Leg Electrolysis", "Consultation"]
+  },
+  "footer": {
+    "description": "FDA-approved permanent hair removal with medical-grade electrolysis. Certified specialist, Upper East Side.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "followUs": "Follow Us",
+    "copyright": "© {year} Electrolysis NYC. All rights reserved."
+  },
+  "floating": {
+    "book": "Book",
+    "call": "Call",
+    "bookAppointment": "Book appointment"
+  },
+  "stickyCta": {
+    "button": "Schedule Consultation",
+    "note": "Free consultation • No commitment"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "selectLanguage": "Select language"
+  },
+  "metadata": {
+    "title": "Electrolysis NYC | Medical-Grade Permanent Hair Removal",
+    "description": "FDA-approved electrolysis for permanent hair removal. Certified specialist providing safe, effective treatment for all skin types. Medical-grade technology in a private Upper East Side studio.",
+    "keywords": ["electrolysis", "permanent hair removal", "hair removal", "electrolysis NYC", "medical hair removal", "certified electrologist"]
+  }
+}

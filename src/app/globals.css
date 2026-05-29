@@ -6,24 +6,30 @@
 
 :root {
   color-scheme: light;
-  --color-primary: 23 19 15;
-  --color-secondary: 247 243 237;
-  --color-accent: 185 144 88;
-  --color-soft-beige: 244 239 231;
-  --color-warm-gray: 221 211 195;
-  --color-ivory: 255 250 242;
-  --color-champagne: 220 196 154;
+  --color-primary: 45 42 40;
+  --color-secondary: 250 248 246;
+  --color-accent: 172 145 110;
+  --color-soft-beige: 248 245 242;
+  --color-warm-gray: 160 150 140;
+  --color-ivory: 255 255 255;
+  --color-champagne: 200 180 155;
+  --color-text-light: 100 95 90;
+  --color-success: 114 169 96;
+  --color-medical: 41 84 122;
 }
 
 .dark {
   color-scheme: dark;
-  --color-primary: 244 233 215;
-  --color-secondary: 38 33 27;
-  --color-accent: 214 176 116;
-  --color-soft-beige: 29 25 21;
-  --color-warm-gray: 81 70 58;
-  --color-ivory: 18 15 13;
-  --color-champagne: 232 206 161;
+  --color-primary: 240 238 235;
+  --color-secondary: 35 33 31;
+  --color-accent: 195 165 130;
+  --color-soft-beige: 50 47 44;
+  --color-warm-gray: 120 110 100;
+  --color-ivory: 20 19 18;
+  --color-champagne: 220 195 165;
+  --color-text-light: 200 195 190;
+  --color-success: 140 190 120;
+  --color-medical: 100 160 200;
 }
 
 * {

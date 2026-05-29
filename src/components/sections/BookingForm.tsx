@@ -8,16 +8,11 @@ import { SelectField, TextField, type FieldChangeEvent } from '@/components/Form
 import Reveal from '@/components/Reveal'
 import SectionHeader from '@/components/SectionHeader'
 import type { BookingRequest } from '@/types'
-
-const services = [
-  'Sculpt & Restore Facial',
-  'Lymphatic Bodywork',
-  'Gloss & Blowout',
-  'Editorial Hands & Feet',
-  'Event Preparation',
-]
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function BookingForm() {
+  const { t, list } = useLanguage()
+  const services = list<string>('booking.services')
   const [formData, setFormData] = useState<BookingRequest>({
     name: '',
     phone: '',
@@ -41,15 +36,15 @@ export default function BookingForm() {
 
   const validateForm = (): boolean => {
     if (!formData.name.trim()) {
-      setError('Please enter your name')
+      setError(t('booking.validation.name'))
       return false
     }
     if (!formData.phone.trim()) {
-      setError('Please enter your phone number')
+      setError(t('booking.validation.phone'))
       return false
     }
     if (!formData.service) {
-      setError('Please select a service')
+      setError(t('booking.validation.service'))
       return false
     }
     return true
@@ -77,7 +72,7 @@ export default function BookingForm() {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit booking')
+        throw new Error(data.error || t('booking.validation.submit'))
       }
 
       console.log('Booking successful:', data)
@@ -94,7 +89,7 @@ export default function BookingForm() {
         setSuccess(false)
       }, 5000)
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Something went wrong'
+      const errorMessage = err instanceof Error ? err.message : t('booking.validation.generic')
       console.error('Booking error:', errorMessage)
       setError(errorMessage)
     } finally {
@@ -106,9 +101,9 @@ export default function BookingForm() {
     <section id="booking" className="bg-soft-beige py-16 md:py-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow="Reserve"
-          title="Request a private appointment."
-          description="Share your preferred treatment, timing, and any skin sensitivities or event deadlines. The studio will confirm availability and preparation notes."
+          eyebrow={t('booking.eyebrow')}
+          title={t('booking.title')}
+          description={t('booking.description')}
           align="center"
           className="mb-12"
         />
@@ -124,8 +119,8 @@ export default function BookingForm() {
               exit={{ opacity: 0, y: -10 }}
               className="mb-6 border border-green-200 bg-green-50 p-4 text-green-800"
             >
-              <p className="font-semibold">Booking submitted successfully.</p>
-              <p className="text-sm">We'll contact you soon to confirm your appointment.</p>
+              <p className="font-semibold">{t('booking.successTitle')}</p>
+              <p className="text-sm">{t('booking.successDescription')}</p>
             </motion.div>
           )}
 
@@ -135,14 +130,14 @@ export default function BookingForm() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-6 border border-red-200 bg-red-50 p-4 text-red-800"
             >
-              <p className="font-semibold">Error</p>
+              <p className="font-semibold">{t('booking.errorTitle')}</p>
               <p className="text-sm">{error}</p>
             </motion.div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <TextField
-              label="Full Name"
+              label={t('booking.form.name')}
               type="text"
               id="name"
               name="name"
@@ -153,7 +148,7 @@ export default function BookingForm() {
             />
 
             <TextField
-              label="Phone Number"
+              label={t('booking.form.phone')}
               type="tel"
               id="phone"
               name="phone"
@@ -164,7 +159,7 @@ export default function BookingForm() {
             />
 
             <TextField
-              label="Email Address"
+              label={t('booking.form.email')}
               type="email"
               id="email"
               name="email"
@@ -174,48 +169,48 @@ export default function BookingForm() {
             />
 
             <SelectField
-              label="Select Service"
+              label={t('booking.form.service')}
               id="service"
               name="service"
               value={formData.service}
               onChange={handleChange}
               options={services}
-              placeholder="Select preferred treatment..."
+              placeholder={t('booking.form.servicePlaceholder')}
               required
             />
 
             <TextField
-              label="Additional Notes"
+              label={t('booking.form.comment')}
               id="comment"
               name="comment"
               value={formData.comment || ''}
               onChange={handleChange}
-              placeholder="Example: sensitive skin, pregnancy-safe products, wedding makeup timeline, or preferred appointment window."
+              placeholder={t('booking.form.commentPlaceholder')}
               rows={5}
               multiline
             />
 
             <div className="border border-primary/10 bg-soft-beige p-4 text-sm text-primary/60">
               <p>
-                By submitting this form, you agree to our{' '}
+                {t('booking.form.consentPrefix')}{' '}
                 <a href="#" className="text-accent hover:underline">
-                  Privacy Policy
+                  {t('common.privacyPolicy')}
                 </a>{' '}
-                and{' '}
+                {t('booking.form.consentAnd')}{' '}
                 <a href="#" className="text-accent hover:underline">
-                  Terms of Service
+                  {t('common.termsOfService')}
                 </a>
                 .
               </p>
             </div>
 
             <Button type="submit" size="lg" disabled={isLoading} className="min-h-14 w-full">
-              {isLoading ? 'Submitting...' : 'Request Appointment'}
+              {isLoading ? t('booking.form.submitting') : t('booking.form.submit')}
             </Button>
           </form>
 
           <div className="mt-8 border-t border-primary/10 pt-8 text-center">
-            <p className="mb-4 text-sm text-primary/60">Prefer to contact us directly?</p>
+            <p className="mb-4 text-sm text-primary/60">{t('booking.form.direct')}</p>
             <div className="flex flex-wrap justify-center gap-4">
               <ActionLink
                 href="https://wa.me/12127318426?text=Hello%20Maison%20Elise%2C%20I%20would%20like%20to%20request%20an%20appointment"
@@ -224,7 +219,7 @@ export default function BookingForm() {
                 compact
                 className="flex-1 sm:flex-none sm:px-6"
               >
-                WhatsApp
+                {t('common.whatsApp')}
               </ActionLink>
               <ActionLink
                 href="https://t.me/maisoneliseskin"
@@ -233,14 +228,14 @@ export default function BookingForm() {
                 compact
                 className="flex-1 sm:flex-none sm:px-6"
               >
-                Telegram
+                {t('common.telegram')}
               </ActionLink>
               <ActionLink
                 href="tel:+12127318426"
                 compact
                 className="flex-1 sm:flex-none sm:px-6"
               >
-                Call Us
+                {t('common.callUs')}
               </ActionLink>
             </div>
           </div>

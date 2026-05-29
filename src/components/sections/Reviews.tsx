@@ -6,37 +6,38 @@ import ConversionCTA from '@/components/ConversionCTA'
 import Reveal from '@/components/Reveal'
 import SectionHeader from '@/components/SectionHeader'
 import type { Review } from '@/types'
+import { useLanguage } from '@/lib/LanguageContext'
 
 const reviews: Review[] = [
   {
     id: '1',
-    name: 'Nina Patel',
-    title: 'Monthly facial client',
-    text: 'The Sculpt & Restore facial is the first treatment that made my skin look lifted without feeling stripped. I left with a real plan for the next six weeks.',
+    name: 'Sarah Martinez',
+    title: 'Facial hair removal',
+    text: 'After years of waxing and plucking, I finally have a permanent solution. My chin is completely hair-free and the results are incredible. The treatment was quick and professional.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
   },
   {
     id: '2',
-    name: 'Claire Rosen',
-    title: 'Pre-wedding client',
-    text: 'Elise mapped out my appointments before the wedding and kept everything calm. My makeup sat better, my skin was even, and nothing felt overdone.',
+    name: 'Jessica Chen',
+    title: 'Full electrolysis client',
+    text: 'I was nervous before my first appointment, but the specialist was incredibly knowledgeable and put me at ease. The permanence is real—no more waxing appointments or razor bumps.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
   },
   {
     id: '3',
-    name: 'Avery Brooks',
-    title: 'Creative director',
-    text: 'The gloss and blowout photographed beautifully at a campaign dinner. Soft, expensive-looking shine, no stiff finish, and it held through the whole night.',
+    name: 'Amanda Foster',
+    title: 'Regular client',
+    text: 'The clinic is so clean and professional. The specialist is certified and really knows her craft. Each session brings me closer to permanent hair freedom. Highly recommend.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
   },
   {
     id: '4',
-    name: 'Leah Morgan',
-    title: 'Post-travel recovery',
-    text: 'I booked lymphatic bodywork after a long-haul trip and felt noticeably less puffy the next morning. The room, pacing, and pressure were exactly right.',
+    name: 'Rebecca Thompson',
+    title: 'Underarm treatment',
+    text: 'Finally permanent results after years of shaving and waxing. The cost is worth it compared to years of temporary hair removal methods. My skin has never been smoother.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=100&h=100&fit=crop',
   },
@@ -53,6 +54,13 @@ const containerVariants = {
 }
 
 export default function Reviews() {
+  const { t, list } = useLanguage()
+  const localizedReviews = reviews.map((review, index) => ({
+    ...review,
+    ...(list<Partial<Review>>('reviews.items')[index] || {}),
+  }))
+  const stats = list<{ number: string; label: string }>('reviews.stats')
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }).map((_, i) => (
       <svg
@@ -70,9 +78,9 @@ export default function Reviews() {
     <section id="reviews" className="bg-ivory py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow="Client notes"
-          title="A quieter kind of five-star experience."
-          description="Clients come back for measured technique, practical aftercare, and results that feel polished without announcing the appointment."
+          eyebrow={t('reviews.eyebrow')}
+          title={t('reviews.title')}
+          description={t('reviews.description')}
           align="center"
           className="mx-auto max-w-3xl"
         />
@@ -85,7 +93,7 @@ export default function Reviews() {
           viewport={{ once: true }}
           className="grid grid-cols-1 gap-5 md:grid-cols-2"
         >
-          {reviews.map((review) => (
+          {localizedReviews.map((review) => (
             <Card key={review.id} className="p-8">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-4">
@@ -110,7 +118,7 @@ export default function Reviews() {
               <p className="leading-8 text-primary/68">{review.text}</p>
 
               <div className="mt-6 border-t border-primary/10 pt-6">
-                <p className="eyebrow text-primary/35">Verified client</p>
+                <p className="eyebrow text-primary/35">{t('common.verifiedClient')}</p>
               </div>
             </Card>
           ))}
@@ -122,24 +130,25 @@ export default function Reviews() {
           className="mt-20 grid grid-cols-1 border-y border-primary/10 text-center sm:grid-cols-3"
         >
           <motion.div className="py-8" whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-            <div className="mb-2 font-serif text-5xl text-accent">4.9/5</div>
-            <p className="eyebrow text-primary/45">Average Rating</p>
+            <div className="mb-2 font-serif text-5xl text-accent">{stats[0]?.number}</div>
+            <p className="eyebrow text-primary/45">{stats[0]?.label}</p>
           </motion.div>
           <motion.div className="border-y border-primary/10 py-8 sm:border-x sm:border-y-0" whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-            <div className="mb-2 font-serif text-5xl text-accent">1,200+</div>
-            <p className="eyebrow text-primary/45">Appointments</p>
+            <div className="mb-2 font-serif text-5xl text-accent">{stats[1]?.number}</div>
+            <p className="eyebrow text-primary/45">{stats[1]?.label}</p>
           </motion.div>
           <motion.div className="py-8" whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-            <div className="mb-2 font-serif text-5xl text-accent">98%</div>
-            <p className="eyebrow text-primary/45">Satisfaction Rate</p>
+            <div className="mb-2 font-serif text-5xl text-accent">{stats[2]?.number}</div>
+            <p className="eyebrow text-primary/45">{stats[2]?.label}</p>
           </motion.div>
         </Reveal>
 
         <ConversionCTA
-          eyebrow="Ready when you are"
-          title="Request a time and we will confirm the right treatment."
-          description="Use the booking form for preferred dates, sensitivity notes, and event deadlines. You will receive a confirmation before the appointment is held."
-          secondaryLabel="Contact Studio"
+          eyebrow={t('reviews.cta.eyebrow')}
+          title={t('reviews.cta.title')}
+          description={t('reviews.cta.description')}
+          primaryLabel={t('reviews.cta.primary')}
+          secondaryLabel={t('reviews.cta.secondary')}
           secondaryHref="#contact"
         />
       </div>

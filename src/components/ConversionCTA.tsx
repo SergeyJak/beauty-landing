@@ -1,5 +1,8 @@
+'use client'
+
 import ActionLink from '@/components/ActionLink'
 import Reveal from '@/components/Reveal'
+import { useT } from '@/lib/LanguageContext'
 
 interface ConversionCTAProps {
   eyebrow: string
@@ -15,11 +18,12 @@ export default function ConversionCTA({
   eyebrow,
   title,
   description,
-  primaryLabel = 'Request Appointment',
+  primaryLabel,
   secondaryLabel,
   secondaryHref,
   dark = false,
 }: ConversionCTAProps) {
+  const t = useT()
   const shellClass = dark
     ? 'border-parchment/15 bg-parchment/[0.04] text-parchment'
     : 'border-primary/10 bg-soft-beige text-primary'
@@ -40,7 +44,7 @@ export default function ConversionCTA({
       </div>
       <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
         <ActionLink href="#booking" className={`premium-sheen ${primaryClass}`}>
-          {primaryLabel}
+          {primaryLabel || t('booking.form.submit')}
         </ActionLink>
         {secondaryLabel && secondaryHref && (
           <ActionLink

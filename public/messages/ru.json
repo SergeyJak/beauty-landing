@@ -1,0 +1,694 @@
+{
+  "brand": {
+    "name": "Electrolysis NYC",
+    "shortName": "Electrolysis",
+    "footerName": "Electrolysis NYC"
+  },
+  "common": {
+    "benefits": "Benefits",
+    "limitations": "Limitations",
+    "learnMore": "Learn more",
+    "before": "Before",
+    "after": "After",
+    "beforeAfter": "Before / after",
+    "category": "Category",
+    "verifiedClient": "Verified client",
+    "whatsApp": "WhatsApp",
+    "telegram": "Telegram",
+    "email": "Email",
+    "callUs": "Call Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "language": "Русский",
+    "backToHome": "Вернуться на главную"
+  },
+  "header": {
+    "skipToMain": "Перейти к основному содержанию",
+    "bookNow": "Забронировать",
+    "toggleMenu": "Переключить меню навигации",
+    "navigation": {
+      "why": "Почему электролиз",
+      "benefits": "Преимущества",
+      "howWorks": "Как это работает",
+      "results": "Результаты",
+      "faq": "Часто задаваемые вопросы",
+      "contact": "Контакты"
+    }
+  },
+  "hero": {
+    "eyebrow": "Сертифицированный электролог • Одобренная FDA технология",
+    "title": "Постоянное удаление волос, научно доказано.",
+    "description": "Электролиз — это единственный одобренный FDA способ постоянного удаления волос. Наши сертифицированные специалисты используют медицинское оборудование для безопасного и эффективного лечения всех типов кожи и цветов волос.",
+    "primaryCTA": "Записаться на консультацию",
+    "secondaryCTA": "Узнайте, как это работает",
+    "included": "Free consultation included",
+    "location": "Upper East Side, Manhattan",
+    "stats": {
+      "experienceNumber": "15+",
+      "experience": "15+ лет опыта",
+      "approvedNumber": "FDA",
+      "approved": "Одобрено FDA",
+      "permanentNumber": "100%",
+      "permanent": "100% постоянно"
+    },
+    "sidecard": {
+      "eyebrow": "Medical-Grade",
+      "title": "Медицинский электролиз",
+      "location": "Upper East Side",
+      "specialist": "Сертифицированный специалист",
+      "imageAlt": "Electrolysis treatment"
+    }
+  },
+  "whyElectrolysis": {
+    "eyebrow": "Сравнение",
+    "title": "Почему электролиз?",
+    "description": "Электролиз — это единственный доказанный способ постоянного удаления волос. Узнайте, как он сравнивается с другими методами.",
+    "methods": [
+      {
+        "id": "electrolysis",
+        "name": "Электролиз",
+        "type": "(This is us)",
+        "permanent": true,
+        "badge": "ПОСТОЯННО",
+        "description": "Единственный одобренный FDA способ постоянного удаления",
+        "benefits": [
+          "Полностью постоянно",
+          "Работает на всех типах кожи",
+          "Работает со всеми цветами волос",
+          "Медицинского класса"
+        ],
+        "limitations": [],
+        "title": "Электролиз"
+      },
+      {
+        "id": "laser",
+        "name": "Лазер",
+        "type": "(Temporary)",
+        "permanent": false,
+        "description": "Популярно, но требует повторения",
+        "benefits": [
+          "Быстрая процедура",
+          "Доступная"
+        ],
+        "limitations": [
+          "Требует повторения ежегодно",
+          "Не работает на светлых волосах",
+          "Риск для темной кожи"
+        ],
+        "title": "Лазер"
+      },
+      {
+        "id": "waxing",
+        "name": "Воск",
+        "type": "(Temporary)",
+        "permanent": false,
+        "description": "Дешево, но временно",
+        "benefits": [
+          "Дешево",
+          "Быстро"
+        ],
+        "limitations": [
+          "Требует повторения каждый месяц",
+          "Болезненно",
+          "Раздражение кожи"
+        ],
+        "title": "Воск"
+      },
+      {
+        "id": "sugaring",
+        "name": "Сахар",
+        "type": "(Temporary)",
+        "permanent": false,
+        "description": "Натурально, но временно",
+        "benefits": [
+          "Натуральный",
+          "Менее болезненно"
+        ],
+        "limitations": [
+          "Требует повторения каждый месяц",
+          "Дороже",
+          "Раздражение кожи"
+        ],
+        "title": "Сахар"
+      }
+    ],
+    "explainer": {
+      "title": "Постоянная разница",
+      "paragraph1": "Электролиз активно разрушает волосяной фолликул путем воздействия электрического тока. Когда фолликул разрушен, волосы больше не могут расти. Это единственный подлинно постоянный результат.",
+      "paragraph2": "This is why electrolysis is the only FDA-approved permanent hair removal method. While other methods may reduce hair, only electrolysis offers true permanence."
+    }
+  },
+  "benefits": {
+    "eyebrow": "Преимущества",
+    "title": "Преимущества постоянного удаления волос",
+    "description": "Откройте для себя, почему тысячи людей выбирают электролиз для длительных результатов и медицинской безопасности.",
+    "items": [
+      {
+        "id": "permanent",
+        "icon": "✓",
+        "title": "Полностью постоянно",
+        "description": "Когда волосяной фолликул обработан, он исчезает навсегда. Больше нет волос в этой области."
+      },
+      {
+        "id": "allSkinTypes",
+        "icon": "◎",
+        "title": "Все типы кожи",
+        "description": "Эффективно работает на всех типах кожи, от очень светлой до очень темной кожи."
+      },
+      {
+        "id": "allHairColors",
+        "icon": "◼",
+        "title": "Все цвета волос",
+        "description": "Эффективна на светлых, рыжих, белых и темных волосах — даже цвете, который лазер не может обработать."
+      },
+      {
+        "id": "precision",
+        "icon": "●",
+        "title": "Точное управление",
+        "description": "Нацеливайте отдельные волосы с хирургической точностью. Идеально для волос на лице и чувствительных зон."
+      },
+      {
+        "id": "safe",
+        "icon": "★",
+        "title": "Медицински безопасно",
+        "description": "Одобрено FDA, без УФ-излучения, минимальный риск побочных эффектов при проведении сертифицированными специалистами."
+      },
+      {
+        "id": "costEffective",
+        "icon": "◆",
+        "title": "Долгосрочная экономия",
+        "description": "Хотя первоначальная стоимость выше, постоянные результаты означают отсутствие дальнейших процедур или продуктов."
+      }
+    ],
+    "science": {
+      "title": "Science-Based Results",
+      "items": [
+        "No more daily hair removal routines",
+        "Say goodbye to razor burns and ingrown hairs",
+        "Ideal for bikini line, face, and sensitive areas",
+        "Treatment customized to your hair growth cycle"
+      ]
+    },
+    "timeline": {
+      "title": "Treatment Timeline",
+      "items": [
+        {
+          "phase": "Initial Consultation",
+          "duration": "Free"
+        },
+        {
+          "phase": "First Treatment",
+          "duration": "Variable (30-90 min)"
+        },
+        {
+          "phase": "Follow-up Sessions",
+          "duration": "Typically 6-12 months"
+        },
+        {
+          "phase": "Results",
+          "duration": "Permanent after final session"
+        }
+      ]
+    }
+  },
+  "hairGrowthPhases": {
+    "eyebrow": "Наука",
+    "title": "Цикл роста волос",
+    "description": "Поймите биологию волос и почему для полного постоянного удаления требуется несколько процедур.",
+    "percentageLabel": "Percentage of Hair",
+    "durationLabel": "Phase Duration",
+    "characteristics": "Key Characteristics",
+    "treatableBadge": "✓ TREATABLE PHASE",
+    "treatableNote": "Only treatment during Anagen results in permanent hair removal.",
+    "phases": [
+      {
+        "id": "anagen",
+        "name": "Анаген (Фаза роста)",
+        "subtitle": "Growth Phase",
+        "percentage": "85%",
+        "duration": "2-7 лет",
+        "description": "Hair actively grows from the follicle. This is the only phase when electrolysis can permanently destroy the follicle.",
+        "details": [
+          "Волос активно растет из фолликула",
+          "Фолликул полностью активен",
+          "Единственная фаза, когда можно лечить"
+        ],
+        "color": "from-accent/20 to-champagne/10"
+      },
+      {
+        "id": "catagen",
+        "name": "Катаген (Переходная фаза)",
+        "subtitle": "Transition Phase",
+        "percentage": "2-3%",
+        "duration": "2-3 недели",
+        "description": "Hair transitions from growth to rest. The follicle begins to separate from the dermal papilla.",
+        "details": [
+          "Волос переходит в переходное состояние",
+          "Фолликул начинает отделяться",
+          "Невозможно лечить на этом этапе"
+        ],
+        "color": "from-primary/10 to-accent/5"
+      },
+      {
+        "id": "telogen",
+        "name": "Телоген (Фаза покоя)",
+        "subtitle": "Resting Phase",
+        "percentage": "10-15%",
+        "duration": "5-14 недель",
+        "description": "Hair rests in the follicle before being shed. The follicle is dormant and cannot be treated.",
+        "details": [
+          "Волос находится в состоянии покоя",
+          "Фолликул спящий",
+          "Невозможно лечить"
+        ],
+        "color": "from-primary/5 to-primary/10"
+      }
+    ],
+    "multiple": {
+      "title": "Почему требуется несколько процедур",
+      "paragraph1": "В любой момент времени находится в обработке только 85% волос. После каждой обработки новые волосы вступают в фазу роста. Может потребоваться 6-12 месяцев и несколько сеансов для полного постоянного удаления.",
+      "paragraph2": "Over the next several weeks, new hairs from Catagen and Telogen phases will enter Anagen and become visible. These are treated in follow-up sessions until all hairs have been permanently removed. This typically takes 6-12 months depending on body area and individual hair growth patterns."
+    },
+    "steps": [
+      {
+        "number": "1",
+        "label": "1-я обработка: 85% волос обработано",
+        "desc": "Treats 85% of hairs in Anagen phase"
+      },
+      {
+        "number": "2-3",
+        "label": "2-3 обработки: Видны новые волосы",
+        "desc": "Treats newly visible hairs from other phases"
+      },
+      {
+        "number": "∞",
+        "label": "∞ Постоянный результат: Отсутствие роста волос",
+        "desc": "No more hair growth once complete"
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "Процедура",
+    "title": "Как работает электролиз",
+    "description": "Понимайте пошаговый процесс нашего медицинского электролиза.",
+    "whatHappens": "What Happens",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Бесплатная консультация",
+        "description": "Мы оценим вашу кожу и волосы, обсудим график лечения и ответим на ваши вопросы.",
+        "details": [
+          "Оценка кожи",
+          "Оценка волос",
+          "Обсуждение графика лечения",
+          "Решение проблем"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Подготовка кожи",
+        "description": "Мы очищаем область и наносим успокаивающие продукты.",
+        "details": [
+          "Очистка области",
+          "Успокаивающие продукты",
+          "По желанию: Крем от боли"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "Обработка волос",
+        "description": "Мы вводим микроскопический зонд в волосяной фолликул и используем электрический ток для уничтожения фолликула.",
+        "details": [
+          "Микроскопический зонд",
+          "Электрический ток",
+          "Разрушение фолликула",
+          "Индивидуальная обработка волос"
+        ]
+      },
+      {
+        "number": "04",
+        "title": "Успокоение кожи",
+        "description": "Мы наносим успокаивающие продукты для минимизации раздражения.",
+        "details": [
+          "Успокаивающие продукты",
+          "Противовоспалительные средства",
+          "Инструкции по уходу"
+        ]
+      }
+    ],
+    "science": {
+      "title": "Наука электролиза",
+      "methodTitle": "Galvanic Method",
+      "methodDescription": "Электролиз использует гальванический ток, чтобы разрушить волосяной фолликул с помощью электроэнергии.",
+      "methodItems": [
+        "Deep follicle destruction",
+        "Works on all skin types"
+      ],
+      "permanentTitle": "Why It's Permanent",
+      "permanentDescription": "Результаты постоянны, потому что энергия разрушает дермальную папиллу фолликула — структуру, ответственную за рост волос.",
+      "permanentItems": [
+        "Biological permanence",
+        "FDA-approved method"
+      ]
+    },
+    "timeline": {
+      "title": "График лечения",
+      "items": [
+        {
+          "time": "Week 1-2",
+          "action": "Schedule first appointment"
+        },
+        {
+          "time": "Week 3-6",
+          "action": "First visible hairs shed"
+        },
+        {
+          "time": "Month 2-3",
+          "action": "Schedule follow-up session"
+        },
+        {
+          "time": "Month 6-12",
+          "action": "Complete remaining sessions"
+        },
+        {
+          "time": "Ongoing",
+          "action": "Permanent hair-free results"
+        }
+      ]
+    },
+    "aftercare": {
+      "title": "Уход после лечения",
+      "items": [
+        {
+          "tip": "Избегайте солнца в течение 48 часов",
+          "desc": "Keep treated area protected for 48 hours"
+        },
+        {
+          "tip": "Пропустите макияж на 24 часа",
+          "desc": "Wait 24 hours before applying cosmetics"
+        },
+        {
+          "tip": "Увлажняйте регулярно",
+          "desc": "Use gentle, fragrance-free moisturizer"
+        },
+        {
+          "tip": "Не берите и не ковыряйте",
+          "desc": "Let skin heal naturally, don't pick at hairs"
+        },
+        {
+          "tip": "Оставайтесь прохладными",
+          "desc": "Avoid hot showers and strenuous exercise"
+        }
+      ]
+    }
+  },
+  "results": {
+    "eyebrow": "Результаты",
+    "title": "Видимые, постоянные результаты электролиза.",
+    "description": "Реальные трансформации клиентов с медицинским лечением. Галерея до и после показывает результаты лечения в разных областях тела.",
+    "gallery": [
+      {
+        "id": "1",
+        "title": "Удаление волос на лице",
+        "category": "Chin, upper lip, cheeks"
+      },
+      {
+        "id": "2",
+        "title": "Удаление подмышечных волос",
+        "category": "Permanent smoothness"
+      },
+      {
+        "id": "3",
+        "title": "Лечение бикини-линии",
+        "category": "Complete hair removal"
+      },
+      {
+        "id": "4",
+        "title": "Полный электролиз ног",
+        "category": "Permanent leg smoothness"
+      }
+    ],
+    "cta": {
+      "eyebrow": "Готовы к постоянным результатам?",
+      "title": "Начните свой путь электролиза сегодня.",
+      "description": "Запишитесь на бесплатную консультацию к нашему сертифицированному электрологу. Мы оценим вашу кожу и волосы, обсудим график лечения и ответим на все ваши вопросы.",
+      "primary": "Записаться на консультацию",
+      "secondary": "Узнайте больше"
+    },
+    "categories": {
+      "facial": "Удаление волос на лице",
+      "underarm": "Удаление подмышечных волос",
+      "bikini": "Лечение бикини-линии",
+      "legs": "Полный электролиз ног"
+    }
+  },
+  "reviews": {
+    "eyebrow": "Отзывы",
+    "title": "Отзывы наших клиентов",
+    "description": "Реальные люди, реальные результаты. Узнайте, почему наши клиенты нас любят.",
+    "items": [
+      {
+        "id": "1",
+        "name": "Сара Мартинес",
+        "title": "Удаление волос на лице",
+        "text": "Я перешла на электролиз и никогда не была счастливее. Больше нет необходимости брить верхнюю губу или волосы на щеках. Я вернула свою уверенность!",
+        "rating": 5,
+        "quote": "Я перешла на электролиз и никогда не была счастливее. Больше нет необходимости брить верхнюю губу или волосы на щеках. Я вернула свою уверенность!"
+      },
+      {
+        "id": "2",
+        "name": "Джессика Чэнь",
+        "title": "Удаление подмышечных волос",
+        "text": "Процедура была намного проще, чем я ожидала. Специалист был профессионален, место было чистым, и результаты невероятны. Я больше никогда не буду брить!",
+        "rating": 5,
+        "quote": "Процедура была намного проще, чем я ожидала. Специалист был профессионален, место было чистым, и результаты невероятны. Я больше никогда не буду брить!"
+      },
+      {
+        "id": "3",
+        "name": "Аманда Фостер",
+        "title": "Лечение бикини-линии",
+        "text": "Наконец-то я нашла постоянное решение. Больше нет выщипывания или воска. Окупаемость уже через несколько лет.",
+        "rating": 5,
+        "quote": "Наконец-то я нашла постоянное решение. Больше нет выщипывания или воска. Окупаемость уже через несколько лет."
+      },
+      {
+        "id": "4",
+        "name": "Ребекка Томпсон",
+        "title": "Полный электролиз ног",
+        "text": "Профессиональный подход, медицинское качество, реальные результаты. Я рекомендую это всем, кто ищет постоянное решение для удаления волос.",
+        "rating": 5,
+        "quote": "Профессиональный подход, медицинское качество, реальные результаты. Я рекомендую это всем, кто ищет постоянное решение для удаления волос."
+      }
+    ],
+    "stats": [
+      {
+        "number": "4.9/5",
+        "label": "Рейтинг клиента"
+      },
+      {
+        "number": "500+",
+        "label": "Завершенные процедуры"
+      },
+      {
+        "number": "100%",
+        "label": "Постоянные результаты"
+      }
+    ],
+    "cta": {
+      "eyebrow": "Готовы начать?",
+      "title": "Забронируйте бесплатную консультацию сегодня.",
+      "description": "Присоединитесь к сотням удовлетворенных клиентов, которые начали свой путь удаления волос с нами.",
+      "primary": "Book Consultation",
+      "secondary": "Contact Us"
+    },
+    "testimonials": [
+      {
+        "name": "Сара Мартинес",
+        "title": "Удаление волос на лице",
+        "quote": "Я перешла на электролиз и никогда не была счастливее. Больше нет необходимости брить верхнюю губу или волосы на щеках. Я вернула свою уверенность!",
+        "rating": 5
+      },
+      {
+        "name": "Джессика Чэнь",
+        "title": "Удаление подмышечных волос",
+        "quote": "Процедура была намного проще, чем я ожидала. Специалист был профессионален, место было чистым, и результаты невероятны. Я больше никогда не буду брить!",
+        "rating": 5
+      },
+      {
+        "name": "Аманда Фостер",
+        "title": "Лечение бикини-линии",
+        "quote": "Наконец-то я нашла постоянное решение. Больше нет выщипывания или воска. Окупаемость уже через несколько лет.",
+        "rating": 5
+      },
+      {
+        "name": "Ребекка Томпсон",
+        "title": "Полный электролиз ног",
+        "quote": "Профессиональный подход, медицинское качество, реальные результаты. Я рекомендую это всем, кто ищет постоянное решение для удаления волос.",
+        "rating": 5
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Вопросы",
+    "title": "Все, что вам нужно знать об электролизе.",
+    "description": "Ответы на общие вопросы о процессе лечения, результатах и постоянном удалении волос.",
+    "items": [
+      {
+        "question": "Электролиз действительно постоянен?",
+        "answer": "Да. Электролиз одобрен FDA как единственный постоянный способ удаления волос. Когда волосяной фолликул обработан и разрушен, он больше не может производить волосы. Результаты постоянны."
+      },
+      {
+        "question": "Сколько времени занимает электролиз?",
+        "answer": "Время лечения варьируется в зависимости от области и плотности волос. Небольшие области, такие как верхняя губа, могут занять 15-30 минут, тогда как более крупные области могут занять 1-2 часа. Ваш электролог предоставит график во время консультации."
+      },
+      {
+        "question": "Сколько сеансов мне потребуется?",
+        "answer": "Большинству клиентов требуется 6-12 сеансов, распределенных на 6-12 месяцев. Это потому, что только волосы в активной фазе роста (Анаген) могут быть обработаны постоянно. Интервалы позволяют новым волосам вступить в фазу роста."
+      },
+      {
+        "question": "Больно ли электролиз?",
+        "answer": "Электролиз вызывает минимальный дискомфорт. Большинство клиентов описывают это как легкое покалывание или тепло. При желании доступен крем от боли. Ощущение зависит от индивидуальной переносимости и обрабатываемой области."
+      },
+      {
+        "question": "Будет ли покраснение или следы после лечения?",
+        "answer": "Большинство клиентов испытывают минимальное покраснение, которое исчезает в течение часов или дней. Некоторые могут видеть небольшие следы, которые быстро исчезают. Мы наносим успокаивающие продукты сразу после лечения, чтобы минимизировать любую реакцию."
+      },
+      {
+        "question": "Работает ли электролиз на всех типах кожи и цветах волос?",
+        "answer": "Да. В отличие от лазерной эпиляции, электролиз работает на всех типах кожи (от светлой до очень темной) и всех цветах волос (включая светлые, рыжие, серые и белые). Это делает его наиболее инклюзивным методом постоянного удаления волос."
+      }
+    ],
+    "cta": {
+      "title": "Свяжитесь с нами для бесплатной консультации.",
+      "description": "Наш специалист с удовольствием ответит на любые ваши вопросы и поможет спланировать ваш путь.",
+      "eyebrow": "Еще вопросы?"
+    }
+  },
+  "contact": {
+    "eyebrow": "Местоположение",
+    "title": "Медицинская студия электролиза на Upper East Side",
+    "description": "Посетите нас в условиях сертифицированного электролога и медицинского лечения.",
+    "follow": "Follow",
+    "methods": [
+      {
+        "title": "Address",
+        "label": "AD",
+        "content": "157 E 86th St, New York, NY 10028"
+      },
+      {
+        "title": "Phone",
+        "label": "PH",
+        "content": "+1 (212) 555-0123",
+        "action": "tel:+12125550123"
+      },
+      {
+        "title": "Email",
+        "label": "EM",
+        "content": "hello@electrolysisnyc.com",
+        "action": "mailto:hello@electrolysisnyc.com"
+      },
+      {
+        "title": "Hours",
+        "label": "HR",
+        "content": "Вторник-пятница: 10:00-18:00 | Суббота: 10:00-16:00 | Воскресенье-понедельник: Закрыто"
+      }
+    ],
+    "address": "157 E 86th St, New York, NY 10028",
+    "phone": "+1 (212) 555-0123",
+    "email": "hello@electrolysisnyc.com",
+    "hours": "Вторник-пятница: 10:00-18:00 | Суббота: 10:00-16:00 | Воскресенье-понедельник: Закрыто",
+    "directions": "Получить маршрут",
+    "social": {
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "booking": {
+    "eyebrow": "Бесплатная консультация",
+    "title": "Зарезервируйте время",
+    "description": "Запланируйте бесплатную консультацию. Никаких обязательств.",
+    "successTitle": "Booking submitted successfully.",
+    "successDescription": "We'll contact you soon to confirm your appointment.",
+    "errorTitle": "Error",
+    "validation": {
+      "name": "Please enter your name",
+      "phone": "Please enter your phone number",
+      "service": "Please select a service",
+      "submit": "Failed to submit booking",
+      "generic": "Something went wrong"
+    },
+    "form": {
+      "name": "Ваше имя",
+      "phone": "Ваш номер телефона",
+      "email": "Ваш адрес электронной почты",
+      "service": "Select Service",
+      "servicePlaceholder": "Select preferred treatment...",
+      "comment": "Additional Notes",
+      "commentPlaceholder": "Example: area to treat, skin sensitivity, preferred appointment window, or questions.",
+      "consentPrefix": "By submitting this form, you agree to our",
+      "consentAnd": "and",
+      "submit": "Отправить запрос консультации",
+      "submitting": "Отправка...",
+      "direct": "Prefer to contact us directly?",
+      "serviceType": "Тип лечения",
+      "serviceTypes": {
+        "facial": "Удаление волос на лице",
+        "underarm": "Удаление подмышечных волос",
+        "bikini": "Лечение бикини-линии",
+        "legs": "Полный электролиз ног",
+        "other": "Другое"
+      },
+      "preferredDate": "Предпочитаемая дата",
+      "message": "Дополнительная информация",
+      "success": "Спасибо! Мы свяжемся с вами вскоре.",
+      "error": "Ошибка! Пожалуйста, попробуйте еще раз."
+    },
+    "services": [
+      "Удаление волос на лице",
+      "Удаление подмышечных волос",
+      "Лечение бикини-линии",
+      "Полный электролиз ног",
+      "Другое"
+    ]
+  },
+  "footer": {
+    "description": "Одобренное FDA постоянное удаление волос медицинским электролизом. Сертифицированный специалист, Upper East Side.",
+    "quickLinks": "Быстрые ссылки",
+    "services": "Услуги",
+    "followUs": "Следите за нами",
+    "copyright": "© {year} Электролиз NYC. Все права защищены.",
+    "brand": "Электролиз NYC",
+    "links": {
+      "privacy": "Политика конфиденциальности",
+      "terms": "Условия обслуживания",
+      "contact": "Связаться"
+    }
+  },
+  "floating": {
+    "book": "Book",
+    "call": "Call",
+    "bookAppointment": "Book appointment"
+  },
+  "stickyCta": {
+    "button": "Schedule Consultation",
+    "note": "Free consultation • No commitment"
+  },
+  "languageSwitcher": {
+    "label": "Язык",
+    "selectLanguage": "Выберите язык"
+  },
+  "metadata": {
+    "title": "Электролиз NYC | Медицинское постоянное удаление волос",
+    "description": "Одобренный FDA электролиз для постоянного удаления волос. Сертифицированный специалист предоставляет безопасное, эффективное лечение для всех типов кожи. Медицинское оборудование в частной студии Upper East Side.",
+    "keywords": [
+      "электролиз",
+      "постоянное удаление волос",
+      "удаление волос",
+      "электролиз NYC",
+      "медицинское удаление волос",
+      "сертифицированный электролог"
+    ]
+  }
+}

@@ -1,7 +1,12 @@
 'use client'
 
+import { interpolate } from '@/lib/i18n'
+import { useLanguage } from '@/lib/LanguageContext'
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t, list } = useLanguage()
+  const serviceLinks = list<string>('booking.services').slice(0, 4)
 
   return (
     <footer className="bg-ink py-16 text-parchment md:py-20">
@@ -11,39 +16,39 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="flex h-10 w-10 items-center justify-center border border-accent">
-                <span className="font-serif text-xl text-champagne">M</span>
+                <span className="font-serif text-xl text-champagne">E</span>
               </div>
-              <span className="font-serif text-xl">Maison Elise</span>
+              <span className="font-serif text-xl">{t('brand.footerName')}</span>
             </div>
             <p className="text-sm leading-7 text-parchment/55">
-              Tailored facials, bodywork, gloss treatments, and event beauty in a private Flatiron studio.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="eyebrow mb-4 text-champagne">
-              Quick Links
+              {t('footer.quickLinks')}
             </h3>
             <ul className="space-y-2 text-sm text-parchment/55">
               <li>
                 <a href="#services" className="transition-colors hover:text-champagne">
-                  Services
+                  {t('header.navigation.benefits')}
                 </a>
               </li>
               <li>
                 <a href="#gallery" className="transition-colors hover:text-champagne">
-                  Gallery
+                  {t('header.navigation.results')}
                 </a>
               </li>
               <li>
                 <a href="#reviews" className="transition-colors hover:text-champagne">
-                  Reviews
+                  {t('reviews.eyebrow')}
                 </a>
               </li>
               <li>
                 <a href="#faq" className="transition-colors hover:text-champagne">
-                  FAQ
+                  {t('header.navigation.faq')}
                 </a>
               </li>
             </ul>
@@ -52,36 +57,23 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="eyebrow mb-4 text-champagne">
-              Services
+              {t('footer.services')}
             </h3>
             <ul className="space-y-2 text-sm text-parchment/55">
-              <li>
-                <a href="#services" className="transition-colors hover:text-champagne">
-                  Sculpt & Restore Facial
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="transition-colors hover:text-champagne">
-                  Lymphatic Bodywork
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="transition-colors hover:text-champagne">
-                  Gloss & Blowout
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="transition-colors hover:text-champagne">
-                  Editorial Hands & Feet
-                </a>
-              </li>
+              {serviceLinks.map((service) => (
+                <li key={service}>
+                  <a href="#booking" className="transition-colors hover:text-champagne">
+                    {service}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
             <h3 className="eyebrow mb-4 text-champagne">
-              Follow Us
+              {t('footer.followUs')}
             </h3>
             <div className="flex space-x-4">
               <a
@@ -118,16 +110,16 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between text-sm text-parchment/45 md:flex-row">
-            <p>&copy; {currentYear} Maison Elise Skin Studio. All rights reserved.</p>
+            <p>{interpolate(t('footer.copyright'), { year: currentYear })}</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="transition-colors hover:text-champagne">
-                Privacy Policy
+                {t('common.privacyPolicy')}
               </a>
               <a href="#" className="transition-colors hover:text-champagne">
-                Terms of Service
+                {t('common.termsOfService')}
               </a>
               <a href="#" className="transition-colors hover:text-champagne">
-                Cookie Policy
+                {t('common.cookiePolicy')}
               </a>
             </div>
           </div>

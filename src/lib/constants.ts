@@ -3,19 +3,19 @@ export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost
 
 // Contact Information
 export const CONTACT_INFO = {
-  phone: process.env.NEXT_PUBLIC_PHONE || '+1 (212) 731-8426',
-  email: process.env.NEXT_PUBLIC_EMAIL || 'hello@maisonelise.studio',
-  address: process.env.NEXT_PUBLIC_ADDRESS || '118 W 18th St, Suite 602, New York, NY 10011',
-  hours: 'Tue-Fri: 10am-7pm | Sat: 9am-5pm | Sun-Mon: Closed',
+  phone: process.env.NEXT_PUBLIC_PHONE || '+1 (212) 555-0123',
+  email: process.env.NEXT_PUBLIC_EMAIL || 'hello@electrolysisnyc.com',
+  address: process.env.NEXT_PUBLIC_ADDRESS || '157 E 86th St, New York, NY 10028',
+  hours: 'Tue-Fri: 10am-6pm | Sat: 10am-4pm | Sun-Mon: Closed',
 }
 
 // Social Links
 export const SOCIAL_LINKS = {
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || 'https://wa.me/12127318426?text=Hello%20Maison%20Elise%2C%20I%20would%20like%20to%20request%20an%20appointment',
-  telegram: process.env.NEXT_PUBLIC_TELEGRAM || 'https://t.me/maisoneliseskin',
-  instagram: process.env.NEXT_PUBLIC_INSTAGRAM || 'https://instagram.com/maisoneliseskin',
-  facebook: 'https://facebook.com/maisoneliseskin',
-  tiktok: 'https://tiktok.com/@maisoneliseskin',
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || 'https://wa.me/12125550123?text=Hello%20Electrolysis%20NYC%2C%20I%20would%20like%20to%20schedule%20a%20consultation',
+  telegram: process.env.NEXT_PUBLIC_TELEGRAM || 'https://t.me/electrolysisnyc',
+  instagram: process.env.NEXT_PUBLIC_INSTAGRAM || 'https://instagram.com/electrolysisnyc',
+  facebook: 'https://facebook.com/electrolysisnyc',
+  tiktok: 'https://tiktok.com/@electrolysisnyc',
 }
 
 // Animation Duration
