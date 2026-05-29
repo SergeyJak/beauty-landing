@@ -45,6 +45,17 @@
     "consultation": {
       "title": "Expert Consultation",
       "description": "In-depth skin and hair analysis to create a personalized treatment plan."
+    },
+    "medicalStandards": {
+      "eyebrow": "Medical Standards",
+      "title": "Uncompromising Hygiene Protocols",
+      "description": "Your safety is our absolute priority. We adhere to the highest clinical hygiene standards, ensuring a sterile and safe environment for every session.",
+      "points": [
+        "Single-use sterile disposable probes",
+        "Medical-grade sterilization of all tools",
+        "Clinical environment following guidelines",
+        "Regular professional hygiene audits"
+      ]
     }
   },
   "comparison": {
@@ -97,6 +108,7 @@
     "description": "Electrolysis is the only FDA-approved method for permanent hair removal. Our certified specialists use medical-grade technology for safe, effective treatment on all skin types and hair colors.",
     "primaryCTA": "Schedule Consultation",
     "secondaryCTA": "Learn How It Works",
+    "trustedBy": "Trusted by 500+ clinical patients",
     "included": "Free consultation • No obligation",
     "location": "City centre, Riga",
     "stats": {

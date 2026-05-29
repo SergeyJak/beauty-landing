@@ -5,26 +5,26 @@
     "footerName": "Elektrolīze Rīga"
   },
   "common": {
-    "benefits": "Benefits",
-    "limitations": "Limitations",
-    "learnMore": "Learn more",
-    "before": "Before",
-    "after": "After",
-    "beforeAfter": "Before / after",
-    "category": "Category",
-    "verifiedClient": "Verified client",
+    "benefits": "Ieguvumi",
+    "limitations": "Ierobežojumi",
+    "learnMore": "Uzzināt vairāk",
+    "before": "Pirms",
+    "after": "Pēc",
+    "beforeAfter": "Pirms / pēc",
+    "category": "Kategorija",
+    "verifiedClient": "Pārbaudīts klients",
     "whatsApp": "WhatsApp",
     "telegram": "Telegram",
-    "email": "Email",
-    "callUs": "Call Us",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
-    "cookiePolicy": "Cookie Policy",
+    "email": "E-pasts",
+    "callUs": "Zvanīt mums",
+    "privacyPolicy": "Privātuma politika",
+    "termsOfService": "Pakalpojuma noteikumi",
+    "cookiePolicy": "Sīkfailu politika",
     "language": "Latviešu",
     "backToHome": "Atpakaļ uz sākumu",
     "close": "Aizvērt",
-    "cookiesTitle": "Mēs augstu vērtējam jūsu privātumu",
-    "cookiesDescription": "Mēs izmantojam sīkfailus, lai uzlabotu jūsu pārlūkošanas pieredzi, rādītu personalizētas reklāmas vai saturu un analizētu mūsu trafiku. Noklikšķinot uz 'Pieņemt visu', jūs piekrītat mūsu sīkfailu izmantošanai.",
+    "cookiesTitle": "Mēs cienām jūsu privātumu",
+    "cookiesDescription": "Mēs izmantojam sīkfailus, lai uzlabotu jūsu pārlūkošanas pieredzi, rādītu personalizētas reklāmas un analizētu mūsu trafiku. Noklikšķinot uz 'Pieņemt visu', jūs piekrītat sīkfailu izmantošanai.",
     "acceptAll": "Pieņemt visu",
     "decline": "Noraidīt"
   },
@@ -47,6 +47,17 @@
     "consultation": {
       "title": "Eksperta konsultācija",
       "description": "Padziļināta ādas un matu analīze, lai izveidotu personalizētu ārstēšanas plānu."
+    },
+    "medicalStandards": {
+      "eyebrow": "Medicīniskie standarti",
+      "title": "Beskompromisa higiēnas protokoli",
+      "description": "Jūsu drošība ir mūsu prioritāte. Mēs ievērojam augstākos klīniskās higiēnas standartus, nodrošinot sterilu vidi katrai sesijai.",
+      "points": [
+        "Vienreizlietojamas sterilas zondes",
+        "Medicīniska līmeņa instrumentu sterilizācija",
+        "Klīniskā vide atbilstoši vadlīnijām",
+        "Regulāri profesionāli higiēnas auditi"
+      ]
     }
   },
   "comparison": {
@@ -94,10 +105,11 @@
   },
   "hero": {
     "eyebrow": "Sertificēts elektrologs • FDA-apstiprināta tehnoloģija",
-    "title": "Permanenta matu noņemšana, medicinā pierādīta.",
-    "description": "Elektrolīze ir vienīgā FDA-apstiprināta metode permanentai matu noņemšanai. Mūsu sertificētie speciālisti izmanto medicīnisko pakāpes tehnoloģiju drošam un efektīvam ārstēšanai uz visiem ādas tipiem un matu krāsām.",
-    "primaryCTA": "Rezervēt konsultāciju",
-    "secondaryCTA": "Uzziniet, kā tas darbojas",
+    "title": "Permanenta matu noņemšana. Medicīniski pierādīta.",
+    "description": "Elektrolīze ir vienīgā FDA-apstiprinātā metode permanentai matu noņemšanai. Droša un efektīva ārstēšana visiem ādas tipiem un matu krāsām.",
+    "primaryCTA": "Pieteikties konsultācijai",
+    "secondaryCTA": "Kā tas darbojas?",
+    "trustedBy": "Uzticas vairāk nekā 500 klīnisko pacientu",
     "included": "Bezmaksas konsultācija • Bez saistībām",
     "location": "Centrs, Rīga",
     "stats": {
@@ -124,7 +136,7 @@
       {
         "id": "electrolysis",
         "name": "Elektrolīze",
-        "type": "(This is us)",
+        "type": "(Mēs)",
         "permanent": true,
         "badge": "PERMANENTA",
         "description": "Vienīgā FDA apstiprināta permanenta metode",
@@ -140,7 +152,7 @@
       {
         "id": "laser",
         "name": "Lāzers",
-        "type": "(Temporary)",
+        "type": "(Pagaidu)",
         "permanent": false,
         "description": "Populāra, bet jāatkārto",
         "benefits": [
@@ -157,16 +169,16 @@
       {
         "id": "waxing",
         "name": "Vasks",
-        "type": "(Temporary)",
+        "type": "(Pagaidu)",
         "permanent": false,
-        "description": "Lēta, bet pagarina",
+        "description": "Lēti, bet īslaicīgi",
         "benefits": [
-          "Lēta",
-          "Ātra"
+          "Lēti",
+          "Ātri"
         ],
         "limitations": [
-          "Jāatkārto katrs mēnesis",
-          "Sāpīga",
+          "Jāatkārto katru mēnesi",
+          "Sāpīgi",
           "Ādas kairinājums"
         ],
         "title": "Vasks"
@@ -174,16 +186,16 @@
       {
         "id": "sugaring",
         "name": "Cukurs",
-        "type": "(Temporary)",
+        "type": "(Pagaidu)",
         "permanent": false,
-        "description": "Dabiska, bet pagarina",
+        "description": "Dabiski, bet īslaicīgi",
         "benefits": [
-          "Dabiska",
-          "Mazsāpīga"
+          "Dabiski",
+          "Mazāk sāpīgi"
         ],
         "limitations": [
-          "Jāatkārto katrs mēnesis",
-          "Dārgāka",
+          "Jāatkārto katru mēnesi",
+          "Dārgāk",
           "Ādas kairinājums"
         ],
         "title": "Cukurs"
@@ -191,103 +203,103 @@
     ],
     "explainer": {
       "title": "Permanentā atšķirība",
-      "paragraph1": "Elektrolīze aktīvi iznīcina matu folikulu caur elektriskas strāvas iedarbību. Kad folikuls ir pazīts, tas vairs nevar augt mati. Tas ir vienīgais patiesi permanents rezultāts.",
-      "paragraph2": "This is why electrolysis is the only FDA-approved permanent hair removal method. While other methods may reduce hair, only electrolysis offers true permanence."
+      "paragraph1": "Elektrolīze aktīvi iznīcina matu folikulu caur elektriskas strāvas iedarbību. Kad folikuls ir iznīcināts, mati tur vairs nevar augt. Tas ir vienīgais patiesi permanents rezultāts.",
+      "paragraph2": "Tāpēc elektrolīze ir vienīgā FDA apstiprinātā permanentā matu noņemšanas metode. Kamēr citas metodes var samazināt matu augšanu, tikai elektrolīze piedāvā patiesu permanentumu."
     }
   },
   "benefits": {
     "eyebrow": "Priekšrocības",
-    "title": "Permanentās matu noņemšanas labumi",
-    "description": "Atklāj, kāpēc tūkstošiem cilvēku izvēlas elektrolīzi ilgstošiem rezultātiem un medicīniskās klases draudzībai.",
+    "title": "Permanentās matu noņemšanas ieguvumi",
+    "description": "Atklājiet, kāpēc tūkstošiem cilvēku izvēlas elektrolīzi ilgstošiem rezultātiem un medicīniskai drošībai.",
     "items": [
       {
         "id": "permanent",
         "icon": "✓",
         "title": "Patiesi permanents",
-        "description": "Kad matu folikuls ir ārstēts, tas ir spēks uz visiem laikiem. Nē vairāk matu tajā apgabalā."
+        "description": "Kad matu folikuls ir apstrādāts, tas ir iznīcināts uz visiem laikiem. Šajā zonā mati vairs neaugs."
       },
       {
         "id": "allSkinTypes",
         "icon": "◎",
-        "title": "Visas ādas tipos",
-        "description": "Darbojas efektīvi uz visiem ādas toņiem, no ļoti gaiša līdz ļoti tumšai ādai."
+        "title": "Visiem ādas tipiem",
+        "description": "Efektīvi darbojas uz visiem ādas toņiem, no ļoti gaišas līdz ļoti tumšai ādai."
       },
       {
         "id": "allHairColors",
         "icon": "◼",
-        "title": "Visas matu krāsas",
-        "description": "Efektīva uz blondiem, sarkaniem, baltiem un tumšiem matiem — pat krāsas, ko lāzers nevar ārstēt."
+        "title": "Visām matu krāsām",
+        "description": "Efektīva blondiem, sarkaniem, sirmiem un tumšiem matiem — pat tādām krāsām, ko lāzers nevar apstrādāt."
       },
       {
         "id": "precision",
         "icon": "●",
         "title": "Precīza kontrole",
-        "description": "Mērķējiet atsevišķus matus ar ķirurģisku precizitāti. Ideāli sejas matiem un jūtīgiem apgabaliem."
+        "description": "Mērķējiet atsevišķus matus ar ķirurģisku precizitāti. Ideāli sejas matiem un jutīgām zonām."
       },
       {
         "id": "safe",
         "icon": "★",
-        "title": "Medicinā droši",
-        "description": "FDA apstiprināts, bez UV radiācijas, minimāls blakņu risku, ja to veic sertificēti speciālisti."
+        "title": "Medicīniski droši",
+        "description": "FDA apstiprināts, bez UV radiācijas, minimāls blakusparādību risks, ja to veic sertificēti speciālisti."
       },
       {
         "id": "costEffective",
         "icon": "◆",
-        "title": "Ilgtermiņa ietaupījumi",
-        "description": "Lai gan sākotnējā izmaksas ir augstākas, permanentie rezultāti nozīmē bez vairāk turpmāku ārstēšanu vai produktu."
+        "title": "Ilgtermiņa ietaupījums",
+        "description": "Lai gan sākotnējās izmaksas ir augstākas, permanentie rezultāti nozīmē, ka vairs nav nepieciešama atkārtota ārstēšana."
       }
     ],
     "science": {
-      "title": "Science-Based Results",
+      "title": "Zinātniski pamatoti rezultāti",
       "items": [
-        "No more daily hair removal routines",
-        "Say goodbye to razor burns and ingrown hairs",
-        "Ideal for bikini line, face, and sensitive areas",
-        "Treatment customized to your hair growth cycle"
+        "Vairs nekādas ikdienas matu noņemšanas rutīnas",
+        "Atvadieties no skūšanās kairinājuma un ieaugušiem matiem",
+        "Ideāli piemērots bikini līnijai, sejai un jutīgām zonām",
+        "Ārstēšana pielāgota jūsu matu augšanas ciklam"
       ]
     },
     "timeline": {
-      "title": "Treatment Timeline",
+      "title": "Ārstēšanas norise",
       "items": [
         {
-          "phase": "Initial Consultation",
-          "duration": "Free"
+          "phase": "Sākotnējā konsultācija",
+          "duration": "Bezmaksas"
         },
         {
-          "phase": "First Treatment",
-          "duration": "Variable (30-90 min)"
+          "phase": "Pirmā procedūra",
+          "duration": "Mainīgs (30-90 min)"
         },
         {
-          "phase": "Follow-up Sessions",
-          "duration": "Typically 6-12 months"
+          "phase": "Atkārtotas sesijas",
+          "duration": "Parasti 6-12 mēneši"
         },
         {
-          "phase": "Results",
-          "duration": "Permanent after final session"
+          "phase": "Rezultāti",
+          "duration": "Permanenti pēc pēdējās sesijas"
         }
       ]
     }
   },
   "hairGrowthPhases": {
     "eyebrow": "Zinātne",
-    "title": "Matu izaugsmes cikls",
-    "description": "Izprotiet matu biologiju, kāpēc nepieciešami vairāki ārstēšanas reizes pilnīgai permanentai noņemšanai.",
-    "percentageLabel": "Percentage of Hair",
-    "durationLabel": "Phase Duration",
-    "characteristics": "Key Characteristics",
-    "treatableBadge": "✓ TREATABLE PHASE",
-    "treatableNote": "Only treatment during Anagen results in permanent hair removal.",
+    "title": "Matu augšanas cikls",
+    "description": "Izprotiet matu bioloģiju un to, kāpēc pilnīgai permanentai noņemšanai ir nepieciešamas vairākas procedūras.",
+    "percentageLabel": "Matu daudzums",
+    "durationLabel": "Fāzes ilgums",
+    "characteristics": "Galvenās iezīmes",
+    "treatableBadge": "✓ ĀRSTĒJAMĀ FĀZE",
+    "treatableNote": "Tikai ārstēšana Anagēna fāzē sniedz permanentus rezultātus.",
     "phases": [
       {
         "id": "anagen",
-        "name": "Anagēns (Izaugsmes fāze)",
-        "subtitle": "Growth Phase",
+        "name": "Anagēns (Augšanas fāze)",
+        "subtitle": "Aktīvā augšana",
         "percentage": "85%",
         "duration": "2-7 gadi",
-        "description": "Hair actively grows from the follicle. This is the only phase when electrolysis can permanently destroy the follicle.",
+        "description": "Mats aktīvi aug no folikula. Šī ir vienīgā fāze, kurā elektrolīze var neatgriezeniski iznīcināt folikulu.",
         "details": [
           "Mats aktīvi aug no folikula",
-          "Folikuls ir pilnīgi aktīvs",
+          "Folikuls ir pilnībā aktīvs",
           "Vienīgā fāze, kad var ārstēt"
         ],
         "color": "from-accent/20 to-champagne/10"
@@ -295,10 +307,10 @@
       {
         "id": "catagen",
         "name": "Katagēns (Pārejas fāze)",
-        "subtitle": "Transition Phase",
+        "subtitle": "Pāreja",
         "percentage": "2-3%",
         "duration": "2-3 nedēļas",
-        "description": "Hair transitions from growth to rest. The follicle begins to separate from the dermal papilla.",
+        "description": "Mats pāriet no augšanas uz atpūtas fāzi. Folikuls sāk atdalīties no barošanas avota.",
         "details": [
           "Mats pārejas stāvoklī",
           "Folikuls sāk atdalīties",
@@ -309,152 +321,154 @@
       {
         "id": "telogen",
         "name": "Telogēns (Atpūtas fāze)",
-        "subtitle": "Resting Phase",
+        "subtitle": "Atpūta",
         "percentage": "10-15%",
         "duration": "5-14 nedēļas",
-        "description": "Hair rests in the follicle before being shed. The follicle is dormant and cannot be treated.",
+        "description": "Mats atrodas folikulā pirms izkrišanas. Folikuls ir dusošs un to nevar ārstēt.",
         "details": [
           "Mats atrodas atpūtas stāvoklī",
-          "Folikuls dorms",
-          "Neiespējams ārstēt"
+          "Folikuls ir dusošs",
+          "Neiespējami ārstēt"
         ],
         "color": "from-primary/5 to-primary/10"
       }
     ],
     "multiple": {
-      "title": "Kāpēc nepieciešami vairāki ārstēšanas reizes",
-      "paragraph1": "Tikai 85% matu ir ārstējamos stāvoklī jebkurā laikā. Pēc katras ārstēšanas, jauni mati iestājas izaugsmes fāzē. Iespējams, ka tas nepieciešams 6-12 mēnešus un vairākas sesijas pilnīgai permanentai noņemšanai.",
-      "paragraph2": "Over the next several weeks, new hairs from Catagen and Telogen phases will enter Anagen and become visible. These are treated in follow-up sessions until all hairs have been permanently removed. This typically takes 6-12 months depending on body area and individual hair growth patterns."
+      "title": "Kāpēc nepieciešamas vairākas procedūras",
+      "paragraph1": "Jebkurā laikā tikai aptuveni 85% matu ir Anagēna augšanas fāzē. Atlikušie 10-15% ir Katagēna vai Telogēna fāzēs un tos nevar ārstēt. Tas nozīmē, ka pirmajā vizītē var apstrādāt tikai aktīvi augošos matus.",
+      "paragraph2": "Nākamo nedēļu laikā jauni mati no Katagēna un Telogēna fāzēm nonāks Anagēna fāzē un kļūs redzami. Tie tiek apstrādāti nākamajās sesijās, līdz visi mati ir neatgriezeniski noņemti. Tas parasti aizņem 6-12 mēnešus."
     },
     "steps": [
       {
         "number": "1",
-        "label": "1. ārstēšana: 85% no matiem ārstēti",
-        "desc": "Treats 85% of hairs in Anagen phase"
+        "label": "Pirmā procedūra",
+        "desc": "Apstrādā 85% matu, kas ir Anagēna fāzē"
       },
       {
         "number": "2-3",
-        "label": "2-3 ārstēšanas: Jauni mati redzami",
-        "desc": "Treats newly visible hairs from other phases"
+        "label": "Atkārtotas sesijas",
+        "desc": "Apstrādā no jauna parādījušos matus"
       },
       {
         "number": "∞",
-        "label": "∞ Permanents rezultāts: Bez matu izaugsmes",
-        "desc": "No more hair growth once complete"
+        "label": "Permanents rezultāts",
+        "desc": "Mati šajā zonā vairs neaug"
       }
     ]
   },
   "howItWorks": {
     "eyebrow": "Procedūra",
     "title": "Kā darbojas elektrolīze",
-    "description": "Izprotiet soļu procedūru mūsu medicīniskās klases elektrolīzes ārstēšanai.",
-    "whatHappens": "What Happens",
+    "description": "Soli pa solim paskaidrots mūsu medicīniskās klases elektrolīzes process.",
+    "whatHappens": "Kas notiek procedūras laikā",
     "steps": [
       {
         "number": "01",
-        "title": "Brīva konsultācija",
-        "description": "Mēs novērtējam jūsu ādu un matus, apspriežam ārstēšanas grafiku un atbildējam uz jūsu jautājumiem.",
+        "title": "Bezmaksas konsultācija",
+        "description": "Mēs novērtējam jūsu ādu un matus, apspriežam ārstēšanas grafiku un atbildam uz jūsu jautājumiem.",
         "details": [
-          "Ādas novērtēšana",
-          "Matu novērtēšana",
-          "Ārstēšanas grafika diskusija",
-          "Problēmu risināšana"
+          "Medicīniskās vēstures pārskats",
+          "Ādas un matu tipa novērtēšana",
+          "Personalizēta plāna izveide",
+          "Izmaksu un laika diskusija"
         ]
       },
       {
         "number": "02",
         "title": "Ādas sagatavošana",
-        "description": "Mēs izskaņojam apgabalu un piesakām sausilājošus produktus.",
+        "description": "Mēs attīrām un sagatavojam ādu. Ja nepieciešams, var pieteikt sāpju mazinošu krēmu.",
         "details": [
-          "Apgabala tīrīšana",
-          "Sausilājošie produkti",
-          "Opcionāli: Sāpju mazinošs krēms"
+          "Maiga attīrīšana",
+          "Opcionāls atsāpinātājs",
+          "Ērta pozicionēšana",
+          "Gala novērtējums"
         ]
       },
       {
         "number": "03",
-        "title": "Matu ārstēšana",
-        "description": "Mēs ievietojam mikroskopiski mazu zondi matu folikulā un izmantojam elektrisko strāvu folikula iznīcināšanai.",
+        "title": "Matu apstrāde",
+        "description": "Katrā matu folikulā tiek ievadīta smalka zonde. Īss elektriskās strāvas impulss iznīcina folikulu uz visiem laikiem.",
         "details": [
-          "Mikroskopiski maza zonde",
-          "Elektriskā strāva",
-          "Folikula iznīcināšana",
-          "Individuāls matu ārstēšana"
+          "Zonde ievadīta folikulā",
+          "Elektriskās strāvas impulss",
+          "Folikuls permanenti iznīcināts",
+          "Mats tiek saudzīgi izņemts"
         ]
       },
       {
         "number": "04",
-        "title": "Ādas mierin",
-        "description": "Mēs piesakām mierinoši produkti, lai samazinātu jebkādu kairinājumu.",
+        "title": "Ādas nomierināšana",
+        "description": "Pēc procedūras mēs uzklājam nomierinošus produktus, lai mazinātu apsārtumu.",
         "details": [
-          "Mierinošie produkti",
-          "Antiinflamatori",
-          "Mājienu norādījumi"
+          "Nomierinošs serums",
+          "Pretiekaisuma apstrāde",
+          "Norādījumi pēckopšanai",
+          "Nākamās vizītes plānošana"
         ]
       }
     ],
     "science": {
       "title": "Zinātne aiz elektrolīzes",
-      "methodTitle": "Galvanic Method",
-      "methodDescription": "Elektrolīze izmanto galvānisko strāvu elektriskās enerģijas iedarbību uz matu folikulu.",
+      "methodTitle": "Galvāniskā metode",
+      "methodDescription": "Tiešā elektriskā strāva rada ķīmisku reakciju, kas iznīcina folikulu. Šī metode ir īpaši efektīva un rada minimālu diskomfortu.",
       "methodItems": [
-        "Deep follicle destruction",
-        "Works on all skin types"
+        "Dziļa folikula iznīcināšana",
+        "Darbojas uz visiem ādas tipiem"
       ],
-      "permanentTitle": "Why It's Permanent",
-      "permanentDescription": "Rezultāti ir permanenti, jo enerģija iznīcina folikula dermu papilli — struktūru, kas atbildīga par matu izaugsmei.",
+      "permanentTitle": "Kāpēc tas ir permanenti?",
+      "permanentDescription": "Elektriskā strāva iznīcina dermālo papillu un matricas šūnas — struktūras, kas atbildīgas par matu augšanu. Pēc iznīcināšanas tās nevar atjaunoties.",
       "permanentItems": [
-        "Biological permanence",
-        "FDA-approved method"
+        "Bioloģisks permanentums",
+        "FDA apstiprināta metode"
       ]
     },
     "timeline": {
       "title": "Ārstēšanas grafiks",
       "items": [
         {
-          "time": "Week 1-2",
-          "action": "Schedule first appointment"
+          "time": "1.-2. nedēļa",
+          "action": "Pirmā vizīte"
         },
         {
-          "time": "Week 3-6",
-          "action": "First visible hairs shed"
+          "time": "3.-6. nedēļa",
+          "action": "Pirmie apstrādātie mati izkrīt"
         },
         {
-          "time": "Month 2-3",
-          "action": "Schedule follow-up session"
+          "time": "2.-3. mēnesis",
+          "action": "Atkārtota sesija"
         },
         {
-          "time": "Month 6-12",
-          "action": "Complete remaining sessions"
+          "time": "6.-12. mēnesis",
+          "action": "Pēdējās sesijas pabeigšana"
         },
         {
-          "time": "Ongoing",
-          "action": "Permanent hair-free results"
+          "time": "Turpmāk",
+          "action": "Gluda āda uz visiem laikiem"
         }
       ]
     },
     "aftercare": {
-      "title": "Pēcārstēšanas aprūpe",
+      "title": "Pēckopšana",
       "items": [
         {
-          "tip": "Izvairieties no saules uz 48 stundām",
-          "desc": "Keep treated area protected for 48 hours"
+          "tip": "Izvairieties no saules",
+          "desc": "Sargājiet apstrādāto zonu 48 stundas"
         },
         {
-          "tip": "Izlaidiet makijāžu uz 24 stundām",
-          "desc": "Wait 24 hours before applying cosmetics"
+          "tip": "Bez makijāžas",
+          "desc": "Nogaidiet 24 stundas pirms kosmētikas lietošanas"
         },
         {
-          "tip": "Mitriniet regulāri",
-          "desc": "Use gentle, fragrance-free moisturizer"
+          "tip": "Mitriniet",
+          "desc": "Lietojiet maigu, bezaromāta mitrinātāju"
         },
         {
-          "tip": "Neņemiet un neciarā",
-          "desc": "Let skin heal naturally, don't pick at hairs"
+          "tip": "Neaiztieciet",
+          "desc": "Ļaujiet ādai dzīt dabiski"
         },
         {
-          "tip": "Palieciet vēsumā",
-          "desc": "Avoid hot showers and strenuous exercise"
+          "tip": "Svaigums",
+          "desc": "Izvairieties no karstām dušām un sporta"
         }
       ]
     }
@@ -462,89 +476,85 @@
   "results": {
     "eyebrow": "Rezultāti",
     "title": "Redzami, permanenti elektrolīzes rezultāti.",
-    "description": "Reāla klienta transformācija ar medicīniskās klases ārstēšanu. Pirms un pēc galerijas rāda ārstēšanas rezultātus dažādos ķermeņa apgabalos.",
+    "description": "Reālas klientu transformācijas ar medicīniska līmeņa ārstēšanu. Galerija rāda rezultātus dažādās ķermeņa zonās.",
     "gallery": [
       {
         "id": "1",
         "title": "Sejas matu noņemšana",
-        "category": "Chin, upper lip, cheeks"
+        "category": "Zods, augšlūpa, vaigi"
       },
       {
         "id": "2",
-        "title": "Padusju matu noņemšana",
-        "category": "Permanent smoothness"
+        "title": "Padušu matu noņemšana",
+        "category": "Gludums uz visiem laikiem"
       },
       {
         "id": "3",
         "title": "Bikini līnijas ārstēšana",
-        "category": "Complete hair removal"
+        "category": "Pilnīga matu noņemšana"
       },
       {
         "id": "4",
-        "title": "Pilnīga kāju elektrolīze",
-        "category": "Permanent leg smoothness"
+        "title": "Kāju elektrolīze",
+        "category": "Permanents kāju gludums"
       }
     ],
     "cta": {
-      "eyebrow": "Gatavs permanentiem rezultātiem?",
-      "title": "Sāciet savu elektrolīzes ceļojumu šodien.",
-      "description": "Rezervējiet bezmaksas konsultāciju ar mūsu sertificēto elektrologu. Mēs novērtēsim jūsu ādu un matus, apspriežam ārstēšanas grafiku un atbildēsim uz visiem jūsu jautājumiem.",
-      "primary": "Rezervēt konsultāciju",
-      "secondary": "Uzziniet vairāk"
+      "eyebrow": "Gatavi permanentiem rezultātiem?",
+      "title": "Sāciet savu ceļu šodien.",
+      "description": "Pieteikties bezmaksas konsultācijai pie mūsu sertificētā elektrologa. Mēs atbildēsim uz visiem jautājumiem.",
+      "primary": "Pieteikties konsultācijai",
+      "secondary": "Uzzināt vairāk"
     },
     "categories": {
       "facial": "Sejas matu noņemšana",
-      "underarm": "Padusju matu noņemšana",
+      "underarm": "Padušu matu noņemšana",
       "bikini": "Bikini līnijas ārstēšana",
-      "legs": "Pilnīga kāju elektrolīze"
+      "legs": "Kāju elektrolīze"
     }
   },
   "reviews": {
     "eyebrow": "Atsauksmes",
     "title": "Atsauksmes no mūsu klientiem",
-    "description": "Reāli cilvēki, reāli rezultāti. Uzziniet, kāpēc mūsu klienti mūs mīl.",
+    "description": "Reāli cilvēki, reāli rezultāti. Uzziniet, kāpēc klienti izvēlas mūs.",
     "items": [
       {
         "id": "1",
         "name": "Sarā Martinesa",
         "title": "Sejas matu noņemšana",
-        "text": "Es esmu pievienojusies elektrolīzei un nekad neesmu bijusi laimīgāka. Vairāk nav jāskaits augšējā lūpa vai vaigu mati. Es guvusi atpakaļ manu pārliecību!",
-        "rating": 5,
-        "quote": "Es esmu pievienojusies elektrolīzei un nekad neesmu bijusi laimīgāka. Vairāk nav jāskaits augšējā lūpa vai vaigu mati. Es guvusi atpakaļ manu pārliecību!"
+        "text": "Pēc gadiem ilgas vaksācijas, es beidzot atradu risinājumu. Mans zods ir pilnīgi gluds un rezultāti ir neticami!",
+        "rating": 5
       },
       {
         "id": "2",
-        "name": "Džesika Čens",
-        "title": "Padusju matu noņemšana",
-        "text": "Procedūra bija daudz vieglāka, nekā gaidīju. Speciālists bija profesionāls, vieta bija tīra, un rezultāti ir neticami. Vairāk nekad nepelēju!",
-        "rating": 5,
-        "quote": "Procedūra bija daudz vieglāka, nekā gaidīju. Speciālists bija profesionāls, vieta bija tīra, un rezultāti ir neticami. Vairāk nekad nepelēju!"
+        "name": "Džesika Čena",
+        "title": "Pilna elektrolīze",
+        "text": "Biju uztraukusies pirms pirmās vizītes, bet speciāliste bija ļoti zinoša. Permanents rezultāts ir reāls!",
+        "rating": 5
       },
       {
         "id": "3",
         "name": "Amanda Fostera",
-        "title": "Bikini līnijas ārstēšana",
-        "text": "Beidzot atradu permanentu risinājumu. Nekas vairāk pikošana vai vaska. Preču atmaksa ir jau dažu gadu laikā.",
-        "rating": 5,
-        "quote": "Beidzot atradu permanentu risinājumu. Nekas vairāk pikošana vai vaska. Preču atmaksa ir jau dažu gadu laikā."
+        "title": "Pastāvīgā kliente",
+        "text": "Klīnika ir ļoti tīra un profesionāla. Katra sesija tuvina mani brīvībai no matiem. Iesaku!",
+        "rating": 5
       },
       {
         "id": "4",
         "name": "Rebeka Tomsone",
-        "title": "Kāju elektrolīze",
-        "text": "Profesionālā pieeja, medicīniskā klase, reāli rezultāti. Es iesaku to visiem, kuri meklē permanentus matu noņemšanas risinājumus.",
-        "rating": 5,
-        "quote": "Profesionālā pieeja, medicīniskā klase, reāli rezultāti. Es iesaku to visiem, kuri meklē permanentus matu noņemšanas risinājumus."
+        "title": "Padušu apstrāde",
+        "text": "Beidzot permanents rezultāts. Izmaksas ir tā vērtas, salīdzinot ar gadiem ilgu vaksāciju.",
+        "rating": 5
       }
     ],
     "stats": [
       {
         "number": "4.9/5",
-        "label": "Klienta vērtējums"
+        "label": "Klientu vērtējums"
       },
       {
         "number": "500+",
-        "label": "Ārstēšanas paveiktas"
+        "label": "Pabeigtas procedūras"
       },
       {
         "number": "100%",
@@ -552,87 +562,86 @@
       }
     ],
     "cta": {
-      "eyebrow": "Gatavs sākt?",
-      "title": "Plānojiet savu bezmaksas konsultāciju šodien.",
-      "description": "Pievienojieties simtiem apmierinātu klientu, kas mūsu uztver uz savu matu noņemšanas ceļojumu.",
-      "primary": "Book Consultation",
-      "secondary": "Contact Us"
+      "eyebrow": "Gatavi sākt?",
+      "title": "Piesakieties bezmaksas konsultācijai šodien.",
+      "description": "Pievienojieties simtiem apmierinātu klientu, kuri ir sākuši savu ceļu uz gludu ādu.",
+      "primary": "Pieteikties konsultācijai",
+      "secondary": "Sazināties ar mums"
     },
     "testimonials": [
       {
         "name": "Sarā Martinesa",
         "title": "Sejas matu noņemšana",
-        "quote": "Es esmu pievienojusies elektrolīzei un nekad neesmu bijusi laimīgāka. Vairāk nav jāskaits augšējā lūpa vai vaigu mati. Es guvusi atpakaļ manu pārliecību!",
+        "quote": "Pēc gadiem ilgas vaksācijas, es beidzot atradu risinājumu. Mans zods ir pilnīgi gluds un rezultāti ir neticami!",
         "rating": 5
       },
       {
-        "name": "Džesika Čens",
-        "title": "Padusju matu noņemšana",
-        "quote": "Procedūra bija daudz vieglāka, nekā gaidīju. Speciālists bija profesionāls, vieta bija tīra, un rezultāti ir neticami. Vairāk nekad nepelēju!",
+        "name": "Džesika Čena",
+        "title": "Pilna elektrolīze",
+        "quote": "Biju uztraukusies pirms pirmās vizītes, bet speciāliste bija ļoti zinoša. Permanents rezultāts ir reāls!",
         "rating": 5
       },
       {
         "name": "Amanda Fostera",
-        "title": "Bikini līnijas ārstēšana",
-        "quote": "Beidzot atradu permanentu risinājumu. Nekas vairāk pikošana vai vaska. Preču atmaksa ir jau dažu gadu laikā.",
+        "title": "Pastāvīgā kliente",
+        "quote": "Klīnika ir ļoti tīra un profesionāla. Katra sesija tuvina mani brīvībai no matiem. Iesaku!",
         "rating": 5
       },
       {
         "name": "Rebeka Tomsone",
-        "title": "Kāju elektrolīze",
-        "quote": "Profesionālā pieeja, medicīniskā klase, reāli rezultāti. Es iesaku to visiem, kuri meklē permanentus matu noņemšanas risinājumus.",
+        "title": "Padušu apstrāde",
+        "quote": "Beidzot permanents rezultāts. Izmaksas ir tā vērtas, salīdzinot ar gadiem ilgu vaksāciju.",
         "rating": 5
       }
     ]
   },
   "faq": {
-    "eyebrow": "BUJ par elektrolīzi Rīgā",
+    "eyebrow": "BUJ par elektrolīzi — Rīga",
     "title": "Viss, kas jums jāzina par elektrolīzi.",
-    "description": "Atbildes uz izplatītajiem jautājumiem par ārstēšanas procedūru, rezultātiem un permanento matu noņemšanu.",
+    "description": "Atbildes uz izplatītiem jautājumiem par procesu, rezultātiem un permanento noņemšanu.",
     "items": [
       {
         "id": "1",
-        "question": "Vai elektrolīze patiesi ir permanenta?",
-        "answer": "Jā. Elektrolīze ir FDA-apstiprināta kā vienīgā permanenta matu noņemšanas metode. Kad matu folikuls ir ārstēts un iznīcināts, tas vairs nevar augt mati. Rezultāti ir permanenti."
+        "question": "Vai elektrolīze patiešām ir permanenta?",
+        "answer": "Jā. Elektrolīze ir FDA apstiprināta kā vienīgā permanentā matu noņemšanas metode. Kad folikuls ir iznīcināts, tas vairs nevar ražot matus."
       },
       {
         "id": "2",
-        "question": "Cik ilgu laiku aizņem elektrolīze?",
-        "answer": "Ārstēšanas laiks atšķiras atkarībā no apgabala un matu blīvuma. Mazie apgabali, piemēram, augšējā lūpa, var aizņemt 15-30 minūtes, savukārt lielāki apgabali var aizņemt 1-2 stundas. Jūsu elektrologs sniegs grafiku pēc konsultācijas."
+        "question": "Cik ilgu laiku aizņem procedūra?",
+        "answer": "Laiks atkarīgs no zonas un matu blīvuma. Augšlūpa var aizņemt 15-30 minūtes, lielākas zonas 1-2 stundas."
       },
       {
         "id": "3",
-        "question": "Cik sesijas man būs nepieciešamas?",
-        "answer": "Lielākā daļa klientu nepieciešams 6-12 sesijas, kas izstiepts pāri 6-12 mēnešiem. Tā ir tāpēc, ka tikai mati aktīvajā izaugsmes fāzē (Anagēns) var tikt ārstēti permanenti. Atstarpe ļauj jauniem matiem iekļūt izaugsmes fāzē."
+        "question": "Cik sesijas būs nepieciešamas?",
+        "answer": "Lielākajai daļai klientu nepieciešamas 6-12 sesijas 6-12 mēnešu laikā, jo mati aug cikliski."
       },
       {
         "id": "4",
-        "question": "Vai elektrolīze sāp?",
-        "answer": "Elektrolīze izraisa minimālu diskomfortu. Lielākā daļa klientu to apraksta kā vieglu drudžošanu vai siltumu. Sāpju mazinošais krēms ir pieejams, ja vēlams. Sajūta atšķiras atkarībā no individuālās tolerance un ārstējamās zonas."
+        "question": "Vai tas ir sāpīgi?",
+        "answer": "Elektrolīze rada minimālu diskomfortu, ko raksturo kā vieglu tirpšanu vai siltumu. Pieejami atsāpinoši krēmi."
       },
       {
         "id": "5",
-        "question": "Vai būs sarkana vieta vai atzīmes pēc ārstēšanas?",
-        "answer": "Lielākā daļa klientu piedzīvo minimālu sarkanu vietu, kas izzūd pēc pāris stundu līdz dažām dienām. Daži var redzēt nelielas atzīmes, kas ātri pazūd. Mēs uzreiz pēc ārstēšanas piesakām mierinošus produktus, lai samazinātu jebkādu reakciju."
+        "question": "Vai pēc tam būs apsārtums?",
+        "answer": "Minimāls apsārtums pāriet dažu stundu vai dienu laikā. Mēs uzklājam nomierinošus līdzekļus tūlīt pēc apstrādes."
       },
       {
         "id": "6",
-        "question": "Vai elektrolīze darbojas uz visiem ādas tipiem un matu krāsām?",
-        "answer": "Jā. Atšķirībā no lāzera matu noņemšanas, elektrolīze darbojas uz visiem ādas tipiem (gaiša līdz ļoti tumša) un visām matu krāsām (tostarp blonda, sarkana, pelēka un balta). Tas padara to par vispievilcīgāko permanento matu noņemšanas metodi."
+        "question": "Vai tas darbojas uz visiem ādas un matu tipiem?",
+        "answer": "Jā. Atšķirībā no lāzera, elektrolīze darbojas uz visiem ādas toņiem un visām matu krāsām, ieskaitot blondus un sirmus matus."
       }
     ],
     "cta": {
-      "title": "Sazinājieties ar mums bezmaksas konsultācijai.",
-      "description": "Mūsu speciālists ar prieku atbildēs jebkuriem jūsu jautājumiem un palīdzēs plānot jūsu ceļojumu.",
-      "eyebrow": "Joprojām jautājumi?"
+      "title": "Gatavi sākt savu ceļu?",
+      "description": "Sazinieties ar mums, lai pieteiktos bezmaksas konsultācijai vai uzdotu papildu jautājumus."
     }
   },
   "contact": {
     "eyebrow": "Atrašanās vieta",
-    "title": "Medicīniskās klases elektrolīzes studija Rīgā",
-    "description": "Apmeklējiet mūs sertificēta elektrologa un medicīniskās klases ārstēšanas vidē.",
+    "title": "Medicīniska līmeņa elektrolīzes studija Rīgā",
+    "description": "Atrodamies Rīgas centrā ar ērtām, privātām procedūru telpām. Piesakieties konsultācijai jau šodien.",
     "follow": "Sekojiet mums",
-    "whatsappMessage": "Sveiki! Vēlos uzzināt par permanento matu noņemšanu ar elektrolīzi Rīgā.",
+    "whatsappMessage": "Labdien! Vēlos uzzināt vairāk par permanento matu noņemšanu ar elektrolīzi Rīgā.",
     "social": [
       {
         "id": "instagram",
@@ -652,33 +661,33 @@
     ],
     "methods": [
       {
-        "title": "Address",
+        "title": "Adrese",
         "label": "AD",
         "content": "Elizabetes iela 45, Centrs, Rīga, LV-1010"
       },
       {
-        "title": "Phone",
+        "title": "Tālrunis",
         "label": "PH",
         "content": "+371 26 123 456",
         "action": "tel:+37126123456"
       },
       {
-        "title": "Email",
+        "title": "E-pasts",
         "label": "EM",
         "content": "info@elektrolizeriga.lv",
         "action": "mailto:info@elektrolizeriga.lv"
       },
       {
-        "title": "Hours",
+        "title": "Darba laiks",
         "label": "HR",
-        "content": "Otrdiena-piektdiena: 10:00-18:00 | Sestdiena: 10:00-16:00 | Svētdiena-pirmdiena: Slēgts"
+        "content": "Otr-Pkt: 10:00-18:00 | Sest: 10:00-16:00 | Sv-Pr: Slēgts"
       }
     ],
     "address": "Elizabetes iela 45, Centrs, Rīga, LV-1010",
     "phone": "+371 26 123 456",
     "email": "info@elektrolizeriga.lv",
-    "hours": "Otrdiena-piektdiena: 10:00-18:00 | Sestdiena: 10:00-16:00 | Svētdiena-pirmdiena: Slēgts",
-    "directions": "Iegūt norādes",
+    "hours": "Otr-Pkt: 10:00-18:00 | Sest: 10:00-16:00 | Sv-Pr: Slēgts",
+    "directions": "Saņemt norādes",
     "socialAria": {
       "instagram": "Instagram",
       "tiktok": "TikTok",
@@ -686,43 +695,43 @@
     }
   },
   "booking": {
-    "eyebrow": "Brīva konsultācija",
-    "title": "Rezervējiet savu laiku",
-    "description": "Sakārtojiet Jūsu bezmaksas konsultāciju. Nav apņemšanās.",
-    "successTitle": "Booking submitted successfully.",
-    "successDescription": "We'll contact you soon to confirm your appointment.",
-    "errorTitle": "Error",
+    "eyebrow": "Rezervācija",
+    "title": "Pieteikt privātu vizīti.",
+    "description": "Norādiet vēlamo zonu, laiku un jebkādas ādas īpatnības. Studija apstiprinās pieejamību un sniegs norādījumus.",
+    "successTitle": "Pieteikums nosūtīts veiksmīgi.",
+    "successDescription": "Mēs ar jums drīz sazināsimies, lai apstiprinātu vizīti.",
+    "errorTitle": "Kļūda",
     "validation": {
-      "name": "Please enter your name",
+      "name": "Lūdzu, ievadiet savu vārdu",
       "phone": "Lūdzu, ievadiet savu tālruņa numuru",
       "phoneInvalid": "Lūdzu, ievadiet derīgu tālruņa numuru",
       "emailInvalid": "Lūdzu, ievadiet derīgu e-pasta adresi",
       "service": "Lūdzu, izvēlieties pakalpojumu",
-      "submit": "Failed to submit booking",
-      "generic": "Something went wrong"
+      "submit": "Neizdevās nosūtīt pieteikumu",
+      "generic": "Kaut kas nogāja greizi"
     },
     "form": {
-      "name": "Jūsu vārds",
-      "phone": "Jūsu tālrunis",
-      "email": "Jūsu e-pasta adrese",
-      "service": "Select Service",
-      "servicePlaceholder": "Select preferred treatment...",
-      "comment": "Additional Notes",
-      "commentPlaceholder": "Piemēram: ārstējamā zona, ādas jutība, vēlamais laiks vai jautājumi.",
+      "name": "Vārds, Uzvārds",
+      "phone": "Tālruņa numurs",
+      "email": "E-pasta adrese",
+      "service": "Izvēlēties pakalpojumu",
+      "servicePlaceholder": "Izvēlieties vēlamo zonu...",
+      "comment": "Papildu piezīmes",
+      "commentPlaceholder": "Piemēram: zona, ādas jutība, vēlamais laiks vai jautājumi.",
       "placeholders": {
         "name": "Māra Čena",
         "phone": "+371 20 000 000",
         "email": "mara@piemers.lv"
       },
-      "consentPrefix": "Iesniedzot šo formu, jūs piekrītat mūsu",
-      "consentAnd": "and",
-      "submit": "Nosūtīt konsultācijas pieprasījumu",
+      "consentPrefix": "Nosūtot šo formu, jūs piekrītat mūsu",
+      "consentAnd": "un",
+      "submit": "Pieteikt vizīti",
       "submitting": "Nosūta...",
-      "direct": "Prefer to contact us directly?",
+      "direct": "Vēlaties sazināties tieši?",
       "serviceType": "Ārstēšanas veids",
       "serviceTypes": {
         "facial": "Sejas matu noņemšana",
-        "underarm": "Padusju matu noņemšana",
+        "underarm": "Padušu matu noņemšana",
         "bikini": "Bikini līnijas ārstēšana",
         "legs": "Kāju elektrolīze",
         "other": "Cits"
@@ -734,10 +743,10 @@
     },
     "services": [
       "Sejas matu noņemšana",
-      "Padusju matu noņemšana",
+      "Padušu matu noņemšana",
       "Bikini līnijas ārstēšana",
       "Kāju elektrolīze",
-      "Cits"
+      "Konsultācija"
     ],
     "api": {
       "missingFields": "Trūkst obligāto lauku",
@@ -746,7 +755,7 @@
     }
   },
   "footer": {
-    "description": "FDA apstiprināta permanenta matu noņemšana Rīgā. Sertificēts elektrologs, medicīniskās klases aprīkojums, privāta studija centrā.",
+    "description": "FDA apstiprināta permanenta matu noņemšana Rīgā. Sertificēts elektrologs, medicīniskas pakāpes aprīkojums, privāta studija pilsētas centrā.",
     "quickLinks": "Ātrās saites",
     "services": "Pakalpojumi",
     "followUs": "Sekojiet mums",
@@ -756,20 +765,20 @@
       "facebook": "Facebook",
       "pinterest": "Pinterest"
     },
-    "brand": "Elektrolīze NYC",
+    "brand": "Maison Elise",
     "links": {
       "privacy": "Privātuma politika",
-      "terms": "Pakalpojuma noteikumi",
-      "contact": "Sazinājieties"
+      "terms": "Lietošanas noteikumi",
+      "contact": "Saziņa"
     }
   },
   "floating": {
     "book": "Pieraksts",
     "call": "Zvanīt",
-    "bookAppointment": "Pierakstīties uz vizīti"
+    "bookAppointment": "Pieteikt vizīti"
   },
   "stickyCta": {
-    "button": "Pierakstīties konsultācijai",
+    "button": "Pieteikties konsultācijai",
     "note": "Bezmaksas konsultācija • Bez saistībām"
   },
   "accessibility": {
@@ -843,12 +852,12 @@
     "results": {
       "eyebrow": "Gatavi sākt?",
       "title": "Rezervējiet bezmaksas konsultāciju Rīgā",
-      "description": "Pārvērtiet rezultātus ilgtermiņa pārliecībā — mūsu speciālists sagatavos personalizētu plānu."
+      "description": "Pārvērtiet redzamu progresu ilgtermiņa pārliecībā ar personalizētu plānu."
     },
     "reviews": {
       "eyebrow": "Pievienojieties klientiem",
       "title": "Jūsu permanents rezultāts sākas ar konsultāciju",
-      "description": "Pierakstieties bez saistībām — mēs izskaidrosim procedūru, ilgumu un izmaksas."
+      "description": "Pierakstieties bez saistībām — mēs izskaidrosim procesu, termiņus un izmaksas."
     }
   }
 }

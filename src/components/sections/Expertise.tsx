@@ -7,28 +7,28 @@ import Card from '@/components/Card'
 import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Expertise() {
-  const { t } = useLanguage()
+  const { t, list } = useLanguage()
 
   const expertiseItems = [
     {
       icon: <GraduationCap className="h-6 w-6" />,
-      title: t('expertise.certified.title') || 'Certified Electrologist',
-      description: t('expertise.certified.description') || 'Trained and certified by international medical-grade electrolysis standards.',
+      title: t('expertise.certified.title'),
+      description: t('expertise.certified.description'),
     },
     {
       icon: <Microscope className="h-6 w-6" />,
-      title: t('expertise.hygiene.title') || 'Medical Hygiene',
-      description: t('expertise.hygiene.description') || 'Strict sterilization protocols using medical-grade equipment for every patient.',
+      title: t('expertise.hygiene.title'),
+      description: t('expertise.hygiene.description'),
     },
     {
       icon: <Shield className="h-6 w-6" />,
-      title: t('expertise.experience.title') || 'Clinical Experience',
-      description: t('expertise.experience.description') || 'Over 15 years specializing exclusively in permanent hair removal.',
+      title: t('expertise.experience.title'),
+      description: t('expertise.experience.description'),
     },
     {
       icon: <Check className="h-6 w-6" />,
-      title: t('expertise.consultation.title') || 'Expert Consultation',
-      description: t('expertise.consultation.description') || 'In-depth skin and hair analysis to create a personalized treatment plan.',
+      title: t('expertise.consultation.title'),
+      description: t('expertise.consultation.description'),
     },
   ]
 
@@ -36,9 +36,9 @@ export default function Expertise() {
     <section className="bg-ivory py-20 md:py-32 overflow-hidden">
       <div className="section-container">
         <SectionHeader
-          eyebrow={t('expertise.eyebrow') || 'Our Expertise'}
-          title={t('expertise.title') || 'Professional Excellence in Permanent Hair Removal'}
-          description={t('expertise.description') || 'We combine clinical precision with a patient-first approach to deliver the highest standard of electrolysis care.'}
+          eyebrow={t('expertise.eyebrow')}
+          title={t('expertise.title')}
+          description={t('expertise.description')}
           align="center"
         />
 
@@ -77,18 +77,13 @@ export default function Expertise() {
           
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="eyebrow text-accent mb-4 block">Medical Standards</span>
-              <h3 className="section-heading text-4xl mb-6">Uncompromising Hygiene Protocols</h3>
+              <span className="eyebrow text-accent mb-4 block">{t('expertise.medicalStandards.eyebrow')}</span>
+              <h3 className="section-heading text-4xl mb-6">{t('expertise.medicalStandards.title')}</h3>
               <p className="body-base text-primary/70 mb-8 leading-relaxed">
-                Your safety is our absolute priority. We adhere to the highest clinical hygiene standards, ensuring a sterile and safe environment for every session.
+                {t('expertise.medicalStandards.description')}
               </p>
               <ul className="space-y-4">
-                {[
-                  'Single-use sterile disposable probes',
-                  'Medical-grade sterilization of all tools',
-                  'Clinical environment following RKI guidelines',
-                  'Regular professional hygiene audits',
-                ].map((point, i) => (
+                {(list<string>('expertise.medicalStandards.points') || []).map((point, i) => (
                   <li key={i} className="flex items-center gap-3 body-small font-semibold text-primary/80">
                     <div className="h-1.5 w-1.5 rounded-full bg-accent" />
                     {point}

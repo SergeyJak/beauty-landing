@@ -65,7 +65,7 @@ export default function Hero() {
             </div>
             <div className="flex flex-col">
               <span className="text-[0.65rem] font-bold uppercase tracking-wider text-accent">{t('hero.eyebrow')}</span>
-              <span className="text-[0.6rem] text-primary/50">Trusted by 500+ clinical patients</span>
+              <span className="text-[0.6rem] text-primary/50">{t('hero.trustedBy')}</span>
             </div>
           </motion.div>
 

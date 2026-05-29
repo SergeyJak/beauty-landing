@@ -7,19 +7,16 @@ import { useLanguage } from '@/lib/LanguageContext'
 import { cn } from '@/lib/utils'
 
 export default function ClinicalComparison() {
-  const { t } = useLanguage()
+  const { t, list } = useLanguage()
+
+  const electrolysisPoints = list<string>('comparison.electrolysis.points') || []
+  const laserPoints = list<string>('comparison.laser.points') || []
 
   const electrolysis = {
     title: t('comparison.electrolysis.title'),
     subtitle: t('comparison.electrolysis.subtitle'),
     description: t('comparison.electrolysis.description'),
-    points: [
-      { text: t('comparison.electrolysis.points.0'), status: 'check' },
-      { text: t('comparison.electrolysis.points.1'), status: 'check' },
-      { text: t('comparison.electrolysis.points.2'), status: 'check' },
-      { text: t('comparison.electrolysis.points.3'), status: 'check' },
-      { text: t('comparison.electrolysis.points.4'), status: 'check' },
-    ],
+    points: electrolysisPoints.map((text, i) => ({ text, status: 'check' })),
     highlight: true,
   }
 
@@ -27,13 +24,10 @@ export default function ClinicalComparison() {
     title: t('comparison.laser.title'),
     subtitle: t('comparison.laser.subtitle'),
     description: t('comparison.laser.description'),
-    points: [
-      { text: t('comparison.laser.points.0'), status: 'info' },
-      { text: t('comparison.laser.points.1'), status: 'cross' },
-      { text: t('comparison.laser.points.2'), status: 'cross' },
-      { text: t('comparison.laser.points.3'), status: 'cross' },
-      { text: t('comparison.laser.points.4'), status: 'cross' },
-    ],
+    points: laserPoints.map((text, i) => ({ 
+      text, 
+      status: i === 0 ? 'info' : 'cross' 
+    })),
     highlight: false,
   }
 
