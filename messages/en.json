@@ -39,7 +39,7 @@
       "description": "Strict sterilization protocols using medical-grade equipment for every patient."
     },
     "experience": {
-      "title": "Clinical Experience",
+      "title": "Professional Experience",
       "description": "Over 15 years specializing exclusively in permanent hair removal."
     },
     "consultation": {
@@ -47,20 +47,20 @@
       "description": "In-depth skin and hair analysis to create a personalized treatment plan."
     },
     "medicalStandards": {
-      "eyebrow": "Medical Standards",
-      "title": "Uncompromising Hygiene Protocols",
-      "description": "Your safety is our absolute priority. We adhere to the highest clinical hygiene standards, ensuring a sterile and safe environment for every session.",
+      "eyebrow": "Care Standards",
+      "title": "Uncompromising hygiene and comfort",
+      "description": "Your safety is our priority. We follow proven hygiene protocols and keep every session clean, private, and calm.",
       "points": [
         "Single-use sterile disposable probes",
-        "Medical-grade sterilization of all tools",
-        "Clinical environment following guidelines",
-        "Regular professional hygiene audits"
+        "Thorough sterilization of tools",
+        "Private treatment space with expert care",
+        "Regular professional hygiene checks"
       ]
     }
   },
   "comparison": {
-    "eyebrow": "Medical vs. Temporary",
-    "title": "Clinical Comparison: Electrolysis vs. Laser",
+    "eyebrow": "Permanent vs. Temporary",
+    "title": "Science-backed Comparison: Electrolysis vs. Laser",
     "description": "Understanding the fundamental biological difference between permanent removal and temporary reduction.",
     "electrolysis": {
       "title": "Electrolysis",
@@ -91,7 +91,7 @@
 
   "header": {
     "skipToMain": "Skip to main content",
-    "bookNow": "Book Now",
+    "bookNow": "Contact",
     "toggleMenu": "Toggle navigation menu",
     "navigation": {
       "why": "Why Electrolysis",
@@ -103,14 +103,14 @@
     }
   },
   "hero": {
-    "eyebrow": "Certified Electrologist • FDA-Approved Technology",
-    "title": "Permanent hair removal, medically proven.",
-    "description": "Electrolysis is the only FDA-approved method for permanent hair removal. Our certified specialists use medical-grade technology for safe, effective treatment on all skin types and hair colors.",
-    "primaryCTA": "Schedule Consultation",
+    "eyebrow": "Certified Electrologist • Science-backed permanent removal",
+    "title": "Permanent hair removal with electrolysis.",
+    "description": "Electrolysis is the only scientifically proven permanent hair removal method. It works safely on all skin tones and hair colors, from a private specialist in Riga.",
+    "primaryCTA": "Message on WhatsApp",
     "secondaryCTA": "Learn How It Works",
-    "trustedBy": "Trusted by 500+ clinical patients",
-    "included": "Free consultation • No obligation",
-    "location": "City centre, Riga",
+    "trustedBy": "Trusted by Riga clients",
+    "included": "Private practice • Riga only",
+    "location": "Latgales iela 267, Riga",
     "stats": {
       "experienceNumber": "15+",
       "experience": "Years Experience",
@@ -710,7 +710,7 @@
     }
   },
   "footer": {
-    "description": "FDA-approved permanent hair removal in Riga. Certified electrologist, medical-grade equipment, private studio in the city centre.",
+    "description": "Certified electrolysis specialist in Riga. Private practice for permanent facial and bikini hair removal.",
     "quickLinks": "Quick Links",
     "services": "Services",
     "followUs": "Follow Us",
@@ -722,13 +722,13 @@
     }
   },
   "floating": {
-    "book": "Book",
+    "book": "Contact",
     "call": "Call",
-    "bookAppointment": "Book appointment"
+    "bookAppointment": "Contact"
   },
   "stickyCta": {
-    "button": "Schedule Consultation",
-    "note": "Free consultation • No commitment"
+    "button": "Message on WhatsApp",
+    "note": "Fast replies via WhatsApp and Telegram"
   },
   "accessibility": {
     "mainNavigation": "Main navigation"

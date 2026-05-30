@@ -85,9 +85,9 @@ export function buildWebSiteSchema(locale: Locale, siteName: string) {
     name: siteName,
     inLanguage: locale,
     potentialAction: {
-      '@type': 'ReserveAction',
-      target: `${BUSINESS.siteUrl}/${locale}#booking`,
-      name: 'Book consultation',
+      '@type': 'CommunicateAction',
+      target: `${BUSINESS.siteUrl}/${locale}#contact`,
+      name: 'Contact the specialist',
     },
   }
 }

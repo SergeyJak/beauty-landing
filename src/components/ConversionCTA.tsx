@@ -2,6 +2,7 @@
 
 import ActionLink from '@/components/ActionLink'
 import Reveal from '@/components/Reveal'
+import { SOCIAL_LINKS } from '@/lib/constants'
 import { useT } from '@/lib/LanguageContext'
 
 interface ConversionCTAProps {
@@ -43,7 +44,7 @@ export default function ConversionCTA({
         <p className={`mt-3 max-w-2xl leading-7 ${copyClass}`}>{description}</p>
       </div>
       <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
-        <ActionLink href="#booking" className={`premium-sheen min-h-12 items-center ${primaryClass}`}>
+        <ActionLink href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className={`premium-sheen min-h-12 items-center ${primaryClass}`}>
           {primaryLabel || t('hero.primaryCTA')}
         </ActionLink>
         {secondaryLabel && secondaryHref && (

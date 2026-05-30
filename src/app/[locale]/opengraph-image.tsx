@@ -62,7 +62,7 @@ export default async function OpenGraphImage({ params }: Props) {
             {metadata?.title?.split('|')[0]?.trim() || 'Permanent hair removal'}
           </p>
           <p style={{ fontSize: 28, lineHeight: 1.45, opacity: 0.82 }}>
-            {metadata?.description?.slice(0, 140) || 'Medical-grade electrolysis in Riga'}
+            {metadata?.description?.slice(0, 140) || 'Certified electrolysis specialist for permanent hair removal in Riga'}
           </p>
         </div>
         <p style={{ fontSize: 22, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#ac916e' }}>

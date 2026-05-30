@@ -94,7 +94,7 @@ export default function Expertise() {
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm grayscale-[0.5] hover:grayscale-0 transition-all duration-700">
               <img 
                 src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" 
-                alt="Medical Equipment" 
+                alt="Electrolysis workspace" 
                 className="h-full w-full object-cover"
               />
             </div>

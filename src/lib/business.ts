@@ -1,9 +1,9 @@
 /** Locale-agnostic business facts for schema, maps, and tel/mailto links. */
 export const BUSINESS = {
   siteUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://elektrolizeriga.lv',
-  streetAddress: 'Elizabetes iela 45',
+  streetAddress: 'Latgales iela 267',
   addressLocality: 'Rīga',
-  postalCode: 'LV-1010',
+  postalCode: 'LV-1057',
   addressCountry: 'LV',
   geo: {
     latitude: 56.9496,
@@ -18,9 +18,9 @@ export const BUSINESS = {
   facebook: 'https://facebook.com/electrolizeriga',
   priceRange: '€€',
   googleMapsEmbed:
-    'https://www.google.com/maps?q=Elizabetes+iela+45,+R%C4%ABga,+LV-1010&output=embed',
+    'https://www.google.com/maps?q=Latgales+iela+267,+R%C4%ABga,+LV-1057&output=embed',
   googleMapsDirections:
-    'https://www.google.com/maps/dir/?api=1&destination=Elizabetes+iela+45,+R%C4%ABga,+LV-1010',
+    'https://www.google.com/maps/dir/?api=1&destination=Latgales+iela+267,+R%C4%ABga,+LV-1057',
 } as const
 
 export function buildWhatsAppUrl(message: string): string {

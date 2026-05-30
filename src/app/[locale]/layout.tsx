@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       template: `%s | ${brand?.name || 'Electrolysis Riga'}`,
     },
     description:
-      metadata?.description || 'Medical-grade permanent hair removal in Riga',
+      metadata?.description || 'Certified electrolysis specialist for permanent facial and bikini hair removal in Riga',
     keywords: metadata?.keywords || [],
     robots: { index: true, follow: true },
     openGraph: {

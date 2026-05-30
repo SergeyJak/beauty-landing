@@ -8,6 +8,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { useLanguage } from '@/lib/LanguageContext'
 import { cn } from '@/lib/utils'
 import Button from '@/components/Button'
+import { SOCIAL_LINKS } from '@/lib/constants'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -56,7 +57,7 @@ export default function Header() {
               <span className="font-serif text-2xl font-semibold text-primary leading-tight">
                 {t('brand.name')}
               </span>
-              <span className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-accent">Clinical Specialist</span>
+              <span className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-accent">Certified Electrolysis Specialist</span>
             </div>
           </Link>
 
@@ -75,7 +76,10 @@ export default function Header() {
           <div className="hidden items-center gap-6 lg:flex">
             <LanguageSwitcher />
             <a
-              href="#booking"
+              href={SOCIAL_LINKS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t('header.bookNow')}
               className="premium-sheen relative h-14 bg-primary px-8 flex items-center justify-center text-[0.7rem] font-bold uppercase tracking-[0.2em] text-ivory shadow-[0_20px_50px_rgba(23,19,15,0.15)] transition-all hover:bg-clay hover:-translate-y-1"
             >
               {t('header.bookNow')}
@@ -143,7 +147,7 @@ export default function Header() {
                     <div className="flex items-center justify-between mb-8">
                       <ThemeToggle />
                     </div>
-                    <a href="#booking" onClick={() => setIsOpen(false)}>
+                    <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
                       <Button size="lg" className="h-18 w-full">{t('header.bookNow')}</Button>
                     </a>
                   </div>

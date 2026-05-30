@@ -9,7 +9,6 @@ import Expertise from '@/components/sections/Expertise'
 import Reviews from '@/components/sections/Reviews'
 import FAQ from '@/components/sections/FAQ'
 import Contact from '@/components/sections/Contact'
-import BookingForm from '@/components/sections/BookingForm'
 import FloatingButtons from '@/components/FloatingButtons'
 import PageTransition from '@/components/PageTransition'
 
@@ -27,7 +26,6 @@ export default function Home() {
       <Reviews />
       <FAQ />
       <Contact />
-      <BookingForm />
       <FloatingButtons />
     </PageTransition>
   )

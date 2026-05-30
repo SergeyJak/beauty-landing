@@ -77,7 +77,7 @@ export default function FAQ() {
         <div className="border-y border-primary/10">
           {faqList.map((item, index) => (
             <motion.div
-              key={item.id}
+              key={`faq-item-${index}-${item.id}`}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.48, delay: index * 0.045, ease: [0.22, 1, 0.36, 1] }}
@@ -145,8 +145,8 @@ export default function FAQ() {
             <ActionLink href={`mailto:${BUSINESS.email}`}>
               {t('common.email')}
             </ActionLink>
-            <ActionLink href="#booking" className="border-primary bg-primary text-ivory hover:bg-clay hover:text-ivory">
-              {t('hero.primaryCTA')}
+            <ActionLink href="#contact" className="border-primary bg-primary text-ivory hover:bg-clay hover:text-ivory">
+              {t('header.bookNow')}
             </ActionLink>
           </div>
         </Reveal>

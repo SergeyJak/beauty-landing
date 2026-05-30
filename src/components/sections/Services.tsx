@@ -88,8 +88,8 @@ export default function Services() {
               <div className="sm:col-span-2 md:col-auto md:text-right">
                 <p className="font-semibold text-primary">{service.price}</p>
                 <p className="mt-1 text-sm text-primary/50">{service.duration}</p>
-                <a href="#booking" className="eyebrow mt-4 inline-block text-accent transition-all duration-500 hover:translate-x-1 hover:text-primary">
-                  Reserve
+                <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="eyebrow mt-4 inline-block text-accent transition-all duration-500 hover:translate-x-1 hover:text-primary">
+                  Contact
                 </a>
               </div>
             </motion.div>

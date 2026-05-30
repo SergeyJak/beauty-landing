@@ -29,7 +29,7 @@ const reviews: Review[] = [
     id: '3',
     name: 'Amanda Foster',
     title: 'Regular client',
-    text: 'The clinic is so clean and professional. The specialist is certified and really knows her craft. Each session brings me closer to permanent hair freedom. Highly recommend.',
+    text: 'The treatment space is so clean and professional. The specialist is certified and really knows her craft. Each session brings me closer to permanent hair freedom. Highly recommend.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
   },

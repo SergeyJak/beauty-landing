@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Button from '@/components/Button'
 import OptimizedImage from '@/components/OptimizedImage'
+import { SOCIAL_LINKS } from '@/lib/constants'
 import { useT } from '@/lib/LanguageContext'
 
 const HERO_IMAGE =
@@ -81,7 +82,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-stretch">
-            <a href="#booking" className="group w-full sm:w-auto sm:min-w-[16rem]">
+            <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto sm:min-w-[16rem]">
               <Button size="lg" className="h-16 w-full shadow-[0_25px_60px_rgba(23,19,15,0.25)]">
                 {t('hero.primaryCTA')}
                 <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,7 +90,7 @@ export default function Hero() {
                 </svg>
               </Button>
             </a>
-            <a href="#why-electrolysis" className="w-full sm:w-auto">
+            <a href="#contact" className="w-full sm:w-auto">
               <Button variant="outline" size="lg" className="h-16 w-full border-primary/20 bg-ivory/40 backdrop-blur-md hover:border-primary/40">
                 {t('hero.secondaryCTA')}
               </Button>

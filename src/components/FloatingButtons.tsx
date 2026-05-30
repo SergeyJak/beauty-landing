@@ -15,9 +15,9 @@ export default function FloatingButtons() {
       href: SOCIAL_LINKS.whatsapp,
     },
     {
-      id: 'call',
-      label: t('floating.call'),
-      href: 'tel:+37126123456',
+      id: 'telegram',
+      label: t('common.telegram'),
+      href: SOCIAL_LINKS.telegram,
     },
   ]
 
@@ -29,7 +29,7 @@ export default function FloatingButtons() {
         transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
         className="safe-bottom fixed inset-x-0 bottom-0 z-40 border-t border-primary/10 bg-ivory/96 px-3 pt-3 shadow-[0_-18px_45px_rgba(23,19,15,0.14)] backdrop-blur md:hidden"
       >
-        <a href="#booking" className="mb-2 block w-full">
+        <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="mb-2 block w-full">
           <Button size="lg" className="min-h-12 w-full">
             {t('stickyCta.button')}
           </Button>
@@ -91,8 +91,8 @@ export default function FloatingButtons() {
           </motion.a>
         ))}
         <motion.a
-          href="#booking"
-          aria-label={t('floating.bookAppointment')}
+          href="#contact"
+          aria-label={t('floating.contact')}
           className="flex h-12 w-12 items-center justify-center bg-accent text-ivory shadow-[0_14px_35px_rgba(23,19,15,0.16)] transition-all hover:bg-primary"
           whileHover={{ y: -3 }}
           whileTap={{ scale: 0.95 }}

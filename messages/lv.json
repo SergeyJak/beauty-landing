@@ -41,7 +41,7 @@
       "description": "Stingri sterilizācijas protokoli, izmantojot medicīniskās klases aprīkojumu katram pacientam."
     },
     "experience": {
-      "title": "Klīniskā pieredze",
+      "title": "Profesionālā pieredze",
       "description": "Vairāk nekā 15 gadus specializējamies tikai un vienīgi permanentajā matu noņemšanā."
     },
     "consultation": {
@@ -49,20 +49,20 @@
       "description": "Padziļināta ādas un matu analīze, lai izveidotu personalizētu ārstēšanas plānu."
     },
     "medicalStandards": {
-      "eyebrow": "Medicīniskie standarti",
-      "title": "Beskompromisa higiēnas protokoli",
-      "description": "Jūsu drošība ir mūsu prioritāte. Mēs ievērojam augstākos klīniskās higiēnas standartus, nodrošinot sterilu vidi katrai sesijai.",
+      "eyebrow": "Aprūpes standarti",
+      "title": "Nepārspējama higiēna un komforts",
+      "description": "Jūsu drošība ir mūsu prioritāte. Mēs īstenojam pārbaudītus higiēnas protokolus un nodrošinām katru sesiju tīru, privātu un mierīgu.",
       "points": [
         "Vienreizlietojamas sterilas zondes",
-        "Medicīniska līmeņa instrumentu sterilizācija",
-        "Klīniskā vide atbilstoši vadlīnijām",
-        "Regulāri profesionāli higiēnas auditi"
+        "Rūpīga instrumentu sterilizācija",
+        "Privāta procedūru telpa ar ekspertu aprūpi",
+        "Regulāras profesionālas higiēnas pārbaudes"
       ]
     }
   },
   "comparison": {
-    "eyebrow": "Medicīniskā vs Pagaidu",
-    "title": "Klīniskais salīdzinājums: Elektrolīze vs Lāzers",
+    "eyebrow": "Pastāvīga vs pagaidu",
+    "title": "Zinātniski pamatots salīdzinājums: Elektrolīze vs lāzers",
     "description": "Izprotiet fundamentālo bioloģisko atšķirību starp permanento noņemšanu un pagaidu samazināšanu.",
     "electrolysis": {
       "title": "Elektrolīze",
@@ -92,7 +92,7 @@
   },
   "header": {
     "skipToMain": "Pāriet uz galveno saturu",
-    "bookNow": "Rezervēt",
+    "bookNow": "Sazināties",
     "toggleMenu": "Pārslēgt navigācijas izvēlni",
     "navigation": {
       "why": "Kāpēc elektrolīze",
@@ -104,14 +104,14 @@
     }
   },
   "hero": {
-    "eyebrow": "Sertificēts elektrologs • FDA-apstiprināta tehnoloģija",
-    "title": "Permanenta matu noņemšana. Medicīniski pierādīta.",
-    "description": "Elektrolīze ir vienīgā FDA-apstiprinātā metode permanentai matu noņemšanai. Droša un efektīva ārstēšana visiem ādas tipiem un matu krāsām.",
-    "primaryCTA": "Pieteikties konsultācijai",
+    "eyebrow": "Sertificēts elektrologs • Zinātniski pamatota permanenta noņemšana",
+    "title": "Permanenta matu noņemšana ar elektrolīzi.",
+    "description": "Elektrolīze ir vienīgā zinātniski pierādītā permanenta matu noņemšanas metode. Tā droši strādā uz visiem ādas toņiem un visām matu krāsām, privātā speciālistes vadībā Rīgā.",
+    "primaryCTA": "Rakstīt WhatsApp",
     "secondaryCTA": "Kā tas darbojas?",
-    "trustedBy": "Uzticas vairāk nekā 500 klīnisko pacientu",
-    "included": "Bezmaksas konsultācija • Bez saistībām",
-    "location": "Centrs, Rīga",
+    "trustedBy": "Uzticas Rīgas klientes",
+    "included": "Privāta prakse • Tik Rīgā",
+    "location": "Latgales iela 267, Rīga",
     "stats": {
       "experienceNumber": "15+",
       "experience": "15+ gadi pieredzes",
@@ -755,7 +755,7 @@
     }
   },
   "footer": {
-    "description": "FDA apstiprināta permanenta matu noņemšana Rīgā. Sertificēts elektrologs, medicīniskas pakāpes aprīkojums, privāta studija pilsētas centrā.",
+    "description": "Sertificēta elektrolīze Rīgā. Privāta prakse permanenta matu noņemšanai sejas un bikini zonām.",
     "quickLinks": "Ātrās saites",
     "services": "Pakalpojumi",
     "followUs": "Sekojiet mums",
@@ -773,13 +773,13 @@
     }
   },
   "floating": {
-    "book": "Pieraksts",
+    "book": "Sazināties",
     "call": "Zvanīt",
-    "bookAppointment": "Pieteikt vizīti"
+    "bookAppointment": "Sazināties"
   },
   "stickyCta": {
-    "button": "Pieteikties konsultācijai",
-    "note": "Bezmaksas konsultācija • Bez saistībām"
+    "button": "Rakstīt WhatsApp",
+    "note": "Ātra atbilde WhatsApp un Telegram"
   },
   "accessibility": {
     "mainNavigation": "Galvenā navigācija"

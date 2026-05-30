@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Button from '@/components/Button'
+import { SOCIAL_LINKS } from '@/lib/constants'
 import { useT } from '@/lib/LanguageContext'
 
 export default function StickyMobileCTA() {
@@ -15,7 +16,7 @@ export default function StickyMobileCTA() {
       className="fixed bottom-0 left-0 right-0 z-40 border-t border-primary/10 bg-ivory/95 backdrop-blur-sm md:hidden"
     >
       <div className="px-4 py-3">
-        <a href="#booking" className="block w-full">
+        <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="block w-full">
           <Button size="lg" className="w-full min-h-12">
             {t('stickyCta.button')}
           </Button>
