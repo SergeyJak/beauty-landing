@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import ConversionCTA from '@/components/ConversionCTA'
 import SectionHeader from '@/components/SectionHeader'
 import type { Service } from '@/types'
+import { SOCIAL_LINKS } from '@/lib/constants'
 
 const services: Service[] = [
   {
