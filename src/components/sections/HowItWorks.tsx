@@ -47,7 +47,7 @@ export default function HowItWorks() {
                   <p className="mb-4 text-sm font-semibold uppercase text-primary/60">{t('howItWorks.whatHappens')}</p>
                   <ul className="space-y-2">
                     {step.details?.map((detail: string) => (
-                      <li key={detail} className="flex gap-2 text-sm text-primary/70">
+                      <li key={detail} className="flex gap-2 text-sm text-primary/85">
                         <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent" />
                         <span>{detail}</span>
                       </li>
@@ -83,7 +83,7 @@ function ScienceColumn({ title, description, items }: { title: string; descripti
       <p className="mb-4 text-base text-primary/72">{description}</p>
       <ul className="space-y-2">
         {items.map((item) => (
-          <li key={item} className="flex gap-2 text-sm text-primary/70">
+          <li key={item} className="flex gap-2 text-sm text-primary/85">
             <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent" />
             <span>{item}</span>
           </li>

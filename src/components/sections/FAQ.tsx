@@ -118,7 +118,7 @@ export default function FAQ() {
                 className="overflow-hidden"
               >
                 <div className="border-t border-primary/10 px-2 py-5 md:px-4">
-                  <p className="leading-8 text-primary/65">{item.answer}</p>
+                  <p className="leading-8 text-primary/85">{item.answer}</p>
                 </div>
               </motion.div>
             </motion.div>

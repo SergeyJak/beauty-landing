@@ -35,7 +35,7 @@ export default function Benefits() {
                     <span className="text-2xl font-bold text-accent">{benefit.icon}</span>
                   </div>
                   <h3 className="mb-3 font-serif text-2xl text-primary">{benefit.title}</h3>
-                  <p className="text-base leading-relaxed text-primary/72">{benefit.description}</p>
+                  <p className="text-base leading-relaxed text-primary/85">{benefit.description}</p>
                   <div className="mt-6 border-t border-primary/10 pt-6">
                     <motion.div className="inline-flex items-center gap-2 text-sm font-semibold text-accent" whileHover={{ x: 4 }} transition={{ duration: 0.3 }}>
                       {t('common.learnMore')}
@@ -59,7 +59,7 @@ export default function Benefits() {
                   <svg className="mt-1 h-5 w-5 flex-shrink-0 text-accent" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-primary/72">{item}</span>
+                  <span className="text-primary/85">{item}</span>
                 </li>
               ))}
             </ul>

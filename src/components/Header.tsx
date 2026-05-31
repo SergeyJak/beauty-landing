@@ -66,7 +66,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary/60 transition-all hover:text-accent hover:-translate-y-0.5"
+                className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary/80 transition-all hover:text-accent hover:-translate-y-0.5"
               >
                 {t(link.key)}
               </a>
@@ -141,7 +141,7 @@ export default function Header() {
                   
                   <div className="mt-auto pt-10 border-t border-primary/10">
                     <div className="mb-8">
-                      <p className="eyebrow mb-4 opacity-40">{t('languageSwitcher.label')}</p>
+                      <p className="eyebrow mb-4 opacity-70">{t('languageSwitcher.label')}</p>
                       <LanguageSwitcher variant="inline" />
                     </div>
                     <div className="flex items-center justify-between mb-8">

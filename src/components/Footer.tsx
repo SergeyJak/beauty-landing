@@ -116,7 +116,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col items-center justify-between text-sm text-parchment/45 md:flex-row">
+          <div className="flex flex-col items-center justify-between text-sm text-parchment/65 md:flex-row">
             <p>{interpolate(t('footer.copyright'), { year: currentYear })}</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="transition-colors hover:text-champagne">

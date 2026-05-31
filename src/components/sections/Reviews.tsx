@@ -106,7 +106,7 @@ export default function Reviews() {
                   />
                   <div>
                     <h3 className="font-semibold text-primary">{review.name}</h3>
-                    <p className="text-sm text-primary/50">{review.title}</p>
+                    <p className="text-sm text-primary/70">{review.title}</p>
                   </div>
                 </div>
               </div>
@@ -115,10 +115,10 @@ export default function Reviews() {
                 {renderStars(review.rating)}
               </div>
 
-              <p className="leading-8 text-primary/68">{review.text}</p>
+              <p className="leading-8 text-primary/85">{review.text}</p>
 
               <div className="mt-6 border-t border-primary/10 pt-6">
-                <p className="eyebrow text-primary/35">{t('common.verifiedClient')}</p>
+                <p className="eyebrow text-primary/60">{t('common.verifiedClient')}</p>
               </div>
             </Card>
           ))}
@@ -131,15 +131,15 @@ export default function Reviews() {
         >
           <motion.div className="py-8" whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
             <div className="mb-2 font-serif text-5xl text-accent">{stats[0]?.number}</div>
-            <p className="eyebrow text-primary/45">{stats[0]?.label}</p>
+            <p className="eyebrow text-primary/65">{stats[0]?.label}</p>
           </motion.div>
           <motion.div className="border-y border-primary/10 py-8 sm:border-x sm:border-y-0" whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
             <div className="mb-2 font-serif text-5xl text-accent">{stats[1]?.number}</div>
-            <p className="eyebrow text-primary/45">{stats[1]?.label}</p>
+            <p className="eyebrow text-primary/65">{stats[1]?.label}</p>
           </motion.div>
           <motion.div className="py-8" whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
             <div className="mb-2 font-serif text-5xl text-accent">{stats[2]?.number}</div>
-            <p className="eyebrow text-primary/45">{stats[2]?.label}</p>
+            <p className="eyebrow text-primary/65">{stats[2]?.label}</p>
           </motion.div>
         </Reveal>
       </div>

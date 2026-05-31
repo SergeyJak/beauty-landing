@@ -24,7 +24,7 @@ export default function TrustStrip() {
       <div className="section-container">
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 md:justify-between lg:gap-x-20">
           <div className="hidden lg:block border-r border-primary/10 pr-12">
-            <h4 className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-primary/30 whitespace-nowrap">
+            <h4 className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-primary/50 whitespace-nowrap">
               Trusted Electrolysis Expertise
             </h4>
           </div>
