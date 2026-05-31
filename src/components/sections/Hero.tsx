@@ -5,11 +5,10 @@ import Button from '@/components/Button'
 import OptimizedImage from '@/components/OptimizedImage'
 import { SOCIAL_LINKS } from '@/lib/constants'
 import { useT } from '@/lib/LanguageContext'
+import specialistPhoto from '@/components/foto/340949596_3542884339364963_3036902857413467716_n.jpg'
 
 const HERO_IMAGE =
   'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=2100&h=1300&fit=crop&q=80'
-const SIDECARD_IMAGE =
-  'https://images.unsplash.com/photo-1576091160599-112ba8d25d1d?w=900&h=1200&fit=crop&q=80'
 
 export default function Hero() {
   const t = useT()
@@ -56,18 +55,8 @@ export default function Hero() {
         className="relative z-10 grid min-h-[calc(94vh-9rem)] max-w-7xl grid-cols-1 items-center gap-10 px-4 pb-24 sm:px-6 md:min-h-[calc(100vh-11rem)] md:pb-16 lg:mx-auto lg:grid-cols-[1.12fr_0.88fr] lg:px-8"
       >
         <div className="max-w-4xl">
-          <motion.div variants={itemVariants} className="mb-8 flex items-center gap-4">
-            <div className="flex -space-x-2">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="h-8 w-8 rounded-full border-2 border-ivory bg-soft-beige ring-1 ring-primary/5 overflow-hidden">
-                  <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Client" className="h-full w-full object-cover grayscale" />
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[0.65rem] font-bold uppercase tracking-wider text-accent">{t('hero.eyebrow')}</span>
-              <span className="text-[0.6rem] text-primary/50">{t('hero.trustedBy')}</span>
-            </div>
+          <motion.div variants={itemVariants} className="mb-6">
+            <span className="eyebrow text-accent">{t('hero.eyebrow')}</span>
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="hero-heading mb-10 max-w-4xl tracking-tighter">
@@ -142,7 +131,7 @@ export default function Hero() {
             </div>
             <div className="relative aspect-[4/5] w-full overflow-hidden">
               <OptimizedImage
-                src={SIDECARD_IMAGE}
+                src={specialistPhoto}
                 alt={t('hero.sidecard.imageAlt')}
                 fill
                 sizes="(max-width: 1024px) 0vw, 400px"
