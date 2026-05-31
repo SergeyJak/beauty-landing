@@ -14,8 +14,8 @@
     "category": "Kategorija",
     "verifiedClient": "Pārbaudīts klients",
     "whatsApp": "WhatsApp",
-    "telegram": "Telegram",
-    "email": "E-pasts",
+    "instagram": "Instagram",
+    "email": "Email",
     "callUs": "Zvanīt",
     "privacyPolicy": "Privātuma politika",
     "termsOfService": "Pakalpojuma noteikumi",
@@ -285,7 +285,24 @@
       "title": "Kāpēc nepieciešamas vairākas sesijas",
       "paragraph1": "Jebkurā laikā tikai aptuveni 85% matu ir aktīvajā fāzē. Pārējie atpūšas, un tos nevar apstrādāt.",
       "paragraph2": "Nākamo nedēļu laikā jauni mati kļūs aktīvi un redzami. Tie tiek apstrādāti nākamajās sesijās, līdz visi ir noņemti."
-    }
+    },
+    "steps": [
+      {
+        "number": "1",
+        "label": "Pirmā procedūra",
+        "desc": "Apstrādā aktīvos Anagēna matus"
+      },
+      {
+        "number": "2-3",
+        "label": "Atkārtotas sesijas",
+        "desc": "Apstrādā no jauna redzamos matus"
+      },
+      {
+        "number": "∞",
+        "label": "Rezultāts",
+        "desc": "Mati vairs neaug"
+      }
+    ]
   },
   "howItWorks": {
     "eyebrow": "Process",
@@ -334,7 +351,72 @@
           "Pēckopšanas padomi"
         ]
       }
-    ]
+    ],
+    "science": {
+      "title": "Pastāvīguma zinātne",
+      "methodTitle": "Precīza enerģija",
+      "methodDescription": "Precīza elektriskā strāva rada reakciju, kas iznīcina folikula augšanas centru.",
+      "methodItems": [
+        "Folikula iznīcināšana",
+        "Darbojas uz visiem ādas tipiem"
+      ],
+      "permanentTitle": "Kāpēc tas ir uz visiem laikiem",
+      "permanentDescription": "Strāva iznīcina bioloģiskās struktūras, kas atbild par matu augšanu.",
+      "permanentItems": [
+        "Bioloģisks pastāvīgums",
+        "Zinātniski pierādīts"
+      ]
+    },
+    "timeline": {
+      "title": "Jūsu laika grafiks",
+      "items": [
+        {
+          "time": "1. nedēļa",
+          "action": "Pirmā konsultācija"
+        },
+        {
+          "time": "2.-4. nedēļa",
+          "action": "Sākotnējās procedūras"
+        },
+        {
+          "time": "2.-3. mēnesis",
+          "action": "Progresa pārbaude"
+        },
+        {
+          "time": "6.-12. mēnesis",
+          "action": "Procedūru pabeigšana"
+        },
+        {
+          "time": "Turpmāk",
+          "action": "Gluda āda uz visiem laikiem"
+        }
+      ]
+    },
+    "aftercare": {
+      "title": "Pēckopšana",
+      "items": [
+        {
+          "tip": "Izvairieties no saules",
+          "desc": "Sargājiet zonu 48 stundas"
+        },
+        {
+          "tip": "Bez kosmētikas",
+          "desc": "Nogaidiet 24 stundas pirms produktu lietošanas"
+        },
+        {
+          "tip": "Mitrināšana",
+          "desc": "Lietojiet maigus produktus bez smaržvielām"
+        },
+        {
+          "tip": "Neaiztikt",
+          "desc": "Ļaujiet ādai dzīt dabiski"
+        },
+        {
+          "tip": "Svaigums",
+          "desc": "Izvairieties no karstām dušām un sporta"
+        }
+      ]
+    }
   },
   "results": {
     "eyebrow": "Rezultāti",
@@ -442,14 +524,14 @@
     "whatsappMessage": "Labdien! Vēlos uzzināt vairāk par permanento noņemšanu Crystal E Studio.",
     "social": [
       {
-        "id": "instagram",
-        "label": "Instagram",
-        "href": "https://instagram.com/crystal_e_studio"
-      },
-      {
         "id": "whatsapp",
         "label": "WhatsApp",
         "href": "https://wa.me/37128821341"
+      },
+      {
+        "id": "instagram",
+        "label": "Instagram",
+        "href": "https://instagram.com/crystal_e_studio"
       }
     ],
     "methods": [

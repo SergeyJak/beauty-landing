@@ -11,6 +11,8 @@ import SectionHeader from '@/components/SectionHeader'
 import type { BookingRequest } from '@/types'
 import { useLanguage } from '@/lib/LanguageContext'
 import { isValidEmail, isValidPhone } from '@/lib/utils'
+import { BUSINESS } from '@/lib/business'
+import { SOCIAL_LINKS } from '@/lib/constants'
 
 export default function BookingForm() {
   const { t, list, locale } = useLanguage()
@@ -232,7 +234,7 @@ export default function BookingForm() {
             <p className="mb-4 text-sm text-primary/60">{t('booking.form.direct')}</p>
             <div className="flex flex-wrap justify-center gap-4">
               <ActionLink
-                href="https://wa.me/12127318426?text=Hello%20Maison%20Elise%2C%20I%20would%20like%20to%20request%20an%20appointment"
+                href={SOCIAL_LINKS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 compact
@@ -241,16 +243,16 @@ export default function BookingForm() {
                 {t('common.whatsApp')}
               </ActionLink>
               <ActionLink
-                href="https://t.me/maisoneliseskin"
+                href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 compact
                 className="flex-1 sm:flex-none sm:px-6"
               >
-                {t('common.telegram')}
+                {t('common.instagram')}
               </ActionLink>
               <ActionLink
-                href="tel:+12127318426"
+                href={`tel:${BUSINESS.phoneE164}`}
                 compact
                 className="flex-1 sm:flex-none sm:px-6"
               >

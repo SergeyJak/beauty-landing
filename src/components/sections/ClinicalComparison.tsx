@@ -57,7 +57,7 @@ export default function ClinicalComparison() {
               
               <h3 className="font-serif text-3xl mb-2 text-primary">{electrolysis.title}</h3>
               <p className="eyebrow text-accent mb-6">{electrolysis.subtitle}</p>
-              <p className="body-small text-primary/70 mb-10 leading-relaxed">
+              <p className="body-small text-primary/95 mb-10 leading-relaxed font-medium">
                 {electrolysis.description}
               </p>
 
@@ -67,7 +67,7 @@ export default function ClinicalComparison() {
                     <div className="flex-shrink-0 h-6 w-6 rounded-full bg-accent/10 flex items-center justify-center text-accent">
                       <Check className="h-4 w-4" />
                     </div>
-                    <span className="text-sm font-semibold text-primary/80">{point.text}</span>
+                    <span className="text-sm font-bold text-primary">{point.text}</span>
                   </li>
                 ))}
               </ul>
@@ -82,22 +82,22 @@ export default function ClinicalComparison() {
             className="relative"
           >
             <div className="relative border border-primary/10 bg-ivory/50 p-8 md:p-12 h-full">
-              <h3 className="font-serif text-3xl mb-2 text-primary/60">{laser.title}</h3>
-              <p className="eyebrow text-primary/30 mb-6">{laser.subtitle}</p>
-              <p className="body-small text-primary/60 mb-10 leading-relaxed">
+              <h3 className="font-serif text-3xl mb-2 text-primary/80">{laser.title}</h3>
+              <p className="eyebrow text-primary/60 mb-6">{laser.subtitle}</p>
+              <p className="body-small text-primary/80 mb-10 leading-relaxed">
                 {laser.description}
               </p>
 
               <ul className="space-y-5">
                 {laser.points.map((point, i) => (
-                  <li key={i} className="flex items-center gap-4 opacity-70">
+                  <li key={i} className="flex items-center gap-4 opacity-90">
                     <div className={cn(
                       "flex-shrink-0 h-6 w-6 rounded-full flex items-center justify-center",
-                      point.status === 'cross' ? "bg-red-100 text-red-500" : "bg-primary/10 text-primary/40"
+                      point.status === 'cross' ? "bg-red-100 text-red-500" : "bg-primary/20 text-primary/60"
                     )}>
                       {point.status === 'cross' ? <X className="h-4 w-4" /> : <AlertCircle className="h-4 w-4" />}
                     </div>
-                    <span className="text-sm font-medium text-primary/60">{point.text}</span>
+                    <span className="text-sm font-semibold text-primary/80">{point.text}</span>
                   </li>
                 ))}
               </ul>
@@ -112,7 +112,7 @@ export default function ClinicalComparison() {
           className="mt-16 max-w-3xl mx-auto text-center"
         >
           <div className="luxury-rule mb-8" />
-          <p className="body-base italic text-primary/60 leading-relaxed">
+          <p className="body-base italic text-primary/80 leading-relaxed font-medium">
             {t('comparison.quote')}
           </p>
         </motion.div>

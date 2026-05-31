@@ -14,7 +14,7 @@
     "category": "Category",
     "verifiedClient": "Verified client",
     "whatsApp": "WhatsApp",
-    "telegram": "Telegram",
+    "instagram": "Instagram",
     "email": "Email",
     "callUs": "Call Us",
     "privacyPolicy": "Privacy Policy",
@@ -613,19 +613,14 @@
     "whatsappMessage": "Hello! I would like to learn about permanent hair removal with electrolysis at Crystal E Studio.",
     "social": [
       {
-        "id": "instagram",
-        "label": "Instagram",
-        "href": "https://instagram.com/crystal_e_studio"
-      },
-      {
-        "id": "tiktok",
-        "label": "TikTok",
-        "href": "https://tiktok.com/@crystal_e_studio"
-      },
-      {
         "id": "whatsapp",
         "label": "WhatsApp",
         "href": "https://wa.me/37128821341"
+      },
+      {
+        "id": "instagram",
+        "label": "Instagram",
+        "href": "https://instagram.com/crystal_e_studio"
       }
     ],
     "methods": [
