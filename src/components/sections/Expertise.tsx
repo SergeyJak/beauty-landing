@@ -59,7 +59,7 @@ export default function Expertise() {
                 <h3 className="mb-4 font-serif text-xl font-bold text-primary tracking-tight">
                   {item.title}
                 </h3>
-                <p className="body-small text-primary/60 leading-relaxed">
+                <p className="body-small text-primary/75 leading-relaxed">
                   {item.description}
                 </p>
               </Card>
@@ -79,13 +79,13 @@ export default function Expertise() {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="eyebrow text-accent mb-4 block">{t('expertise.medicalStandards.eyebrow')}</span>
-              <h3 className="section-heading text-4xl mb-6">{t('expertise.medicalStandards.title')}</h3>
-              <p className="body-base text-primary/70 mb-8 leading-relaxed">
+              <h3 className="section-heading text-4xl mb-6 text-primary">{t('expertise.medicalStandards.title')}</h3>
+              <p className="body-base text-primary/85 mb-8 leading-relaxed">
                 {t('expertise.medicalStandards.description')}
               </p>
               <ul className="space-y-4">
                 {(list<string>('expertise.medicalStandards.points') || []).map((point, i) => (
-                  <li key={i} className="flex items-center gap-3 body-small font-semibold text-primary/80">
+                  <li key={i} className="flex items-center gap-3 body-small font-semibold text-primary/95">
                     <div className="h-1.5 w-1.5 rounded-full bg-accent" />
                     {point}
                   </li>

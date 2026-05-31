@@ -124,32 +124,6 @@ export default function FAQ() {
             </motion.div>
           ))}
         </div>
-
-        {/* Still have questions? */}
-        <Reveal
-          delay={0.2}
-          whileHover={{ y: -5, borderColor: 'rgba(172, 145, 110, 0.28)' }}
-          className="premium-sheen mt-16 border border-primary/10 bg-ivory p-8 text-center shadow-[0_24px_70px_rgba(45,42,40,0.06)]"
-        >
-          <h3 className="mb-2 font-serif text-3xl text-primary">{t('faq.cta.title')}</h3>
-          <p className="mb-6 text-primary/65">
-            {t('faq.cta.description')}
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <ActionLink href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer">
-              {t('common.whatsApp')}
-            </ActionLink>
-            <ActionLink href={SOCIAL_LINKS.telegram} target="_blank" rel="noopener noreferrer">
-              {t('common.telegram')}
-            </ActionLink>
-            <ActionLink href={`mailto:${BUSINESS.email}`}>
-              {t('common.email')}
-            </ActionLink>
-            <ActionLink href="#contact" className="border-primary bg-primary text-ivory hover:bg-clay hover:text-ivory">
-              {t('header.bookNow')}
-            </ActionLink>
-          </div>
-        </Reveal>
       </div>
     </section>
   )

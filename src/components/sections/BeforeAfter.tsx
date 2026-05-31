@@ -90,16 +90,6 @@ export default function BeforeAfter() {
           ))}
         </motion.div>
 
-        <ConversionCTA
-          eyebrow={t('results.cta.eyebrow')}
-          title={t('results.cta.title')}
-          description={t('results.cta.description')}
-          primaryLabel={t('results.cta.primary')}
-          secondaryLabel={t('results.cta.secondary')}
-          secondaryHref="#why-electrolysis"
-          dark
-        />
-
         {/* Modal */}
         <AnimatePresence>
           {selectedImage && (

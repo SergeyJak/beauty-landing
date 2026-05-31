@@ -403,11 +403,19 @@
         "number": "100%",
         "label": "Rezultāti"
       }
-    ]
+    ],
+    "cta": {
+      "eyebrow": "Gatavi gludai ādai?",
+      "title": "Pieteikties konsultācijai šodien.",
+      "description": "Sazinieties ar mani, lai apspriestu jūsu mērķus un izveidotu personīgu plānu.",
+      "primary": "Pieteikties konsultācijai",
+      "secondary": "Sazināties"
+    }
   },
   "faq": {
     "eyebrow": "BUJ — Rīga",
     "title": "Viss, kas jāzina par elektrolīzi.",
+    "description": "Atbildes uz biežāk uzdotajiem jautājumiem par procesu un rezultātiem.",
     "items": [
       {
         "id": "1",

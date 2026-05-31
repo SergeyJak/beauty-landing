@@ -142,15 +142,6 @@ export default function Reviews() {
             <p className="eyebrow text-primary/45">{stats[2]?.label}</p>
           </motion.div>
         </Reveal>
-
-        <ConversionCTA
-          eyebrow={t('reviews.cta.eyebrow')}
-          title={t('reviews.cta.title')}
-          description={t('reviews.cta.description')}
-          primaryLabel={t('reviews.cta.primary')}
-          secondaryLabel={t('reviews.cta.secondary')}
-          secondaryHref="#contact"
-        />
       </div>
     </section>
   )
