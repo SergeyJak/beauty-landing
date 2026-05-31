@@ -42,9 +42,7 @@ export default function RootLayout({
                   if (['lv', 'ru', 'en'].indexOf(locale) > -1) {
                     document.documentElement.lang = locale;
                   }
-                  var stored = localStorage.getItem('theme');
-                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var theme = stored === 'dark' || (!stored && prefersDark) ? 'dark' : 'light';
+                  var theme = 'light';
                   document.documentElement.classList.toggle('dark', theme === 'dark');
                   document.documentElement.style.colorScheme = theme;
                 } catch (e) {}
