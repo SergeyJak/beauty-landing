@@ -148,7 +148,7 @@ export default async function LocaleLayout({
       )}
 
       <Header />
-      <main id="main-content" className="relative min-h-screen">
+      <main id="main-content" className="relative min-h-screen pt-28 md:pt-28">
         <ErrorBoundary>
           {children}
         </ErrorBoundary>

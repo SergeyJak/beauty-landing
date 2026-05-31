@@ -34,7 +34,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-[94vh] overflow-hidden bg-ivory pt-20 md:min-h-screen md:pt-24">
+    <section className="relative min-h-[calc(94vh-7rem)] overflow-hidden bg-ivory pt-4 md:min-h-[calc(100vh-7rem)] md:pt-8">
       <div className="absolute inset-0 z-0">
         <OptimizedImage
           src={HERO_IMAGE}
@@ -53,7 +53,7 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 grid min-h-[calc(94vh-5rem)] max-w-7xl grid-cols-1 items-center gap-10 px-4 pb-24 sm:px-6 md:min-h-[calc(100vh-6rem)] md:pb-16 lg:mx-auto lg:grid-cols-[1.12fr_0.88fr] lg:px-8"
+        className="relative z-10 grid min-h-[calc(94vh-9rem)] max-w-7xl grid-cols-1 items-center gap-10 px-4 pb-24 sm:px-6 md:min-h-[calc(100vh-11rem)] md:pb-16 lg:mx-auto lg:grid-cols-[1.12fr_0.88fr] lg:px-8"
       >
         <div className="max-w-4xl">
           <motion.div variants={itemVariants} className="mb-8 flex items-center gap-4">

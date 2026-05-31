@@ -1,8 +1,8 @@
 {
   "brand": {
-    "name": "Electrolysis Riga",
-    "shortName": "Electrolysis",
-    "footerName": "Electrolysis Riga"
+    "name": "Crystal E Studio",
+    "shortName": "Crystal E",
+    "footerName": "Crystal E Studio"
   },
   "common": {
     "benefits": "Benefits",
@@ -27,47 +27,47 @@
     "decline": "Decline"
   },
   "expertise": {
-    "eyebrow": "Clinical Standards",
+    "eyebrow": "Studio Standards",
     "title": "Professional Excellence in Permanent Hair Removal",
-    "description": "We combine clinical precision with a patient-first approach to deliver the highest standard of electrolysis care.",
+    "description": "I combine technical precision with a personal, caring approach to deliver the highest standard of electrolysis in Riga.",
     "certified": {
       "title": "Certified Electrologist",
-      "description": "Trained and certified by international medical-grade electrolysis standards."
+      "description": "Trained and certified by international electrolysis standards to ensure safe and effective results."
     },
     "hygiene": {
-      "title": "Medical Hygiene",
-      "description": "Strict sterilization protocols using medical-grade equipment for every patient."
+      "title": "Studio Hygiene",
+      "description": "Strict sterilization protocols using professional equipment for every client."
     },
     "experience": {
       "title": "Professional Experience",
-      "description": "Over 15 years specializing exclusively in permanent hair removal."
+      "description": "Specializing exclusively in permanent hair removal with a focus on client comfort."
     },
     "consultation": {
-      "title": "Expert Consultation",
-      "description": "In-depth skin and hair analysis to create a personalized treatment plan."
+      "title": "Personal Consultation",
+      "description": "In-depth skin and hair analysis to create your personalized treatment plan."
     },
     "medicalStandards": {
       "eyebrow": "Care Standards",
       "title": "Uncompromising hygiene and comfort",
-      "description": "Your safety is our priority. We follow proven hygiene protocols and keep every session clean, private, and calm.",
+      "description": "Your safety is my priority. I follow proven hygiene protocols and keep every session clean, private, and calm.",
       "points": [
         "Single-use sterile disposable probes",
         "Thorough sterilization of tools",
-        "Private treatment space with expert care",
+        "Private studio space with expert care",
         "Regular professional hygiene checks"
       ]
     }
   },
   "comparison": {
     "eyebrow": "Permanent vs. Temporary",
-    "title": "Science-backed Comparison: Electrolysis vs. Laser",
+    "title": "The Science: Electrolysis vs. Laser",
     "description": "Understanding the fundamental biological difference between permanent removal and temporary reduction.",
     "electrolysis": {
       "title": "Electrolysis",
       "subtitle": "The Gold Standard",
-      "description": "The only FDA-approved method for truly permanent hair removal. Works by destroying the follicle growth center.",
+      "description": "The only scientifically proven method for truly permanent hair removal. It destroys the follicle growth center.",
       "points": [
-        "FDA-Approved Permanent",
+        "Scientifically Proven Permanent",
         "Works on All Hair Colors",
         "Effective on All Skin Tones",
         "Precision Individual Treatment",
@@ -79,14 +79,14 @@
       "subtitle": "Temporary Reduction",
       "description": "A popular method that uses light energy to damage follicles. Requires lifelong maintenance sessions.",
       "points": [
-        "FDA-Approved Reduction",
+        "Approved for Hair Reduction",
         "Ineffective on Light/Red Hair",
         "Risks on Darker Skin Tones",
         "Maintenance Required Yearly",
         "Higher Long-Term Cost"
       ]
     },
-    "quote": "\"While Laser Hair Removal offers temporary reduction, it does not permanently stop hair growth. Electrolysis remains the only medical solution for 100% hair-free results across all biological variations.\""
+    "quote": "\"While Laser Hair Removal offers temporary reduction, it does not permanently stop hair growth. Electrolysis remains the only solution for 100% hair-free results across all biological variations.\""
   },
 
   "header": {
@@ -103,26 +103,26 @@
     }
   },
   "hero": {
-    "eyebrow": "Certified Electrologist • Science-backed permanent removal",
-    "title": "Permanent hair removal with electrolysis.",
-    "description": "Electrolysis is the only scientifically proven permanent hair removal method. It works safely on all skin tones and hair colors, from a private specialist in Riga.",
+    "eyebrow": "Certified Electrologist • Permanent hair removal",
+    "title": "The only way to remove hair permanently.",
+    "description": "Electrolysis is the only scientifically proven permanent hair removal method. Safe for all skin tones and hair colors, in a private studio in Riga.",
     "primaryCTA": "Message on WhatsApp",
     "secondaryCTA": "Learn How It Works",
     "trustedBy": "Trusted by Riga clients",
-    "included": "Private practice • Riga only",
+    "included": "Private practice • Riga",
     "location": "Latgales iela 267, Riga",
     "stats": {
       "experienceNumber": "15+",
       "experience": "Years Experience",
-      "approvedNumber": "FDA",
-      "approved": "Approved",
+      "approvedNumber": "ONLY",
+      "approved": "Permanent Method",
       "permanentNumber": "100%",
       "permanent": "Permanent"
     },
     "sidecard": {
-      "eyebrow": "Medical-Grade",
+      "eyebrow": "Crystal E Studio",
       "title": "Electrolysis",
-      "location": "Riga centre",
+      "location": "Riga",
       "specialist": "Certified specialist",
       "imageAlt": "Electrolysis treatment"
     }
@@ -130,7 +130,7 @@
   "whyElectrolysis": {
     "eyebrow": "How It Compares",
     "title": "Why Electrolysis is the Only Permanent Solution",
-    "description": "Electrolysis is the FDA-approved method for permanent hair removal. Unlike temporary methods, electrolysis destroys the hair follicle completely.",
+    "description": "Electrolysis is the only method for permanent hair removal. Unlike temporary methods, electrolysis destroys the hair follicle completely.",
     "methods": [
       {
         "id": "electrolysis",
@@ -140,10 +140,10 @@
         "badge": "PERMANENT",
         "description": "Destroys hair at the root permanently",
         "benefits": [
-          "FDA-approved permanent method",
+          "Scientifically proven permanent method",
           "Works on all skin types",
           "Works on all hair colors",
-          "Electrolysis energy destroys follicle"
+          "Destroys follicle growth center"
         ],
         "limitations": []
       },
@@ -158,7 +158,7 @@
           "Good for large areas"
         ],
         "limitations": [
-          "Not permanent",
+          "Not permanent (reduction only)",
           "Requires ongoing treatments",
           "Not effective on light hair",
           "Risk of skin damage",
@@ -201,14 +201,14 @@
     ],
     "explainer": {
       "title": "The Permanent Difference",
-      "paragraph1": "Electrolysis works by sending a slight electrical current through a fine probe inserted into each hair follicle. This destroys the follicle's ability to produce hair permanently. Once destroyed, that follicle will never regrow hair, not in weeks, months, or years.",
-      "paragraph2": "This is why electrolysis is the only FDA-approved permanent hair removal method. While other methods may reduce hair, only electrolysis offers true permanence."
+      "paragraph1": "Electrolysis works by sending a slight electrical current through a fine probe inserted into each hair follicle. This destroys the follicle's ability to produce hair permanently. Once destroyed, that follicle will never regrow hair.",
+      "paragraph2": "This is why electrolysis is the only scientifically proven permanent hair removal method. While other methods may reduce hair, only electrolysis offers true permanence."
     }
   },
   "benefits": {
     "eyebrow": "Advantages",
     "title": "Benefits of Permanent Hair Removal",
-    "description": "Discover why thousands choose electrolysis for lasting results and medical-grade safety.",
+    "description": "Discover why electrolysis is the preferred choice for lasting results and safety.",
     "items": [
       {
         "id": "permanent",
@@ -226,19 +226,19 @@
         "id": "allHairColors",
         "icon": "◼",
         "title": "All Hair Colors",
-        "description": "Effective on blonde, red, white, and dark hair, even color that laser can't treat."
+        "description": "Effective on blonde, red, white, and dark hair, even colors that laser can't treat."
       },
       {
         "id": "precision",
         "icon": "●",
         "title": "Precise Control",
-        "description": "Target individual hairs with surgical precision. Ideal for facial hair and sensitive areas."
+        "description": "Target individual hairs with precision. Ideal for facial hair and sensitive areas."
       },
       {
         "id": "safe",
         "icon": "★",
-        "title": "Medically Safe",
-        "description": "FDA-approved, no UV radiation, minimal risk of side effects when done by certified professionals."
+        "title": "Proven Safety",
+        "description": "Scientifically proven, no UV radiation, minimal risk of side effects when done by a certified specialist."
       },
       {
         "id": "costEffective",
@@ -248,7 +248,7 @@
       }
     ],
     "science": {
-      "title": "Science-Based Results",
+      "title": "Results for Your Life",
       "items": [
         "No more daily hair removal routines",
         "Say goodbye to razor burns and ingrown hairs",
@@ -257,23 +257,23 @@
       ]
     },
     "timeline": {
-      "title": "Treatment Timeline",
+      "title": "Your Journey",
       "items": [
         {
-          "phase": "Initial Consultation",
-          "duration": "Free"
+          "phase": "First Consultation",
+          "duration": "Personal Assessment"
         },
         {
           "phase": "First Treatment",
-          "duration": "Variable (30-90 min)"
+          "duration": "30-90 min"
         },
         {
           "phase": "Follow-up Sessions",
           "duration": "Typically 6-12 months"
         },
         {
-          "phase": "Results",
-          "duration": "Permanent after final session"
+          "phase": "Permanent Results",
+          "duration": "Hair-free forever"
         }
       ]
     }
@@ -281,7 +281,7 @@
   "hairGrowthPhases": {
     "eyebrow": "Hair Biology",
     "title": "Understanding Hair Growth Cycles",
-    "description": "Hair doesn't grow continuously. Understanding these three phases explains why permanent hair removal requires multiple treatments.",
+    "description": "Hair doesn't grow continuously. Understanding these three phases explains why permanent removal requires multiple sessions.",
     "percentageLabel": "Percentage of Hair",
     "durationLabel": "Phase Duration",
     "characteristics": "Key Characteristics",
@@ -296,10 +296,10 @@
         "duration": "2-7 years",
         "description": "Hair actively grows from the follicle. This is the only phase when electrolysis can permanently destroy the follicle.",
         "details": [
-          "Hair is thickest and most pigmented",
-          "Follicle actively produces hair",
+          "Hair is actively growing",
+          "Follicle is fully connected",
           "Best time for treatment",
-          "Requires direct treatment to be permanent"
+          "Requires direct treatment for permanence"
         ],
         "color": "from-accent/20 to-champagne/10"
       },
@@ -309,12 +309,12 @@
         "subtitle": "Transition Phase",
         "percentage": "2-3%",
         "duration": "2-3 weeks",
-        "description": "Hair transitions from growth to rest. The follicle begins to separate from the dermal papilla.",
+        "description": "Hair transitions from growth to rest. The follicle begins to separate from the root.",
         "details": [
           "Hair detaches from root",
           "Follicle shrinks slightly",
           "Hair may feel looser",
-          "Lasts only 2-3 weeks"
+          "Short transition phase"
         ],
         "color": "from-primary/10 to-accent/5"
       },
@@ -324,127 +324,127 @@
         "subtitle": "Resting Phase",
         "percentage": "10-15%",
         "duration": "5-14 weeks",
-        "description": "Hair rests in the follicle before being shed. The follicle is dormant and cannot be treated.",
+        "description": "Hair rests in the follicle before shedding. The follicle is dormant and cannot be treated effectively.",
         "details": [
-          "Hair is no longer attached to root",
-          "Will eventually fall out naturally",
-          "New hair begins forming below",
-          "Cannot be treated during this phase"
+          "Hair is no longer attached",
+          "Will fall out naturally",
+          "New hair forming below",
+          "Dormant stage"
         ],
         "color": "from-primary/5 to-primary/10"
       }
     ],
     "multiple": {
-      "title": "Why Multiple Treatments Are Needed",
-      "paragraph1": "At any given time, only about 85% of hair is in the Anagen growth phase. The remaining 10-15% is in Catagen or Telogen phases and cannot be treated. This means your first appointment can only treat the actively growing hairs.",
-      "paragraph2": "Over the next several weeks, new hairs from Catagen and Telogen phases will enter Anagen and become visible. These are treated in follow-up sessions until all hairs have been permanently removed. This typically takes 6-12 months depending on body area and individual hair growth patterns."
+      "title": "Why Multiple Sessions Are Needed",
+      "paragraph1": "At any given time, only about 85% of hair is in the Anagen growth phase. The remaining 10-15% is resting and cannot be treated. This means your first appointment treats the actively growing hairs.",
+      "paragraph2": "Over the next several weeks, new hairs from other phases will enter Anagen and become visible. These are treated in follow-up sessions until all hairs have been permanently removed. This typically takes 6-12 months."
     },
     "steps": [
       {
         "number": "1",
         "label": "First Treatment",
-        "desc": "Treats 85% of hairs in Anagen phase"
+        "desc": "Treats active Anagen hairs"
       },
       {
         "number": "2-3",
         "label": "Follow-up Sessions",
-        "desc": "Treats newly visible hairs from other phases"
+        "desc": "Treats newly visible hairs"
       },
       {
         "number": "∞",
         "label": "Permanent Result",
-        "desc": "No more hair growth once complete"
+        "desc": "No more hair growth"
       }
     ]
   },
   "howItWorks": {
     "eyebrow": "The Process",
     "title": "How Electrolysis Works",
-    "description": "Step-by-step explanation of our treatment process and what to expect during your appointment.",
+    "description": "Step-by-step explanation of my treatment process and what to expect during your appointment.",
     "whatHappens": "What Happens",
     "steps": [
       {
         "number": "01",
-        "title": "Free Consultation",
-        "description": "Meet with our certified electrologist to discuss your hair removal goals, skin type, and treatment expectations. We'll answer all your questions.",
+        "title": "First Consultation",
+        "description": "I'll assess your hair and skin, answer your questions, and create your personal treatment plan.",
         "details": [
-          "Review medical history",
-          "Assess hair and skin type",
-          "Create personalized treatment plan",
-          "Discuss timeline and costs"
+          "Review hair/skin type",
+          "Discuss goals",
+          "Create treatment plan",
+          "Discuss timeline"
         ]
       },
       {
         "number": "02",
-        "title": "Skin Preparation",
-        "description": "We cleanse and prepare your skin. You may apply numbing cream if desired. The area is made comfortable for treatment.",
+        "title": "Preparation",
+        "description": "I cleanse the area and ensure you are comfortable. We can discuss numbing options if needed.",
         "details": [
           "Gentle cleansing",
-          "Optional numbing cream",
-          "Position for comfort",
-          "Final assessment"
+          "Ensure comfort",
+          "Skin assessment",
+          "Final preparation"
         ]
       },
       {
         "number": "03",
-        "title": "Hair Treatment",
-        "description": "A fine probe is gently inserted into each hair follicle. A quick electrical current destroys the follicle permanently. The probe never pierces the skin.",
+        "title": "Treatment",
+        "description": "A fine probe is gently inserted into each follicle. A quick pulse of energy destroys the follicle's ability to grow hair.",
         "details": [
-          "Probe inserted into follicle",
-          "Electrical current applied",
-          "Follicle permanently destroyed",
-          "Hair is gently removed"
+          "Precise insertion",
+          "Energy pulse applied",
+          "Follicle destroyed",
+          "Hair gently removed"
         ]
       },
       {
         "number": "04",
-        "title": "Skin Soothing",
-        "description": "After treatment, we apply soothing products to reduce any redness. Most clients see minimal to no visible reaction.",
+        "title": "Skin Care",
+        "description": "After treatment, I apply soothing products to calm the skin and provide aftercare guidance.",
         "details": [
-          "Calming serum applied",
-          "Anti-inflammatory treatment",
-          "Aftercare instructions given",
-          "Schedule follow-up session"
+          "Soothing serum",
+          "Skin calming",
+          "Aftercare advice",
+          "Plan next session"
         ]
       }
     ],
     "science": {
-      "title": "The Science Behind Electrolysis",
-      "methodTitle": "Galvanic Method",
-      "methodDescription": "A direct electrical current creates a chemical reaction that destroys the follicle. This method is particularly effective and causes minimal discomfort.",
+      "title": "The Science of Permanence",
+      "methodTitle": "Precise Energy",
+      "methodDescription": "A precise electrical current creates a reaction that destroys the follicle growth center. This method is effective and safe.",
       "methodItems": [
-        "Deep follicle destruction",
+        "Follicle destruction",
         "Works on all skin types"
       ],
       "permanentTitle": "Why It's Permanent",
-      "permanentDescription": "The electrical current destroys the dermal papilla and matrix cells, the biological structures responsible for hair production. Once destroyed, these cannot regenerate.",
+      "permanentDescription": "The current destroys the biological structures responsible for hair production. Once destroyed, these cells cannot regenerate.",
       "permanentItems": [
         "Biological permanence",
-        "FDA-approved method"
+        "Scientifically proven"
       ]
     },
     "timeline": {
-      "title": "Treatment Timeline",
+      "title": "Your Timeline",
       "items": [
         {
-          "time": "Week 1-2",
-          "action": "Schedule first appointment"
+          "time": "Week 1",
+          "action": "First consultation"
         },
         {
-          "time": "Week 3-6",
-          "action": "First visible hairs shed"
+          "time": "Week 2-4",
+          "action": "Initial treatments"
         },
         {
           "time": "Month 2-3",
-          "action": "Schedule follow-up session"
+          "action": "Progress check"
         },
         {
           "time": "Month 6-12",
-          "action": "Complete remaining sessions"
+          "action": "Complete treatments"
         },
         {
           "time": "Ongoing",
-          "action": "Permanent hair-free results"
+          "action": "Hair-free forever"
         }
       ]
     },
@@ -453,31 +453,31 @@
       "items": [
         {
           "tip": "Avoid Sun",
-          "desc": "Keep treated area protected for 48 hours"
+          "desc": "Keep area protected for 48 hours"
         },
         {
           "tip": "Skip Makeup",
-          "desc": "Wait 24 hours before applying cosmetics"
+          "desc": "Wait 24 hours before applying products"
         },
         {
           "tip": "Moisturize",
-          "desc": "Use gentle, fragrance-free moisturizer"
+          "desc": "Use gentle, fragrance-free products"
         },
         {
           "tip": "No Picking",
-          "desc": "Let skin heal naturally, don't pick at hairs"
+          "desc": "Let skin heal naturally"
         },
         {
           "tip": "Stay Cool",
-          "desc": "Avoid hot showers and strenuous exercise"
+          "desc": "Avoid hot showers and exercise"
         }
       ]
     }
   },
   "results": {
     "eyebrow": "Results",
-    "title": "Visible, permanent results from electrolysis.",
-    "description": "Real client transformations with medical-grade treatment. Before and after gallery shows treatment results across different body areas.",
+    "title": "Visible, permanent results.",
+    "description": "Real transformations from my studio. My before and after gallery shows results across different areas.",
     "gallery": [
       {
         "id": "1",
@@ -496,60 +496,60 @@
       },
       {
         "id": "4",
-        "title": "Full Leg Electrolysis",
+        "title": "Leg Electrolysis",
         "category": "Permanent leg smoothness"
       }
     ],
     "cta": {
       "eyebrow": "Ready for permanent results?",
-      "title": "Start your electrolysis journey today.",
-      "description": "Schedule a free consultation with our certified electrologist. We'll assess your hair and skin, discuss treatment timeline, and answer all your questions.",
+      "title": "Start your journey today.",
+      "description": "Schedule a personal consultation. We'll assess your hair and skin, discuss your timeline, and answer your questions.",
       "primary": "Book Consultation",
       "secondary": "Learn More"
     }
   },
   "reviews": {
     "eyebrow": "Testimonials",
-    "title": "Real results from our clients.",
-    "description": "Join hundreds of satisfied clients who have achieved permanent hair removal through our FDA-approved electrolysis treatments.",
+    "title": "Real results from my clients.",
+    "description": "Satisfied clients who have achieved permanent hair removal through my electrolysis treatments.",
     "items": [
       {
         "id": "1",
-        "name": "Sarah Martinez",
+        "name": "Sarah M.",
         "title": "Facial hair removal",
-        "text": "After years of waxing and plucking, I finally have a permanent solution. My chin is completely hair-free and the results are incredible. The treatment was quick and professional.",
+        "text": "After years of waxing and plucking, I finally have a permanent solution. My chin is completely hair-free and the results are incredible. The treatment was professional and gentle.",
         "rating": 5
       },
       {
         "id": "2",
-        "name": "Jessica Chen",
-        "title": "Full electrolysis client",
-        "text": "I was nervous before my first appointment, but the specialist was incredibly knowledgeable and put me at ease. The permanence is real, no more waxing appointments or razor bumps.",
+        "name": "Jessica C.",
+        "title": "Regular client",
+        "text": "I was nervous before my first appointment, but the specialist was so caring and put me at ease. The permanence is real, no more waxing or razor bumps.",
         "rating": 5
       },
       {
         "id": "3",
-        "name": "Amanda Foster",
-        "title": "Regular client",
-        "text": "The clinic is so clean and professional. The specialist is certified and really knows her craft. Each session brings me closer to permanent hair freedom. Highly recommend.",
+        "name": "Amanda F.",
+        "title": "Full course",
+        "text": "The studio is so calm and private. The specialist really knows her craft. Each session brings me closer to permanent freedom from unwanted hair.",
         "rating": 5
       },
       {
         "id": "4",
-        "name": "Rebecca Thompson",
+        "name": "Rebecca T.",
         "title": "Underarm treatment",
-        "text": "Finally permanent results after years of shaving and waxing. The cost is worth it compared to years of temporary hair removal methods. My skin has never been smoother.",
+        "text": "Finally permanent results after years of shaving. The cost is worth it for the peace of mind. My skin has never been smoother.",
         "rating": 5
       }
     ],
     "stats": [
       {
-        "number": "4.9/5",
+        "number": "5.0",
         "label": "Client Rating"
       },
       {
         "number": "500+",
-        "label": "Treatments Completed"
+        "label": "Sessions Completed"
       },
       {
         "number": "100%",
@@ -558,103 +558,103 @@
     ],
     "cta": {
       "eyebrow": "Ready to start?",
-      "title": "Schedule your free consultation today.",
-      "description": "Meet with our certified electrologist to discuss your hair removal goals, treatment timeline, and answer any questions you may have.",
+      "title": "Schedule your consultation today.",
+      "description": "Meet me to discuss your hair removal goals, treatment timeline, and any questions you have.",
       "primary": "Book Consultation",
-      "secondary": "Contact Us"
+      "secondary": "Contact Me"
     }
   },
   "faq": {
     "eyebrow": "Electrolysis FAQ — Riga",
-    "title": "Everything you need to know about electrolysis.",
-    "description": "Answers to common questions about the treatment process, results, and permanent hair removal.",
+    "title": "Everything you need to know.",
+    "description": "Answers to common questions about the treatment, results, and permanent removal.",
     "items": [
       {
         "id": "1",
         "question": "Is electrolysis really permanent?",
-        "answer": "Yes. Electrolysis is FDA-approved as the only permanent method of hair removal. Once the hair follicle is treated and destroyed, it cannot produce hair again. Results are permanent."
+        "answer": "Yes. Electrolysis is the only scientifically proven permanent method of hair removal. Once the hair follicle is destroyed, it cannot produce hair again. Results are permanent."
       },
       {
         "id": "2",
-        "question": "How long does electrolysis take?",
-        "answer": "Treatment time varies based on the area and hair density. Small areas like the upper lip may take 15-30 minutes, while larger areas can take 1-2 hours. Your electrologist will provide a timeline at your consultation."
+        "question": "How long does a session take?",
+        "answer": "Time varies based on the area. Small areas like the upper lip may take 15-30 minutes, while larger areas can take 1-2 hours. I will provide a timeline at our consultation."
       },
       {
         "id": "3",
         "question": "How many sessions will I need?",
-        "answer": "Most clients need 6-12 sessions spread over 6-12 months. This is because only hair in the active growth phase can be treated permanently. Spacing allows new hairs to enter the growth phase."
+        "answer": "Most clients need 6-12 sessions over several months. This is because only hair in the active growth phase can be treated permanently."
       },
       {
         "id": "4",
-        "question": "Does electrolysis hurt?",
-        "answer": "Electrolysis causes minimal discomfort. Most clients describe it as slight tingling or warmth. Numbing cream is available if desired. The sensation varies by individual tolerance and area being treated."
+        "question": "Does it hurt?",
+        "answer": "Electrolysis causes minimal discomfort, often described as a slight tingling. I prioritize your comfort throughout the session."
       },
       {
         "id": "5",
-        "question": "Will there be redness or marks after treatment?",
-        "answer": "Most clients experience minimal redness that fades within hours to a few days. Some may see slight marks that disappear quickly. We apply soothing products immediately after treatment to minimize any reaction."
+        "question": "Will there be redness after treatment?",
+        "answer": "Most clients experience minimal redness that fades within hours. I apply soothing products immediately after treatment."
       },
       {
         "id": "6",
-        "question": "Can electrolysis work on all skin types and hair colors?",
-        "answer": "Yes. Unlike laser hair removal, electrolysis works on all skin types and all hair colors, including blonde, red, gray, and white. This makes it the most inclusive permanent hair removal method."
+        "question": "Does it work on all hair colors?",
+        "answer": "Yes. Electrolysis works on all skin types and all hair colors, including blonde, red, gray, and white. It is the most inclusive method available."
       }
     ],
     "cta": {
       "title": "Ready to start your journey?",
-      "description": "Contact us for a free consultation or to answer any additional questions about permanent hair removal."
+      "description": "Contact me for a consultation or to answer any questions about permanent hair removal."
     }
   },
   "contact": {
     "eyebrow": "Location",
-    "title": "Medical-grade electrolysis studio in Riga",
-    "description": "Located on the Upper East Side with comfortable, private treatment rooms. Contact us to schedule your free consultation or ask any questions about permanent hair removal.",
-    "follow": "Follow",
-    "whatsappMessage": "Hello! I would like to learn about permanent hair removal with electrolysis in Riga.",
+    "title": "Crystal E Studio in Riga",
+    "description": "A private studio with a calm atmosphere. Contact me to schedule your consultation or ask any questions about permanent hair removal.",
+    "follow": "Follow Me",
+    "whatsappMessage": "Hello! I would like to learn about permanent hair removal with electrolysis at Crystal E Studio.",
     "social": [
       {
         "id": "instagram",
         "label": "Instagram",
-        "href": "https://instagram.com/electrolizeriga"
+        "href": "https://instagram.com/crystal_e_studio"
       },
       {
         "id": "tiktok",
         "label": "TikTok",
-        "href": "https://tiktok.com/@electrolizeriga"
+        "href": "https://tiktok.com/@crystal_e_studio"
       },
       {
         "id": "whatsapp",
         "label": "WhatsApp",
-        "href": "https://wa.me/37126123456"
+        "href": "https://wa.me/37128821341"
       }
     ],
     "methods": [
       {
         "title": "Address",
         "label": "AD",
-        "content": "Elizabetes iela 45, Centrs, Rīga, LV-1010"
+        "content": "Latgales iela 267, Rīga, LV-1063"
       },
       {
         "title": "Phone",
         "label": "PH",
-        "content": "+371 26 123 456",
-        "action": "tel:+37126123456"
+        "content": "+371 28 821 341",
+        "action": "tel:+37128821341"
       },
       {
         "title": "Email",
         "label": "EM",
-        "content": "info@electrolizeriga.lv",
-        "action": "mailto:info@electrolizeriga.lv"
+        "content": "crystalstudio@gmail.com",
+        "action": "mailto:crystalstudio@gmail.com"
       },
       {
         "title": "Hours",
         "label": "HR",
-        "content": "Tue-Fri: 10am-6pm | Sat: 10am-4pm | Sun-Mon: Closed"
+        "content": "By appointment only"
       }
     ],
-    "address": "Elizabetes iela 45, Centrs, Rīga, LV-1010",
-    "phone": "+371 26 123 456",
-    "email": "info@electrolizeriga.lv",
+    "address": "Latgales iela 267, Rīga, LV-1063",
+    "phone": "+371 28 821 341",
+    "email": "crystalstudio@gmail.com",
     "socialAria": {
       "instagram": "Instagram",
       "tiktok": "TikTok",
@@ -664,57 +664,57 @@
   "booking": {
     "eyebrow": "Reserve",
     "title": "Request a private appointment.",
-    "description": "Share your preferred treatment, timing, and any skin sensitivities or treatment goals. The studio will confirm availability and preparation notes.",
-    "successTitle": "Booking submitted successfully.",
-    "successDescription": "We'll contact you soon to confirm your appointment.",
+    "description": "Share your preferred area and timing. I will confirm availability and send you preparation notes.",
+    "successTitle": "Request submitted.",
+    "successDescription": "I'll contact you soon to confirm your appointment.",
     "errorTitle": "Error",
     "validation": {
       "name": "Please enter your name",
       "phone": "Please enter your phone number",
       "phoneInvalid": "Please enter a valid phone number",
       "emailInvalid": "Please enter a valid email address",
-      "service": "Please select a service",
-      "submit": "Failed to submit booking",
+      "service": "Please select an area",
+      "submit": "Failed to submit request",
       "generic": "Something went wrong"
     },
     "form": {
-      "name": "Full Name",
+      "name": "Your Name",
       "phone": "Phone Number",
       "email": "Email Address",
-      "service": "Select Service",
-      "servicePlaceholder": "Select preferred treatment...",
+      "service": "Area to Treat",
+      "servicePlaceholder": "Select area...",
       "comment": "Additional Notes",
-      "commentPlaceholder": "Example: area to treat, skin sensitivity, preferred appointment window, or questions.",
+      "commentPlaceholder": "Example: area, skin sensitivity, or preferred time.",
       "placeholders": {
-        "name": "Mara Chen",
-        "phone": "+1 (212) 555-0126",
-        "email": "mara@example.com"
+        "name": "Sarah J.",
+        "phone": "+371 28 821 341",
+        "email": "sarah@example.com"
       },
-      "consentPrefix": "By submitting this form, you agree to our",
+      "consentPrefix": "By submitting, you agree to the",
       "consentAnd": "and",
       "submit": "Request Appointment",
       "submitting": "Submitting...",
-      "direct": "Prefer to contact us directly?"
+      "direct": "Prefer to message directly?"
     },
     "services": [
-      "Facial Hair Removal",
-      "Underarm Hair Removal",
-      "Bikini Line Treatment",
-      "Full Leg Electrolysis",
+      "Facial Area",
+      "Underarm Area",
+      "Bikini Area",
+      "Legs",
       "Consultation"
     ],
     "api": {
       "missingFields": "Missing required fields",
-      "success": "Booking request received! We will contact you soon.",
-      "failed": "Failed to process booking request"
+      "success": "Request received! I will contact you soon.",
+      "failed": "Failed to process request"
     }
   },
   "footer": {
-    "description": "Certified electrolysis specialist in Riga. Private practice for permanent facial and bikini hair removal.",
+    "description": "Certified electrolysis specialist in Riga. Private studio for permanent hair removal.",
     "quickLinks": "Quick Links",
-    "services": "Services",
-    "followUs": "Follow Us",
-    "copyright": "© {year} Electrolysis Riga. All rights reserved.",
+    "services": "Areas",
+    "followUs": "Follow Me",
+    "copyright": "© {year} Crystal E Studio. All rights reserved.",
     "social": {
       "instagram": "Instagram",
       "facebook": "Facebook",
@@ -728,7 +728,7 @@
   },
   "stickyCta": {
     "button": "Message on WhatsApp",
-    "note": "Fast replies via WhatsApp and Telegram"
+    "note": "Personal replies via WhatsApp"
   },
   "accessibility": {
     "mainNavigation": "Main navigation"
@@ -758,15 +758,14 @@
     }
   },
   "metadata": {
-    "title": "Electrolysis Riga | Permanent Hair Removal",
-    "description": "Certified electrolysis in Riga — the only FDA-approved permanent hair removal. Free consultation, private suites, all skin types and hair colours.",
+    "title": "Crystal E Studio | Permanent Hair Removal Riga",
+    "description": "Certified electrolysis in Riga — the only scientifically proven permanent hair removal. Personal care, private studio, all skin and hair types.",
     "keywords": [
       "electrolysis Riga",
       "permanent hair removal Riga",
-      "electrolysis Latvia",
-      "hair removal Riga",
-      "certified electrologist",
-      "electrolysis city centre"
+      "Crystal E Studio",
+      "certified electrologist Riga",
+      "permanent hair removal Latvia"
     ]
   },
   "trust": {
@@ -774,39 +773,37 @@
     "badges": [
       {
         "id": "certified",
-        "label": "Certified electrologist"
+        "label": "Certified specialist"
       },
       {
-        "id": "fda",
-        "label": "FDA-approved method"
+        "id": "proven",
+        "label": "Proven permanent method"
       },
       {
         "id": "private",
-        "label": "Private treatment suites"
+        "label": "Private studio"
       },
       {
         "id": "consult",
-        "label": "Free consultation"
+        "label": "Personal consultation"
       }
     ]
   },
   "schema": {
     "openingHours": [
-      "Mo-Su closed by appointment",
-      "Tu-Fr 10:00-18:00",
-      "Sa 10:00-16:00"
+      "Mo-Su by appointment only"
     ]
   },
   "conversion": {
     "results": {
       "eyebrow": "Ready to begin?",
-      "title": "Book your free consultation in Riga",
-      "description": "Turn visible progress into lasting confidence with a personalised treatment plan."
+      "title": "Book your consultation in Riga",
+      "description": "Turn visible progress into lasting confidence with a personal treatment plan."
     },
     "reviews": {
-      "eyebrow": "Join our clients",
+      "eyebrow": "Join my clients",
       "title": "Your permanent result starts with a consultation",
-      "description": "Book with no obligation — we explain the process, timeline, and pricing clearly."
+      "description": "Book with no obligation — I'll explain everything clearly."
     }
   }
 }
