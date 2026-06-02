@@ -99,17 +99,18 @@ export default function Header() {
             </button>
           </div>
         </div>
+      </nav>
 
-        <AnimatePresence>
-          {isOpen && (
-            <>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setIsOpen(false)}
-                className="fixed inset-0 z-[99] bg-black/40 backdrop-blur-sm"
-              />
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 z-[99] bg-black/40 backdrop-blur-sm"
+            />
               <motion.div
                 initial={{ x: '100%' }}
                 animate={{ x: 0 }}
@@ -156,7 +157,6 @@ export default function Header() {
             </>
           )}
         </AnimatePresence>
-      </nav>
     </header>
   )
 }
