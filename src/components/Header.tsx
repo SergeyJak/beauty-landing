@@ -53,8 +53,8 @@ export default function Header() {
             <div className="flex h-10 md:h-12 w-10 md:w-12 items-center justify-center border-2 border-primary/10 transition-all group-hover:border-accent">
               <span className="font-serif text-lg md:text-2xl text-primary">E</span>
             </div>
-            <div className="hidden sm:flex flex-col">
-              <span className="font-serif text-sm md:text-2xl font-semibold text-primary leading-tight">
+            <div className="flex flex-col">
+              <span className="font-serif text-xs md:text-2xl font-semibold text-primary leading-tight">
                 {t('brand.name')}
               </span>
               <span className="hidden md:inline text-[0.6rem] font-bold uppercase tracking-[0.2em] text-accent">Certified Electrolysis Specialist</span>
@@ -115,11 +115,11 @@ export default function Header() {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="fixed inset-y-0 right-0 z-[100] w-80 bg-white shadow-[-30px_0_90px_rgba(23,19,15,0.2)]"
+                className="fixed inset-y-0 right-0 z-[100] w-80 bg-white shadow-[-30px_0_90px_rgba(23,19,15,0.2)] overflow-y-auto"
               >
                 <div className="flex flex-col h-full p-8 pt-28">
-                  <nav className="flex-1">
-                    <ul className="space-y-6">
+                  <nav className="flex-1 overflow-y-auto">
+                    <ul className="space-y-3">
                       {navLinks.map((link, index) => (
                         <motion.li
                           key={link.href}
@@ -130,7 +130,7 @@ export default function Header() {
                           <a
                             href={link.href}
                             onClick={() => setIsOpen(false)}
-                            className="font-serif text-4xl text-primary hover:text-accent transition-colors"
+                            className="font-serif text-lg md:text-2xl text-primary hover:text-accent transition-colors inline-block"
                           >
                             {t(link.key)}
                           </a>
