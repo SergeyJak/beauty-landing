@@ -568,6 +568,30 @@
     "button": "Написать в WhatsApp",
     "note": "Личный ответ в WhatsApp"
   },
+  "theme": {
+    "switchToLight": "Светлый режим",
+    "switchToDark": "Темный режим",
+    "lightMode": "Светлый режим",
+    "darkMode": "Темный режим"
+  },
+  "languageSwitcher": {
+    "label": "Язык",
+    "selectLanguage": "Выберите язык",
+    "locales": {
+      "lv": {
+        "native": "Latviešu",
+        "name": "Латышский"
+      },
+      "ru": {
+        "native": "Русский",
+        "name": "Русский"
+      },
+      "en": {
+        "native": "English",
+        "name": "Английский"
+      }
+    }
+  },
   "metadata": {
     "title": "Crystal E Studio | Электролиз в Риге",
     "description": "Сертифицированный электролиз в Риге — единственный научный метод удаления волос навсегда. Личный подход, уютная студия."

@@ -592,6 +592,30 @@
     "button": "Rakstīt WhatsApp",
     "note": "Personīga atbilde WhatsApp"
   },
+  "theme": {
+    "switchToLight": "Pārslēgties uz gaišo režīmu",
+    "switchToDark": "Pārslēgties uz tumšo režīmu",
+    "lightMode": "Gaišais režīms",
+    "darkMode": "Tumšais režīms"
+  },
+  "languageSwitcher": {
+    "label": "Valoda",
+    "selectLanguage": "Atlasiet valodu",
+    "locales": {
+      "lv": {
+        "native": "Latviešu",
+        "name": "Latvian"
+      },
+      "ru": {
+        "native": "Русский",
+        "name": "Russian"
+      },
+      "en": {
+        "native": "English",
+        "name": "English"
+      }
+    }
+  },
   "metadata": {
     "title": "Crystal E Studio | Elektrolīze Rīgā",
     "description": "Sertificēta elektrolīze Rīgā — vienīgā zinātniski pierādītā permanenta matu noņemšana. Personīga aprūpe, privāta studija."
