@@ -49,19 +49,19 @@ export default function Header() {
 
       <nav className="section-container h-full" role="navigation" aria-label={t('accessibility.mainNavigation')}>
         <div className="flex h-full items-center justify-between">
-          <Link href={`/${locale}`} className="flex items-center space-x-4 group">
-            <div className="flex h-12 w-12 items-center justify-center border-2 border-primary/10 transition-all group-hover:border-accent">
-              <span className="font-serif text-2xl text-primary md:text-2xl">E</span>
+          <Link href={`/${locale}`} className="flex items-center space-x-2 md:space-x-4 group flex-shrink-0">
+            <div className="flex h-10 md:h-12 w-10 md:w-12 items-center justify-center border-2 border-primary/10 transition-all group-hover:border-accent">
+              <span className="font-serif text-lg md:text-2xl text-primary">E</span>
             </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-2xl font-semibold text-primary leading-tight">
+            <div className="hidden sm:flex flex-col">
+              <span className="font-serif text-sm md:text-2xl font-semibold text-primary leading-tight">
                 {t('brand.name')}
               </span>
-              <span className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-accent">Certified Electrolysis Specialist</span>
+              <span className="hidden md:inline text-[0.6rem] font-bold uppercase tracking-[0.2em] text-accent">Certified Electrolysis Specialist</span>
             </div>
           </Link>
 
-          <div className="hidden items-center space-x-10 lg:flex">
+          <div className="hidden xl:flex items-center space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -73,7 +73,7 @@ export default function Header() {
             ))}
           </div>
 
-          <div className="hidden items-center gap-6 lg:flex">
+          <div className="hidden xl:flex items-center gap-6">
             <LanguageSwitcher />
             <a
               href={SOCIAL_LINKS.whatsapp}
@@ -86,7 +86,7 @@ export default function Header() {
             </a>
           </div>
 
-          <div className="flex items-center gap-4 lg:hidden">
+          <div className="flex xl:hidden items-center gap-4">
             <button
               onClick={toggleMenu}
               className="group flex h-14 w-14 flex-col items-center justify-center gap-1.5 transition-all hover:bg-primary/5 active:scale-95"
@@ -108,14 +108,14 @@ export default function Header() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setIsOpen(false)}
-                className="fixed inset-0 z-[100] bg-black/20 backdrop-blur-sm"
+                className="fixed inset-0 z-[99] bg-black/40 backdrop-blur-sm"
               />
               <motion.div
                 initial={{ x: '100%' }}
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="fixed inset-y-0 right-0 z-[101] w-full max-w-sm bg-white shadow-[-30px_0_90px_rgba(23,19,15,0.1)] md:max-w-md"
+                className="fixed inset-y-0 right-0 z-[100] w-80 bg-white shadow-[-30px_0_90px_rgba(23,19,15,0.2)]"
               >
                 <div className="flex flex-col h-full p-8 pt-28">
                   <nav className="flex-1">
