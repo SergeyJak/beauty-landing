@@ -29,14 +29,6 @@ export default function FloatingButtons() {
         transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
         className="safe-bottom fixed inset-x-0 bottom-0 z-40 border-t border-primary/10 bg-ivory/96 px-3 pt-3 shadow-[0_-18px_45px_rgba(23,19,15,0.14)] backdrop-blur md:hidden"
       >
-        <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="mb-2 block w-full">
-          <Button size="lg" className="min-h-12 w-full">
-            {t('stickyCta.button')}
-          </Button>
-        </a>
-        <p className="mb-2 text-center text-[0.7rem] leading-snug text-primary/55">
-          {t('stickyCta.note')}
-        </p>
         <div className="grid grid-cols-2 gap-2 pb-1">
           {contactLinks.map((link) => (
             <a
