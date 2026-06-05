@@ -7,7 +7,6 @@ import ThemeToggle from '@/components/ThemeToggle'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { useLanguage } from '@/lib/LanguageContext'
 import { cn } from '@/lib/utils'
-import Button from '@/components/Button'
 import { SOCIAL_LINKS } from '@/lib/constants'
 
 export default function Header() {
@@ -31,7 +30,14 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    document.body.classList.toggle('menu-open', isOpen)
+
+    return () => document.body.classList.remove('menu-open')
+  }, [isOpen])
+
   const toggleMenu = () => setIsOpen(!isOpen)
+  const closeMenu = () => setIsOpen(false)
 
   return (
     <header
@@ -108,7 +114,7 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setIsOpen(false)}
+              onClick={closeMenu}
               className="fixed inset-0 z-[99] bg-black/40 backdrop-blur-sm"
             />
               <motion.div
@@ -116,40 +122,53 @@ export default function Header() {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="fixed inset-y-0 right-0 z-[100] w-80 bg-white shadow-[-30px_0_90px_rgba(23,19,15,0.2)] overflow-y-auto"
+                className="fixed top-0 right-0 z-[100] flex w-full max-w-xs flex-col bg-white shadow-[-30px_0_90px_rgba(23,19,15,0.2)]"
               >
-                <div className="flex flex-col h-full p-8 pt-28">
+                <div className="flex max-h-[100dvh] flex-col p-6">
+                  <div className="mb-8 flex items-center justify-between">
+                    <p className="eyebrow text-primary/45">{t('header.toggleMenu')}</p>
+                    <button
+                      type="button"
+                      onClick={closeMenu}
+                      className="flex h-12 w-12 items-center justify-center text-2xl leading-none text-primary transition-colors hover:text-accent"
+                      aria-label={t('common.close')}
+                    >
+                      ×
+                    </button>
+                  </div>
+
                   <nav className="flex-1 overflow-y-auto">
                     <ul className="space-y-3">
-                      {navLinks.map((link, index) => (
-                        <motion.li
-                          key={link.href}
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.1 }}
-                        >
+                      {navLinks.map((link) => (
+                        <li key={link.href}>
                           <a
                             href={link.href}
-                            onClick={() => setIsOpen(false)}
+                            onClick={closeMenu}
                             className="font-serif text-lg md:text-2xl text-primary hover:text-accent transition-colors inline-block"
                           >
                             {t(link.key)}
                           </a>
-                        </motion.li>
+                        </li>
                       ))}
                     </ul>
                   </nav>
                   
-                  <div className="mt-auto pt-10 border-t border-primary/10">
-                    <div className="mb-8">
+                  <div className="mt-10 border-t border-primary/10 pt-6">
+                    <div className="mb-6">
                       <p className="eyebrow mb-4 opacity-70">{t('languageSwitcher.label')}</p>
-                      <LanguageSwitcher variant="inline" />
+                      <LanguageSwitcher variant="dropdown" upward />
                     </div>
-                    <div className="flex items-center justify-between mb-8">
+                    <div className="mb-6 flex items-center justify-between" onClick={closeMenu}>
                       <ThemeToggle />
                     </div>
-                    <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
-                      <Button size="lg" className="h-18 w-full">{t('header.bookNow')}</Button>
+                    <a
+                      href={SOCIAL_LINKS.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={closeMenu}
+                      className="flex h-14 w-full items-center justify-center bg-primary px-6 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-ivory transition-colors hover:bg-clay"
+                    >
+                      {t('header.bookNow')}
                     </a>
                   </div>
                 </div>

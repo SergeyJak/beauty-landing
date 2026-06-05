@@ -45,39 +45,36 @@ export default function Contact() {
         />
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <Reveal className="border-y border-primary/10">
-            {contactMethods.map((method) => (
-              <div key={method.title} className="grid grid-cols-[3rem_1fr] gap-5 border-b border-primary/10 py-6 last:border-b-0">
-                <div className="flex h-11 w-11 items-center justify-center border border-accent/45 font-serif text-accent">
+          <Reveal className="divide-y divide-primary/8">
+            {contactMethods.map((method: ContactMethod) => (
+              <div
+                key={method.title}
+                className="flex items-center gap-4 py-4"
+              >
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center border border-accent/30 text-[0.6rem] font-bold tracking-wider text-accent">
                   {method.label}
                 </div>
-                <div>
-                  <h3 className="font-serif text-2xl text-primary">{method.title}</h3>
+
+                <div className="min-w-0">
+                  <p className="text-[0.65rem] font-bold uppercase tracking-widest text-primary/40">
+                    {method.title}
+                  </p>
+
                   {method.action ? (
-                    <a href={method.action} className="mt-2 block leading-7 text-primary/65 transition-colors hover:text-accent">
+                    <a
+                      href={method.action}
+                      className="block truncate text-sm font-medium text-primary transition-colors hover:text-accent"
+                    >
                       {method.content}
                     </a>
                   ) : (
-                    <p className="mt-2 leading-7 text-primary/65">{method.content}</p>
+                    <p className="text-sm font-medium text-primary">
+                      {method.content}
+                    </p>
                   )}
                 </div>
               </div>
             ))}
-
-            <div className="py-8">
-              <h3 className="eyebrow mb-4 text-primary/45">{t('contact.follow')}</h3>
-              <div className="flex gap-3">
-                {socialLinks.map((link) => (
-                  <ActionLink
-                    key={link.id}
-                    href={resolveSocialHref(link)}
-                    compact
-                  >
-                    {link.label}
-                  </ActionLink>
-                ))}
-              </div>
-            </div>
           </Reveal>
 
           <motion.div

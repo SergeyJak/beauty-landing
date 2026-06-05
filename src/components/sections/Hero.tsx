@@ -33,7 +33,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-[calc(94vh-7rem)] overflow-hidden bg-ivory pt-4 md:min-h-[calc(100vh-7rem)] md:pt-8">
+    <section className="relative min-h-[calc(94vh-7rem)] overflow-hidden bg-ivory pt-4 md:min-h-[calc(100vh-7rem)] md:pt-5">
       <div className="absolute inset-0 z-0">
         <OptimizedImage
           src={HERO_IMAGE}
@@ -55,32 +55,36 @@ export default function Hero() {
         className="relative z-10 grid min-h-[calc(94vh-9rem)] max-w-7xl grid-cols-1 items-center gap-10 px-4 pb-24 sm:px-6 md:min-h-[calc(100vh-11rem)] md:pb-16 lg:mx-auto lg:grid-cols-[1.12fr_0.88fr] lg:px-8"
       >
         <div className="max-w-4xl">
-          <motion.div variants={itemVariants} className="mb-6">
+          <motion.div variants={itemVariants} className="mb-6 flex items-center gap-3">
+            <span className="h-px w-8 bg-accent/60" />
             <span className="eyebrow text-accent">{t('hero.eyebrow')}</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="hero-heading mb-10 max-w-4xl tracking-tighter">
+          <motion.h1 variants={itemVariants} className="hero-heading mb-6 max-w-4xl tracking-tighter">
             {t('hero.title')}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="mb-12 max-w-2xl text-lg leading-relaxed text-primary/80 md:text-xl md:leading-relaxed"
+            className="mb-8 max-w-2xl text-base leading-relaxed text-primary/80 md:text-lg md:leading-relaxed"
           >
             {t('hero.description')}
           </motion.p>
 
-          <motion.div variants={itemVariants} className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-stretch">
+          <motion.div variants={itemVariants} className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-stretch">
             <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto sm:min-w-[16rem]">
-              <Button size="lg" className="h-16 w-full shadow-[0_25px_60px_rgba(23,19,15,0.25)]">
-                {t('hero.primaryCTA')}
-                <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Button>
+              <button className="relative flex h-12 w-full items-center justify-center overflow-hidden border border-accent/60 bg-transparent px-7 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-primary transition-all hover:border-accent hover:shadow-[0_8px_30px_rgba(172,145,110,0.25)]">
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-accent/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                <span className="relative z-10 flex items-center">
+                  {t('hero.primaryCTA')}
+                  <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </button>
             </a>
             <a href="#contact" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="h-16 w-full border-primary/20 bg-ivory/40 backdrop-blur-md hover:border-primary/40">
+              <Button variant="outline" size="lg" className="h-12 w-full border-primary/20 bg-ivory/40 backdrop-blur-md hover:border-primary/40">
                 {t('hero.secondaryCTA')}
               </Button>
             </a>
@@ -109,16 +113,16 @@ export default function Hero() {
             className="grid max-w-2xl grid-cols-3 border-y border-primary/10 bg-ivory/50 py-5 backdrop-blur-sm dark:bg-ivory/45"
           >
             <div>
-              <p className="font-serif text-3xl text-primary md:text-4xl">{t('hero.stats.experienceNumber')}</p>
-              <p className="eyebrow mt-1 text-primary/50">{t('hero.stats.experience')}</p>
+              <p className="font-serif text-3xl font-light tracking-tight text-accent">{t('hero.stats.experienceNumber')}</p>
+              <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.25em] text-primary/35">{t('hero.stats.experience')}</p>
             </div>
             <div className="border-x border-primary/10 px-4 md:px-6">
-              <p className="font-serif text-3xl text-primary md:text-4xl">{t('hero.stats.approvedNumber')}</p>
-              <p className="eyebrow mt-1 text-primary/50">{t('hero.stats.approved')}</p>
+              <p className="font-serif text-3xl font-light tracking-tight text-accent">{t('hero.stats.approvedNumber')}</p>
+              <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.25em] text-primary/35">{t('hero.stats.approved')}</p>
             </div>
             <div className="pl-4 md:pl-6">
-              <p className="font-serif text-3xl text-primary md:text-4xl">{t('hero.stats.permanentNumber')}</p>
-              <p className="eyebrow mt-1 text-primary/50">{t('hero.stats.permanent')}</p>
+              <p className="font-serif text-3xl font-light tracking-tight text-accent">{t('hero.stats.permanentNumber')}</p>
+              <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.25em] text-primary/35">{t('hero.stats.permanent')}</p>
             </div>
           </motion.div>
         </div>

@@ -58,36 +58,42 @@ export default function BeforeAfter() {
         />
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4"
+          className="mx-auto max-w-xl"
         >
-          {localizedImages.map((image) => (
-            <motion.button
-              key={image.id}
-              whileHover={{ y: -6 }}
-              whileTap={{ scale: 0.985 }}
-              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              onClick={() => setSelectedImage(image)}
-              className="premium-sheen group relative cursor-pointer overflow-hidden border border-parchment/12 text-left focus:outline-none focus:ring-2 focus:ring-accent"
-            >
-              <div className="relative aspect-[4/5] bg-ink">
-                <BeforeAfterSlider
-                  beforeImage={image.before}
-                  afterImage={image.after}
-                  beforeLabel={t('common.before')}
-                  afterLabel={t('common.after')}
-                />
+          {(() => {
+            const image = localizedImages[0]
 
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent p-5 pt-16 pointer-events-none">
-                  <p className="font-serif text-2xl text-parchment">{image.title}</p>
-                  <p className="eyebrow mt-2 text-champagne">{image.category}</p>
+            return (
+              <motion.button
+                whileTap={{ scale: 0.985 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                onClick={() => setSelectedImage(image)}
+                className="group relative w-full cursor-pointer overflow-hidden border border-white/20 text-left focus:outline-none focus:ring-2 focus:ring-accent"
+              >
+                <div className="relative bg-ink">
+                  <BeforeAfterSlider
+                    beforeImage={image.before}
+                    afterImage={image.after}
+                    beforeLabel={t('common.before')}
+                    afterLabel={t('common.after')}
+                  />
+
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 pt-20 pointer-events-none">
+                    <p className="font-serif text-2xl text-white drop-shadow">
+                      {image.title}
+                    </p>
+                    <p className="mt-1 text-sm font-semibold uppercase tracking-widest text-white/70">
+                      {image.category}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </motion.button>
-          ))}
+              </motion.button>
+            )
+          })()}
         </motion.div>
 
         {/* Modal */}

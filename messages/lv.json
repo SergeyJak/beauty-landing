@@ -250,6 +250,9 @@
     "eyebrow": "Zinātne",
     "title": "Matu augšanas cikli",
     "description": "Mati neaug nepārtraukti. Izpratne par šīm fāzēm paskaidro, kāpēc nepieciešami vairāki seansi.",
+    "percentageLabel": "Matu daudzums",
+    "durationLabel": "Fāzes ilgums",
+    "characteristics": "Galvenās īpašības",
     "treatableBadge": "✓ ĀRSTĒJAMĀ FĀZE",
     "treatableNote": "Tikai ārstēšana Anagēna fāzē sniedz permanentu rezultātu.",
     "phases": [
@@ -308,6 +311,7 @@
     "eyebrow": "Process",
     "title": "Kā tas notiek",
     "description": "Soli pa solim par procedūru un ko gaidīt no vizītes.",
+    "whatHappens": "Kas notiek",
     "steps": [
       {
         "number": "01",

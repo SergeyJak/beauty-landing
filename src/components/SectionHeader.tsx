@@ -19,9 +19,9 @@ export default function SectionHeader({
   light = false,
   className = '',
 }: SectionHeaderProps) {
-  const eyebrowClass = light ? 'text-champagne' : 'text-accent'
-  const titleClass = light ? 'text-parchment' : 'text-primary'
-  const descriptionClass = light ? 'text-parchment/65' : 'text-primary/85'
+  const eyebrowClass = light ? '!text-champagne' : 'text-accent'
+  const titleClass = light ? '!text-parchment' : 'text-primary'
+  const descriptionClass = light ? '!text-parchment/75' : 'text-primary/85'
 
   const content = (
     <motion.div
