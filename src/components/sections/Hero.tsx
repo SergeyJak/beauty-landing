@@ -129,10 +129,6 @@ export default function Hero() {
 
         <motion.div variants={itemVariants} className="hidden lg:block">
           <div className="premium-sheen relative ml-auto max-w-sm border border-ivory/70 bg-ivory/78 p-4 shadow-[0_35px_120px_rgba(45,42,40,0.24)] backdrop-blur">
-            <div className="absolute -left-16 top-12 border border-accent/35 bg-ivory/86 px-5 py-4 shadow-[0_18px_50px_rgba(45,42,40,0.14)] backdrop-blur">
-              <p className="eyebrow text-accent">{t('hero.sidecard.eyebrow')}</p>
-              <p className="mt-2 font-serif text-3xl text-primary">{t('hero.sidecard.title')}</p>
-            </div>
             <div className="relative aspect-[4/5] w-full overflow-hidden">
               <OptimizedImage
                 src={specialistPhoto}
