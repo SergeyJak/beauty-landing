@@ -113,12 +113,12 @@ export default function LanguageSwitcher({ variant = 'dropdown', upward = false 
                     aria-selected={locale === lang}
                   >
                     <div className="flex items-center justify-between">
-                      <div className={cn(
+                      <span className={cn(
                         "font-serif text-lg transition-colors",
                         locale === lang ? "text-primary" : "text-primary/60 group-hover/item:text-primary"
                       )}>
                         {localeLabel(lang, 'native')}
-                      </div>
+                      </span>
                       {locale === lang && (
                         <div className="h-2 w-2 rounded-full bg-accent" />
                       )}

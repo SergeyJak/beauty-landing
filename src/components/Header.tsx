@@ -30,14 +30,13 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const toggleMenu = () => setIsOpen(!isOpen)
+
   useEffect(() => {
     document.body.classList.toggle('menu-open', isOpen)
 
     return () => document.body.classList.remove('menu-open')
   }, [isOpen])
-
-  const toggleMenu = () => setIsOpen(!isOpen)
-  const closeMenu = () => setIsOpen(false)
 
   return (
     <header
@@ -45,7 +44,6 @@ export default function Header() {
         isScrolled ? 'h-16 lg:h-22 bg-white/95 shadow-[0_15px_60px_rgba(23,19,15,0.05)] backdrop-blur-xl' : 'h-20 lg:h-28 bg-white/95 backdrop-blur-xl'
       }`}
     >
-      {/* Skip to main content link */}
       <a
         href="#main-content"
         className="absolute -top-full left-4 z-50 inline-block bg-primary text-ivory px-4 py-2 rounded-b text-sm font-semibold focus:top-0 transition-top"
@@ -114,68 +112,74 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={closeMenu}
+              onClick={() => setIsOpen(false)}
               className="fixed inset-0 z-[99] bg-black/40 backdrop-blur-sm"
             />
-              <motion.div
-                initial={{ x: '100%' }}
-                animate={{ x: 0 }}
-                exit={{ x: '100%' }}
-                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="fixed top-0 right-0 z-[100] flex w-full max-w-xs flex-col bg-white shadow-[-30px_0_90px_rgba(23,19,15,0.2)]"
-              >
-                <div className="flex max-h-[100dvh] flex-col p-6">
-                  <div className="mb-8 flex items-center justify-between">
-                    <p className="eyebrow text-primary/45">{t('header.toggleMenu')}</p>
-                    <button
-                      type="button"
-                      onClick={closeMenu}
-                      className="flex h-12 w-12 items-center justify-center text-2xl leading-none text-primary transition-colors hover:text-accent"
-                      aria-label={t('common.close')}
-                    >
-                      ×
-                    </button>
-                  </div>
 
-                  <nav className="flex-1 overflow-y-auto">
-                    <ul className="space-y-3">
-                      {navLinks.map((link) => (
-                        <li key={link.href}>
-                          <a
-                            href={link.href}
-                            onClick={closeMenu}
-                            className="font-serif text-lg md:text-2xl text-primary hover:text-accent transition-colors inline-block"
-                          >
-                            {t(link.key)}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </nav>
-                  
-                  <div className="mt-10 border-t border-primary/10 pt-6">
-                    <div className="mb-6">
-                      <p className="eyebrow mb-4 opacity-70">{t('languageSwitcher.label')}</p>
-                      <LanguageSwitcher variant="dropdown" upward />
-                    </div>
-                    <div className="mb-6 flex items-center justify-between" onClick={closeMenu}>
-                      <ThemeToggle />
-                    </div>
-                    <a
-                      href={SOCIAL_LINKS.whatsapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={closeMenu}
-                      className="flex h-14 w-full items-center justify-center bg-primary px-6 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-ivory transition-colors hover:bg-clay"
-                    >
-                      {t('header.bookNow')}
-                    </a>
-                  </div>
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 28, stiffness: 220 }}
+              className="fixed top-0 right-0 z-[100] w-full max-w-xs bg-white dark:bg-secondary shadow-[-30px_0_90px_rgba(23,19,15,0.25)] flex flex-col"
+            >
+              <div className="flex items-center justify-between px-6 py-4 border-b border-primary/10 flex-shrink-0">
+                <span className="font-serif text-lg text-primary">
+                  {t('brand.name')}
+                </span>
+
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary/5 active:scale-95 transition-all"
+                  aria-label={t('header.toggleMenu')}
+                >
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path
+                      d="M1 1l16 16M17 1L1 17"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <nav className="px-6 py-3">
+                <ul>
+                  {navLinks.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="flex items-center py-3 text-base font-semibold text-primary hover:text-accent border-b border-primary/10 transition-colors"
+                      >
+                        {t(link.key)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              <div className="flex-shrink-0 px-6 pb-6 pt-4 border-t border-primary/10 space-y-4">
+                <div className="flex items-center justify-between">
+                  <LanguageSwitcher upward />
+                  <ThemeToggle />
                 </div>
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
+
+                <a
+                  href={SOCIAL_LINKS.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="flex h-12 w-full items-center justify-center bg-primary text-white text-sm font-bold uppercase tracking-widest hover:bg-accent transition-colors"
+                >
+                  {t('header.bookNow')}
+                </a>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

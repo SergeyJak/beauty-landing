@@ -55,7 +55,7 @@ export default function Hero() {
         className="relative z-10 grid min-h-[calc(94vh-9rem)] max-w-7xl grid-cols-1 items-center gap-10 px-4 pb-24 sm:px-6 md:min-h-[calc(100vh-11rem)] md:pb-16 lg:mx-auto lg:grid-cols-[1.12fr_0.88fr] lg:px-8"
       >
         <div className="max-w-4xl">
-          <motion.div variants={itemVariants} className="mb-6 flex items-center gap-3">
+          <motion.div variants={itemVariants} className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-accent/60" />
             <span className="eyebrow text-accent">{t('hero.eyebrow')}</span>
           </motion.div>
@@ -73,11 +73,11 @@ export default function Hero() {
 
           <motion.div variants={itemVariants} className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-stretch">
             <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto sm:min-w-[16rem]">
-              <button className="relative flex h-12 w-full items-center justify-center overflow-hidden border border-accent/60 bg-transparent px-7 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-primary transition-all hover:border-accent hover:shadow-[0_8px_30px_rgba(172,145,110,0.25)]">
+              <button className="relative h-12 w-full overflow-hidden border border-accent/60 bg-transparent px-8 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-primary shadow-[inset_0_0_0_1px_rgba(172,145,110,0.3)] transition-all duration-500 hover:border-accent hover:shadow-[0_8px_30px_rgba(172,145,110,0.25)] sm:min-w-[14rem]">
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-accent/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                <span className="relative z-10 flex items-center">
+                <span className="relative flex items-center justify-center gap-2">
                   {t('hero.primaryCTA')}
-                  <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </span>
@@ -110,13 +110,13 @@ export default function Hero() {
 
           <motion.div
             variants={itemVariants}
-            className="grid max-w-2xl grid-cols-3 border-y border-primary/10 bg-ivory/50 py-5 backdrop-blur-sm dark:bg-ivory/45"
+            className="grid max-w-xs grid-cols-3 divide-x divide-primary/8 border-t border-primary/10 pt-8"
           >
             <div>
               <p className="font-serif text-3xl font-light tracking-tight text-accent">{t('hero.stats.experienceNumber')}</p>
               <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.25em] text-primary/35">{t('hero.stats.experience')}</p>
             </div>
-            <div className="border-x border-primary/10 px-4 md:px-6">
+            <div className="px-4 md:px-6">
               <p className="font-serif text-3xl font-light tracking-tight text-accent">{t('hero.stats.approvedNumber')}</p>
               <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.25em] text-primary/35">{t('hero.stats.approved')}</p>
             </div>
