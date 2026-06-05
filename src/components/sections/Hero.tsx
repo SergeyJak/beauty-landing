@@ -83,7 +83,7 @@ export default function Hero() {
               </button>
             </a>
             <a
-              href="#contact"
+              href="#how-it-works"
               className="flex h-12 w-full items-center justify-center border border-primary/20 bg-ivory/40 px-8 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-primary backdrop-blur-md transition-all hover:border-primary/40 sm:w-auto"
             >
               {t('hero.secondaryCTA')}
