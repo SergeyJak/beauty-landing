@@ -75,6 +75,17 @@ export default function Contact() {
                 </div>
               </div>
             ))}
+
+            <div className="pt-5">
+              <p className="eyebrow mb-3 text-primary/40">{t('contact.follow')}</p>
+              <div className="flex gap-2">
+                {socialLinks.map((link) => (
+                  <ActionLink key={link.id} href={resolveSocialHref(link)} compact>
+                    {link.label}
+                  </ActionLink>
+                ))}
+              </div>
+            </div>
           </Reveal>
 
           <motion.div

@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Button from '@/components/Button'
 import OptimizedImage from '@/components/OptimizedImage'
 import { SOCIAL_LINKS } from '@/lib/constants'
 import { useT } from '@/lib/LanguageContext'
@@ -83,10 +82,11 @@ export default function Hero() {
                 </span>
               </button>
             </a>
-            <a href="#contact" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="h-12 w-full border-primary/20 bg-ivory/40 backdrop-blur-md hover:border-primary/40">
-                {t('hero.secondaryCTA')}
-              </Button>
+            <a
+              href="#contact"
+              className="flex h-12 w-full items-center justify-center border border-primary/20 bg-ivory/40 px-8 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-primary backdrop-blur-md transition-all hover:border-primary/40 sm:w-auto"
+            >
+              {t('hero.secondaryCTA')}
             </a>
           </motion.div>
 
@@ -110,7 +110,7 @@ export default function Hero() {
 
           <motion.div
             variants={itemVariants}
-            className="grid max-w-xs grid-cols-3 divide-x divide-primary/8 border-t border-primary/10 pt-8"
+            className="grid max-w-xs grid-cols-3 divide-x divide-primary/8 border-t border-primary/10 pt-5"
           >
             <div>
               <p className="font-serif text-3xl font-light tracking-tight text-accent">{t('hero.stats.experienceNumber')}</p>
