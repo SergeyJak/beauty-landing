@@ -93,8 +93,10 @@ export default function LanguageSwitcher({ variant = 'dropdown', upward = false 
               exit={{ opacity: 0, y: upward ? -10 : 10, scale: 0.98 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className={cn(
-                "absolute right-0 z-40 w-56 overflow-hidden border border-primary/5 bg-white shadow-[0_30px_90px_rgba(23,19,15,0.15)]",
-                upward ? "bottom-full mb-3 origin-bottom-right" : "mt-3 origin-top-right"
+                "absolute z-40 w-56 max-w-[calc(100vw-3rem)] overflow-hidden border border-primary/5 bg-white shadow-[0_30px_90px_rgba(23,19,15,0.15)]",
+                upward 
+                  ? "bottom-full mb-3 left-0 origin-bottom-left" 
+                  : "mt-3 right-0 origin-top-right"
               )}
               role="listbox"
               aria-label={t('languageSwitcher.selectLanguage')}
