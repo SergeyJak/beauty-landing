@@ -9,7 +9,12 @@ import specialistPhoto from '@/components/foto/340949596_3542884339364963_303690
 const HERO_IMAGE =
   'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=2100&h=1300&fit=crop&q=80'
 
-export default function Hero() {
+type HeroProps = {
+  title?: string
+  description?: string
+}
+
+export default function Hero({ title, description }: HeroProps) {
   const t = useT()
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -60,14 +65,14 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="hero-heading mb-6 max-w-4xl tracking-tighter">
-            {t('hero.title')}
+            {title || t('hero.title')}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="mb-8 max-w-2xl text-base leading-relaxed text-primary/80 md:text-lg md:leading-relaxed"
           >
-            {t('hero.description')}
+            {description || t('hero.description')}
           </motion.p>
 
           <motion.div variants={itemVariants} className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-stretch">

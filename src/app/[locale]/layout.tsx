@@ -11,6 +11,7 @@ import {
   getOpenGraphLocale,
   getHreflangAlternates,
 } from '@/lib/i18n'
+import { getEditableContent } from '@/lib/content'
 import { LanguageProvider } from '@/lib/LanguageContext'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -18,6 +19,8 @@ import StructuredData from '@/components/StructuredData'
 import { Toaster } from 'sonner'
 import CookieConsent from '@/components/CookieConsent'
 import ErrorBoundary from '@/components/ErrorBoundary'
+
+export const dynamic = 'force-dynamic'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -32,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const locale = resolveLocale(requestedLocale)
   const translations = getTranslations(locale)
+  const saved = await getEditableContent(locale)
   const metadata = translations.metadata as {
     title?: string
     description?: string
@@ -39,22 +43,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } | undefined
   const brand = translations.brand as { name?: string }
 
+  const title = saved?.seoTitle || metadata?.title || 'Electrolysis Riga'
+  const description =
+    saved?.seoDescription ||
+    metadata?.description ||
+    'Certified electrolysis specialist for permanent facial and bikini hair removal in Riga'
+
   const baseUrl = getBaseUrl()
   const canonicalUrl = `${baseUrl}/${locale}`
   const ogImage = `${baseUrl}/${locale}/opengraph-image`
 
   return {
     title: {
-      default: metadata?.title || 'Electrolysis Riga',
+      default: title,
       template: `%s | ${brand?.name || 'Electrolysis Riga'}`,
     },
-    description:
-      metadata?.description || 'Certified electrolysis specialist for permanent facial and bikini hair removal in Riga',
+    description,
     keywords: metadata?.keywords || [],
     robots: { index: true, follow: true },
     openGraph: {
-      title: metadata?.title,
-      description: metadata?.description,
+      title,
+      description,
       type: 'website',
       locale: getOpenGraphLocale(locale),
       url: canonicalUrl,
@@ -64,7 +73,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: metadata?.title || brand?.name || 'Electrolysis Riga',
+          alt: title || brand?.name || 'Electrolysis Riga',
         },
       ],
       alternateLocale: LOCALES.filter((l) => l !== locale).map((l) =>
@@ -73,8 +82,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: metadata?.title,
-      description: metadata?.description,
+      title,
+      description,
       images: [ogImage],
     },
     alternates: {
@@ -114,7 +123,6 @@ export default async function LocaleLayout({
     <LanguageProvider initialLocale={locale} initialTranslations={translations}>
       <StructuredData locale={locale} />
       
-      {/* Analytics Placeholders */}
       {process.env.NODE_ENV === 'production' && (
         <>
           <script
