@@ -77,8 +77,15 @@ export default function Header() {
             ))}
           </div>
 
-          <div className="hidden xl:flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-5">
             <LanguageSwitcher />
+            <Link
+              href="/admin"
+              aria-label="Login"
+              className="flex h-11 items-center justify-center border border-primary/15 px-5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-primary transition-all hover:border-accent hover:text-accent"
+            >
+              Login
+            </Link>
             <a
               href={SOCIAL_LINKS.whatsapp}
               target="_blank"
@@ -165,6 +172,14 @@ export default function Header() {
                   <LanguageSwitcher upward />
                   <ThemeToggle />
                 </div>
+
+                <Link
+                  href="/admin"
+                  onClick={() => setIsOpen(false)}
+                  className="flex h-12 w-full items-center justify-center border border-primary/15 text-sm font-bold uppercase tracking-widest text-primary hover:border-accent hover:text-accent transition-colors"
+                >
+                  Login
+                </Link>
 
                 <a
                   href={SOCIAL_LINKS.whatsapp}
