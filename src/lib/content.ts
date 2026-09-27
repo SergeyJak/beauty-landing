@@ -10,6 +10,10 @@ export type EditablePageContent = {
   updatedAt?: string
 }
 
+type EditablePageContentDocument = Omit<EditablePageContent, 'updatedAt'> & {
+  updatedAt?: Date
+}
+
 const DB_NAME = process.env.MONGODB_DB || 'beauty_prod'
 const COLLECTION = 'site_content'
 
@@ -59,19 +63,18 @@ export async function getEditableContent(
     const client = await getClientPromise()
     const doc = await client
       .db(DB_NAME)
-      .collection<EditablePageContent>(COLLECTION)
+      .collection<EditablePageContentDocument>(COLLECTION)
       .findOne({ locale }, { projection: { _id: 0 } })
 
     if (!doc) return null
 
     return {
-      ...doc,
-      updatedAt:
-        doc.updatedAt instanceof Date
-          ? doc.updatedAt.toISOString()
-          : doc.updatedAt
-            ? String(doc.updatedAt)
-            : undefined,
+      locale: doc.locale,
+      heroTitle: doc.heroTitle,
+      heroDescription: doc.heroDescription,
+      seoTitle: doc.seoTitle,
+      seoDescription: doc.seoDescription,
+      updatedAt: doc.updatedAt?.toISOString(),
     }
   } catch (error) {
     console.error('Failed to load editable page content:', error)
@@ -99,7 +102,7 @@ export async function saveEditableContent(
 
   await client
     .db(DB_NAME)
-    .collection(COLLECTION)
+    .collection<EditablePageContentDocument>(COLLECTION)
     .updateOne(
       { locale },
       { $set: { ...content, updatedAt } },
