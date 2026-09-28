@@ -533,16 +533,6 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
                     className="w-full border border-primary/15 px-3 py-2 text-sm outline-none focus:border-accent"
                   />
 
-                  <input
-                    value={text.category}
-                    onChange={(event) =>
-                      updateText(item.id, 'category', event.target.value)
-                    }
-                    maxLength={160}
-                    placeholder="Category"
-                    className="w-full border border-primary/15 px-3 py-2 text-sm outline-none focus:border-accent"
-                  />
-
                   <p className="text-xs text-primary/40">
                     Before {formatBytes(item.before.originalSize)} →{' '}
                     {formatBytes(item.before.optimizedSize)}
