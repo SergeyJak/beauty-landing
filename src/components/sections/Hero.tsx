@@ -56,7 +56,7 @@ export default function Hero({ title, description }: HeroProps) {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 grid min-h-[calc(94vh-9rem)] max-w-7xl grid-cols-1 items-center gap-10 px-4 pb-40 sm:px-6 sm:pb-32 md:min-h-[calc(100vh-11rem)] md:pb-16 lg:mx-auto lg:grid-cols-[1.12fr_0.88fr] lg:px-8"
+        className="relative z-10 grid min-h-[calc(94vh-9rem)] max-w-7xl grid-cols-1 items-center gap-10 px-4 pb-24 sm:px-6 md:min-h-[calc(100vh-11rem)] md:pb-16 lg:mx-auto lg:grid-cols-[1.12fr_0.88fr] lg:px-8"
       >
         <div className="max-w-4xl">
           <motion.div variants={itemVariants} className="mb-4 flex items-center gap-3">
