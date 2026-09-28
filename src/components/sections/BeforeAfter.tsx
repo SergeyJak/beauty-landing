@@ -39,13 +39,16 @@ const galleryImages: BeforeAfterImage[] = [
   },
 ]
 
-export default function BeforeAfter() {
+export default function BeforeAfter({ images }: { images?: BeforeAfterImage[] }) {
   const { t, list } = useLanguage()
   const [selectedImage, setSelectedImage] = useState<BeforeAfterImage | null>(null)
-  const localizedImages = galleryImages.map((image, index) => ({
-    ...image,
-    ...(list<Partial<BeforeAfterImage>>('results.gallery')[index] || {}),
-  }))
+  const localizedImages =
+    images && images.length > 0
+      ? images
+      : galleryImages.map((image, index) => ({
+          ...image,
+          ...(list<Partial<BeforeAfterImage>>('results.gallery')[index] || {}),
+        }))
 
   return (
     <section id="gallery" className="bg-ink py-20 text-parchment md:py-32">
