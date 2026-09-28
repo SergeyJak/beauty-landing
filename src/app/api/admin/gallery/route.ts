@@ -4,6 +4,7 @@ import {
   createGalleryItem,
   deleteGalleryItem,
   getGallery,
+  reorderGallery,
   updateGalleryText,
 } from '@/lib/gallery'
 import {
@@ -157,6 +158,28 @@ export async function PATCH(request: NextRequest) {
 
   revalidatePath(`/${locale}`)
   return NextResponse.json({ item })
+}
+
+export async function PUT(request: NextRequest) {
+  const body = await request.json().catch(() => null)
+  const orderedIds = Array.isArray(body?.orderedIds)
+    ? body.orderedIds.filter((id: unknown): id is string => typeof id === 'string')
+    : []
+
+  if (!orderedIds.length) {
+    return NextResponse.json({ error: 'Missing gallery order' }, { status: 400 })
+  }
+
+  try {
+    const items = await reorderGallery(orderedIds)
+    revalidateGalleryPages()
+    return NextResponse.json({ items })
+  } catch (error) {
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : 'Failed to reorder gallery' },
+      { status: 400 }
+    )
+  }
 }
 
 export async function DELETE(request: NextRequest) {
