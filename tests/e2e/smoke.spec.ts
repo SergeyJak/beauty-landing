@@ -16,7 +16,7 @@ test.describe('public mobile smoke', () => {
   test('mobile menu opens the standalone gallery', async ({ page }) => {
     await page.goto('/ru')
 
-    const menuButton = page.locator('header button[aria-expanded]').first()
+    const menuButton = page.getByTestId('mobile-menu-toggle')
     await expect(menuButton).toBeVisible()
     await menuButton.click()
 
@@ -53,7 +53,11 @@ test.describe('desktop smoke', () => {
       await expect(page.getByText('Crystal E Studio').first()).toBeVisible()
 
       await page.goto(`/${locale}/gallery`)
-      await expect(page.locator('main')).toBeVisible()
+      const expectedHeading =
+        locale === 'ru' ? 'Галерея' : locale === 'en' ? 'Gallery' : 'Galerija'
+      await expect(
+        page.getByRole('heading', { name: expectedHeading, level: 1 })
+      ).toBeVisible()
     }
   })
 })
