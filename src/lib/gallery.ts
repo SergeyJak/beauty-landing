@@ -20,13 +20,15 @@ export type GalleryText = {
 export type GalleryItem = {
   id: string
   order: number
+  categoryId: string | null
   before: StoredGalleryAsset
   after: StoredGalleryAsset
   text: Record<Locale, GalleryText>
   createdAt: string
 }
 
-type GalleryDocument = Omit<GalleryItem, 'id' | 'createdAt'> & {
+type GalleryDocument = Omit<GalleryItem, 'id' | 'createdAt' | 'categoryId'> & {
+  categoryId?: string | null
   createdAt: Date
 }
 
@@ -75,6 +77,7 @@ function mapGalleryDocument(
   return {
     id: doc._id.toHexString(),
     order: doc.order,
+    categoryId: doc.categoryId || null,
     before: withCurrentPublicUrl(doc.before),
     after: withCurrentPublicUrl(doc.after),
     text: {
@@ -109,7 +112,7 @@ export async function createGalleryItem(
   locale: Locale,
   input: {
     title: string
-    category: string
+    categoryId: string | null
     before: StoredGalleryAsset
     after: StoredGalleryAsset
   }
@@ -121,11 +124,12 @@ export async function createGalleryItem(
   const text = emptyText()
   text[locale] = {
     title: input.title.trim().slice(0, 120),
-    category: input.category.trim().slice(0, 160),
+    category: '',
   }
 
   const doc: GalleryDocument = {
     order: (last?.order ?? -1) + 1,
+    categoryId: input.categoryId,
     before: input.before,
     after: input.after,
     text,
@@ -157,6 +161,27 @@ export async function updateGalleryText(
         [`text.${locale}.category`]: category,
       },
     }
+  )
+
+  const updated = await collection.findOne({ _id })
+  return updated
+    ? mapGalleryDocument(updated as GalleryDocument & { _id: ObjectId })
+    : null
+}
+
+export async function updateGalleryCategory(
+  id: string,
+  categoryId: string | null
+) {
+  if (!ObjectId.isValid(id)) return null
+
+  const db = await getDb()
+  const collection = db.collection<GalleryDocument>(COLLECTION)
+  const _id = new ObjectId(id)
+
+  await collection.updateOne(
+    { _id },
+    { $set: { categoryId } }
   )
 
   const updated = await collection.findOne({ _id })
