@@ -1,6 +1,7 @@
 'use client'
 
 import { FormEvent, useEffect, useState } from 'react'
+import GalleryAdmin from '@/components/admin/GalleryAdmin'
 
 type Locale = 'lv' | 'ru' | 'en'
 
@@ -252,6 +253,7 @@ export default function AdminPage() {
             </div>
           </form>
         )}
+        <GalleryAdmin locale={locale} />
       </div>
     </div>
   )
