@@ -1,14 +1,81 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import { FormEvent, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 
+type LoginLocale = 'lv' | 'ru' | 'en'
+
+const COPY: Record<LoginLocale, {
+  admin: string
+  subtitle: string
+  username: string
+  password: string
+  show: string
+  hide: string
+  submit: string
+  submitting: string
+  back: string
+  invalid: string
+  failed: string
+}> = {
+  lv: {
+    admin: 'Admin',
+    subtitle: 'Pieslēdzies, lai pārvaldītu mājaslapas saturu.',
+    username: 'Lietotājvārds',
+    password: 'Parole',
+    show: 'Rādīt',
+    hide: 'Slēpt',
+    submit: 'Ieiet',
+    submitting: 'Pieslēdzas…',
+    back: 'Atpakaļ uz mājaslapu',
+    invalid: 'Nepareizs lietotājvārds vai parole.',
+    failed: 'Neizdevās pieslēgties. Mēģini vēlreiz.',
+  },
+  ru: {
+    admin: 'Админ',
+    subtitle: 'Войдите, чтобы управлять содержимым сайта.',
+    username: 'Имя пользователя',
+    password: 'Пароль',
+    show: 'Показать',
+    hide: 'Скрыть',
+    submit: 'Войти',
+    submitting: 'Входим…',
+    back: 'Назад на сайт',
+    invalid: 'Неверное имя пользователя или пароль.',
+    failed: 'Не удалось войти. Попробуйте ещё раз.',
+  },
+  en: {
+    admin: 'Admin',
+    subtitle: 'Sign in to manage the website content.',
+    username: 'Username',
+    password: 'Password',
+    show: 'Show',
+    hide: 'Hide',
+    submit: 'Login',
+    submitting: 'Signing in…',
+    back: 'Back to website',
+    invalid: 'Incorrect username or password.',
+    failed: 'Could not sign in. Please try again.',
+  },
+}
+
 export default function LoginPage() {
+  const [locale, setLocale] = useState<LoginLocale>('lv')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    const lang = new URLSearchParams(window.location.search).get('lang')
+    if (lang === 'ru' || lang === 'en' || lang === 'lv') {
+      setLocale(lang)
+    }
+  }, [])
+
+  const copy = COPY[locale]
+  const backHref = useMemo(() => `/${locale}`, [locale])
 
   const submit = async (event: FormEvent) => {
     event.preventDefault()
@@ -22,9 +89,12 @@ export default function LoginPage() {
         body: JSON.stringify({ username, password }),
       })
 
+      if (response.status === 401) {
+        throw new Error(copy.invalid)
+      }
+
       if (!response.ok) {
-        const payload = await response.json().catch(() => null)
-        throw new Error(payload?.error || 'Nepareizs lietotājvārds vai parole.')
+        throw new Error(copy.failed)
       }
 
       const params = new URLSearchParams(window.location.search)
@@ -36,11 +106,7 @@ export default function LoginPage() {
 
       window.location.assign(next)
     } catch (error) {
-      setError(
-        error instanceof Error
-          ? error.message
-          : 'Neizdevās pieslēgties. Mēģini vēlreiz.'
-      )
+      setError(error instanceof Error ? error.message : copy.failed)
     } finally {
       setLoading(false)
     }
@@ -57,16 +123,16 @@ export default function LoginPage() {
               <span className="font-serif text-2xl text-primary">E</span>
             </div>
             <p className="eyebrow mb-2 text-accent">Crystal E Studio</p>
-            <h1 className="font-serif text-4xl font-medium">Admin</h1>
+            <h1 className="font-serif text-4xl font-medium">{copy.admin}</h1>
             <p className="mt-3 text-sm leading-relaxed text-primary/55">
-              Pieslēdzies, lai pārvaldītu mājaslapas saturu.
+              {copy.subtitle}
             </p>
           </div>
 
           <form onSubmit={submit} className="space-y-5">
             <label className="block">
               <span className="mb-2 block text-[0.68rem] font-bold uppercase tracking-[0.18em] text-primary/55">
-                Lietotājvārds
+                {copy.username}
               </span>
               <input
                 value={username}
@@ -76,13 +142,13 @@ export default function LoginPage() {
                 spellCheck={false}
                 required
                 className="h-14 w-full border border-primary/15 bg-white px-4 text-base outline-none transition focus:border-accent"
-                placeholder="Lietotājvārds"
+                placeholder={copy.username}
               />
             </label>
 
             <label className="block">
               <span className="mb-2 block text-[0.68rem] font-bold uppercase tracking-[0.18em] text-primary/55">
-                Parole
+                {copy.password}
               </span>
               <div className="flex h-14 w-full items-stretch border border-primary/15 bg-white transition focus-within:border-accent">
                 <input
@@ -92,15 +158,15 @@ export default function LoginPage() {
                   autoComplete="current-password"
                   required
                   className="min-w-0 flex-1 border-0 bg-transparent px-4 text-base outline-none"
-                  placeholder="Parole"
+                  placeholder={copy.password}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword((value) => !value)}
-                  className="flex h-full min-w-[4.5rem] items-center justify-center border-l border-primary/10 px-3 text-xs font-semibold uppercase tracking-wider text-primary/45 transition hover:bg-primary/[0.03] hover:text-accent"
-                  aria-label={showPassword ? 'Paslēpt paroli' : 'Rādīt paroli'}
+                  className="flex h-full min-w-[5.5rem] items-center justify-center border-l border-primary/10 px-3 text-[0.68rem] font-semibold uppercase tracking-wider text-primary/45 transition hover:bg-primary/[0.03] hover:text-accent"
+                  aria-label={showPassword ? copy.hide : copy.show}
                 >
-                  {showPassword ? 'Hide' : 'Show'}
+                  {showPassword ? copy.hide : copy.show}
                 </button>
               </div>
             </label>
@@ -119,16 +185,16 @@ export default function LoginPage() {
               disabled={loading}
               className="premium-sheen flex h-14 w-full items-center justify-center bg-primary px-6 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#6f5948] disabled:cursor-wait disabled:opacity-60"
             >
-              {loading ? 'Pieslēdzas…' : 'Ieiet'}
+              {loading ? copy.submitting : copy.submit}
             </button>
           </form>
 
           <div className="mt-7 border-t border-primary/10 pt-5 text-center">
             <Link
-              href="/lv"
+              href={backHref}
               className="text-xs font-semibold uppercase tracking-[0.16em] text-primary/45 transition hover:text-accent"
             >
-              ← Atpakaļ uz mājaslapu
+              ← {copy.back}
             </Link>
           </div>
         </section>
