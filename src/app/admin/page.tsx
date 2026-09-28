@@ -25,6 +25,10 @@ export default function AdminPage() {
   useEffect(() => {
     fetch('/api/admin/content?locale=lv', { cache: 'no-store' })
       .then(async (response) => {
+        if (response.status === 401) {
+          window.location.assign('/login?next=/admin')
+          throw new Error('Authentication required')
+        }
         if (!response.ok) throw new Error('Failed to load content')
         return response.json()
       })
@@ -38,7 +42,10 @@ export default function AdminPage() {
           })
         }
       })
-      .catch(() => {
+      .catch((error) => {
+        if (error instanceof Error && error.message === 'Authentication required') {
+          return
+        }
         setMessage(
           'Datubāzes saturs vēl nav pieejams. Aizpildi laukus, lai izveidotu pirmo versiju.'
         )
@@ -62,6 +69,11 @@ export default function AdminPage() {
         body: JSON.stringify(form),
       })
 
+      if (response.status === 401) {
+        window.location.assign('/login?next=/admin')
+        return
+      }
+
       const payload = await response.json()
       if (!response.ok) {
         throw new Error(payload.error || 'Failed to save content')
@@ -77,15 +89,30 @@ export default function AdminPage() {
     }
   }
 
+  const logout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' })
+    window.location.assign('/login')
+  }
+
   return (
-    <div className="min-h-screen bg-ivory px-4 py-12 text-primary sm:px-6">
+    <div className="min-h-screen bg-ivory px-4 py-8 text-primary sm:px-6 sm:py-12">
       <div className="mx-auto max-w-3xl">
-        <div className="mb-10 border-b border-primary/10 pb-6">
-          <p className="eyebrow mb-2 text-accent">Crystal E Studio</p>
-          <h1 className="font-serif text-4xl">Satura administrēšana</h1>
-          <p className="mt-3 text-sm text-primary/60">
-            Pirmais CMS posms: LV sākuma ekrāns un SEO.
-          </p>
+        <div className="mb-10 flex items-start justify-between gap-6 border-b border-primary/10 pb-6">
+          <div>
+            <p className="eyebrow mb-2 text-accent">Crystal E Studio</p>
+            <h1 className="font-serif text-4xl">Satura administrēšana</h1>
+            <p className="mt-3 text-sm text-primary/60">
+              Pirmais CMS posms: LV sākuma ekrāns un SEO.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={logout}
+            className="flex h-11 shrink-0 items-center justify-center border border-primary/15 px-4 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-primary/60 transition hover:border-accent hover:text-accent"
+          >
+            Logout
+          </button>
         </div>
 
         {loading ? (
