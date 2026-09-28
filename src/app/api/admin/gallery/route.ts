@@ -5,6 +5,7 @@ import {
   deleteGalleryItem,
   getGallery,
   reorderGallery,
+  updateGalleryCategory,
   updateGalleryText,
 } from '@/lib/gallery'
 import {
@@ -23,9 +24,9 @@ function getLocale(request: NextRequest) {
 }
 
 function revalidateGalleryPages() {
-  revalidatePath('/lv')
-  revalidatePath('/ru')
-  revalidatePath('/en')
+  revalidatePath('/lv/gallery')
+  revalidatePath('/ru/gallery')
+  revalidatePath('/en/gallery')
 }
 
 export async function GET() {
@@ -41,11 +42,12 @@ export async function POST(request: NextRequest) {
 
   const formData = await request.formData()
   const title = String(formData.get('title') || '').trim()
-  const category = String(formData.get('category') || '').trim()
+  const categoryIdRaw = String(formData.get('categoryId') || '').trim()
+  const categoryId = categoryIdRaw || null
   const beforeFile = formData.get('before')
   const afterFile = formData.get('after')
 
-  if (!title || !category) {
+  if (!title || !categoryId) {
     return NextResponse.json(
       { error: 'Title and category are required' },
       { status: 400 }
@@ -106,7 +108,7 @@ export async function POST(request: NextRequest) {
 
     const item = await createGalleryItem(locale, {
       title,
-      category,
+      categoryId,
       before: {
         ...beforeStored,
         originalSize: beforeFile.size,
@@ -148,6 +150,19 @@ export async function PATCH(request: NextRequest) {
   }
 
   const body = await request.json().catch(() => null)
+  if (body?.categoryOnly === true) {
+    const categoryId =
+      typeof body?.categoryId === 'string' && body.categoryId
+        ? body.categoryId
+        : null
+    const item = await updateGalleryCategory(id, categoryId)
+    if (!item) {
+      return NextResponse.json({ error: 'Gallery item not found' }, { status: 404 })
+    }
+    revalidateGalleryPages()
+    return NextResponse.json({ item })
+  }
+
   const title = typeof body?.title === 'string' ? body.title : ''
   const category = typeof body?.category === 'string' ? body.category : ''
 
