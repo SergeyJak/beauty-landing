@@ -20,6 +20,7 @@ type LocalizedText = {
 
 type GalleryItem = {
   id: string
+  order: number
   text: Record<Locale, LocalizedText>
   before: Asset
   after: Asset
@@ -41,6 +42,8 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
   const [loading, setLoading] = useState(true)
   const [uploading, setUploading] = useState(false)
   const [savingId, setSavingId] = useState<string | null>(null)
+  const [reordering, setReordering] = useState(false)
+  const [draggedId, setDraggedId] = useState<string | null>(null)
   const [message, setMessage] = useState('')
   const beforeRef = useRef<HTMLInputElement>(null)
   const afterRef = useRef<HTMLInputElement>(null)
@@ -69,6 +72,65 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
   useEffect(() => {
     load()
   }, [])
+
+  const persistOrder = async (next: GalleryItem[]) => {
+    setItems(next)
+    setReordering(true)
+    setMessage('')
+
+    try {
+      const response = await fetch('/api/admin/gallery', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ orderedIds: next.map((item) => item.id) }),
+      })
+
+      const payload = await response.json()
+      if (!response.ok) {
+        throw new Error(payload.error || 'Failed to save order')
+      }
+
+      setItems(payload.items || next)
+      setMessage('Gallery order saved.')
+    } catch (error) {
+      setMessage(
+        error instanceof Error ? error.message : 'Failed to save gallery order.'
+      )
+      await load()
+    } finally {
+      setReordering(false)
+    }
+  }
+
+  const moveItem = (index: number, direction: -1 | 1) => {
+    const target = index + direction
+    if (target < 0 || target >= items.length || reordering) return
+
+    const next = [...items]
+    const [moved] = next.splice(index, 1)
+    next.splice(target, 0, moved)
+    void persistOrder(next)
+  }
+
+  const dropOn = (targetId: string) => {
+    if (!draggedId || draggedId === targetId || reordering) {
+      setDraggedId(null)
+      return
+    }
+
+    const from = items.findIndex((item) => item.id === draggedId)
+    const to = items.findIndex((item) => item.id === targetId)
+    if (from === -1 || to === -1) {
+      setDraggedId(null)
+      return
+    }
+
+    const next = [...items]
+    const [moved] = next.splice(from, 1)
+    next.splice(to, 0, moved)
+    setDraggedId(null)
+    void persistOrder(next)
+  }
 
   const submit = async (event: FormEvent) => {
     event.preventDefault()
@@ -191,22 +253,20 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
   }
 
   return (
-    <section className="mt-10 space-y-6 border-t border-primary/10 pt-10">
+    <section className="space-y-6">
       <div>
         <p className="eyebrow mb-2 text-accent">Gallery</p>
-        <h2 className="font-serif text-3xl">
-          Before / After · shared photos
-        </h2>
+        <h2 className="font-serif text-3xl">Before / After</h2>
         <p className="mt-2 text-sm text-primary/55">
-          Photos are stored once and used on LV / RU / EN. Only title and
-          category are translated. Up to 15 MB per original; files are
-          automatically resized, compressed to WebP and stripped of EXIF/GPS.
+          Photos are shared across LV / RU / EN. Titles and categories are
+          translated separately. Drag cards on desktop or use ↑ / ↓ on mobile
+          to change their order.
         </p>
       </div>
 
       <form
         onSubmit={submit}
-        className="space-y-5 border border-primary/10 bg-white/60 p-6"
+        className="space-y-5 border border-primary/10 bg-white/60 p-5 sm:p-6"
       >
         <div className="text-xs font-bold uppercase tracking-[0.16em] text-primary/45">
           New pair · initial text: {locale.toUpperCase()}
@@ -303,14 +363,58 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
         </div>
       ) : (
         <div className="grid gap-5 sm:grid-cols-2">
-          {items.map((item) => {
+          {items.map((item, index) => {
             const text = item.text[locale]
 
             return (
               <article
                 key={item.id}
-                className="overflow-hidden border border-primary/10 bg-white"
+                onDragOver={(event) => event.preventDefault()}
+                onDrop={() => dropOn(item.id)}
+                className={`overflow-hidden border bg-white transition ${
+                  draggedId === item.id
+                    ? 'border-accent opacity-60'
+                    : 'border-primary/10'
+                }`}
               >
+                <div className="flex items-center justify-between border-b border-primary/10 bg-soft-beige/60 px-3 py-2">
+                  <div
+                    draggable={!reordering}
+                    onDragStart={() => setDraggedId(item.id)}
+                    onDragEnd={() => setDraggedId(null)}
+                    className="hidden cursor-grab select-none items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-primary/45 active:cursor-grabbing sm:flex"
+                    title="Drag to reorder"
+                  >
+                    <span className="text-base">↕</span>
+                    Drag
+                  </div>
+
+                  <span className="text-xs font-semibold text-primary/35">
+                    #{index + 1}
+                  </span>
+
+                  <div className="ml-auto flex gap-1 sm:ml-0">
+                    <button
+                      type="button"
+                      onClick={() => moveItem(index, -1)}
+                      disabled={index === 0 || reordering}
+                      aria-label="Move up"
+                      className="flex h-9 w-9 items-center justify-center border border-primary/10 text-base text-primary/55 disabled:opacity-25"
+                    >
+                      ↑
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => moveItem(index, 1)}
+                      disabled={index === items.length - 1 || reordering}
+                      aria-label="Move down"
+                      className="flex h-9 w-9 items-center justify-center border border-primary/10 text-base text-primary/55 disabled:opacity-25"
+                    >
+                      ↓
+                    </button>
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-2">
                   <div>
                     <img
