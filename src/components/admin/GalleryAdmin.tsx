@@ -21,6 +21,7 @@ type LocalizedText = {
 type GalleryItem = {
   id: string
   order: number
+  categoryId: string | null
   text: Record<Locale, LocalizedText>
   before: Asset
   after: Asset
@@ -33,10 +34,17 @@ function formatBytes(bytes: number) {
   return `${Math.max(1, Math.round(bytes / 1024))} KB`
 }
 
+type Category = {
+  id: string
+  slug: string
+  name: Record<Locale, string>
+}
+
 export default function GalleryAdmin({ locale }: { locale: Locale }) {
   const [items, setItems] = useState<GalleryItem[]>([])
+  const [categories, setCategories] = useState<Category[]>([])
   const [title, setTitle] = useState('')
-  const [category, setCategory] = useState('')
+  const [categoryId, setCategoryId] = useState('')
   const [before, setBefore] = useState<File | null>(null)
   const [after, setAfter] = useState<File | null>(null)
   const [loading, setLoading] = useState(true)
@@ -52,16 +60,23 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
     setLoading(true)
     setMessage('')
     try {
-      const response = await fetch('/api/admin/gallery', {
-        cache: 'no-store',
-      })
-      if (response.status === 401) {
+      const [response, categoriesResponse] = await Promise.all([
+        fetch('/api/admin/gallery', { cache: 'no-store' }),
+        fetch('/api/admin/gallery-categories', { cache: 'no-store' }),
+      ])
+      if (response.status === 401 || categoriesResponse.status === 401) {
         window.location.assign(`/login?next=/admin&lang=${locale}`)
         return
       }
-      if (!response.ok) throw new Error('Failed to load gallery')
-      const payload = await response.json()
+      if (!response.ok || !categoriesResponse.ok) {
+        throw new Error('Failed to load gallery')
+      }
+      const [payload, categoriesPayload] = await Promise.all([
+        response.json(),
+        categoriesResponse.json(),
+      ])
       setItems(payload.items || [])
+      setCategories(categoriesPayload.categories || [])
     } catch {
       setMessage('Neizdevās ielādēt galeriju.')
     } finally {
@@ -145,7 +160,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
     try {
       const formData = new FormData()
       formData.set('title', title)
-      formData.set('category', category)
+      formData.set('categoryId', categoryId)
       formData.set('before', before)
       formData.set('after', after)
 
@@ -161,7 +176,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
 
       setItems((current) => [...current, payload.item])
       setTitle('')
-      setCategory('')
+      setCategoryId('')
       setBefore(null)
       setAfter(null)
       if (beforeRef.current) beforeRef.current.value = ''
@@ -204,6 +219,42 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
           : item
       )
     )
+  }
+
+  const changeCategory = async (item: GalleryItem, nextCategoryId: string) => {
+    setItems((current) =>
+      current.map((currentItem) =>
+        currentItem.id === item.id
+          ? { ...currentItem, categoryId: nextCategoryId || null }
+          : currentItem
+      )
+    )
+
+    const response = await fetch(
+      `/api/admin/gallery?id=${item.id}&locale=${locale}`,
+      {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          categoryOnly: true,
+          categoryId: nextCategoryId || null,
+        }),
+      }
+    )
+
+    const payload = await response.json().catch(() => null)
+    if (!response.ok) {
+      setMessage(payload?.error || 'Category update failed.')
+      await load()
+      return
+    }
+
+    setItems((current) =>
+      current.map((currentItem) =>
+        currentItem.id === item.id ? payload.item : currentItem
+      )
+    )
+    setMessage('Category updated.')
   }
 
   const saveText = async (item: GalleryItem) => {
@@ -290,13 +341,23 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
             <span className="mb-2 block text-xs font-bold uppercase tracking-widest">
               Category
             </span>
-            <input
-              value={category}
-              onChange={(event) => setCategory(event.target.value)}
+            <select
+              value={categoryId}
+              onChange={(event) => setCategoryId(event.target.value)}
               required
-              maxLength={160}
               className="w-full border border-primary/20 bg-white px-4 py-3 outline-none focus:border-accent"
-            />
+            >
+              <option value="">Select category</option>
+              {categories.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name[locale] ||
+                    category.name.lv ||
+                    category.name.ru ||
+                    category.name.en ||
+                    category.slug}
+                </option>
+              ))}
+            </select>
           </label>
         </div>
 
@@ -442,6 +503,25 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
                   <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-accent">
                     Text · {locale.toUpperCase()}
                   </p>
+
+                  <select
+                    value={item.categoryId || ''}
+                    onChange={(event) =>
+                      changeCategory(item, event.target.value)
+                    }
+                    className="w-full border border-primary/15 px-3 py-2 text-sm outline-none focus:border-accent"
+                  >
+                    <option value="">Uncategorized</option>
+                    {categories.map((category) => (
+                      <option key={category.id} value={category.id}>
+                        {category.name[locale] ||
+                          category.name.lv ||
+                          category.name.ru ||
+                          category.name.en ||
+                          category.slug}
+                      </option>
+                    ))}
+                  </select>
 
                   <input
                     value={text.title}
