@@ -47,7 +47,7 @@ export default function Hero({ title, description }: HeroProps) {
           sizes="100vw"
           className="object-cover object-center motion-safe:animate-slow-zoom"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_40%,rgba(255,255,255,0.3)_70%,rgba(45,42,40,0.15)_100%)] dark:bg-[linear-gradient(90deg,rgba(20,19,18,0.98)_0%,rgba(20,19,18,0.94)_40%,rgba(20,19,18,0.36)_72%,rgba(45,42,40,0.42)_100%)]" />
+        <div className="absolute inset-0 bg-white/78 md:bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_40%,rgba(255,255,255,0.3)_70%,rgba(45,42,40,0.15)_100%)] dark:bg-secondary/82 md:dark:bg-[linear-gradient(90deg,rgba(20,19,18,0.98)_0%,rgba(20,19,18,0.94)_40%,rgba(20,19,18,0.36)_72%,rgba(45,42,40,0.42)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ivory via-ivory/60 to-transparent dark:from-ivory dark:via-ivory/58" />
         <div className="absolute right-[8%] top-28 hidden h-[68%] w-px bg-accent/35 lg:block" />
       </div>
@@ -103,45 +103,49 @@ export default function Hero({ title, description }: HeroProps) {
               <svg className="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span className="text-xs font-bold uppercase tracking-widest text-primary/60">{t('hero.included')}</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-primary/80">{t('hero.included')}</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
-              <span className="text-xs font-bold uppercase tracking-widest text-primary/60">{t('hero.location')}</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-primary/80">{t('hero.location')}</span>
             </div>
           </motion.div>
 
           <motion.div
             variants={itemVariants}
-            className="grid w-full max-w-md grid-cols-3 border-t border-primary/10 pt-4"
+            className="mt-1 w-full max-w-md border-t border-primary/15 pt-3"
           >
-            <div className="min-w-0 pr-3">
-              <p className="font-serif text-2xl font-light leading-none tracking-tight text-accent sm:text-3xl">
-                {t('hero.stats.experienceNumber')}
-              </p>
-              <p className="mt-2 text-[0.48rem] font-bold uppercase leading-tight tracking-[0.14em] text-primary/40 sm:text-[0.55rem] sm:tracking-[0.2em]">
-                {t('hero.stats.experience')}
-              </p>
-            </div>
-
-            <div className="min-w-0 border-l border-primary/8 px-3">
-              <p className="font-serif text-2xl font-light leading-none tracking-tight text-accent sm:text-3xl">
-                {t('hero.stats.approvedNumber')}
-              </p>
-              <p className="mt-2 break-words text-[0.48rem] font-bold uppercase leading-tight tracking-[0.12em] text-primary/40 sm:text-[0.55rem] sm:tracking-[0.18em]">
-                {t('hero.stats.approved')}
-              </p>
-            </div>
-
-            <div className="min-w-0 border-l border-primary/8 pl-3">
-              <p className="font-serif text-2xl font-light leading-none tracking-tight text-accent sm:text-3xl">
-                {t('hero.stats.permanentNumber')}
-              </p>
-              <p className="mt-2 break-words text-[0.48rem] font-bold uppercase leading-tight tracking-[0.12em] text-primary/40 sm:text-[0.55rem] sm:tracking-[0.18em]">
-                {t('hero.stats.permanent')}
-              </p>
+            <div className="grid gap-2 sm:grid-cols-3 sm:gap-0">
+              {[
+                {
+                  value: t('hero.stats.experienceNumber'),
+                  label: t('hero.stats.experience'),
+                },
+                {
+                  value: t('hero.stats.approvedNumber'),
+                  label: t('hero.stats.approved'),
+                },
+                {
+                  value: t('hero.stats.permanentNumber'),
+                  label: t('hero.stats.permanent'),
+                },
+              ].map((stat, index) => (
+                <div
+                  key={stat.label}
+                  className={`flex min-w-0 items-center justify-between gap-4 border-primary/10 bg-white/55 px-3 py-2.5 backdrop-blur-sm sm:block sm:bg-transparent sm:py-0 ${
+                    index > 0 ? 'sm:border-l sm:px-4' : 'sm:pr-4'
+                  }`}
+                >
+                  <p className="shrink-0 font-serif text-xl font-medium leading-none tracking-tight text-[#8c6d4b] sm:text-2xl">
+                    {stat.value}
+                  </p>
+                  <p className="min-w-0 text-right text-[0.58rem] font-bold uppercase leading-snug tracking-[0.12em] text-primary/70 sm:mt-2 sm:text-left sm:text-[0.54rem] sm:tracking-[0.16em]">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
