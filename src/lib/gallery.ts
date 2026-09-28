@@ -165,6 +165,26 @@ export async function updateGalleryText(
     : null
 }
 
+export async function reorderGallery(ids: string[]) {
+  if (!ids.length || ids.some((id) => !ObjectId.isValid(id))) {
+    throw new Error('Invalid gallery order')
+  }
+
+  const db = await getDb()
+  const collection = db.collection<GalleryDocument>(COLLECTION)
+
+  await collection.bulkWrite(
+    ids.map((id, order) => ({
+      updateOne: {
+        filter: { _id: new ObjectId(id) },
+        update: { $set: { order } },
+      },
+    }))
+  )
+
+  return getGallery()
+}
+
 export async function deleteGalleryItem(id: string) {
   if (!ObjectId.isValid(id)) return null
 
