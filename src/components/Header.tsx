@@ -13,6 +13,8 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const { locale, t } = useLanguage()
+  const loginLabel = locale === 'ru' ? 'Войти' : locale === 'en' ? 'Login' : 'Ieiet'
+  const loginHref = `/login?lang=${locale}&next=/admin`
 
   const navLinks = [
     { key: 'header.navigation.why', href: '#why-electrolysis' },
@@ -80,11 +82,11 @@ export default function Header() {
           <div className="hidden xl:flex items-center gap-5">
             <LanguageSwitcher />
             <Link
-              href="/admin"
-              aria-label="Login"
+              href={loginHref}
+              aria-label={loginLabel}
               className="flex h-11 items-center justify-center border border-primary/15 px-5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-primary transition-all hover:border-accent hover:text-accent"
             >
-              Login
+              {loginLabel}
             </Link>
             <a
               href={SOCIAL_LINKS.whatsapp}
@@ -174,11 +176,11 @@ export default function Header() {
                 </div>
 
                 <Link
-                  href="/admin"
+                  href={loginHref}
                   onClick={() => setIsOpen(false)}
                   className="flex h-12 w-full items-center justify-center border border-primary/15 text-sm font-bold uppercase tracking-widest text-primary hover:border-accent hover:text-accent transition-colors"
                 >
-                  Login
+                  {loginLabel}
                 </Link>
 
                 <a
