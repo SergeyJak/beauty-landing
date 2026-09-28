@@ -20,8 +20,12 @@ test.describe('public mobile smoke', () => {
     const menuButton = page.getByTestId('mobile-menu-toggle')
     await expect(menuButton).toBeVisible()
     await menuButton.click()
+    await expect(menuButton).toHaveAttribute('aria-expanded', 'true')
 
-    const galleryLink = page.locator('a[href="/ru/gallery"]:visible')
+    const panel = page.getByTestId('mobile-menu-panel')
+    await expect(panel).toBeVisible()
+
+    const galleryLink = page.getByTestId('mobile-gallery-link')
     await expect(galleryLink).toBeVisible()
     await galleryLink.click()
 
