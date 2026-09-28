@@ -37,11 +37,17 @@
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   font-family: var(--font-sans), system-ui, sans-serif;
   background-color: rgb(var(--color-ivory));
   color: rgb(var(--color-primary));
@@ -286,4 +292,21 @@ select:focus-visible {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #80664f;
+}
+
+
+/* Prevent accidental page-wide horizontal panning on mobile. */
+img,
+video,
+svg,
+canvas {
+  max-width: 100%;
+}
+
+main,
+section,
+header,
+footer,
+nav {
+  min-width: 0;
 }
