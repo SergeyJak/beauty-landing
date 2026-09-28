@@ -12,14 +12,17 @@ export type StoredGalleryAsset = {
   height: number
 }
 
-export type GalleryItem = {
-  id: string
-  locale: Locale
+export type GalleryText = {
   title: string
   category: string
+}
+
+export type GalleryItem = {
+  id: string
   order: number
   before: StoredGalleryAsset
   after: StoredGalleryAsset
+  text: Record<Locale, GalleryText>
   createdAt: string
 }
 
@@ -47,29 +50,38 @@ async function getDb() {
   return client.db(DB_NAME)
 }
 
+function emptyText(): Record<Locale, GalleryText> {
+  return {
+    lv: { title: '', category: '' },
+    ru: { title: '', category: '' },
+    en: { title: '', category: '' },
+  }
+}
+
 function mapGalleryDocument(
   doc: GalleryDocument & { _id: ObjectId }
 ): GalleryItem {
   return {
     id: doc._id.toHexString(),
-    locale: doc.locale,
-    title: doc.title,
-    category: doc.category,
     order: doc.order,
     before: doc.before,
     after: doc.after,
+    text: {
+      ...emptyText(),
+      ...(doc.text || {}),
+    },
     createdAt: doc.createdAt.toISOString(),
   }
 }
 
-export async function getGallery(locale: Locale): Promise<GalleryItem[]> {
+export async function getGallery(): Promise<GalleryItem[]> {
   if (!process.env.MONGODB_URI) return []
 
   try {
     const db = await getDb()
     const docs = await db
       .collection<GalleryDocument>(COLLECTION)
-      .find({ locale })
+      .find({})
       .sort({ order: 1, createdAt: 1 })
       .toArray()
 
@@ -93,24 +105,53 @@ export async function createGalleryItem(
 ) {
   const db = await getDb()
   const collection = db.collection<GalleryDocument>(COLLECTION)
-  const last = await collection
-    .find({ locale })
-    .sort({ order: -1 })
-    .limit(1)
-    .next()
+  const last = await collection.find({}).sort({ order: -1 }).limit(1).next()
 
-  const doc: GalleryDocument = {
-    locale,
+  const text = emptyText()
+  text[locale] = {
     title: input.title.trim().slice(0, 120),
     category: input.category.trim().slice(0, 160),
+  }
+
+  const doc: GalleryDocument = {
     order: (last?.order ?? -1) + 1,
     before: input.before,
     after: input.after,
+    text,
     createdAt: new Date(),
   }
 
   const result = await collection.insertOne(doc)
   return mapGalleryDocument({ ...doc, _id: result.insertedId })
+}
+
+export async function updateGalleryText(
+  id: string,
+  locale: Locale,
+  input: GalleryText
+) {
+  if (!ObjectId.isValid(id)) return null
+
+  const db = await getDb()
+  const collection = db.collection<GalleryDocument>(COLLECTION)
+  const _id = new ObjectId(id)
+  const title = input.title.trim().slice(0, 120)
+  const category = input.category.trim().slice(0, 160)
+
+  await collection.updateOne(
+    { _id },
+    {
+      $set: {
+        [`text.${locale}.title`]: title,
+        [`text.${locale}.category`]: category,
+      },
+    }
+  )
+
+  const updated = await collection.findOne({ _id })
+  return updated
+    ? mapGalleryDocument(updated as GalleryDocument & { _id: ObjectId })
+    : null
 }
 
 export async function deleteGalleryItem(id: string) {
