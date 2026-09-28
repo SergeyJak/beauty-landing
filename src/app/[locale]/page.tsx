@@ -22,7 +22,7 @@ type Props = {
 export default async function Home({ params }: Props) {
   const { locale } = await params
   const [editable, gallery] = isValidLocale(locale)
-    ? await Promise.all([getEditableContent(locale), getGallery(locale)])
+    ? await Promise.all([getEditableContent(locale), getGallery()])
     : [null, []]
 
   return (
@@ -37,8 +37,16 @@ export default async function Home({ params }: Props) {
           id: item.id,
           before: item.before.url,
           after: item.after.url,
-          title: item.title,
-          category: item.category,
+          title:
+            item.text[locale].title ||
+            item.text.lv.title ||
+            item.text.ru.title ||
+            item.text.en.title,
+          category:
+            item.text[locale].category ||
+            item.text.lv.category ||
+            item.text.ru.category ||
+            item.text.en.category,
         }))}
       />
       <Expertise />
