@@ -2,6 +2,8 @@
 
 import { FormEvent, useEffect, useState } from 'react'
 
+type Locale = 'lv' | 'ru' | 'en'
+
 type FormState = {
   heroTitle: string
   heroDescription: string
@@ -16,42 +18,58 @@ const emptyForm: FormState = {
   seoDescription: '',
 }
 
+const localeLabels: Record<Locale, string> = {
+  lv: 'Latviešu',
+  ru: 'Русский',
+  en: 'English',
+}
+
 export default function AdminPage() {
+  const [locale, setLocale] = useState<Locale>('lv')
   const [form, setForm] = useState<FormState>(emptyForm)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
 
   useEffect(() => {
-    fetch('/api/admin/content?locale=lv', { cache: 'no-store' })
+    let cancelled = false
+    setLoading(true)
+    setMessage('')
+
+    fetch(`/api/admin/content?locale=${locale}`, { cache: 'no-store' })
       .then(async (response) => {
         if (response.status === 401) {
-          window.location.assign('/login?next=/admin')
+          window.location.assign(`/login?next=/admin&lang=${locale}`)
           throw new Error('Authentication required')
         }
         if (!response.ok) throw new Error('Failed to load content')
         return response.json()
       })
       .then(({ content }) => {
-        if (content) {
-          setForm({
-            heroTitle: content.heroTitle || '',
-            heroDescription: content.heroDescription || '',
-            seoTitle: content.seoTitle || '',
-            seoDescription: content.seoDescription || '',
-          })
-        }
+        if (cancelled) return
+        setForm({
+          heroTitle: content?.heroTitle || '',
+          heroDescription: content?.heroDescription || '',
+          seoTitle: content?.seoTitle || '',
+          seoDescription: content?.seoDescription || '',
+        })
       })
       .catch((error) => {
+        if (cancelled) return
         if (error instanceof Error && error.message === 'Authentication required') {
           return
         }
-        setMessage(
-          'Datubāzes saturs vēl nav pieejams. Aizpildi laukus, lai izveidotu pirmo versiju.'
-        )
+        setForm(emptyForm)
+        setMessage('Neizdevās ielādēt saturu.')
       })
-      .finally(() => setLoading(false))
-  }, [])
+      .finally(() => {
+        if (!cancelled) setLoading(false)
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [locale])
 
   const update = (field: keyof FormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }))
@@ -63,14 +81,14 @@ export default function AdminPage() {
     setMessage('')
 
     try {
-      const response = await fetch('/api/admin/content?locale=lv', {
+      const response = await fetch(`/api/admin/content?locale=${locale}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
 
       if (response.status === 401) {
-        window.location.assign('/login?next=/admin')
+        window.location.assign(`/login?next=/admin&lang=${locale}`)
         return
       }
 
@@ -79,7 +97,7 @@ export default function AdminPage() {
         throw new Error(payload.error || 'Failed to save content')
       }
 
-      setMessage('Saglabāts. LV lapa un SEO tagi izmantos jauno saturu.')
+      setMessage(`Saglabāts: ${localeLabels[locale]}.`)
     } catch (error) {
       setMessage(
         error instanceof Error ? error.message : 'Neizdevās saglabāt saturu.'
@@ -91,18 +109,18 @@ export default function AdminPage() {
 
   const logout = async () => {
     await fetch('/api/auth/logout', { method: 'POST' })
-    window.location.assign('/login')
+    window.location.assign(`/login?lang=${locale}`)
   }
 
   return (
     <div className="min-h-screen bg-ivory px-4 py-8 text-primary sm:px-6 sm:py-12">
       <div className="mx-auto max-w-3xl">
-        <div className="mb-10 flex items-start justify-between gap-6 border-b border-primary/10 pb-6">
+        <div className="mb-8 flex items-start justify-between gap-6 border-b border-primary/10 pb-6">
           <div>
             <p className="eyebrow mb-2 text-accent">Crystal E Studio</p>
             <h1 className="font-serif text-4xl">Satura administrēšana</h1>
             <p className="mt-3 text-sm text-primary/60">
-              Pirmais CMS posms: LV sākuma ekrāns un SEO.
+              Hero un SEO saturs visām trim mājaslapas valodām.
             </p>
           </div>
 
@@ -115,15 +133,42 @@ export default function AdminPage() {
           </button>
         </div>
 
+        <div className="mb-8">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-primary/45">
+            Rediģējamā valoda
+          </p>
+          <div className="grid grid-cols-3 border border-primary/10 bg-white/50">
+            {(Object.keys(localeLabels) as Locale[]).map((item) => (
+              <button
+                key={item}
+                type="button"
+                onClick={() => setLocale(item)}
+                className={`h-12 border-r border-primary/10 px-3 text-xs font-bold uppercase tracking-[0.12em] transition last:border-r-0 ${
+                  locale === item
+                    ? 'bg-primary text-white'
+                    : 'text-primary/55 hover:bg-primary/[0.04] hover:text-primary'
+                }`}
+              >
+                {item.toUpperCase()}
+                <span className="ml-2 hidden normal-case tracking-normal sm:inline">
+                  {localeLabels[item]}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
         {loading ? (
-          <p className="text-sm text-primary/60">Ielādē…</p>
+          <p className="text-sm text-primary/60">
+            Ielādē {localeLabels[locale]} saturu…
+          </p>
         ) : (
           <form onSubmit={submit} className="space-y-8">
             <section className="space-y-5 border border-primary/10 bg-white/60 p-6">
               <div>
-                <h2 className="font-serif text-2xl">Hero</h2>
+                <h2 className="font-serif text-2xl">Hero · {locale.toUpperCase()}</h2>
                 <p className="mt-1 text-xs uppercase tracking-widest text-primary/40">
-                  Redzams /lv lapas augšdaļā
+                  Redzams /{locale} lapas augšdaļā
                 </p>
               </div>
 
@@ -157,7 +202,7 @@ export default function AdminPage() {
 
             <section className="space-y-5 border border-primary/10 bg-white/60 p-6">
               <div>
-                <h2 className="font-serif text-2xl">SEO</h2>
+                <h2 className="font-serif text-2xl">SEO · {locale.toUpperCase()}</h2>
                 <p className="mt-1 text-xs uppercase tracking-widest text-primary/40">
                   Google title un description
                 </p>
@@ -197,7 +242,7 @@ export default function AdminPage() {
                 disabled={saving}
                 className="border border-accent bg-accent px-8 py-3 text-xs font-bold uppercase tracking-[0.18em] text-white disabled:opacity-50"
               >
-                {saving ? 'Saglabā…' : 'Saglabāt'}
+                {saving ? 'Saglabā…' : `Saglabāt ${locale.toUpperCase()}`}
               </button>
               {message && (
                 <p className="text-sm text-primary/65" role="status">
