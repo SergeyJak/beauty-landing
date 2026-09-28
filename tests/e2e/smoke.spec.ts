@@ -13,14 +13,15 @@ test.describe('public mobile smoke', () => {
     expect(overflow.scrollWidth).toBeLessThanOrEqual(overflow.clientWidth + 1)
   })
 
-  test('mobile menu opens the standalone gallery', async ({ page }) => {
+  test('mobile menu opens the standalone gallery', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-chrome', 'mobile-only smoke')
     await page.goto('/ru')
 
     const menuButton = page.getByTestId('mobile-menu-toggle')
     await expect(menuButton).toBeVisible()
     await menuButton.click()
 
-    const galleryLink = page.locator('a[href="/ru/gallery"]').first()
+    const galleryLink = page.locator('a[href="/ru/gallery"]:visible')
     await expect(galleryLink).toBeVisible()
     await galleryLink.click()
 
