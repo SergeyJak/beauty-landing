@@ -115,19 +115,33 @@ export default function Hero({ title, description }: HeroProps) {
 
           <motion.div
             variants={itemVariants}
-            className="grid max-w-xs grid-cols-3 divide-x divide-primary/8 border-t border-primary/10 pt-5"
+            className="grid w-full max-w-md grid-cols-3 border-t border-primary/10 pt-4"
           >
-            <div>
-              <p className="font-serif text-3xl font-light tracking-tight text-accent">{t('hero.stats.experienceNumber')}</p>
-              <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.25em] text-primary/35">{t('hero.stats.experience')}</p>
+            <div className="min-w-0 pr-3">
+              <p className="font-serif text-2xl font-light leading-none tracking-tight text-accent sm:text-3xl">
+                {t('hero.stats.experienceNumber')}
+              </p>
+              <p className="mt-2 text-[0.48rem] font-bold uppercase leading-tight tracking-[0.14em] text-primary/40 sm:text-[0.55rem] sm:tracking-[0.2em]">
+                {t('hero.stats.experience')}
+              </p>
             </div>
-            <div className="px-4 md:px-6">
-              <p className="font-serif text-3xl font-light tracking-tight text-accent">{t('hero.stats.approvedNumber')}</p>
-              <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.25em] text-primary/35">{t('hero.stats.approved')}</p>
+
+            <div className="min-w-0 border-l border-primary/8 px-3">
+              <p className="font-serif text-2xl font-light leading-none tracking-tight text-accent sm:text-3xl">
+                {t('hero.stats.approvedNumber')}
+              </p>
+              <p className="mt-2 break-words text-[0.48rem] font-bold uppercase leading-tight tracking-[0.12em] text-primary/40 sm:text-[0.55rem] sm:tracking-[0.18em]">
+                {t('hero.stats.approved')}
+              </p>
             </div>
-            <div className="pl-4 md:pl-6">
-              <p className="font-serif text-3xl font-light tracking-tight text-accent">{t('hero.stats.permanentNumber')}</p>
-              <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.25em] text-primary/35">{t('hero.stats.permanent')}</p>
+
+            <div className="min-w-0 border-l border-primary/8 pl-3">
+              <p className="font-serif text-2xl font-light leading-none tracking-tight text-accent sm:text-3xl">
+                {t('hero.stats.permanentNumber')}
+              </p>
+              <p className="mt-2 break-words text-[0.48rem] font-bold uppercase leading-tight tracking-[0.12em] text-primary/40 sm:text-[0.55rem] sm:tracking-[0.18em]">
+                {t('hero.stats.permanent')}
+              </p>
             </div>
           </motion.div>
         </div>
