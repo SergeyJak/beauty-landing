@@ -58,14 +58,25 @@ function emptyText(): Record<Locale, GalleryText> {
   }
 }
 
+function withCurrentPublicUrl(asset: StoredGalleryAsset): StoredGalleryAsset {
+  const base = process.env.R2_PUBLIC_BASE_URL?.replace(/\/$/, '')
+  if (!base) return asset
+
+  return {
+    ...asset,
+    url: `${base}/${asset.key}`,
+    thumbnailUrl: `${base}/${asset.thumbKey}`,
+  }
+}
+
 function mapGalleryDocument(
   doc: GalleryDocument & { _id: ObjectId }
 ): GalleryItem {
   return {
     id: doc._id.toHexString(),
     order: doc.order,
-    before: doc.before,
-    after: doc.after,
+    before: withCurrentPublicUrl(doc.before),
+    after: withCurrentPublicUrl(doc.after),
     text: {
       ...emptyText(),
       ...(doc.text || {}),
