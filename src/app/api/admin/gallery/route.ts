@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
-import { createGalleryItem, deleteGalleryItem, getGallery } from '@/lib/gallery'
+import {
+  createGalleryItem,
+  deleteGalleryItem,
+  getGallery,
+  updateGalleryText,
+} from '@/lib/gallery'
 import {
   MAX_IMAGE_BYTES,
   deleteR2Objects,
@@ -16,13 +21,14 @@ function getLocale(request: NextRequest) {
   return isValidLocale(locale) ? locale : null
 }
 
-export async function GET(request: NextRequest) {
-  const locale = getLocale(request)
-  if (!locale) {
-    return NextResponse.json({ error: 'Invalid locale' }, { status: 400 })
-  }
+function revalidateGalleryPages() {
+  revalidatePath('/lv')
+  revalidatePath('/ru')
+  revalidatePath('/en')
+}
 
-  const items = await getGallery(locale)
+export async function GET() {
+  const items = await getGallery()
   return NextResponse.json({ items })
 }
 
@@ -110,7 +116,7 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    revalidatePath(`/${locale}`)
+    revalidateGalleryPages()
     return NextResponse.json({ item }, { status: 201 })
   } catch (error) {
     await deleteR2Objects(cleanupKeys).catch(() => undefined)
@@ -126,6 +132,31 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     )
   }
+}
+
+export async function PATCH(request: NextRequest) {
+  const locale = getLocale(request)
+  const id = request.nextUrl.searchParams.get('id')
+
+  if (!locale) {
+    return NextResponse.json({ error: 'Invalid locale' }, { status: 400 })
+  }
+
+  if (!id) {
+    return NextResponse.json({ error: 'Missing id' }, { status: 400 })
+  }
+
+  const body = await request.json().catch(() => null)
+  const title = typeof body?.title === 'string' ? body.title : ''
+  const category = typeof body?.category === 'string' ? body.category : ''
+
+  const item = await updateGalleryText(id, locale, { title, category })
+  if (!item) {
+    return NextResponse.json({ error: 'Gallery item not found' }, { status: 404 })
+  }
+
+  revalidatePath(`/${locale}`)
+  return NextResponse.json({ item })
 }
 
 export async function DELETE(request: NextRequest) {
@@ -146,6 +177,6 @@ export async function DELETE(request: NextRequest) {
     item.after.thumbKey,
   ])
 
-  revalidatePath(`/${item.locale}`)
+  revalidateGalleryPages()
   return NextResponse.json({ ok: true })
 }
