@@ -102,6 +102,7 @@ export default function Header() {
 
           <div className="flex xl:hidden items-center gap-4">
             <button
+              data-testid="mobile-menu-toggle"
               onClick={toggleMenu}
               className="group flex h-14 w-14 flex-col items-center justify-center gap-1.5 transition-all hover:bg-primary/5 active:scale-95"
               aria-label={t('header.toggleMenu')}
