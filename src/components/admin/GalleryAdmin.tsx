@@ -13,10 +13,14 @@ type Asset = {
   height: number
 }
 
-type GalleryItem = {
-  id: string
+type LocalizedText = {
   title: string
   category: string
+}
+
+type GalleryItem = {
+  id: string
+  text: Record<Locale, LocalizedText>
   before: Asset
   after: Asset
 }
@@ -36,6 +40,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
   const [after, setAfter] = useState<File | null>(null)
   const [loading, setLoading] = useState(true)
   const [uploading, setUploading] = useState(false)
+  const [savingId, setSavingId] = useState<string | null>(null)
   const [message, setMessage] = useState('')
   const beforeRef = useRef<HTMLInputElement>(null)
   const afterRef = useRef<HTMLInputElement>(null)
@@ -44,7 +49,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
     setLoading(true)
     setMessage('')
     try {
-      const response = await fetch(`/api/admin/gallery?locale=${locale}`, {
+      const response = await fetch('/api/admin/gallery', {
         cache: 'no-store',
       })
       if (response.status === 401) {
@@ -63,7 +68,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
 
   useEffect(() => {
     load()
-  }, [locale])
+  }, [])
 
   const submit = async (event: FormEvent) => {
     event.preventDefault()
@@ -105,7 +110,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
       const optimized =
         payload.item.before.optimizedSize + payload.item.after.optimizedSize
       setMessage(
-        `Uploaded: ${formatBytes(original)} → ${formatBytes(optimized)}`
+        `Uploaded once for all languages: ${formatBytes(original)} → ${formatBytes(optimized)}`
       )
     } catch (error) {
       setMessage(
@@ -116,8 +121,61 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
     }
   }
 
+  const updateText = (
+    id: string,
+    field: keyof LocalizedText,
+    value: string
+  ) => {
+    setItems((current) =>
+      current.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              text: {
+                ...item.text,
+                [locale]: {
+                  ...item.text[locale],
+                  [field]: value,
+                },
+              },
+            }
+          : item
+      )
+    )
+  }
+
+  const saveText = async (item: GalleryItem) => {
+    setSavingId(item.id)
+    setMessage('')
+
+    try {
+      const response = await fetch(
+        `/api/admin/gallery?id=${item.id}&locale=${locale}`,
+        {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(item.text[locale]),
+        }
+      )
+
+      const payload = await response.json()
+      if (!response.ok) throw new Error(payload.error || 'Save failed')
+
+      setItems((current) =>
+        current.map((currentItem) =>
+          currentItem.id === item.id ? payload.item : currentItem
+        )
+      )
+      setMessage(`Saved ${locale.toUpperCase()} gallery text.`)
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : 'Save failed.')
+    } finally {
+      setSavingId(null)
+    }
+  }
+
   const remove = async (id: string) => {
-    if (!window.confirm('Delete this Before / After pair?')) return
+    if (!window.confirm('Delete this Before / After pair for all languages?')) return
 
     const response = await fetch(`/api/admin/gallery?id=${id}`, {
       method: 'DELETE',
@@ -125,7 +183,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
 
     if (response.ok) {
       setItems((current) => current.filter((item) => item.id !== id))
-      setMessage('Deleted.')
+      setMessage('Deleted from all languages.')
     } else {
       const payload = await response.json().catch(() => null)
       setMessage(payload?.error || 'Delete failed.')
@@ -137,11 +195,12 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
       <div>
         <p className="eyebrow mb-2 text-accent">Gallery</p>
         <h2 className="font-serif text-3xl">
-          Before / After · {locale.toUpperCase()}
+          Before / After · shared photos
         </h2>
         <p className="mt-2 text-sm text-primary/55">
-          Up to 15 MB per original. Images are automatically resized,
-          compressed to WebP and stripped of EXIF/GPS data.
+          Photos are stored once and used on LV / RU / EN. Only title and
+          category are translated. Up to 15 MB per original; files are
+          automatically resized, compressed to WebP and stripped of EXIF/GPS.
         </p>
       </div>
 
@@ -149,6 +208,10 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
         onSubmit={submit}
         className="space-y-5 border border-primary/10 bg-white/60 p-6"
       >
+        <div className="text-xs font-bold uppercase tracking-[0.16em] text-primary/45">
+          New pair · initial text: {locale.toUpperCase()}
+        </div>
+
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="block">
             <span className="mb-2 block text-xs font-bold uppercase tracking-widest">
@@ -222,7 +285,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
           disabled={uploading}
           className="bg-primary px-7 py-3 text-xs font-bold uppercase tracking-[0.18em] text-white disabled:opacity-50"
         >
-          {uploading ? 'Processing…' : 'Upload pair'}
+          {uploading ? 'Processing…' : 'Upload shared pair'}
         </button>
       </form>
 
@@ -236,59 +299,98 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
         <p className="text-sm text-primary/50">Loading gallery…</p>
       ) : items.length === 0 ? (
         <div className="border border-dashed border-primary/15 px-6 py-10 text-center text-sm text-primary/45">
-          No uploaded Before / After pairs for {locale.toUpperCase()} yet.
+          No uploaded Before / After pairs yet.
         </div>
       ) : (
         <div className="grid gap-5 sm:grid-cols-2">
-          {items.map((item) => (
-            <article
-              key={item.id}
-              className="overflow-hidden border border-primary/10 bg-white"
-            >
-              <div className="grid grid-cols-2">
-                <div>
-                  <img
-                    src={item.before.thumbnailUrl}
-                    alt={`${item.title} before`}
-                    className="aspect-square w-full object-cover"
-                  />
-                  <p className="px-3 py-2 text-[0.65rem] font-bold uppercase tracking-wider text-primary/45">
-                    Before
-                  </p>
-                </div>
-                <div className="border-l border-primary/10">
-                  <img
-                    src={item.after.thumbnailUrl}
-                    alt={`${item.title} after`}
-                    className="aspect-square w-full object-cover"
-                  />
-                  <p className="px-3 py-2 text-[0.65rem] font-bold uppercase tracking-wider text-primary/45">
-                    After
-                  </p>
-                </div>
-              </div>
+          {items.map((item) => {
+            const text = item.text[locale]
 
-              <div className="space-y-2 border-t border-primary/10 p-4">
-                <h3 className="font-serif text-xl">{item.title}</h3>
-                <p className="text-sm text-primary/55">{item.category}</p>
-                <p className="text-xs text-primary/40">
-                  Before {formatBytes(item.before.originalSize)} →{' '}
-                  {formatBytes(item.before.optimizedSize)}
-                  <br />
-                  After {formatBytes(item.after.originalSize)} →{' '}
-                  {formatBytes(item.after.optimizedSize)}
-                </p>
+            return (
+              <article
+                key={item.id}
+                className="overflow-hidden border border-primary/10 bg-white"
+              >
+                <div className="grid grid-cols-2">
+                  <div>
+                    <img
+                      src={item.before.thumbnailUrl}
+                      alt="Before"
+                      className="aspect-square w-full object-cover"
+                    />
+                    <p className="px-3 py-2 text-[0.65rem] font-bold uppercase tracking-wider text-primary/45">
+                      Before
+                    </p>
+                  </div>
+                  <div className="border-l border-primary/10">
+                    <img
+                      src={item.after.thumbnailUrl}
+                      alt="After"
+                      className="aspect-square w-full object-cover"
+                    />
+                    <p className="px-3 py-2 text-[0.65rem] font-bold uppercase tracking-wider text-primary/45">
+                      After
+                    </p>
+                  </div>
+                </div>
 
-                <button
-                  type="button"
-                  onClick={() => remove(item.id)}
-                  className="mt-2 border border-red-900/15 px-4 py-2 text-xs font-bold uppercase tracking-wider text-red-800 transition hover:bg-red-50"
-                >
-                  Delete
-                </button>
-              </div>
-            </article>
-          ))}
+                <div className="space-y-3 border-t border-primary/10 p-4">
+                  <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-accent">
+                    Text · {locale.toUpperCase()}
+                  </p>
+
+                  <input
+                    value={text.title}
+                    onChange={(event) =>
+                      updateText(item.id, 'title', event.target.value)
+                    }
+                    maxLength={120}
+                    placeholder="Title"
+                    className="w-full border border-primary/15 px-3 py-2 text-sm outline-none focus:border-accent"
+                  />
+
+                  <input
+                    value={text.category}
+                    onChange={(event) =>
+                      updateText(item.id, 'category', event.target.value)
+                    }
+                    maxLength={160}
+                    placeholder="Category"
+                    className="w-full border border-primary/15 px-3 py-2 text-sm outline-none focus:border-accent"
+                  />
+
+                  <p className="text-xs text-primary/40">
+                    Before {formatBytes(item.before.originalSize)} →{' '}
+                    {formatBytes(item.before.optimizedSize)}
+                    <br />
+                    After {formatBytes(item.after.originalSize)} →{' '}
+                    {formatBytes(item.after.optimizedSize)}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      onClick={() => saveText(item)}
+                      disabled={savingId === item.id}
+                      className="bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wider text-white disabled:opacity-50"
+                    >
+                      {savingId === item.id
+                        ? 'Saving…'
+                        : `Save ${locale.toUpperCase()} text`}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => remove(item.id)}
+                      className="border border-red-900/15 px-4 py-2 text-xs font-bold uppercase tracking-wider text-red-800 transition hover:bg-red-50"
+                    >
+                      Delete pair
+                    </button>
+                  </div>
+                </div>
+              </article>
+            )
+          })}
         </div>
       )}
     </section>
