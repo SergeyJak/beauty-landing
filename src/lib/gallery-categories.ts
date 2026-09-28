@@ -133,5 +133,13 @@ export async function deleteGalleryCategory(id: string) {
   const db = await getDb()
   const _id = new ObjectId(id)
   const result = await db.collection<CategoryDocument>(COLLECTION).deleteOne({ _id })
+
+  if (result.deletedCount > 0) {
+    await db.collection('gallery').updateMany(
+      { categoryId: id },
+      { $set: { categoryId: null } }
+    )
+  }
+
   return result.deletedCount > 0
 }
