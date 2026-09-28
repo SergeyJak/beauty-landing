@@ -12,6 +12,7 @@ import Contact from '@/components/sections/Contact'
 import FloatingButtons from '@/components/FloatingButtons'
 import PageTransition from '@/components/PageTransition'
 import { getEditableContent } from '@/lib/content'
+import { getGallery } from '@/lib/gallery'
 import { isValidLocale } from '@/lib/i18n'
 
 type Props = {
@@ -20,9 +21,9 @@ type Props = {
 
 export default async function Home({ params }: Props) {
   const { locale } = await params
-  const editable = isValidLocale(locale)
-    ? await getEditableContent(locale)
-    : null
+  const [editable, gallery] = isValidLocale(locale)
+    ? await Promise.all([getEditableContent(locale), getGallery(locale)])
+    : [null, []]
 
   return (
     <PageTransition>
@@ -31,7 +32,15 @@ export default async function Home({ params }: Props) {
         description={editable?.heroDescription}
       />
       <TrustStrip />
-      <BeforeAfter />
+      <BeforeAfter
+        images={gallery.map((item) => ({
+          id: item.id,
+          before: item.before.url,
+          after: item.after.url,
+          title: item.title,
+          category: item.category,
+        }))}
+      />
       <Expertise />
       <ClinicalComparison />
       <Benefits />
