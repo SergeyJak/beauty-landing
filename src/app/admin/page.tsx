@@ -2,9 +2,10 @@
 
 import { FormEvent, useEffect, useState } from 'react'
 import GalleryAdmin from '@/components/admin/GalleryAdmin'
+import CategoriesAdmin from '@/components/admin/CategoriesAdmin'
 
 type Locale = 'lv' | 'ru' | 'en'
-type AdminSection = 'content' | 'gallery'
+type AdminSection = 'content' | 'categories' | 'gallery'
 
 type FormState = {
   heroTitle: string
@@ -32,6 +33,7 @@ const sections: Array<{
   description: string
 }> = [
   { id: 'content', label: 'Content', description: 'Hero & SEO' },
+  { id: 'categories', label: 'Categories', description: 'Gallery groups' },
   { id: 'gallery', label: 'Gallery', description: 'Before / After' },
 ]
 
@@ -376,6 +378,8 @@ export default function AdminPage() {
               </form>
             )}
           </section>
+        ) : section === 'categories' ? (
+          <CategoriesAdmin locale={locale} />
         ) : (
           <GalleryAdmin locale={locale} />
         )}
