@@ -14,15 +14,16 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const { locale, t } = useLanguage()
   const loginLabel = locale === 'ru' ? 'Войти' : locale === 'en' ? 'Login' : 'Ieiet'
+  const galleryLabel = locale === 'ru' ? 'Галерея' : locale === 'en' ? 'Gallery' : 'Galerija'
   const loginHref = `/login?lang=${locale}&next=/admin`
 
   const navLinks = [
-    { key: 'header.navigation.why', href: '#why-electrolysis' },
-    { key: 'header.navigation.benefits', href: '#benefits' },
-    { key: 'header.navigation.howWorks', href: '#how-it-works' },
-    { key: 'header.navigation.results', href: '#gallery' },
-    { key: 'header.navigation.faq', href: '#faq' },
-    { key: 'header.navigation.contact', href: '#contact' },
+    { key: 'header.navigation.why', href: `/${locale}#why-electrolysis` },
+    { key: 'header.navigation.benefits', href: `/${locale}#benefits` },
+    { key: 'header.navigation.howWorks', href: `/${locale}#how-it-works` },
+    { key: null, label: galleryLabel, href: `/${locale}/gallery` },
+    { key: 'header.navigation.faq', href: `/${locale}#faq` },
+    { key: 'header.navigation.contact', href: `/${locale}#contact` },
   ]
 
   useEffect(() => {
@@ -74,7 +75,7 @@ export default function Header() {
                 href={link.href}
                 className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary/80 transition-all hover:text-accent hover:-translate-y-0.5"
               >
-                {t(link.key)}
+                {link.key ? t(link.key) : link.label}
               </a>
             ))}
           </div>
@@ -162,7 +163,7 @@ export default function Header() {
                         onClick={() => setIsOpen(false)}
                         className="flex items-center py-3 text-base font-semibold text-primary hover:text-accent border-b border-primary/10 transition-colors"
                       >
-                        {t(link.key)}
+                        {link.key ? t(link.key) : link.label}
                       </a>
                     </li>
                   ))}
