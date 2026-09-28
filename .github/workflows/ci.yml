@@ -51,6 +51,8 @@ jobs:
           node-version: 20
       - name: Install
         run: npm install
+      - name: Build for browser smoke
+        run: npm run build
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
       - name: Smoke
