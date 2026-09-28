@@ -51,6 +51,10 @@ export async function middleware(request: NextRequest) {
       'next',
       `${pathname}${request.nextUrl.search}`
     )
+    const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value
+    if (cookieLocale && isValidLocale(cookieLocale)) {
+      loginUrl.searchParams.set('lang', cookieLocale)
+    }
     return NextResponse.redirect(loginUrl)
   }
 
