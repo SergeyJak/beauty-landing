@@ -75,7 +75,7 @@ export default function LoginPage() {
                 autoCapitalize="none"
                 spellCheck={false}
                 required
-                className="h-13 w-full border border-primary/15 bg-white px-4 text-base outline-none transition focus:border-accent"
+                className="h-14 w-full border border-primary/15 bg-white px-4 text-base outline-none transition focus:border-accent"
                 placeholder="Lietotājvārds"
               />
             </label>
@@ -84,20 +84,20 @@ export default function LoginPage() {
               <span className="mb-2 block text-[0.68rem] font-bold uppercase tracking-[0.18em] text-primary/55">
                 Parole
               </span>
-              <div className="relative">
+              <div className="flex h-14 w-full items-stretch border border-primary/15 bg-white transition focus-within:border-accent">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                   autoComplete="current-password"
                   required
-                  className="h-13 w-full border border-primary/15 bg-white px-4 pr-16 text-base outline-none transition focus:border-accent"
+                  className="min-w-0 flex-1 border-0 bg-transparent px-4 text-base outline-none"
                   placeholder="Parole"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword((value) => !value)}
-                  className="absolute inset-y-0 right-0 flex min-w-14 items-center justify-center px-3 text-xs font-semibold uppercase tracking-wider text-primary/45 hover:text-accent"
+                  className="flex h-full min-w-[4.5rem] items-center justify-center border-l border-primary/10 px-3 text-xs font-semibold uppercase tracking-wider text-primary/45 transition hover:bg-primary/[0.03] hover:text-accent"
                   aria-label={showPassword ? 'Paslēpt paroli' : 'Rādīt paroli'}
                 >
                   {showPassword ? 'Hide' : 'Show'}
@@ -117,7 +117,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="premium-sheen flex h-13 w-full items-center justify-center bg-primary px-6 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#6f5948] disabled:cursor-wait disabled:opacity-60"
+              className="premium-sheen flex h-14 w-full items-center justify-center bg-primary px-6 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#6f5948] disabled:cursor-wait disabled:opacity-60"
             >
               {loading ? 'Pieslēdzas…' : 'Ieiet'}
             </button>
