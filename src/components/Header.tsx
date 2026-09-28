@@ -132,6 +132,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 220 }}
+              data-testid="mobile-menu-panel"
               className="fixed top-0 right-0 z-[100] w-full max-w-xs bg-white dark:bg-secondary shadow-[-30px_0_90px_rgba(23,19,15,0.25)] flex flex-col"
             >
               <div className="flex items-center justify-between px-6 py-4 border-b border-primary/10 flex-shrink-0">
@@ -161,6 +162,7 @@ export default function Header() {
                     <li key={link.href}>
                       <a
                         href={link.href}
+                        data-testid={link.href === `/${locale}/gallery` ? 'mobile-gallery-link' : undefined}
                         onClick={() => setIsOpen(false)}
                         className="flex items-center py-3 text-base font-semibold text-primary hover:text-accent border-b border-primary/10 transition-colors"
                       >
