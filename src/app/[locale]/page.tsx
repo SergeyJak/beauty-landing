@@ -11,11 +11,25 @@ import FAQ from '@/components/sections/FAQ'
 import Contact from '@/components/sections/Contact'
 import FloatingButtons from '@/components/FloatingButtons'
 import PageTransition from '@/components/PageTransition'
+import { getEditableContent } from '@/lib/content'
+import { isValidLocale } from '@/lib/i18n'
 
-export default function Home() {
+type Props = {
+  params: Promise<{ locale: string }>
+}
+
+export default async function Home({ params }: Props) {
+  const { locale } = await params
+  const editable = isValidLocale(locale)
+    ? await getEditableContent(locale)
+    : null
+
   return (
     <PageTransition>
-      <Hero />
+      <Hero
+        title={editable?.heroTitle}
+        description={editable?.heroDescription}
+      />
       <TrustStrip />
       <BeforeAfter />
       <Expertise />
