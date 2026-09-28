@@ -47,7 +47,7 @@ export default function Hero({ title, description }: HeroProps) {
           sizes="100vw"
           className="object-cover object-center motion-safe:animate-slow-zoom"
         />
-        <div className="absolute inset-0 bg-white/78 md:bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_40%,rgba(255,255,255,0.3)_70%,rgba(45,42,40,0.15)_100%)] dark:bg-secondary/82 md:dark:bg-[linear-gradient(90deg,rgba(20,19,18,0.98)_0%,rgba(20,19,18,0.94)_40%,rgba(20,19,18,0.36)_72%,rgba(45,42,40,0.42)_100%)]" />
+        <div className="absolute inset-0 bg-[rgba(255,255,255,0.84)] md:bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_40%,rgba(255,255,255,0.3)_70%,rgba(45,42,40,0.15)_100%)] dark:bg-[rgba(20,19,18,0.82)] md:dark:bg-[linear-gradient(90deg,rgba(20,19,18,0.98)_0%,rgba(20,19,18,0.94)_40%,rgba(20,19,18,0.36)_72%,rgba(45,42,40,0.42)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ivory via-ivory/60 to-transparent dark:from-ivory dark:via-ivory/58" />
         <div className="absolute right-[8%] top-28 hidden h-[68%] w-px bg-accent/35 lg:block" />
       </div>
@@ -56,7 +56,7 @@ export default function Hero({ title, description }: HeroProps) {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 grid min-h-[calc(94vh-9rem)] max-w-7xl grid-cols-1 items-center gap-10 px-4 pb-24 sm:px-6 md:min-h-[calc(100vh-11rem)] md:pb-16 lg:mx-auto lg:grid-cols-[1.12fr_0.88fr] lg:px-8"
+        className="relative z-10 grid min-h-[calc(94vh-9rem)] max-w-7xl grid-cols-1 items-center gap-10 px-4 pb-40 sm:px-6 sm:pb-32 md:min-h-[calc(100vh-11rem)] md:pb-16 lg:mx-auto lg:grid-cols-[1.12fr_0.88fr] lg:px-8"
       >
         <div className="max-w-4xl">
           <motion.div variants={itemVariants} className="mb-4 flex items-center gap-3">
@@ -134,14 +134,14 @@ export default function Hero({ title, description }: HeroProps) {
               ].map((stat, index) => (
                 <div
                   key={stat.label}
-                  className={`flex min-w-0 items-center justify-between gap-4 border-primary/10 bg-white/55 px-3 py-2.5 backdrop-blur-sm sm:block sm:bg-transparent sm:py-0 ${
+                  className={`flex min-w-0 items-center justify-between gap-4 border-primary/10 bg-white/80 px-3 py-2.5 backdrop-blur-sm sm:block sm:bg-transparent sm:py-0 ${
                     index > 0 ? 'sm:border-l sm:px-4' : 'sm:pr-4'
                   }`}
                 >
                   <p className="shrink-0 font-serif text-xl font-medium leading-none tracking-tight text-[#8c6d4b] sm:text-2xl">
                     {stat.value}
                   </p>
-                  <p className="min-w-0 text-right text-[0.58rem] font-bold uppercase leading-snug tracking-[0.12em] text-primary/70 sm:mt-2 sm:text-left sm:text-[0.54rem] sm:tracking-[0.16em]">
+                  <p className="min-w-0 text-right text-[0.58rem] font-bold uppercase leading-snug tracking-[0.12em] text-primary/85 sm:mt-2 sm:text-left sm:text-[0.54rem] sm:tracking-[0.16em]">
                     {stat.label}
                   </p>
                 </div>
