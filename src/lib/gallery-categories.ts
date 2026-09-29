@@ -129,12 +129,25 @@ export async function updateGalleryCategoryName(
 
 
 export async function reorderGalleryCategories(ids: string[]) {
-  if (!ids.length || ids.some((id) => !ObjectId.isValid(id))) {
+  if (
+    !ids.length ||
+    ids.some((id) => !ObjectId.isValid(id)) ||
+    new Set(ids).size !== ids.length
+  ) {
     throw new Error('Invalid category order')
   }
 
   const db = await getDb()
   const collection = db.collection<CategoryDocument>(COLLECTION)
+  const existingIds = (await collection.find({}, { projection: { _id: 1 } }).toArray())
+    .map((doc) => doc._id.toHexString())
+
+  if (
+    ids.length !== existingIds.length ||
+    existingIds.some((id) => !ids.includes(id))
+  ) {
+    throw new Error('Category order must include every category exactly once')
+  }
 
   await collection.bulkWrite(
     ids.map((id, order) => ({
