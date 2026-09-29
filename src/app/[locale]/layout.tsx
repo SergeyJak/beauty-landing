@@ -11,11 +11,11 @@ import {
   getOpenGraphLocale,
   getHreflangAlternates,
 } from '@/lib/i18n'
+import { BUSINESS } from '@/lib/business'
 import { getEditableContent } from '@/lib/content'
 import { LanguageProvider } from '@/lib/LanguageContext'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import StructuredData from '@/components/StructuredData'
 import { Toaster } from 'sonner'
 import CookieConsent from '@/components/CookieConsent'
 import ErrorBoundary from '@/components/ErrorBoundary'
@@ -93,8 +93,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     other: {
       'geo.region': 'LV-RIX',
       'geo.placename': 'Riga',
-      'geo.position': '56.9496;24.1134',
-      ICBM: '56.9496, 24.1134',
+      'geo.position': `${BUSINESS.geo.latitude};${BUSINESS.geo.longitude}`,
+      ICBM: `${BUSINESS.geo.latitude}, ${BUSINESS.geo.longitude}`,
     },
   }
 }
@@ -121,8 +121,6 @@ export default async function LocaleLayout({
 
   return (
     <LanguageProvider initialLocale={locale} initialTranslations={translations}>
-      <StructuredData locale={locale} />
-      
       {process.env.NODE_ENV === 'production' && (
         <>
           <script
