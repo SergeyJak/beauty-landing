@@ -1,20 +1,30 @@
 import type { MetadataRoute } from 'next'
-import { BUSINESS } from '@/lib/business'
-import { LOCALES } from '@/lib/i18n'
+import { LOCALES, getBaseUrl } from '@/lib/i18n'
+
+const ROUTES = [
+  { path: '', priority: 1 },
+  { path: '/gallery', priority: 0.8 },
+] as const
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = BUSINESS.siteUrl
-  const lastModified = new Date()
+  const baseUrl = getBaseUrl()
 
-  return LOCALES.map((locale) => ({
-    url: `${baseUrl}/${locale}`,
-    lastModified,
-    changeFrequency: 'weekly',
-    priority: locale === 'lv' ? 1 : 0.9,
-    alternates: {
-      languages: Object.fromEntries(
-        LOCALES.map((l) => [l, `${baseUrl}/${l}`])
-      ),
-    },
-  }))
+  return ROUTES.flatMap((route) =>
+    LOCALES.map((locale) => ({
+      url: `${baseUrl}/${locale}${route.path}`,
+      changeFrequency: 'weekly' as const,
+      priority: route.priority,
+      alternates: {
+        languages: {
+          ...Object.fromEntries(
+            LOCALES.map((language) => [
+              language,
+              `${baseUrl}/${language}${route.path}`,
+            ])
+          ),
+          'x-default': `${baseUrl}/lv${route.path}`,
+        },
+      },
+    }))
+  )
 }

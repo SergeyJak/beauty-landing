@@ -12,6 +12,7 @@ import FloatingButtons from '@/components/FloatingButtons'
 import PageTransition from '@/components/PageTransition'
 import { getEditableContent } from '@/lib/content'
 import { isValidLocale } from '@/lib/i18n'
+import StructuredData from '@/components/StructuredData'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -25,6 +26,7 @@ export default async function Home({ params }: Props) {
 
   return (
     <PageTransition>
+      {isValidLocale(locale) && <StructuredData locale={locale} />}
       <Hero
         title={editable?.heroTitle}
         description={editable?.heroDescription}

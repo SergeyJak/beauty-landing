@@ -7,6 +7,7 @@ export const LOCALE_COOKIE = 'preferred-language'
 import lv from '../../messages/lv.json'
 import ru from '../../messages/ru.json'
 import en from '../../messages/en.json'
+import { DEFAULT_SITE_URL } from '@/lib/business'
 
 export function isValidLocale(locale: string): locale is Locale {
   return LOCALES.includes(locale as Locale)
@@ -58,7 +59,7 @@ export function getTranslations(locale: Locale): Translations {
 }
 
 export function getBaseUrl(): string {
-  return process.env.NEXT_PUBLIC_BASE_URL || 'https://elektrolizeriga.lv'
+  return (process.env.NEXT_PUBLIC_BASE_URL || DEFAULT_SITE_URL).replace(/\/$/, '')
 }
 
 const OPEN_GRAPH_LOCALE: Record<Locale, string> = {
