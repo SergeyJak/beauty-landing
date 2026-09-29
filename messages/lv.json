@@ -294,7 +294,7 @@
         "subtitle": "Augšanas fāze",
         "percentage": "85%",
         "duration": "2-7 gadi",
-        "description": "Mats aktīvi aug. Šī ir vienīgā fāze, kad elektrolīze var iznīcināt folikulu uz visiem laikiem.",
+        "description": "Mats aktīvi aug, un folikuls šajā fāzē ir piemērots precīzai elektrolīzes apstrādei.",
         "color": "from-accent/20 to-champagne/10",
         "details": [
           "Mats aktīvi aug",
@@ -487,7 +487,7 @@
       {
         "id": "2",
         "title": "Padušu zona",
-        "category": "Gludums uz visiem laikiem"
+        "category": "Ilgstošs gludums"
       },
       {
         "id": "3",
@@ -508,62 +508,6 @@
       "secondary": "Uzzināt vairāk"
     }
   },
-  "reviews": {
-    "eyebrow": "Atsauksmes",
-    "title": "Rezultāti no manām klientēm.",
-    "description": "Apmierinātas klientes, kuras ieguvušas brīvību no liekajiem matiem.",
-    "items": [
-      {
-        "id": "1",
-        "name": "Sarā M.",
-        "title": "Sejas zona",
-        "text": "Beidzot permanents risinājums. Mans zods ir pilnīgi gluds, un rezultāti ir neticami!",
-        "rating": 5
-      },
-      {
-        "id": "2",
-        "name": "Džesika Č.",
-        "title": "Pastāvīgā kliente",
-        "text": "Speciāliste ir ļoti rūpīga un zinoša. Rezultāts ir reāls, vairs nekādas vaksācijas!",
-        "rating": 5
-      },
-      {
-        "id": "3",
-        "name": "Amanda F.",
-        "title": "Pilns kurss",
-        "text": "Studijā ir mierīga un privāta atmosfēra. Ar katru seansu redzu progresu un jūtos arvien pārliecinātāka par rezultātu.",
-        "rating": 5
-      },
-      {
-        "id": "4",
-        "name": "Rebeka T.",
-        "title": "Padušu zona",
-        "text": "Pēc gadiem ilgas skūšanās beidzot redzu ilgstošu rezultātu. Āda ir daudz gludāka, un ikdienā par matiņiem vairs nav jādomā.",
-        "rating": 5
-      }
-    ],
-    "stats": [
-      {
-        "number": "5.0",
-        "label": "Vērtējums"
-      },
-      {
-        "number": "500+",
-        "label": "Sesijas"
-      },
-      {
-        "number": "100%",
-        "label": "Rezultāti"
-      }
-    ],
-    "cta": {
-      "eyebrow": "Gatavi gludai ādai?",
-      "title": "Pieteikties konsultācijai šodien.",
-      "description": "Sazinieties ar mani, lai apspriestu jūsu mērķus un izveidotu personīgu plānu.",
-      "primary": "Pieteikties konsultācijai",
-      "secondary": "Sazināties"
-    }
-  },
   "faq": {
     "eyebrow": "BUJ — Rīga",
     "title": "Viss, kas jāzina par elektrolīzi.",
@@ -571,7 +515,7 @@
     "items": [
       {
         "id": "1",
-        "question": "Vai tas tiešām ir uz visiem laikiem?",
+        "question": "Vai elektrolīzes rezultāts var būt permanents?",
         "answer": "Jā. Elektrolīze var nodrošināt permanentu nevēlamo matu noņemšanu. Tā kā mati aug cikliski, parasti nepieciešamas vairākas procedūras, lai apstrādātu matus to aktīvajā fāzē."
       },
       {
@@ -794,11 +738,6 @@
       "eyebrow": "Gatavi sākt?",
       "title": "Piesakieties konsultācijai Rīgā",
       "description": "Pārvērtiet redzamo progresu ilgstošā pārliecībā ar individuālu procedūru plānu."
-    },
-    "reviews": {
-      "eyebrow": "Pievienojieties manām klientēm",
-      "title": "Jūsu permanentais rezultāts sākas ar konsultāciju",
-      "description": "Piesakieties bez saistībām. Es visu skaidri izstāstīšu."
     }
   }
 }
