@@ -164,9 +164,8 @@ export async function PATCH(request: NextRequest) {
   }
 
   const title = typeof body?.title === 'string' ? body.title : ''
-  const category = typeof body?.category === 'string' ? body.category : ''
 
-  const item = await updateGalleryText(id, locale, { title, category })
+  const item = await updateGalleryText(id, locale, { title })
   if (!item) {
     return NextResponse.json({ error: 'Gallery item not found' }, { status: 404 })
   }
