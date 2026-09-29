@@ -77,7 +77,7 @@ export default function PublicGallery({
     category.slug
 
   return (
-    <main id="main-content" className="min-h-screen bg-ivory pt-28 lg:pt-36">
+    <div className="min-h-screen bg-ivory pt-28 lg:pt-36">
       <section className="section-container pb-10 text-center sm:pb-14">
         <p className="eyebrow mb-3 text-accent">{t.eyebrow}</p>
         <h1 className="font-serif text-5xl text-primary sm:text-6xl">
@@ -146,6 +146,6 @@ export default function PublicGallery({
           </div>
         )}
       </section>
-    </main>
+    </div>
   )
 }

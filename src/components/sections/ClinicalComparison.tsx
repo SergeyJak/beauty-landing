@@ -50,7 +50,7 @@ export default function ClinicalComparison() {
             className="relative group"
           >
             <div className="absolute inset-0 bg-accent/5 blur-2xl group-hover:bg-accent/10 transition-colors" />
-            <div className="relative border-2 border-accent bg-white p-8 md:p-12 shadow-2xl h-full">
+            <div data-testid="electrolysis-standard-card" className="relative border-2 border-accent bg-white dark:bg-secondary p-8 md:p-12 shadow-2xl h-full">
               <div className="absolute top-0 right-0 bg-accent px-4 py-1 text-[0.6rem] font-bold uppercase tracking-widest text-white">
                 Science-backed standard
               </div>
