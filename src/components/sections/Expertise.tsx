@@ -52,7 +52,7 @@ export default function Expertise() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
             >
-              <Card className="h-full border-none bg-soft-beige/50 p-8 hover:bg-white hover:shadow-xl transition-all duration-500">
+              <Card className="h-full border-none bg-soft-beige/50 p-8 hover:bg-white dark:hover:bg-secondary hover:shadow-xl transition-all duration-500">
                 <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-sm bg-accent/10 text-accent">
                   {item.icon}
                 </div>
@@ -71,7 +71,7 @@ export default function Expertise() {
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-20 relative p-8 md:p-16 border border-primary/5 bg-white shadow-2xl overflow-hidden"
+          className="mt-20 relative p-8 md:p-16 border border-primary/10 bg-white dark:bg-secondary shadow-2xl overflow-hidden"
         >
           <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
           <div className="absolute bottom-0 left-0 -ml-16 -mb-16 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
