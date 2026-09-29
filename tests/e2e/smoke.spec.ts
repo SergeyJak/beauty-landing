@@ -43,6 +43,19 @@ test.describe('public mobile smoke', () => {
     await expect(page.getByRole('button', { name: 'Войти' })).toBeVisible()
   })
 
+  test('admin login stays readable even when public dark theme is active', async ({ page }) => {
+    await page.goto('/login?lang=ru&next=/admin')
+    await page.evaluate(() => document.documentElement.classList.add('dark'))
+
+    const heading = page.getByRole('heading', { name: 'Админ' })
+    await expect(heading).toBeVisible()
+
+    const color = await heading.evaluate(
+      (element) => getComputedStyle(element).color
+    )
+    expect(color).toBe('rgb(45, 42, 40)')
+  })
+
   test('admin route redirects unauthenticated users to login', async ({ page }) => {
     await page.goto('/admin')
 
