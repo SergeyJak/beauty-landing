@@ -44,7 +44,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        isScrolled ? 'h-16 lg:h-22 bg-white/95 shadow-[0_15px_60px_rgba(23,19,15,0.05)] backdrop-blur-xl' : 'h-20 lg:h-28 bg-white/95 backdrop-blur-xl'
+        isScrolled ? 'h-16 lg:h-22 bg-white/95 dark:bg-secondary/95 shadow-[0_15px_60px_rgba(23,19,15,0.05)] dark:shadow-[0_15px_60px_rgba(0,0,0,0.25)] backdrop-blur-xl' : 'h-20 lg:h-28 bg-white/95 dark:bg-secondary/95 backdrop-blur-xl'
       }`}
     >
       <a
@@ -133,7 +133,7 @@ export default function Header() {
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 220 }}
               data-testid="mobile-menu-panel"
-              className="fixed top-0 right-0 z-[100] w-full max-w-xs bg-white dark:bg-secondary shadow-[-30px_0_90px_rgba(23,19,15,0.25)] flex flex-col"
+              className="fixed top-0 right-0 z-[100] w-full max-w-xs bg-white dark:bg-secondary shadow-[-30px_0_90px_rgba(23,19,15,0.25)] dark:shadow-[-30px_0_90px_rgba(0,0,0,0.45)] flex flex-col"
             >
               <div className="flex items-center justify-between px-6 py-4 border-b border-primary/10 flex-shrink-0">
                 <span className="font-serif text-lg text-primary">
