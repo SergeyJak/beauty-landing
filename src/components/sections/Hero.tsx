@@ -134,6 +134,7 @@ export default function Hero({ title, description }: HeroProps) {
               ].map((stat, index) => (
                 <div
                   key={stat.label}
+                  data-testid="hero-stat-card"
                   className={`flex min-w-0 items-center justify-between gap-4 border-primary/10 bg-white/80 dark:bg-secondary/80 px-3 py-2.5 backdrop-blur-sm sm:block sm:bg-transparent sm:py-0 ${
                     index > 0 ? 'sm:border-l sm:px-4' : 'sm:pr-4'
                   }`}
