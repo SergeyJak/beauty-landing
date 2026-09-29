@@ -83,6 +83,31 @@ test.describe('public mobile smoke', () => {
     }
   })
 
+  test('dark mobile menu CTA keeps readable contrast', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-chrome', 'mobile-only smoke')
+
+    await page.addInitScript(() => {
+      localStorage.setItem('theme', 'dark')
+    })
+
+    await page.goto('/ru')
+    const menuButton = page.getByTestId('mobile-menu-toggle')
+    await menuButton.click()
+
+    const cta = page.getByRole('link', { name: 'Связь' })
+    await expect(cta).toBeVisible()
+
+    const styles = await cta.evaluate((element) => {
+      const computed = getComputedStyle(element)
+      return {
+        color: computed.color,
+        backgroundColor: computed.backgroundColor,
+      }
+    })
+
+    expect(styles.color).not.toBe(styles.backgroundColor)
+  })
+
   test('Russian login is localized', async ({ page }) => {
     await page.goto('/login?lang=ru&next=/admin')
 
