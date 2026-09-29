@@ -24,7 +24,9 @@
     "cookiesTitle": "Ваша приватность",
     "cookiesDescription": "Мы используем файлы cookie для анализа трафика и улучшения работы сайта.",
     "acceptAll": "Принять всё",
-    "decline": "Отклонить"
+    "decline": "Отклонить",
+    "backToHome": "На главную",
+    "language": "Язык"
   },
   "expertise": {
     "eyebrow": "Стандарты студии",
