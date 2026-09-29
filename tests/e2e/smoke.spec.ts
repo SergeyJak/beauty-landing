@@ -43,6 +43,14 @@ test.describe('public mobile smoke', () => {
     await page.goto('/ru')
     await expect(page.locator('html')).toHaveClass(/dark/)
 
+    const header = page.locator('header').first()
+    const headerBackground = await header.evaluate(
+      (element) => getComputedStyle(element).backgroundColor
+    )
+    expect(headerBackground).not.toBe('rgba(0, 0, 0, 0)')
+
+    await expect(page.getByText('Crystal E Studio').first()).toBeVisible()
+
     const menuButton = page.getByTestId('mobile-menu-toggle')
     if (await menuButton.isVisible()) {
       await menuButton.click()
