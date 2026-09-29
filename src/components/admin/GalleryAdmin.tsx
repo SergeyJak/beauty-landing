@@ -316,7 +316,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
 
       <form
         onSubmit={submit}
-        className="space-y-5 border border-primary/10 bg-white/60 p-5 sm:p-6"
+        className="admin-card space-y-5 p-5 sm:p-6"
       >
         <div className="text-xs font-bold uppercase tracking-[0.16em] text-primary/45">
           New pair · initial text: {locale.toUpperCase()}
@@ -332,7 +332,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
               onChange={(event) => setTitle(event.target.value)}
               required
               maxLength={120}
-              className="w-full border border-primary/20 bg-white px-4 py-3 outline-none focus:border-accent"
+              className="admin-input px-4 py-3"
             />
           </label>
 
@@ -344,7 +344,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
               value={categoryId}
               onChange={(event) => setCategoryId(event.target.value)}
               required
-              className="w-full border border-primary/20 bg-white px-4 py-3 outline-none focus:border-accent"
+              className="admin-input px-4 py-3"
             >
               <option value="">Select category</option>
               {categories.map((category) => (
@@ -371,7 +371,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
               accept="image/jpeg,image/png,image/webp,image/avif,image/heic,image/heif"
               onChange={(event) => setBefore(event.target.files?.[0] || null)}
               required
-              className="block w-full text-sm text-primary/60 file:mr-4 file:border-0 file:bg-primary file:px-4 file:py-3 file:text-xs file:font-bold file:uppercase file:tracking-wider file:text-white"
+              className="admin-input block p-3 text-sm file:mr-4 file:border-0 file:bg-primary file:px-4 file:py-3 file:text-xs file:font-bold file:uppercase file:tracking-wider file:text-white"
             />
             {before && (
               <span className="mt-2 block text-xs text-primary/45">
@@ -390,7 +390,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
               accept="image/jpeg,image/png,image/webp,image/avif,image/heic,image/heif"
               onChange={(event) => setAfter(event.target.files?.[0] || null)}
               required
-              className="block w-full text-sm text-primary/60 file:mr-4 file:border-0 file:bg-primary file:px-4 file:py-3 file:text-xs file:font-bold file:uppercase file:tracking-wider file:text-white"
+              className="admin-input block p-3 text-sm file:mr-4 file:border-0 file:bg-primary file:px-4 file:py-3 file:text-xs file:font-bold file:uppercase file:tracking-wider file:text-white"
             />
             {after && (
               <span className="mt-2 block text-xs text-primary/45">
@@ -403,7 +403,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
         <button
           type="submit"
           disabled={uploading}
-          className="bg-primary px-7 py-3 text-xs font-bold uppercase tracking-[0.18em] text-white disabled:opacity-50"
+          className="admin-button-primary px-7 py-3 text-xs font-bold uppercase tracking-[0.18em] disabled:opacity-50"
         >
           {uploading ? 'Processing…' : 'Upload shared pair'}
         </button>
@@ -431,7 +431,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
                 key={item.id}
                 onDragOver={(event) => event.preventDefault()}
                 onDrop={() => dropOn(item.id)}
-                className={`overflow-hidden border bg-white transition ${
+                className={`admin-panel overflow-hidden transition ${
                   draggedId === item.id
                     ? 'border-accent opacity-60'
                     : 'border-primary/10'
@@ -508,7 +508,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
                     onChange={(event) =>
                       changeCategory(item, event.target.value)
                     }
-                    className="w-full border border-primary/15 px-3 py-2 text-sm outline-none focus:border-accent"
+                    className="admin-input px-3 py-2 text-sm"
                   >
                     <option value="">Uncategorized</option>
                     {categories.map((category) => (
@@ -529,7 +529,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
                     }
                     maxLength={120}
                     placeholder="Title"
-                    className="w-full border border-primary/15 px-3 py-2 text-sm outline-none focus:border-accent"
+                    className="admin-input px-3 py-2 text-sm"
                   />
 
                   <p className="text-xs text-primary/40">
@@ -545,7 +545,7 @@ export default function GalleryAdmin({ locale }: { locale: Locale }) {
                       type="button"
                       onClick={() => saveText(item)}
                       disabled={savingId === item.id}
-                      className="bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wider text-white disabled:opacity-50"
+                      className="admin-button-primary px-4 py-2 text-xs font-bold uppercase tracking-wider disabled:opacity-50"
                     >
                       {savingId === item.id
                         ? 'Saving…'
