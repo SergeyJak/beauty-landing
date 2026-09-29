@@ -24,7 +24,9 @@
     "cookiesTitle": "We value your privacy",
     "cookiesDescription": "We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking 'Accept All', you consent to our use of cookies.",
     "acceptAll": "Accept All",
-    "decline": "Decline"
+    "decline": "Decline",
+    "backToHome": "Back to home",
+    "language": "Language"
   },
   "expertise": {
     "eyebrow": "Studio Standards",
@@ -88,7 +90,6 @@
     },
     "quote": "\"While Laser Hair Removal offers temporary reduction, it does not permanently stop hair growth. Electrolysis remains the only solution for 100% hair-free results across all biological variations.\""
   },
-
   "header": {
     "skipToMain": "Skip to main content",
     "bookNow": "Contact",
