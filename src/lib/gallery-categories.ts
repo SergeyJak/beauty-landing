@@ -127,6 +127,27 @@ export async function updateGalleryCategoryName(
     : null
 }
 
+
+export async function reorderGalleryCategories(ids: string[]) {
+  if (!ids.length || ids.some((id) => !ObjectId.isValid(id))) {
+    throw new Error('Invalid category order')
+  }
+
+  const db = await getDb()
+  const collection = db.collection<CategoryDocument>(COLLECTION)
+
+  await collection.bulkWrite(
+    ids.map((id, order) => ({
+      updateOne: {
+        filter: { _id: new ObjectId(id) },
+        update: { $set: { order } },
+      },
+    }))
+  )
+
+  return getGalleryCategories()
+}
+
 export async function deleteGalleryCategory(id: string) {
   if (!ObjectId.isValid(id)) return false
 
