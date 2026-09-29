@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } | undefined
   const brand = translations.brand as { name?: string }
 
-  const title = saved?.seoTitle || metadata?.title || 'Electrolysis Riga'
+  const title = saved?.seoTitle || metadata?.title || 'Crystal E Studio'
   const description =
     saved?.seoDescription ||
     metadata?.description ||
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: {
       default: title,
-      template: `%s | ${brand?.name || 'Electrolysis Riga'}`,
+      template: `%s | ${brand?.name || 'Crystal E Studio'}`,
     },
     description,
     keywords: metadata?.keywords || [],
@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: title || brand?.name || 'Electrolysis Riga',
+          alt: title || brand?.name || 'Crystal E Studio',
         },
       ],
       alternateLocale: LOCALES.filter((l) => l !== locale).map((l) =>
@@ -121,32 +121,38 @@ export default async function LocaleLayout({
 
   return (
     <LanguageProvider initialLocale={locale} initialTranslations={translations}>
-      {process.env.NODE_ENV === 'production' && (
+      {process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_FB_PIXEL_ID && (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(args)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID}');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
+      )}
+
+      {process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_GA_ID && (
         <>
           <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                !function(f,b,e,v,n,t,s)
-                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(args)};
-                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID || 'PIXEL_ID'}');
-                fbq('track', 'PageView');
-              `,
-            }}
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
           />
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'GA_ID'}`} />
           <script
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || 'GA_ID'}');
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
               `,
             }}
           />

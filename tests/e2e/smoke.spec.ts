@@ -174,6 +174,98 @@ test.describe('admin preference smoke', () => {
   })
 })
 
+test.describe('seo and conversion smoke', () => {
+  test('robots and sitemap expose only public localized routes', async ({ request }) => {
+    const robots = await request.get('/robots.txt')
+    expect(robots.ok()).toBeTruthy()
+    const robotsText = await robots.text()
+    expect(robotsText).toContain('Disallow: /admin')
+    expect(robotsText).toContain('Disallow: /api')
+    expect(robotsText).toContain('Disallow: /login')
+    expect(robotsText).toContain('/sitemap.xml')
+
+    const sitemap = await request.get('/sitemap.xml')
+    expect(sitemap.ok()).toBeTruthy()
+    const sitemapText = await sitemap.text()
+
+    for (const path of [
+      '/lv',
+      '/ru',
+      '/en',
+      '/lv/gallery',
+      '/ru/gallery',
+      '/en/gallery',
+    ]) {
+      expect(sitemapText).toContain(path)
+    }
+
+    expect(sitemapText).not.toContain('/admin')
+    expect(sitemapText).not.toContain('/login')
+  })
+
+  test('localized pages expose canonical and hreflang metadata', async ({ page }) => {
+    for (const locale of ['lv', 'ru', 'en']) {
+      await page.goto('/' + locale)
+
+      const canonicalHref = await page.locator('link[rel="canonical"]').getAttribute('href')
+      expect(canonicalHref).toBeTruthy()
+      expect(canonicalHref?.endsWith('/' + locale)).toBeTruthy()
+
+      for (const hreflang of ['lv', 'ru', 'en', 'x-default']) {
+        await expect(
+          page.locator('link[rel="alternate"][hreflang="' + hreflang + '"]')
+        ).toHaveCount(1)
+      }
+
+      await page.goto('/' + locale + '/gallery')
+      const galleryCanonical = await page
+        .locator('link[rel="canonical"]')
+        .getAttribute('href')
+      expect(galleryCanonical).toBeTruthy()
+      expect(galleryCanonical?.endsWith('/' + locale + '/gallery')).toBeTruthy()
+    }
+  })
+
+  test('contact CTAs point to real external destinations', async ({ page }) => {
+    await page.goto('/en')
+
+    const whatsappHref = await page.locator('a[href*="wa.me"]').first().getAttribute('href')
+    const instagramHref = await page
+      .locator('a[href*="instagram.com"]')
+      .first()
+      .getAttribute('href')
+
+    expect(whatsappHref?.startsWith('https://')).toBeTruthy()
+    expect(instagramHref?.startsWith('https://')).toBeTruthy()
+  })
+
+  test('missing analytics IDs do not emit placeholder tracking scripts', async ({ page }) => {
+    await page.goto('/en')
+
+    await expect(page.locator('script[src*="GA_ID"]')).toHaveCount(0)
+    const html = await page.content()
+    expect(html).not.toContain('PIXEL_ID')
+    expect(html).not.toContain("gtag('config', 'GA_ID')")
+  })
+
+  test('gallery keeps a dark surface in dark mode', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.setItem('theme', 'dark')
+    })
+
+    await page.goto('/en/gallery')
+    await expect(page.locator('html')).toHaveClass(/dark/)
+
+    const allFilter = page.getByRole('button', { name: 'All' })
+    await expect(allFilter).toBeVisible()
+
+    const background = await allFilter.evaluate(
+      (element) => getComputedStyle(element).backgroundColor
+    )
+    expect(background).not.toBe('rgb(255, 255, 255)')
+  })
+})
+
 test.describe('desktop smoke', () => {
   test('all locale homepages render and gallery route is reachable', async ({ page }) => {
     for (const locale of ['lv', 'ru', 'en']) {
