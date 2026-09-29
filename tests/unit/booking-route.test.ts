@@ -58,7 +58,7 @@ describe('POST /api/booking', () => {
 
     expect(response.status).toBe(503)
     await expect(response.json()).resolves.toEqual({
-      error: 'Failed to process booking request',
+      error: 'Failed to process request',
     })
   })
 
