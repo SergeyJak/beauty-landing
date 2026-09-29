@@ -353,6 +353,11 @@ nav {
   box-shadow: 0 24px 70px rgba(45, 42, 40, 0.10);
 }
 
+.admin-panel {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+}
+
 .admin-label {
   display: block;
   color: var(--admin-muted);
