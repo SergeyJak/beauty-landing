@@ -1,6 +1,9 @@
+/** Canonical public origin used when no environment override is supplied. */
+export const DEFAULT_SITE_URL = 'https://crystal-e-studio.heysmart.lv'
+
 /** Locale-agnostic business facts for schema, maps, and tel/mailto links. */
 export const BUSINESS = {
-  siteUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://crystals-electrolysis.lv',
+  siteUrl: (process.env.NEXT_PUBLIC_BASE_URL || DEFAULT_SITE_URL).replace(/\/$/, ''),
   streetAddress: 'Latgales iela 267',
   addressLocality: 'Rīga',
   postalCode: 'LV-1063',
