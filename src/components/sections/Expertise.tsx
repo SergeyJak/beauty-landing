@@ -71,6 +71,7 @@ export default function Expertise() {
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
+          data-testid="expertise-standards-card"
           className="mt-20 relative p-8 md:p-16 border border-primary/10 bg-white dark:bg-secondary shadow-2xl overflow-hidden"
         >
           <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
