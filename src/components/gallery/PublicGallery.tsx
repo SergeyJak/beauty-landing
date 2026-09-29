@@ -1,6 +1,7 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import BeforeAfterSlider from '@/components/BeforeAfterSlider'
 
 type Locale = 'lv' | 'ru' | 'en'
@@ -58,16 +59,34 @@ export default function PublicGallery({
   categories: Category[]
   items: Item[]
 }) {
-  const [activeCategory, setActiveCategory] = useState<string>('all')
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
   const t = copy[locale]
+  const categorySlug = searchParams.get('category')
+  const activeCategory =
+    categories.find((category) => category.slug === categorySlug) || null
 
   const visibleItems = useMemo(
     () =>
-      activeCategory === 'all'
-        ? items
-        : items.filter((item) => item.categoryId === activeCategory),
+      activeCategory
+        ? items.filter((item) => item.categoryId === activeCategory.id)
+        : items,
     [activeCategory, items]
   )
+
+  const selectCategory = (slug?: string) => {
+    const next = new URLSearchParams(searchParams.toString())
+
+    if (slug) {
+      next.set('category', slug)
+    } else {
+      next.delete('category')
+    }
+
+    const query = next.toString()
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false })
+  }
 
   const categoryLabel = (category: Category) =>
     category.name[locale] ||
@@ -92,11 +111,11 @@ export default function PublicGallery({
         <div className="mb-8 flex gap-2 overflow-x-auto pb-2">
           <button
             type="button"
-            onClick={() => setActiveCategory('all')}
+            onClick={() => selectCategory()}
             className={`shrink-0 border px-5 py-3 text-xs font-bold uppercase tracking-[0.15em] transition ${
-              activeCategory === 'all'
-                ? 'border-primary bg-primary text-white'
-                : 'border-primary/15 bg-white text-primary/60 hover:border-accent hover:text-accent'
+              !activeCategory
+                ? 'border-primary bg-primary text-ivory'
+                : 'border-primary/15 bg-white text-primary/60 hover:border-accent hover:text-accent dark:bg-secondary'
             }`}
           >
             {t.all}
@@ -106,11 +125,11 @@ export default function PublicGallery({
             <button
               key={category.id}
               type="button"
-              onClick={() => setActiveCategory(category.id)}
+              onClick={() => selectCategory(category.slug)}
               className={`shrink-0 border px-5 py-3 text-xs font-bold uppercase tracking-[0.15em] transition ${
-                activeCategory === category.id
-                  ? 'border-primary bg-primary text-white'
-                  : 'border-primary/15 bg-white text-primary/60 hover:border-accent hover:text-accent'
+                activeCategory?.id === category.id
+                  ? 'border-primary bg-primary text-ivory'
+                  : 'border-primary/15 bg-white text-primary/60 hover:border-accent hover:text-accent dark:bg-secondary'
               }`}
             >
               {categoryLabel(category)}
@@ -119,7 +138,7 @@ export default function PublicGallery({
         </div>
 
         {visibleItems.length === 0 ? (
-          <div className="border border-dashed border-primary/15 bg-white/50 px-6 py-16 text-center text-sm text-primary/45">
+          <div className="border border-dashed border-primary/15 bg-white/50 px-6 py-16 text-center text-sm text-primary/45 dark:bg-secondary/50">
             {t.empty}
           </div>
         ) : (
@@ -127,7 +146,7 @@ export default function PublicGallery({
             {visibleItems.map((item) => (
               <article
                 key={item.id}
-                className="overflow-hidden border border-primary/10 bg-white shadow-[0_20px_60px_rgba(23,19,15,0.05)]"
+                className="overflow-hidden border border-primary/10 bg-white shadow-[0_20px_60px_rgba(23,19,15,0.05)] dark:bg-secondary"
               >
                 <BeforeAfterSlider
                   beforeImage={item.before}

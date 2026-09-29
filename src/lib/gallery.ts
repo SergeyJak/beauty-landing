@@ -14,7 +14,6 @@ export type StoredGalleryAsset = {
 
 export type GalleryText = {
   title: string
-  category: string
 }
 
 export type GalleryItem = {
@@ -54,9 +53,9 @@ async function getDb() {
 
 function emptyText(): Record<Locale, GalleryText> {
   return {
-    lv: { title: '', category: '' },
-    ru: { title: '', category: '' },
-    en: { title: '', category: '' },
+    lv: { title: '' },
+    ru: { title: '' },
+    en: { title: '' },
   }
 }
 
@@ -124,7 +123,6 @@ export async function createGalleryItem(
   const text = emptyText()
   text[locale] = {
     title: input.title.trim().slice(0, 120),
-    category: '',
   }
 
   const doc: GalleryDocument = {
@@ -151,14 +149,12 @@ export async function updateGalleryText(
   const collection = db.collection<GalleryDocument>(COLLECTION)
   const _id = new ObjectId(id)
   const title = input.title.trim().slice(0, 120)
-  const category = input.category.trim().slice(0, 160)
 
   await collection.updateOne(
     { _id },
     {
       $set: {
         [`text.${locale}.title`]: title,
-        [`text.${locale}.category`]: category,
       },
     }
   )

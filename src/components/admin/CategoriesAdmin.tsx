@@ -16,6 +16,7 @@ export default function CategoriesAdmin({ locale }: { locale: Locale }) {
   const [name, setName] = useState('')
   const [loading, setLoading] = useState(true)
   const [savingId, setSavingId] = useState<string | null>(null)
+  const [reordering, setReordering] = useState(false)
   const [message, setMessage] = useState('')
 
   const load = async () => {
@@ -113,6 +114,40 @@ export default function CategoriesAdmin({ locale }: { locale: Locale }) {
     }
   }
 
+
+  const persistOrder = async (next: Category[]) => {
+    setCategories(next)
+    setReordering(true)
+    setMessage('')
+
+    try {
+      const response = await fetch('/api/admin/gallery-categories', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ orderedIds: next.map((category) => category.id) }),
+      })
+      const payload = await response.json()
+      if (!response.ok) throw new Error(payload.error || 'Failed to save order')
+      setCategories(payload.categories || next)
+      setMessage('Category order saved.')
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : 'Failed to save category order.')
+      await load()
+    } finally {
+      setReordering(false)
+    }
+  }
+
+  const moveCategory = (index: number, direction: -1 | 1) => {
+    const target = index + direction
+    if (target < 0 || target >= categories.length || reordering) return
+
+    const next = [...categories]
+    const [moved] = next.splice(index, 1)
+    next.splice(target, 0, moved)
+    void persistOrder(next)
+  }
+
   const remove = async (id: string) => {
     if (!window.confirm('Delete this category? Existing photos will become uncategorized.')) {
       return
@@ -196,6 +231,26 @@ export default function CategoriesAdmin({ locale }: { locale: Locale }) {
                   <p className="mt-1 text-xs text-primary/35">
                     /{category.slug}
                   </p>
+                </div>
+                <div className="flex gap-1">
+                  <button
+                    type="button"
+                    onClick={() => moveCategory(index, -1)}
+                    disabled={index === 0 || reordering}
+                    aria-label="Move category up"
+                    className="flex h-9 w-9 items-center justify-center border border-primary/10 text-base text-primary/55 disabled:opacity-25"
+                  >
+                    ↑
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => moveCategory(index, 1)}
+                    disabled={index === categories.length - 1 || reordering}
+                    aria-label="Move category down"
+                    className="flex h-9 w-9 items-center justify-center border border-primary/10 text-base text-primary/55 disabled:opacity-25"
+                  >
+                    ↓
+                  </button>
                 </div>
               </div>
 
