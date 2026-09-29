@@ -1,4 +1,7 @@
 import { describe, expect, it } from 'vitest'
+import lv from '../../messages/lv.json'
+import ru from '../../messages/ru.json'
+import en from '../../messages/en.json'
 import {
   DEFAULT_LOCALE,
   getLocaleFromPath,
@@ -7,6 +10,26 @@ import {
   removeLocaleFromPath,
   resolveLocale,
 } from '@/lib/i18n'
+
+function translationShape(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return {
+      type: 'array',
+      length: value.length,
+      items: value.map(translationShape),
+    }
+  }
+
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>)
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([key, child]) => [key, translationShape(child)])
+    )
+  }
+
+  return typeof value
+}
 
 describe('i18n routing', () => {
   it('accepts only supported locales', () => {
@@ -35,5 +58,15 @@ describe('i18n routing', () => {
   it('removes only the leading locale segment', () => {
     expect(removeLocaleFromPath('/ru/gallery')).toBe('/gallery')
     expect(removeLocaleFromPath('/en')).toBe('/')
+  })
+})
+
+describe('translation dictionaries', () => {
+  it('keeps Latvian structurally aligned with English', () => {
+    expect(translationShape(lv)).toEqual(translationShape(en))
+  })
+
+  it('keeps Russian structurally aligned with English', () => {
+    expect(translationShape(ru)).toEqual(translationShape(en))
   })
 })
