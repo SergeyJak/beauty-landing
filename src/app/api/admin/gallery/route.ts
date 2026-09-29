@@ -29,6 +29,15 @@ function revalidateGalleryPages() {
   revalidatePath('/en/gallery')
 }
 
+async function uploadGalleryImage(
+  id: string,
+  slot: 'before' | 'after',
+  file: File
+) {
+  const source = await file.arrayBuffer()
+  return uploadOptimizedImage('gallery', id, slot, Buffer.from(source))
+}
+
 export async function GET() {
   const items = await getGallery()
   return NextResponse.json({ items })
@@ -86,25 +95,8 @@ export async function POST(request: NextRequest) {
   ]
 
   try {
-    const [beforeBuffer, afterBuffer] = await Promise.all([
-      beforeFile.arrayBuffer(),
-      afterFile.arrayBuffer(),
-    ])
-
-    const [beforeStored, afterStored] = await Promise.all([
-      uploadOptimizedImage(
-        'gallery',
-        id,
-        'before',
-        Buffer.from(beforeBuffer)
-      ),
-      uploadOptimizedImage(
-        'gallery',
-        id,
-        'after',
-        Buffer.from(afterBuffer)
-      ),
-    ])
+    const beforeStored = await uploadGalleryImage(id, 'before', beforeFile)
+    const afterStored = await uploadGalleryImage(id, 'after', afterFile)
 
     const item = await createGalleryItem(locale, {
       title,
