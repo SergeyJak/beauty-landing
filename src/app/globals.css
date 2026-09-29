@@ -310,3 +310,93 @@ footer,
 nav {
   min-width: 0;
 }
+
+
+/* Admin visual system
+   Admin/Login intentionally stay light and high-contrast regardless of the
+   public site's saved light/dark preference. */
+.admin-theme {
+  color-scheme: light;
+  --color-primary: 45 42 40;
+  --color-secondary: 250 248 246;
+  --color-accent: 154 122 83;
+  --color-soft-beige: 247 243 238;
+  --color-warm-gray: 128 118 108;
+  --color-ivory: 255 255 255;
+  --color-champagne: 190 164 130;
+  --color-text-light: 92 86 80;
+
+  --admin-canvas: #f5f1eb;
+  --admin-surface: #ffffff;
+  --admin-surface-muted: #faf8f5;
+  --admin-ink: #2d2a28;
+  --admin-muted: #716a64;
+  --admin-border: #ded8d1;
+  --admin-accent: #9a7a53;
+  --admin-accent-hover: #806344;
+
+  background: var(--admin-canvas);
+  color: var(--admin-ink);
+}
+
+.admin-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(154, 122, 83, 0.10), transparent 30rem),
+    var(--admin-canvas);
+  color: var(--admin-ink);
+}
+
+.admin-card {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  box-shadow: 0 24px 70px rgba(45, 42, 40, 0.10);
+}
+
+.admin-label {
+  display: block;
+  color: var(--admin-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.admin-input {
+  width: 100%;
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  color: var(--admin-ink);
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.admin-input::placeholder {
+  color: #99918a;
+  opacity: 1;
+}
+
+.admin-input:focus {
+  border-color: var(--admin-accent);
+  box-shadow: 0 0 0 3px rgba(154, 122, 83, 0.10);
+}
+
+.admin-button-primary {
+  background: var(--admin-ink);
+  color: #fff;
+  border: 1px solid var(--admin-ink);
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.admin-button-primary:hover {
+  background: var(--admin-accent-hover);
+  border-color: var(--admin-accent-hover);
+}
+
+.admin-muted {
+  color: var(--admin-muted);
+}
+
+.admin-accent {
+  color: var(--admin-accent);
+}
