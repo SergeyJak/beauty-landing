@@ -135,6 +135,16 @@ test.describe('public mobile smoke', () => {
     await expect(page).toHaveURL(/\/login\?/)
     expect(page.url()).toContain('next=%2Fadmin')
   })
+
+
+  test('admin API rejects unauthenticated requests with 401 JSON', async ({ request }) => {
+    const response = await request.get('/api/admin/gallery')
+
+    expect(response.status()).toBe(401)
+    await expect(response.json()).resolves.toEqual({
+      error: 'Authentication required',
+    })
+  })
 })
 
 test.describe('desktop smoke', () => {
