@@ -5,22 +5,18 @@ import { useT } from '@/lib/LanguageContext'
 
 type Theme = 'light' | 'dark'
 
-function getInitialTheme(): Theme {
-  if (typeof window === 'undefined') {
+function getAppliedTheme(): Theme {
+  if (typeof document === 'undefined') {
     return 'light'
   }
 
-  const stored = window.localStorage.getItem('theme')
-  if (stored === 'light' || stored === 'dark') {
-    return stored
-  }
-
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  return document.documentElement.classList.contains('dark') ? 'dark' : 'light'
 }
 
 function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark')
   document.documentElement.style.colorScheme = theme
+  document.documentElement.dataset.theme = theme
 }
 
 export default function ThemeToggle() {
@@ -29,9 +25,8 @@ export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const initialTheme = getInitialTheme()
-    setTheme(initialTheme)
-    applyTheme(initialTheme)
+    const appliedTheme = getAppliedTheme()
+    setTheme(appliedTheme)
     setMounted(true)
   }, [])
 
