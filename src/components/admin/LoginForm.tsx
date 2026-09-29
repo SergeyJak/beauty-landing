@@ -103,24 +103,24 @@ export default function LoginForm({
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f7f3ee] px-5 py-10 text-primary sm:px-6">
+    <main className="admin-theme admin-shell relative min-h-screen overflow-hidden px-5 py-10 sm:px-6">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(172,145,110,0.18),transparent_34%),radial-gradient(circle_at_85%_80%,rgba(45,42,40,0.08),transparent_32%)]" />
       <div className="relative mx-auto flex min-h-[calc(100vh-5rem)] max-w-md items-center">
-        <section className="w-full border border-primary/10 bg-white/85 p-7 shadow-[0_30px_90px_rgba(45,42,40,0.12)] backdrop-blur-xl sm:p-9">
+        <section className="admin-card w-full p-7 sm:p-9">
           <div className="mb-8 text-center">
             <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center border border-accent/40">
               <span className="font-serif text-2xl text-primary">E</span>
             </div>
-            <p className="eyebrow mb-2 text-accent">Crystal E Studio</p>
+            <p className="eyebrow admin-accent mb-2">Crystal E Studio</p>
             <h1 className="font-serif text-4xl font-medium">{copy.admin}</h1>
-            <p className="mt-3 text-sm leading-relaxed text-primary/55">
+            <p className="admin-muted mt-3 text-sm leading-relaxed">
               {copy.subtitle}
             </p>
           </div>
 
           <form onSubmit={submit} className="space-y-5">
             <label className="block">
-              <span className="mb-2 block text-[0.68rem] font-bold uppercase tracking-[0.18em] text-primary/55">
+              <span className="admin-label mb-2">
                 {copy.username}
               </span>
               <input
@@ -130,29 +130,29 @@ export default function LoginForm({
                 autoCapitalize="none"
                 spellCheck={false}
                 required
-                className="h-14 w-full border border-primary/15 bg-white px-4 text-base outline-none transition focus:border-accent"
+                className="admin-input h-14 px-4 text-base"
                 placeholder={copy.username}
               />
             </label>
 
             <label className="block">
-              <span className="mb-2 block text-[0.68rem] font-bold uppercase tracking-[0.18em] text-primary/55">
+              <span className="admin-label mb-2">
                 {copy.password}
               </span>
-              <div className="flex h-14 w-full items-stretch border border-primary/15 bg-white transition focus-within:border-accent">
+              <div className="admin-input flex h-14 items-stretch">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                   autoComplete="current-password"
                   required
-                  className="min-w-0 flex-1 border-0 bg-transparent px-4 text-base outline-none"
+                  className="min-w-0 flex-1 border-0 bg-transparent px-4 text-base text-[#2d2a28] outline-none placeholder:text-[#99918a]"
                   placeholder={copy.password}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword((value) => !value)}
-                  className="flex h-full min-w-[5.5rem] items-center justify-center border-l border-primary/10 px-3 text-[0.68rem] font-semibold uppercase tracking-wider text-primary/45 transition hover:bg-primary/[0.03] hover:text-accent"
+                  className="flex h-full min-w-[5.5rem] items-center justify-center border-l border-[#ded8d1] px-3 text-[0.68rem] font-semibold uppercase tracking-wider text-[#716a64] transition hover:bg-[#faf8f5] hover:text-[#9a7a53]"
                   aria-label={showPassword ? copy.hide : copy.show}
                 >
                   {showPassword ? copy.hide : copy.show}
@@ -169,16 +169,16 @@ export default function LoginForm({
             <button
               type="submit"
               disabled={loading}
-              className="premium-sheen flex h-14 w-full items-center justify-center bg-primary px-6 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#6f5948] disabled:cursor-wait disabled:opacity-60"
+              className="admin-button-primary premium-sheen flex h-14 w-full items-center justify-center px-6 text-xs font-bold uppercase tracking-[0.2em] disabled:cursor-wait disabled:opacity-60"
             >
               {loading ? copy.submitting : copy.submit}
             </button>
           </form>
 
-          <div className="mt-7 border-t border-primary/10 pt-5 text-center">
+          <div className="mt-7 border-t border-[#ded8d1] pt-5 text-center">
             <Link
               href={`/${locale}`}
-              className="text-xs font-semibold uppercase tracking-[0.16em] text-primary/45 transition hover:text-accent"
+              className="text-xs font-semibold uppercase tracking-[0.16em] text-[#716a64] transition hover:text-[#9a7a53]"
             >
               ← {copy.back}
             </Link>
