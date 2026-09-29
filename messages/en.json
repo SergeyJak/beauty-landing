@@ -508,62 +508,6 @@
       "secondary": "Learn More"
     }
   },
-  "reviews": {
-    "eyebrow": "Testimonials",
-    "title": "Real results from my clients.",
-    "description": "Satisfied clients who have achieved permanent hair removal through my electrolysis treatments.",
-    "items": [
-      {
-        "id": "1",
-        "name": "Sarah M.",
-        "title": "Facial hair removal",
-        "text": "After years of waxing and plucking, I finally have a permanent solution. My chin is completely hair-free and the results are incredible. The treatment was professional and gentle.",
-        "rating": 5
-      },
-      {
-        "id": "2",
-        "name": "Jessica C.",
-        "title": "Regular client",
-        "text": "I was nervous before my first appointment, but the specialist was so caring and put me at ease. The permanence is real, no more waxing or razor bumps.",
-        "rating": 5
-      },
-      {
-        "id": "3",
-        "name": "Amanda F.",
-        "title": "Full course",
-        "text": "The studio is so calm and private. The specialist really knows her craft. Each session brings me closer to permanent freedom from unwanted hair.",
-        "rating": 5
-      },
-      {
-        "id": "4",
-        "name": "Rebecca T.",
-        "title": "Underarm treatment",
-        "text": "Finally permanent results after years of shaving. The cost is worth it for the peace of mind. My skin has never been smoother.",
-        "rating": 5
-      }
-    ],
-    "stats": [
-      {
-        "number": "5.0",
-        "label": "Client Rating"
-      },
-      {
-        "number": "500+",
-        "label": "Sessions Completed"
-      },
-      {
-        "number": "100%",
-        "label": "Permanent Results"
-      }
-    ],
-    "cta": {
-      "eyebrow": "Ready to start?",
-      "title": "Schedule your consultation today.",
-      "description": "Meet me to discuss your hair removal goals, treatment timeline, and any questions you have.",
-      "primary": "Book Consultation",
-      "secondary": "Contact Me"
-    }
-  },
   "faq": {
     "eyebrow": "Electrolysis FAQ — Riga",
     "title": "Everything you need to know.",
@@ -794,11 +738,6 @@
       "eyebrow": "Ready to begin?",
       "title": "Book your consultation in Riga",
       "description": "Turn visible progress into lasting confidence with a personal treatment plan."
-    },
-    "reviews": {
-      "eyebrow": "Join my clients",
-      "title": "Your permanent result starts with a consultation",
-      "description": "Book with no obligation — I'll explain everything clearly."
     }
   }
 }
