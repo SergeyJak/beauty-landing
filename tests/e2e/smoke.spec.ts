@@ -147,6 +147,33 @@ test.describe('public mobile smoke', () => {
   })
 })
 
+test.describe('admin preference smoke', () => {
+  test('CMS keeps selected section and locale after reload', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-chrome', 'desktop-only admin smoke')
+
+    const login = await page.context().request.post('/api/auth/login', {
+      data: {
+        username: 'e2e-admin',
+        password: 'e2e-password',
+      },
+    })
+    expect(login.ok()).toBeTruthy()
+
+    await page.goto('/admin')
+    await expect(page.getByTestId('admin-current-section')).toHaveText('Content')
+
+    await page.getByRole('button', { name: 'Open CMS menu' }).click()
+    await page.getByTestId('admin-section-gallery').click()
+    await page.getByTestId('admin-locale-ru').click()
+
+    await expect(page.getByTestId('admin-current-section')).toHaveText('Gallery')
+    await page.reload()
+
+    await expect(page.getByTestId('admin-current-section')).toHaveText('Gallery')
+    await expect(page.getByTestId('admin-locale-ru')).toHaveClass(/bg-accent/)
+  })
+})
+
 test.describe('desktop smoke', () => {
   test('all locale homepages render and gallery route is reachable', async ({ page }) => {
     for (const locale of ['lv', 'ru', 'en']) {
