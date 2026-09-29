@@ -192,7 +192,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}
-                  className="flex h-12 w-full items-center justify-center bg-primary text-white text-sm font-bold uppercase tracking-widest hover:bg-accent transition-colors"
+                  className="flex h-12 w-full items-center justify-center bg-primary text-ivory text-sm font-bold uppercase tracking-widest hover:bg-accent transition-colors"
                 >
                   {t('header.bookNow')}
                 </a>
