@@ -4,6 +4,7 @@ import {
   createGalleryCategory,
   deleteGalleryCategory,
   getGalleryCategories,
+  reorderGalleryCategories,
   updateGalleryCategoryName,
 } from '@/lib/gallery-categories'
 import { isValidLocale } from '@/lib/i18n'
@@ -63,6 +64,29 @@ export async function PATCH(request: NextRequest) {
 
   revalidateGallery()
   return NextResponse.json({ category })
+}
+
+
+export async function PUT(request: NextRequest) {
+  const body = await request.json().catch(() => null)
+  const orderedIds = Array.isArray(body?.orderedIds)
+    ? body.orderedIds.filter((id: unknown): id is string => typeof id === 'string')
+    : []
+
+  if (!orderedIds.length) {
+    return NextResponse.json({ error: 'Missing category order' }, { status: 400 })
+  }
+
+  try {
+    const categories = await reorderGalleryCategories(orderedIds)
+    revalidateGallery()
+    return NextResponse.json({ categories })
+  } catch (error) {
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : 'Failed to reorder categories' },
+      { status: 400 }
+    )
+  }
 }
 
 export async function DELETE(request: NextRequest) {
