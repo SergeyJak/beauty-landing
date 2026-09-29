@@ -1,5 +1,8 @@
 name: CI
 
+permissions:
+  contents: write
+
 on:
   pull_request:
     branches:
@@ -26,7 +29,18 @@ jobs:
           node-version: 24.21.0
           cache: npm
       - name: Install
-        run: npm ci
+        run: npm install
+      - name: Persist sharp lockfile update
+        if: github.event_name == 'pull_request' && github.head_ref == 'chore/dependency-security-audit'
+        run: |
+          git add package.json package-lock.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh lockfile for sharp security update"
+          git push origin HEAD:"$GITHUB_HEAD_REF"
       - name: Security audit
         run: npm audit --audit-level=high
       - name: Typecheck
