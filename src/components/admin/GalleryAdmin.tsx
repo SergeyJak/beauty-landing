@@ -15,7 +15,6 @@ type Asset = {
 
 type LocalizedText = {
   title: string
-  category: string
 }
 
 type GalleryItem = {
