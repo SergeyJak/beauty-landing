@@ -181,7 +181,7 @@ export default function CategoriesAdmin({ locale }: { locale: Locale }) {
 
       <form
         onSubmit={create}
-        className="flex flex-col gap-3 border border-primary/10 bg-white/60 p-5 sm:flex-row sm:items-end"
+        className="admin-card flex flex-col gap-3 p-5 sm:flex-row sm:items-end"
       >
         <label className="flex-1">
           <span className="mb-2 block text-xs font-bold uppercase tracking-widest">
@@ -193,12 +193,12 @@ export default function CategoriesAdmin({ locale }: { locale: Locale }) {
             required
             maxLength={100}
             placeholder="Category name"
-            className="w-full border border-primary/20 bg-white px-4 py-3 outline-none focus:border-accent"
+            className="admin-input px-4 py-3"
           />
         </label>
         <button
           type="submit"
-          className="h-12 bg-primary px-6 text-xs font-bold uppercase tracking-[0.16em] text-white"
+          className="admin-button-primary h-12 px-6 text-xs font-bold uppercase tracking-[0.16em]"
         >
           Create
         </button>
@@ -221,7 +221,7 @@ export default function CategoriesAdmin({ locale }: { locale: Locale }) {
           {categories.map((category, index) => (
             <article
               key={category.id}
-              className="border border-primary/10 bg-white p-4"
+              className="admin-panel p-4"
             >
               <div className="mb-3 flex items-center justify-between gap-4">
                 <div>
@@ -262,14 +262,14 @@ export default function CategoriesAdmin({ locale }: { locale: Locale }) {
                   }
                   maxLength={100}
                   placeholder={`Name · ${locale.toUpperCase()}`}
-                  className="flex-1 border border-primary/15 px-3 py-2 text-sm outline-none focus:border-accent"
+                  className="admin-input flex-1 px-3 py-2 text-sm"
                 />
 
                 <button
                   type="button"
                   onClick={() => save(category)}
                   disabled={savingId === category.id}
-                  className="bg-accent px-4 py-2 text-xs font-bold uppercase tracking-wider text-white disabled:opacity-50"
+                  className="admin-button-primary px-4 py-2 text-xs font-bold uppercase tracking-wider disabled:opacity-50"
                 >
                   {savingId === category.id
                     ? 'Saving…'
