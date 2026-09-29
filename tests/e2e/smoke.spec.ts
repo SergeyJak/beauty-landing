@@ -59,6 +59,30 @@ test.describe('public mobile smoke', () => {
     }
   })
 
+  test('dark mode cards use dark surfaces instead of white panels', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.setItem('theme', 'dark')
+    })
+
+    await page.goto('/lv')
+
+    const selectors = [
+      page.getByTestId('hero-stat-card').first(),
+      page.getByTestId('expertise-standards-card'),
+      page.getByTestId('electrolysis-standard-card'),
+    ]
+
+    for (const card of selectors) {
+      await card.scrollIntoViewIfNeeded()
+      await expect(card).toBeVisible()
+      const background = await card.evaluate(
+        (element) => getComputedStyle(element).backgroundColor
+      )
+      expect(background).not.toBe('rgb(255, 255, 255)')
+      expect(background).not.toBe('rgba(255, 255, 255, 0.8)')
+    }
+  })
+
   test('Russian login is localized', async ({ page }) => {
     await page.goto('/login?lang=ru&next=/admin')
 
