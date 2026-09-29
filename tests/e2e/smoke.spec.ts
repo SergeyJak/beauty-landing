@@ -35,6 +35,22 @@ test.describe('public mobile smoke', () => {
     ).toBeVisible()
   })
 
+  test('saved dark theme is applied before interaction and toggle is in sync', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.setItem('theme', 'dark')
+    })
+
+    await page.goto('/ru')
+    await expect(page.locator('html')).toHaveClass(/dark/)
+
+    const menuButton = page.getByTestId('mobile-menu-toggle')
+    if (await menuButton.isVisible()) {
+      await menuButton.click()
+      const themeButton = page.getByRole('button', { name: /свет|light|gaiš/i })
+      await expect(themeButton).toBeVisible()
+    }
+  })
+
   test('Russian login is localized', async ({ page }) => {
     await page.goto('/login?lang=ru&next=/admin')
 
