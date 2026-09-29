@@ -141,8 +141,8 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-ivory text-primary">
-      <header className="sticky top-0 z-40 border-b border-primary/10 bg-white/90 px-4 py-4 backdrop-blur-xl sm:px-6">
+    <div className="admin-theme admin-shell min-h-screen">
+      <header className="sticky top-0 z-40 border-b border-[#ded8d1] bg-white/95 px-4 py-4 backdrop-blur-xl sm:px-6">
         <div className="relative mx-auto flex max-w-4xl items-center justify-between gap-4">
           <div className="min-w-0">
             <p className="eyebrow mb-1 text-accent">Crystal E Studio</p>
@@ -279,7 +279,7 @@ export default function AdminPage() {
               </p>
             ) : (
               <form onSubmit={submit} className="space-y-8">
-                <section className="space-y-5 border border-primary/10 bg-white/60 p-5 sm:p-6">
+                <section className="admin-card space-y-5 p-5 sm:p-6">
                   <div>
                     <h3 className="font-serif text-2xl">
                       Hero · {locale.toUpperCase()}
@@ -298,7 +298,7 @@ export default function AdminPage() {
                       onChange={(e) => update('heroTitle', e.target.value)}
                       required
                       maxLength={180}
-                      className="w-full border border-primary/20 bg-white px-4 py-3 outline-none focus:border-accent"
+                      className="admin-input px-4 py-3"
                     />
                   </label>
 
@@ -314,12 +314,12 @@ export default function AdminPage() {
                       required
                       maxLength={500}
                       rows={5}
-                      className="w-full border border-primary/20 bg-white px-4 py-3 outline-none focus:border-accent"
+                      className="admin-input px-4 py-3"
                     />
                   </label>
                 </section>
 
-                <section className="space-y-5 border border-primary/10 bg-white/60 p-5 sm:p-6">
+                <section className="admin-card space-y-5 p-5 sm:p-6">
                   <div>
                     <h3 className="font-serif text-2xl">
                       SEO · {locale.toUpperCase()}
@@ -338,7 +338,7 @@ export default function AdminPage() {
                       onChange={(e) => update('seoTitle', e.target.value)}
                       required
                       maxLength={120}
-                      className="w-full border border-primary/20 bg-white px-4 py-3 outline-none focus:border-accent"
+                      className="admin-input px-4 py-3"
                     />
                   </label>
 
@@ -354,7 +354,7 @@ export default function AdminPage() {
                       required
                       maxLength={320}
                       rows={4}
-                      className="w-full border border-primary/20 bg-white px-4 py-3 outline-none focus:border-accent"
+                      className="admin-input px-4 py-3"
                     />
                   </label>
                 </section>
@@ -363,7 +363,7 @@ export default function AdminPage() {
                   <button
                     type="submit"
                     disabled={saving}
-                    className="border border-accent bg-accent px-8 py-3 text-xs font-bold uppercase tracking-[0.18em] text-white disabled:opacity-50"
+                    className="admin-button-primary px-8 py-3 text-xs font-bold uppercase tracking-[0.18em] disabled:opacity-50"
                   >
                     {saving
                       ? 'Saglabā…'
