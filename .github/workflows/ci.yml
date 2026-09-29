@@ -1,8 +1,5 @@
 name: CI
 
-permissions:
-  contents: write
-
 on:
   pull_request:
     branches:
@@ -26,36 +23,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 24.21.0
+          cache: npm
       - name: Install
-        run: npm install
-      - name: Persist generated lockfile
-        if: github.event_name == 'pull_request' && github.head_ref == 'chore/deterministic-node-deps'
-        run: |
-          cp package-lock.json /tmp/package-lock.json
-          git fetch origin "$GITHUB_HEAD_REF"
-          git checkout "$GITHUB_HEAD_REF"
-          cp /tmp/package-lock.json package-lock.json
-          git add package-lock.json
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: add deterministic package lock"
-          git push origin HEAD:"$GITHUB_HEAD_REF"
+        run: npm ci
       - name: Typecheck
         run: npm run typecheck
       - name: Unit tests
         run: npm run test:unit
       - name: Build
         run: npm run build
-      - name: Upload lock candidate
-        uses: actions/upload-artifact@v4
-        with:
-          name: package-lock-candidate
-          path: package-lock.json
-          retention-days: 1
       - name: Upload Next build
         uses: actions/upload-artifact@v4
         with:
@@ -80,9 +57,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 24.21.0
+          cache: npm
       - name: Install
-        run: npm install
+        run: npm ci
       - name: Download Next build
         uses: actions/download-artifact@v4
         with:
