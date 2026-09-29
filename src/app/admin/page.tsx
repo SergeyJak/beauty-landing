@@ -21,6 +21,9 @@ const emptyForm: FormState = {
   seoDescription: '',
 }
 
+const ADMIN_SECTION_STORAGE_KEY = 'crystal-admin-section'
+const ADMIN_LOCALE_STORAGE_KEY = 'crystal-admin-locale'
+
 const localeLabels: Record<Locale, string> = {
   lv: 'Latviešu',
   ru: 'Русский',
@@ -41,6 +44,7 @@ export default function AdminPage() {
   const [section, setSection] = useState<AdminSection>('content')
   const [menuOpen, setMenuOpen] = useState(false)
   const [locale, setLocale] = useState<Locale>('lv')
+  const [preferencesReady, setPreferencesReady] = useState(false)
   const [form, setForm] = useState<FormState>(emptyForm)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
@@ -50,7 +54,32 @@ export default function AdminPage() {
     sections.find((item) => item.id === section) || sections[0]
 
   useEffect(() => {
-    if (section !== 'content') return
+    const savedSection = window.localStorage.getItem(ADMIN_SECTION_STORAGE_KEY)
+    const savedLocale = window.localStorage.getItem(ADMIN_LOCALE_STORAGE_KEY)
+
+    if (savedSection && sections.some((item) => item.id === savedSection)) {
+      setSection(savedSection as AdminSection)
+    }
+
+    if (savedLocale && savedLocale in localeLabels) {
+      setLocale(savedLocale as Locale)
+    }
+
+    setPreferencesReady(true)
+  }, [])
+
+  useEffect(() => {
+    if (!preferencesReady) return
+    window.localStorage.setItem(ADMIN_SECTION_STORAGE_KEY, section)
+  }, [preferencesReady, section])
+
+  useEffect(() => {
+    if (!preferencesReady) return
+    window.localStorage.setItem(ADMIN_LOCALE_STORAGE_KEY, locale)
+  }, [locale, preferencesReady])
+
+  useEffect(() => {
+    if (!preferencesReady || section !== 'content') return
 
     let cancelled = false
     setLoading(true)
@@ -92,7 +121,7 @@ export default function AdminPage() {
     return () => {
       cancelled = true
     }
-  }, [locale, section])
+  }, [locale, preferencesReady, section])
 
   const update = (field: keyof FormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }))
@@ -148,7 +177,10 @@ export default function AdminPage() {
             <p className="eyebrow mb-1 text-accent">Crystal E Studio</p>
             <div className="flex items-baseline gap-3">
               <h1 className="font-serif text-2xl sm:text-3xl">CMS</h1>
-              <span className="truncate text-xs font-semibold uppercase tracking-[0.14em] text-primary/35">
+              <span
+                data-testid="admin-current-section"
+                className="truncate text-xs font-semibold uppercase tracking-[0.14em] text-primary/35"
+              >
                 {currentSection.label}
               </span>
             </div>
@@ -185,6 +217,7 @@ export default function AdminPage() {
                       key={item.id}
                       type="button"
                       onClick={() => chooseSection(item.id)}
+                      data-testid={`admin-section-${item.id}`}
                       className={`flex w-full items-center justify-between gap-4 border-b border-primary/10 px-4 py-4 text-left transition last:border-b-0 ${
                         section === item.id
                           ? 'bg-primary text-white'
@@ -247,6 +280,7 @@ export default function AdminPage() {
                 key={item}
                 type="button"
                 onClick={() => setLocale(item)}
+                data-testid={`admin-locale-${item}`}
                 className={`h-12 border-r border-primary/10 px-3 text-xs font-bold uppercase tracking-[0.12em] transition last:border-r-0 ${
                   locale === item
                     ? 'bg-accent text-white'
