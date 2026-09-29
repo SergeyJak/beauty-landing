@@ -29,7 +29,7 @@ async function hasAdminSession(request: NextRequest) {
   return verifyAdminSessionToken(token, username, password)
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
   if (

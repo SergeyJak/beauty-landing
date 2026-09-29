@@ -1,8 +1,8 @@
 import { ImageResponse } from 'next/og'
 import { getTranslations, resolveLocale, isValidLocale } from '@/lib/i18n'
 
-export const runtime = 'edge'
-export const alt = 'Electrolysis Riga'
+export const runtime = 'nodejs'
+export const alt = 'Crystal E Studio electrolysis Riga'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -47,7 +47,7 @@ export default async function OpenGraphImage({ params }: Props) {
             E
           </div>
           <p style={{ fontSize: 28, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
-            {brand?.name || 'Electrolysis Riga'}
+            {brand?.name || 'Crystal E Studio'}
           </p>
         </div>
         <div style={{ maxWidth: 900 }}>
