@@ -69,4 +69,12 @@ describe('translation dictionaries', () => {
   it('keeps Russian structurally aligned with English', () => {
     expect(translationShape(ru)).toEqual(translationShape(en))
   })
+
+
+  it('does not ship demo testimonials as verified client content', () => {
+    for (const dictionary of [lv, ru, en]) {
+      expect(dictionary).not.toHaveProperty('reviews')
+      expect(dictionary.common).not.toHaveProperty('verifiedClient')
+    }
+  })
 })

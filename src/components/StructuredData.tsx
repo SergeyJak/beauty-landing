@@ -22,7 +22,7 @@ export default function StructuredData({ locale }: StructuredDataProps) {
     id: item.id ?? String(index + 1),
   }))
 
-  const businessName = brand?.name || 'Electrolysis Riga'
+  const businessName = brand?.name || 'Crystal E Studio'
   const graphs = [
     buildWebSiteSchema(locale, businessName),
     buildLocalBusinessSchema(locale, {

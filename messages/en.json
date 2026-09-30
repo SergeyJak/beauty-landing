@@ -12,7 +12,6 @@
     "after": "After",
     "beforeAfter": "Before / after",
     "category": "Category",
-    "verifiedClient": "Verified client",
     "whatsApp": "WhatsApp",
     "instagram": "Instagram",
     "email": "Email",
@@ -61,34 +60,34 @@
     }
   },
   "comparison": {
-    "eyebrow": "Permanent vs. Temporary",
-    "title": "The Science: Electrolysis vs. Laser",
-    "description": "Understanding the fundamental biological difference between permanent removal and temporary reduction.",
+    "eyebrow": "Permanent removal vs reduction",
+    "title": "Electrolysis and laser: what differs",
+    "description": "Both methods can reduce unwanted hair, but they work differently. Electrolysis treats individual follicles with electrical current, while laser targets pigment in the hair.",
     "electrolysis": {
       "title": "Electrolysis",
-      "subtitle": "The Gold Standard",
-      "description": "The only scientifically proven method for truly permanent hair removal. It destroys the follicle growth center.",
+      "subtitle": "Permanent hair removal",
+      "description": "Electrolysis treats individual follicles with electrical current and can permanently remove unwanted hair over a course of sessions.",
       "points": [
-        "Scientifically Proven Permanent",
-        "Works on All Hair Colors",
-        "Effective on All Skin Tones",
-        "Precision Individual Treatment",
-        "No UV Radiation Exposure"
+        "Can provide permanent hair removal",
+        "Works on all hair colours",
+        "Suitable across skin tones",
+        "Precise follicle-by-follicle treatment",
+        "Does not rely on hair pigment"
       ]
     },
     "laser": {
       "title": "Laser Hair Removal",
-      "subtitle": "Temporary Reduction",
-      "description": "A popular method that uses light energy to damage follicles. Requires lifelong maintenance sessions.",
+      "subtitle": "Permanent hair reduction",
+      "description": "Laser targets pigment in the hair and can provide long-term or permanent reduction in regrowth. Results vary by area, hair colour, skin tone, hormones and device.",
       "points": [
-        "Approved for Hair Reduction",
-        "Ineffective on Light/Red Hair",
-        "Risks on Darker Skin Tones",
-        "Maintenance Required Yearly",
-        "Higher Long-Term Cost"
+        "Effective for many dark hairs",
+        "Less effective on very light hair",
+        "Settings depend on skin tone and device",
+        "Several sessions are typically needed",
+        "Some regrowth or maintenance may occur"
       ]
     },
-    "quote": "\"While Laser Hair Removal offers temporary reduction, it does not permanently stop hair growth. Electrolysis remains the only solution for 100% hair-free results across all biological variations.\""
+    "quote": "The best method depends on hair colour, skin tone, treatment area and your goals. Electrolysis is especially useful for light hairs and precise follicle-by-follicle treatment."
   },
   "header": {
     "skipToMain": "Skip to main content",
@@ -105,8 +104,8 @@
   },
   "hero": {
     "eyebrow": "Certified Electrologist • Permanent hair removal",
-    "title": "The only way to remove hair permanently.",
-    "description": "Electrolysis is the only scientifically proven permanent hair removal method. Safe for all skin tones and hair colors, in a private studio in Riga.",
+    "title": "Permanent hair removal with electrolysis.",
+    "description": "Electrolysis treats individual follicles and can permanently remove unwanted hair across all hair colours. Personalised treatment in a private Riga studio.",
     "primaryCTA": "Message on WhatsApp",
     "secondaryCTA": "Learn How It Works",
     "trustedBy": "Trusted by Riga clients",
@@ -115,10 +114,10 @@
     "stats": {
       "experienceNumber": "15+",
       "experience": "Years Experience",
-      "approvedNumber": "ONLY",
-      "approved": "Permanent Method",
-      "permanentNumber": "100%",
-      "permanent": "Permanent"
+      "approvedNumber": "ALL",
+      "approved": "Hair colours",
+      "permanentNumber": "1:1",
+      "permanent": "Follicle treatment"
     },
     "sidecard": {
       "eyebrow": "Crystal E Studio",
@@ -131,7 +130,7 @@
   "whyElectrolysis": {
     "eyebrow": "How It Compares",
     "title": "Why Electrolysis is the Only Permanent Solution",
-    "description": "Electrolysis is the only method for permanent hair removal. Unlike temporary methods, electrolysis destroys the hair follicle completely.",
+    "description": "Electrolysis treats each follicle individually and can provide permanent hair removal without relying on hair pigment.",
     "methods": [
       {
         "id": "electrolysis",
@@ -139,31 +138,30 @@
         "type": "(This is us)",
         "permanent": true,
         "badge": "PERMANENT",
-        "description": "Destroys hair at the root permanently",
+        "description": "Treats individual follicles for permanent removal",
         "benefits": [
-          "Scientifically proven permanent method",
-          "Works on all skin types",
-          "Works on all hair colors",
-          "Destroys follicle growth center"
+          "Established professional method",
+          "Works across skin tones",
+          "Works on all hair colours",
+          "Targets the follicle growth centre"
         ],
         "limitations": []
       },
       {
         "id": "laser",
         "name": "Laser Hair Removal",
-        "type": "(Temporary)",
+        "type": "(Reduction)",
         "permanent": false,
-        "description": "Requires multiple sessions and maintenance",
+        "description": "Targets pigment to reduce hair regrowth",
         "benefits": [
           "Quick treatment times",
           "Good for large areas"
         ],
         "limitations": [
-          "Not permanent (reduction only)",
-          "Requires ongoing treatments",
-          "Not effective on light hair",
-          "Risk of skin damage",
-          "Can be expensive long-term"
+          "Less effective on very light hair",
+          "Results vary by area and hormones",
+          "Several sessions are typically needed",
+          "Some regrowth may occur"
         ]
       },
       {
@@ -202,8 +200,8 @@
     ],
     "explainer": {
       "title": "The Permanent Difference",
-      "paragraph1": "Electrolysis works by sending a slight electrical current through a fine probe inserted into each hair follicle. This destroys the follicle's ability to produce hair permanently. Once destroyed, that follicle will never regrow hair.",
-      "paragraph2": "This is why electrolysis is the only scientifically proven permanent hair removal method. While other methods may reduce hair, only electrolysis offers true permanence."
+      "paragraph1": "Electrolysis delivers energy directly into an individual hair follicle to disable its ability to produce hair.",
+      "paragraph2": "Successful electrolysis treatment can permanently remove treated hairs. Laser is generally described in terms of long-term or permanent reduction in regrowth."
     }
   },
   "benefits": {
@@ -215,7 +213,7 @@
         "id": "permanent",
         "icon": "✓",
         "title": "Truly Permanent",
-        "description": "Once a hair follicle is treated, it's gone forever. No more hair in that area."
+        "description": "A successfully treated follicle can stop producing hair."
       },
       {
         "id": "allSkinTypes",
@@ -245,7 +243,7 @@
         "id": "costEffective",
         "icon": "◆",
         "title": "Long-Term Savings",
-        "description": "While initial cost is higher, permanent results mean no more ongoing treatments or products."
+        "description": "Long-term results can reduce the need for repeated temporary hair-removal routines."
       }
     ],
     "science": {
@@ -274,7 +272,7 @@
         },
         {
           "phase": "Permanent Results",
-          "duration": "Hair-free forever"
+          "duration": "Long-term result"
         }
       ]
     }
@@ -417,8 +415,8 @@
         "Follicle destruction",
         "Works on all skin types"
       ],
-      "permanentTitle": "Why It's Permanent",
-      "permanentDescription": "The current destroys the biological structures responsible for hair production. Once destroyed, these cells cannot regenerate.",
+      "permanentTitle": "Why results can be permanent",
+      "permanentDescription": "Electrolysis targets the structures responsible for hair production. Successful treatment can prevent a treated follicle from producing hair again.",
       "permanentItems": [
         "Biological permanence",
         "Scientifically proven"
@@ -445,7 +443,7 @@
         },
         {
           "time": "Ongoing",
-          "action": "Hair-free forever"
+          "action": "Long-term result"
         }
       ]
     },
@@ -509,62 +507,6 @@
       "secondary": "Learn More"
     }
   },
-  "reviews": {
-    "eyebrow": "Testimonials",
-    "title": "Real results from my clients.",
-    "description": "Satisfied clients who have achieved permanent hair removal through my electrolysis treatments.",
-    "items": [
-      {
-        "id": "1",
-        "name": "Sarah M.",
-        "title": "Facial hair removal",
-        "text": "After years of waxing and plucking, I finally have a permanent solution. My chin is completely hair-free and the results are incredible. The treatment was professional and gentle.",
-        "rating": 5
-      },
-      {
-        "id": "2",
-        "name": "Jessica C.",
-        "title": "Regular client",
-        "text": "I was nervous before my first appointment, but the specialist was so caring and put me at ease. The permanence is real, no more waxing or razor bumps.",
-        "rating": 5
-      },
-      {
-        "id": "3",
-        "name": "Amanda F.",
-        "title": "Full course",
-        "text": "The studio is so calm and private. The specialist really knows her craft. Each session brings me closer to permanent freedom from unwanted hair.",
-        "rating": 5
-      },
-      {
-        "id": "4",
-        "name": "Rebecca T.",
-        "title": "Underarm treatment",
-        "text": "Finally permanent results after years of shaving. The cost is worth it for the peace of mind. My skin has never been smoother.",
-        "rating": 5
-      }
-    ],
-    "stats": [
-      {
-        "number": "5.0",
-        "label": "Client Rating"
-      },
-      {
-        "number": "500+",
-        "label": "Sessions Completed"
-      },
-      {
-        "number": "100%",
-        "label": "Permanent Results"
-      }
-    ],
-    "cta": {
-      "eyebrow": "Ready to start?",
-      "title": "Schedule your consultation today.",
-      "description": "Meet me to discuss your hair removal goals, treatment timeline, and any questions you have.",
-      "primary": "Book Consultation",
-      "secondary": "Contact Me"
-    }
-  },
   "faq": {
     "eyebrow": "Electrolysis FAQ — Riga",
     "title": "Everything you need to know.",
@@ -573,7 +515,7 @@
       {
         "id": "1",
         "question": "Is electrolysis really permanent?",
-        "answer": "Yes. Electrolysis is the only scientifically proven permanent method of hair removal. Once the hair follicle is destroyed, it cannot produce hair again. Results are permanent."
+        "answer": "Yes. Electrolysis can permanently remove unwanted hair. Because hair grows in cycles, several sessions are usually needed to treat hairs as they become active."
       },
       {
         "id": "2",
@@ -583,12 +525,12 @@
       {
         "id": "3",
         "question": "How many sessions will I need?",
-        "answer": "Most clients need 6-12 sessions over several months. This is because only hair in the active growth phase can be treated permanently."
+        "answer": "The number of sessions varies by area, hair density, growth cycle, hormones and previous hair-removal methods. Your treatment plan can be refined as progress becomes visible."
       },
       {
         "id": "4",
         "question": "Does it hurt?",
-        "answer": "Electrolysis causes minimal discomfort, often described as a slight tingling. I prioritize your comfort throughout the session."
+        "answer": "Sensation varies from person to person and by treatment area. It is often described as brief warmth, tingling or stinging, and comfort can be discussed during your consultation."
       },
       {
         "id": "5",
@@ -755,7 +697,7 @@
   },
   "metadata": {
     "title": "Crystal E Studio | Permanent Hair Removal Riga",
-    "description": "Certified electrolysis in Riga — the only scientifically proven permanent hair removal. Personal care, private studio, all skin and hair types.",
+    "description": "Certified electrolysis in Riga for permanent hair removal. Personal care in a private studio, suitable for all hair colours and a wide range of skin tones.",
     "keywords": [
       "electrolysis Riga",
       "permanent hair removal Riga",
@@ -795,11 +737,6 @@
       "eyebrow": "Ready to begin?",
       "title": "Book your consultation in Riga",
       "description": "Turn visible progress into lasting confidence with a personal treatment plan."
-    },
-    "reviews": {
-      "eyebrow": "Join my clients",
-      "title": "Your permanent result starts with a consultation",
-      "description": "Book with no obligation — I'll explain everything clearly."
     }
   }
 }

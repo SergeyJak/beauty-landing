@@ -12,7 +12,6 @@
     "after": "Pēc",
     "beforeAfter": "Pirms / pēc",
     "category": "Kategorija",
-    "verifiedClient": "Pārbaudīts klients",
     "whatsApp": "WhatsApp",
     "instagram": "Instagram",
     "email": "Email",
@@ -61,34 +60,34 @@
     }
   },
   "comparison": {
-    "eyebrow": "Pastāvīga vs pagaidu",
-    "title": "Zinātne: Elektrolīze vs Lāzers",
-    "description": "Izprotiet fundamentālo bioloģisko atšķirību starp permanento noņemšanu un pagaidu samazināšanu.",
+    "eyebrow": "Permanenta noņemšana un samazināšana",
+    "title": "Elektrolīze un lāzers: galvenās atšķirības",
+    "description": "Abas metodes var samazināt nevēlamo matu daudzumu, taču tās darbojas atšķirīgi. Elektrolīze ar elektrisko strāvu apstrādā atsevišķu folikulu, bet lāzers mērķē uz mata pigmentu.",
     "electrolysis": {
       "title": "Elektrolīze",
-      "subtitle": "Zelta standarts",
-      "description": "Vienīgā zinātniski pierādītā metode patiesi permanentai matu noņemšanai.",
+      "subtitle": "Permanenta matu noņemšana",
+      "description": "Elektrolīze ar elektrisko strāvu apstrādā atsevišķus folikulus un procedūru kursa laikā var nodrošināt permanentu nevēlamo matu noņemšanu.",
       "points": [
-        "Zinātniski pierādīts: Permanents",
-        "Visām matu krāsām",
-        "Visiem ādas toņiem",
-        "Precīza individuāla apstrāde",
-        "Bez UV starojuma ietekmes"
+        "Var nodrošināt permanentu matu noņemšanu",
+        "Darbojas ar visu krāsu matiem",
+        "Piemērota dažādiem ādas toņiem",
+        "Precīza katra folikula apstrāde",
+        "Nav atkarīga no mata pigmenta"
       ]
     },
     "laser": {
       "title": "Lāzerepilācija",
-      "subtitle": "Pagaidu samazināšana",
-      "description": "Populāra metode, kas prasa uzturošas procedūras visu mūžu.",
+      "subtitle": "Permanenta matu augšanas samazināšana",
+      "description": "Lāzers mērķē uz mata pigmentu un var nodrošināt ilgstošu vai permanentu ataugšanas samazinājumu. Rezultāts ir atkarīgs no zonas, matu un ādas krāsas, hormoniem un izmantotās iekārtas.",
       "points": [
-        "Apstiprināta matu samazināšanai",
-        "Neefektīva gaišiem/sarkaniem matiem",
-        "Riski tumšākiem ādas toņiem",
-        "Nepieciešama uzturēšana",
-        "Dārgāk ilgtermiņā"
+        "Efektīvs daudziem tumšiem matiem",
+        "Mazāk efektīvs ļoti gaišiem matiem",
+        "Iestatījumi atkarīgi no ādas un iekārtas",
+        "Parasti nepieciešamas vairākas sesijas",
+        "Iespējama ataugšana vai uzturošas procedūras"
       ]
     },
-    "quote": "\"Lai gan lāzerepilācija piedāvā pagaidu matu samazināšanu, elektrolīze joprojām ir vienīgais risinājums 100% rezultātam.\""
+    "quote": "Piemērotākā metode ir atkarīga no matu krāsas, ādas toņa, apstrādes zonas un jūsu mērķiem. Elektrolīze ir īpaši noderīga gaišiem matiem un precīzai atsevišķu folikulu apstrādei."
   },
   "header": {
     "skipToMain": "Pāriet uz saturu",
@@ -105,8 +104,8 @@
   },
   "hero": {
     "eyebrow": "Sertificēta speciāliste • Permanenta noņemšana",
-    "title": "Vienīgais veids, kā noņemt matus pavisam.",
-    "description": "Elektrolīze ir vienīgā zinātniski pierādītā permanenta matu noņemšanas metode. Droša visiem ādas un matu tipiem, privātā studijā Rīgā.",
+    "title": "Permanenta matu noņemšana ar elektrolīzi.",
+    "description": "Elektrolīze apstrādā katru folikulu individuāli un var nodrošināt permanentu nevēlamo matu noņemšanu neatkarīgi no matu krāsas. Individuāla pieeja privātā studijā Rīgā.",
     "primaryCTA": "Rakstīt WhatsApp",
     "secondaryCTA": "Kā tas darbojas?",
     "trustedBy": "Uzticas Rīgas klientes",
@@ -115,10 +114,10 @@
     "stats": {
       "experienceNumber": "15+",
       "experience": "Gadu pieredze",
-      "approvedNumber": "TIKAI",
-      "approved": "Permanenta metode",
-      "permanentNumber": "100%",
-      "permanent": "Permanents"
+      "approvedNumber": "VISAS",
+      "approved": "Matu krāsas",
+      "permanentNumber": "1:1",
+      "permanent": "Folikula apstrāde"
     },
     "sidecard": {
       "eyebrow": "Crystal E Studio",
@@ -131,7 +130,7 @@
   "whyElectrolysis": {
     "eyebrow": "Salīdzinājums",
     "title": "Kāpēc Elektrolīze?",
-    "description": "Elektrolīze ir vienīgā metode permanentai matu noņemšanai. Tā pilnībā iznīcina matu folikulu.",
+    "description": "Elektrolīze apstrādā katru folikulu individuāli un var nodrošināt permanentu matu noņemšanu, nepaļaujoties uz mata pigmentu.",
     "methods": [
       {
         "id": "electrolysis",
@@ -139,31 +138,30 @@
         "type": "(Mēs)",
         "permanent": true,
         "badge": "PERMANENTA",
-        "description": "Iznīcina matu sakni uz visiem laikiem",
+        "description": "Individuāla folikulu apstrāde permanentai noņemšanai",
         "benefits": [
-          "Zinātniski pierādīta metode",
-          "Darbojas uz visiem ādas tipiem",
-          "Darbojas ar visām matu krāsām",
-          "Iznīcina augšanas centru"
+          "Atzīta profesionāla metode",
+          "Piemērota dažādiem ādas toņiem",
+          "Darbojas ar visu krāsu matiem",
+          "Mērķē uz folikula augšanas centru"
         ],
         "limitations": []
       },
       {
         "id": "laser",
         "name": "Lāzers",
-        "type": "(Pagaidu)",
+        "type": "(Samazināšana)",
         "permanent": false,
-        "description": "Prasa uzturošas procedūras",
+        "description": "Mērķē uz pigmentu, lai samazinātu matu ataugšanu",
         "benefits": [
           "Ātra procedūra",
           "Lielām zonām"
         ],
         "limitations": [
-          "Nav permanents (tikai samazina)",
-          "Nepieciešama uzturēšana",
-          "Nedarbojas uz gaišiem matiem",
-          "Riski ādai",
-          "Dārgi ilgtermiņā"
+          "Mazāk efektīvs ļoti gaišiem matiem",
+          "Rezultāts atkarīgs no zonas un hormoniem",
+          "Parasti nepieciešamas vairākas sesijas",
+          "Iespējama daļēja ataugšana"
         ]
       },
       {
@@ -202,8 +200,8 @@
     ],
     "explainer": {
       "title": "Permanentā atšķirība",
-      "paragraph1": "Elektrolīze iznīcina matu folikula spēju ražot matu. Kad tas ir iznīcināts, mats tur vairs nekad neaugs.",
-      "paragraph2": "Tāpēc elektrolīze ir vienīgā zinātniski pierādītā permanentā metode. Citas metodes var tikai samazināt augšanu."
+      "paragraph1": "Elektrolīzes laikā enerģija tiek ievadīta tieši atsevišķā mata folikulā, lai mazinātu tā spēju veidot jaunu matu.",
+      "paragraph2": "Veiksmīgi apstrādāti mati var tikt noņemti permanenti. Lāzera metodēm parasti lieto formulējumu par ilgstošu vai permanentu ataugšanas samazinājumu."
     }
   },
   "benefits": {
@@ -215,7 +213,7 @@
         "id": "permanent",
         "icon": "✓",
         "title": "Patiesi permanents",
-        "description": "Kad folikuls ir apstrādāts, tas ir iznīcināts uz visiem laikiem."
+        "description": "Veiksmīgi apstrādāts folikuls var pārstāt veidot jaunu matu."
       },
       {
         "id": "allSkinTypes",
@@ -245,7 +243,7 @@
         "id": "costEffective",
         "icon": "◆",
         "title": "Ietaupījums",
-        "description": "Permanentie rezultāti nozīmē, ka vairs nav jātērē nauda pagaidu metodēm."
+        "description": "Ilgtermiņa rezultāts var mazināt nepieciešamību atkārtoti izmantot pagaidu matu noņemšanas metodes."
       }
     ],
     "science": {
@@ -274,7 +272,7 @@
         },
         {
           "phase": "Rezultāts",
-          "duration": "Gluda āda uz visiem laikiem"
+          "duration": "Ilgtermiņa rezultāts"
         }
       ]
     }
@@ -295,7 +293,7 @@
         "subtitle": "Augšanas fāze",
         "percentage": "85%",
         "duration": "2-7 gadi",
-        "description": "Mats aktīvi aug. Šī ir vienīgā fāze, kad elektrolīze var iznīcināt folikulu uz visiem laikiem.",
+        "description": "Mats aktīvi aug, un folikuls šajā fāzē ir piemērots precīzai elektrolīzes apstrādei.",
         "color": "from-accent/20 to-champagne/10",
         "details": [
           "Mats aktīvi aug",
@@ -417,8 +415,8 @@
         "Folikula iznīcināšana",
         "Darbojas uz visiem ādas tipiem"
       ],
-      "permanentTitle": "Kāpēc tas ir uz visiem laikiem",
-      "permanentDescription": "Strāva iznīcina bioloģiskās struktūras, kas atbild par matu augšanu.",
+      "permanentTitle": "Kāpēc rezultāts var būt permanents",
+      "permanentDescription": "Elektrolīze mērķē uz struktūrām, kas atbild par mata augšanu. Veiksmīga apstrāde var novērst jauna mata augšanu no konkrētā folikula.",
       "permanentItems": [
         "Bioloģisks pastāvīgums",
         "Zinātniski pierādīts"
@@ -445,7 +443,7 @@
         },
         {
           "time": "Turpmāk",
-          "action": "Gluda āda uz visiem laikiem"
+          "action": "Ilgtermiņa rezultāts"
         }
       ]
     },
@@ -488,7 +486,7 @@
       {
         "id": "2",
         "title": "Padušu zona",
-        "category": "Gludums uz visiem laikiem"
+        "category": "Ilgstošs gludums"
       },
       {
         "id": "3",
@@ -509,62 +507,6 @@
       "secondary": "Uzzināt vairāk"
     }
   },
-  "reviews": {
-    "eyebrow": "Atsauksmes",
-    "title": "Rezultāti no manām klientēm.",
-    "description": "Apmierinātas klientes, kuras ieguvušas brīvību no liekajiem matiem.",
-    "items": [
-      {
-        "id": "1",
-        "name": "Sarā M.",
-        "title": "Sejas zona",
-        "text": "Beidzot permanents risinājums. Mans zods ir pilnīgi gluds, un rezultāti ir neticami!",
-        "rating": 5
-      },
-      {
-        "id": "2",
-        "name": "Džesika Č.",
-        "title": "Pastāvīgā kliente",
-        "text": "Speciāliste ir ļoti rūpīga un zinoša. Rezultāts ir reāls, vairs nekādas vaksācijas!",
-        "rating": 5
-      },
-      {
-        "id": "3",
-        "name": "Amanda F.",
-        "title": "Pilns kurss",
-        "text": "Studijā ir mierīga un privāta atmosfēra. Ar katru seansu redzu progresu un jūtos arvien pārliecinātāka par rezultātu.",
-        "rating": 5
-      },
-      {
-        "id": "4",
-        "name": "Rebeka T.",
-        "title": "Padušu zona",
-        "text": "Pēc gadiem ilgas skūšanās beidzot redzu ilgstošu rezultātu. Āda ir daudz gludāka, un ikdienā par matiņiem vairs nav jādomā.",
-        "rating": 5
-      }
-    ],
-    "stats": [
-      {
-        "number": "5.0",
-        "label": "Vērtējums"
-      },
-      {
-        "number": "500+",
-        "label": "Sesijas"
-      },
-      {
-        "number": "100%",
-        "label": "Rezultāti"
-      }
-    ],
-    "cta": {
-      "eyebrow": "Gatavi gludai ādai?",
-      "title": "Pieteikties konsultācijai šodien.",
-      "description": "Sazinieties ar mani, lai apspriestu jūsu mērķus un izveidotu personīgu plānu.",
-      "primary": "Pieteikties konsultācijai",
-      "secondary": "Sazināties"
-    }
-  },
   "faq": {
     "eyebrow": "BUJ — Rīga",
     "title": "Viss, kas jāzina par elektrolīzi.",
@@ -572,8 +514,8 @@
     "items": [
       {
         "id": "1",
-        "question": "Vai tas tiešām ir uz visiem laikiem?",
-        "answer": "Jā. Elektrolīze ir vienīgā zinātniski pierādītā permanentā metode. Rezultāti ir uz mūžu."
+        "question": "Vai elektrolīzes rezultāts var būt permanents?",
+        "answer": "Jā. Elektrolīze var nodrošināt permanentu nevēlamo matu noņemšanu. Tā kā mati aug cikliski, parasti nepieciešamas vairākas procedūras, lai apstrādātu matus to aktīvajā fāzē."
       },
       {
         "id": "2",
@@ -583,12 +525,12 @@
       {
         "id": "3",
         "question": "Cik seansu būs nepieciešams?",
-        "answer": "Seansu skaits ir individuāls un atkarīgs no zonas, matu augšanas cikla un apjoma. Konsultācijā izveidosim aptuvenu procedūru plānu."
+        "answer": "Procedūru skaits ir atkarīgs no zonas, matu blīvuma, augšanas cikla, hormonālajiem faktoriem un iepriekš izmantotajām matu noņemšanas metodēm. Plānu var precizēt, redzot progresu."
       },
       {
         "id": "4",
         "question": "Vai tas ir sāpīgi?",
-        "answer": "Diskomforts ir minimāls. Mans mērķis ir nodrošināt jums maksimālu komfortu procedūras laikā."
+        "answer": "Sajūtas katram cilvēkam un dažādās zonās atšķiras. Tās bieži raksturo kā īslaicīgu siltumu, tirpšanu vai dūrienu; komforta iespējas var pārrunāt konsultācijā."
       },
       {
         "id": "5",
@@ -752,7 +694,7 @@
   },
   "metadata": {
     "title": "Crystal E Studio | Elektrolīze Rīgā",
-    "description": "Sertificēta elektrolīze Rīgā — vienīgā zinātniski pierādītā permanenta matu noņemšana. Personīga aprūpe, privāta studija.",
+    "description": "Sertificēta elektrolīze Rīgā permanentai matu noņemšanai. Individuāla pieeja privātā studijā, piemērota visu krāsu matiem un dažādiem ādas toņiem.",
     "keywords": [
       "elektrolīze Rīgā",
       "permanenta matu noņemšana Rīgā",
@@ -795,11 +737,6 @@
       "eyebrow": "Gatavi sākt?",
       "title": "Piesakieties konsultācijai Rīgā",
       "description": "Pārvērtiet redzamo progresu ilgstošā pārliecībā ar individuālu procedūru plānu."
-    },
-    "reviews": {
-      "eyebrow": "Pievienojieties manām klientēm",
-      "title": "Jūsu permanentais rezultāts sākas ar konsultāciju",
-      "description": "Piesakieties bez saistībām. Es visu skaidri izstāstīšu."
     }
   }
 }
