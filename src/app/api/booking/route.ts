@@ -7,48 +7,89 @@ type BookingPayload = BookingRequest & {
   honeypot?: string
 }
 
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID
+const MAX_LENGTHS = {
+  name: 100,
+  phone: 40,
+  service: 120,
+  email: 254,
+  comment: 1000,
+} as const
+
+function clean(value: unknown, maxLength: number): string {
+  return typeof value === 'string' ? value.trim().slice(0, maxLength) : ''
+}
+
+function isValidEmail(value: string): boolean {
+  return !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
 
 async function sendTelegramMessage(message: string) {
-  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
-    console.warn('Telegram credentials missing, skipping message.')
+  const token = process.env.TELEGRAM_BOT_TOKEN
+  const chatId = process.env.TELEGRAM_CHAT_ID
+
+  if (!token || !chatId) {
+    console.warn('Booking delivery unavailable: Telegram is not configured.')
     return false
   }
 
   try {
-    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
-    const response = await fetch(url, {
+    const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
+        chat_id: chatId,
         text: message,
         parse_mode: 'HTML',
       }),
     })
-    return response.ok
-  } catch (error) {
-    console.error('Telegram error:', error)
+
+    if (!response.ok) {
+      console.error('Booking delivery failed:', { status: response.status })
+      return false
+    }
+
+    return true
+  } catch {
+    console.error('Booking delivery failed: Telegram request error')
     return false
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const body: BookingPayload = await request.json()
+    const body = (await request.json()) as BookingPayload
     const locale = resolveLocale(body.locale)
     const translations = getTranslations(locale)
 
-    // Anti-spam honeypot
     if (body.honeypot) {
-      console.log('Spam detected via honeypot')
       return NextResponse.json({ success: true }, { status: 200 })
     }
 
-    if (!body.name || !body.phone || !body.service) {
+    const name = clean(body.name, MAX_LENGTHS.name)
+    const phone = clean(body.phone, MAX_LENGTHS.phone)
+    const service = clean(body.service, MAX_LENGTHS.service)
+    const email = clean(body.email, MAX_LENGTHS.email)
+    const comment = clean(body.comment, MAX_LENGTHS.comment)
+
+    if (!name || !phone || !service) {
       return NextResponse.json(
         { error: t(translations, 'booking.api.missingFields') },
+        { status: 400 }
+      )
+    }
+
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { error: t(translations, 'booking.validation.emailInvalid') },
         { status: 400 }
       )
     }
@@ -56,22 +97,26 @@ export async function POST(request: NextRequest) {
     const message = `
 <b>🆕 New Booking Request</b>
 <b>Locale:</b> ${locale.toUpperCase()}
-<b>Name:</b> ${body.name}
-<b>Phone:</b> ${body.phone}
-<b>Service:</b> ${body.service}
-<b>Email:</b> ${body.email || 'N/A'}
-<b>Comment:</b> ${body.comment || 'None'}
-<b>Time:</b> ${new Date().toLocaleString()}
+<b>Name:</b> ${escapeHtml(name)}
+<b>Phone:</b> ${escapeHtml(phone)}
+<b>Service:</b> ${escapeHtml(service)}
+<b>Email:</b> ${email ? escapeHtml(email) : 'N/A'}
+<b>Comment:</b> ${comment ? escapeHtml(comment) : 'None'}
+<b>Time:</b> ${new Date().toISOString()}
     `.trim()
 
-    await sendTelegramMessage(message)
+    const delivered = await sendTelegramMessage(message)
 
-    console.log('📋 New Booking Request:', {
+    if (!delivered) {
+      return NextResponse.json(
+        { error: t(translations, 'booking.api.failed') },
+        { status: 503 }
+      )
+    }
+
+    console.info('Booking request delivered.', {
       timestamp: new Date().toISOString(),
       locale,
-      name: body.name,
-      phone: body.phone,
-      service: body.service,
     })
 
     return NextResponse.json(
@@ -82,9 +127,10 @@ export async function POST(request: NextRequest) {
       },
       { status: 201 }
     )
-  } catch (error) {
-    console.error('Booking error:', error)
+  } catch {
+    console.error('Booking request failed to process.')
     const translations = getTranslations('en')
+
     return NextResponse.json(
       { error: t(translations, 'booking.api.failed') },
       { status: 500 }
