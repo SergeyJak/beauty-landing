@@ -37,3 +37,7 @@
 - Consent/navigation rerun after strengthening the no-network assertion: 6 passed.
 - Independent read-only review: no material findings.
 - MongoDB and Telegram failures use boundary test doubles; live service credentials were not used.
+
+## Required CI security check
+
+The first CI run stopped at npm audit on pre-existing vulnerable dependencies. Updated Next.js to 16.4.5, Vitest to 5.1.0 and compatible transitive dependencies. Audit now reports 0 vulnerabilities. Repeated the 45-test unit suite, typecheck, production build and full Chromium suite (35 passed, 3 viewport-specific skips) on these versions.
