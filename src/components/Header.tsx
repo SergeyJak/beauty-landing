@@ -18,7 +18,7 @@ export default function Header() {
   const loginHref = `/login?lang=${locale}&next=/admin`
 
   const navLinks = [
-    { key: 'header.navigation.why', href: `/${locale}#why-electrolysis` },
+    { key: 'header.navigation.why', href: `/${locale}#comparison` },
     { key: 'header.navigation.benefits', href: `/${locale}#benefits` },
     { key: 'header.navigation.howWorks', href: `/${locale}#how-it-works` },
     { key: null, label: galleryLabel, href: `/${locale}/gallery` },

@@ -6,7 +6,7 @@ import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-  const { t, list } = useLanguage()
+  const { t, list, locale } = useLanguage()
   const serviceLinks = list<string>('booking.services').slice(0, 4)
 
   return (
@@ -33,22 +33,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-parchment/55">
               <li>
-                <a href="#benefits" className="transition-colors hover:text-champagne">
+                <a href={`/${locale}#benefits`} className="transition-colors hover:text-champagne">
                   {t('header.navigation.benefits')}
                 </a>
               </li>
               <li>
-                <a href="#gallery" className="transition-colors hover:text-champagne">
+                <a href={`/${locale}/gallery`} className="transition-colors hover:text-champagne">
                   {t('header.navigation.results')}
                 </a>
               </li>
               <li>
-                <a href="#reviews" className="transition-colors hover:text-champagne">
-                  {t('reviews.eyebrow')}
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="transition-colors hover:text-champagne">
+                <a href={`/${locale}#faq`} className="transition-colors hover:text-champagne">
                   {t('header.navigation.faq')}
                 </a>
               </li>
@@ -63,7 +58,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-parchment/55">
               {serviceLinks.map((service) => (
                 <li key={service}>
-                  <a href="#contact" className="transition-colors hover:text-champagne">
+                  <a href={`/${locale}#contact`} className="transition-colors hover:text-champagne">
                     {service}
                   </a>
                 </li>
