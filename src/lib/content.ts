@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb'
+import { getMongoClient } from '@/lib/mongodb'
 import type { Locale } from '@/lib/i18n'
 
 export type EditablePageContent = {
@@ -16,25 +16,6 @@ type EditablePageContentDocument = Omit<EditablePageContent, 'updatedAt'> & {
 
 const DB_NAME = process.env.MONGODB_DB || 'beauty_prod'
 const COLLECTION = 'site_content'
-
-declare global {
-  // eslint-disable-next-line no-var
-  var __beautyMongoClientPromise: Promise<MongoClient> | undefined
-}
-
-function getClientPromise(): Promise<MongoClient> {
-  const uri = process.env.MONGODB_URI
-  if (!uri) {
-    throw new Error('MONGODB_URI is not configured')
-  }
-
-  if (!global.__beautyMongoClientPromise) {
-    const client = new MongoClient(uri)
-    global.__beautyMongoClientPromise = client.connect()
-  }
-
-  return global.__beautyMongoClientPromise
-}
 
 export function sanitizeEditableContent(
   input: Partial<EditablePageContent>,
@@ -60,7 +41,7 @@ export async function getEditableContent(
   }
 
   try {
-    const client = await getClientPromise()
+    const client = await getMongoClient()
     const doc = await client
       .db(DB_NAME)
       .collection<EditablePageContentDocument>(COLLECTION)
@@ -97,7 +78,7 @@ export async function saveEditableContent(
     throw new Error('All content fields are required')
   }
 
-  const client = await getClientPromise()
+  const client = await getMongoClient()
   const updatedAt = new Date()
 
   await client
