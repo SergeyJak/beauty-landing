@@ -10,6 +10,10 @@ const HERO_IMAGE =
   'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=2100&h=1300&fit=crop&q=80'
 
 const previousDefaultDescriptions = new Set([
+  "Электроэпиляция (ЭЭ)- это научно подтвержденный метод удаления волос НАВСЕГДА! В отличии от лазерной-, фото-, шугаринга и восковой депиляции.",
+  "Electrolysis is a scientifically confirmed method of removing hair FOREVER! Unlike laser, photoepilation, sugaring and waxing.",
+  "Elektroepilācija ir zinātniski apstiprināta metode matiņu noņemšanai UZ VISIEM LAIKIEM! Atšķirībā no lāzerepilācijas, fotoepilācijas, šugaringa un vaksācijas.",
+
   'Электроэпиляция воздействует на каждый волосяной фолликул отдельно и может обеспечить перманентное удаление волос. Для результата обычно требуется курс процедур.',
   'Electrolysis treats each hair follicle individually and can provide permanent hair removal. A course of treatments is usually needed.',
   'Elektroepilācija iedarbojas uz katru mata folikulu atsevišķi un var nodrošināt permanentu matiņu noņemšanu. Parasti nepieciešams procedūru kurss.',
