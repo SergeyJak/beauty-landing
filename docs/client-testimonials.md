@@ -6,9 +6,11 @@
 
 Six entries have `featured: true`; three are initially visible on phones and six on larger screens. Other entries open on explicit request. Add a new record with a stable `id`, source reference, three text/topic translations and `featured: false`. Read the original and translations together before publishing. Never add invented names, star ratings, dates, outcomes or aggregate rating schema.
 
-## Source files are still required
+## Prepared original screenshots
 
-The conversation images are visible to the author, but their downloadable binary files were not attached to the execution workspace or repository. Consequently `testimonial-images.json` starts empty. No replacement screenshot has been fabricated and no broken original links are shown. The code reveals the original button only when an anonymized asset is present in that manifest. Supply the 23 files to complete the image publication step.
+All 23 screenshots supplied in `foto1.zip` have been matched to their review records and published as message-only WebP crops in `public/reviews/`. The manifest contains a source and exact dimensions for every review. Untouched screenshots and the archive stay outside Git. Names, profile pictures, faces, QR codes, reply previews containing client names, and irrelevant replies are excluded by cropping. Public references to the specialist or studio within a client message are retained. Each resulting crop was visually inspected.
+
+The Russian excerpts for reviews 18 and 20, and their translations, were shortened to match the exact client messages in the cropped originals. No words or identities were invented. The 23 optimized images total 524,694 bytes and are requested only after opening the viewer; none are loaded in the initial card layout.
 
 ## Preparing originals
 
@@ -40,15 +42,14 @@ The script writes only flattened WebP crops to `public/reviews/`, strips metadat
 
 The main page sends only the selected language to the client. Initial cards contain text, no Story screenshots or remote assets. Originals are requested only after a click; their dimensions are explicit. The native modal provides focus containment, Escape, close button and browser focus restoration. The document reserves its scrollbar gutter to avoid width shifts on opening. No autoplay, timers or entrance animations are used in the section.
 
-Run `npm test`, `npm run typecheck`, `npm run build`, and `npm run test:e2e -- tests/e2e/testimonials.spec.ts`. Browser tests cover the actual mobile and desktop layout, expansion, localized copy and internal CTA. Add binary originals before the final original-viewer acceptance check; missing-source status is not a completed publication step.
+Run `npm test`, `npm run typecheck`, `npm run build`, and `npm run test:e2e -- tests/e2e/testimonials.spec.ts`. Browser tests cover the actual mobile and desktop layout, expansion, localized copy and internal CTA. Browser tests open every original on desktop and mobile and assert that all 23 images load, focus returns after closing, and no originals are requested before interaction.
 
 ## Implementation status and validation
 
 This branch is stacked on `fix/review-findings` (PR #19), which has not been merged into main. Review this PR against that branch, then retarget to main once #19 is merged.
 
-- 48 unit tests, TypeScript and production build passed.
-- Full Chromium suite: 33 passed, 9 skipped (viewport conditions, analytics test IDs absent, and two original-viewer tests awaiting source binaries).
-- A temporary synthetic image exercised the crop/redaction tool and original viewer at 390 and 1440 px. Escape, focus containment/restoration, and zero scrollbar-width shift passed; observed review-section CLS was 0 in these checks. The fixture was removed and is not part of this PR.
+- 49 unit tests, TypeScript and production build passed.
+- All 23 actual crops were visually inspected at source resolution for personal information and quote correspondence.
 - Asset preparation has a pixel-level regression test ensuring masks are flattened before resizing and metadata is removed.
-- npm audit reports 0 vulnerabilities on the stacked base.
-- Remaining acceptance item: obtain the original screenshots, crop/redact them individually, inspect the outputs and rerun real-image viewer checks. This is why the PR remains a draft.
+- Full real-image Chromium suite: 41 passed, 3 viewport-specific skips. All 23 originals load on both mobile and desktop, no originals are requested initially, and keyboard focus containment, Escape/close and focus restoration passed.
+- The source archive and untouched screenshots are not committed or served by the application.

@@ -30,7 +30,7 @@ test('original viewer supports keyboard dismissal and restores focus', async ({ 
   await page.addInitScript(() => localStorage.setItem('cookie-consent', 'essential'))
   await page.goto('/ru')
   const trigger = page.locator('#client-reviews button[aria-haspopup="dialog"]').first()
-  test.skip(await trigger.count() === 0, 'Original screenshot binaries have not been supplied yet')
+  await expect(trigger).toBeVisible()
   await trigger.click()
   const dialog = page.getByRole('dialog')
   await expect(dialog).toBeVisible()
@@ -47,4 +47,28 @@ test('original viewer supports keyboard dismissal and restores focus', async ({ 
   await close.click()
   await expect(dialog).toBeHidden()
   await expect(trigger).toBeFocused()
+})
+
+
+test('all review originals load only on request', async ({ page }) => {
+  await page.addInitScript(() => { try { localStorage.setItem('cookie-consent', 'essential') } catch {} })
+  const imageRequests: string[] = []
+  page.on('request', (request) => { if (new URL(request.url()).pathname.startsWith('/reviews/')) imageRequests.push(request.url()) })
+  await page.goto('/ru')
+  const section = page.locator('#client-reviews')
+  await expect(section.locator('figure:visible')).toHaveCount(page.viewportSize()!.width < 768 ? 3 : 6)
+  expect(imageRequests).toEqual([])
+  await section.getByRole('button', { name: 'Больше отзывов', exact: true }).click()
+  const triggers = section.locator('button[aria-haspopup="dialog"]')
+  await expect(triggers).toHaveCount(23)
+  for (let index = 0; index < 23; index++) {
+    await triggers.nth(index).click()
+    const dialog = page.getByRole('dialog')
+    await expect(dialog).toBeVisible()
+    await expect.poll(() => dialog.locator('img').evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true)
+    await dialog.getByRole('button', { name: 'Закрыть оригинал отзыва' }).click()
+    await expect(dialog).toBeHidden()
+    await expect(triggers.nth(index)).toBeFocused()
+  }
+  expect(new Set(imageRequests).size).toBe(23)
 })

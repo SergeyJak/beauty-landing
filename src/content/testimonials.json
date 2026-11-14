@@ -259,9 +259,9 @@
     "sourceNumber": 18,
     "featured": false,
     "text": {
-      "ru": "Ты — волшебница! Такой результат с усами — браво! Вообще как будто так всегда и было! Никаких проблем.",
-      "en": "You’re a magician! What a result with my upper lip — bravo! It feels as though it has always been this way. No problems at all.",
-      "lv": "Tu esi burve! Tāds rezultāts ar ūsiņām — bravo! It kā tā vienmēr būtu bijis. Nekādu problēmu."
+      "ru": "Ты — волшебница! Такой результат с усами — браво!",
+      "en": "You’re a magician! What a result with my upper lip — bravo!",
+      "lv": "Tu esi burve! Tāds rezultāts ar ūsiņām — bravo!"
     },
     "topic": {
       "ru": "Верхняя губа",
@@ -289,9 +289,9 @@
     "sourceNumber": 20,
     "featured": false,
     "text": {
-      "ru": "Кристиночка, спасибо тебе огромное! Ребенок аж подпрыгивал от счастья! Ты фея! Тебе бесконечное спасибо!",
-      "en": "Thank you so much! My child was literally jumping with happiness! You’re a fairy! Endless thanks to you!",
-      "lv": "Milzīgs paldies! Bērns pat lēkāja no prieka! Tu esi feja! Bezgalīgs paldies tev!"
+      "ru": "Кристиночка, спасибо тебе огромное! Ребенок аж подпрыгивал от счастья! Ты фея!",
+      "en": "Thank you so much! My child was literally jumping with happiness! You’re a fairy!",
+      "lv": "Milzīgs paldies! Bērns pat lēkāja no prieka! Tu esi feja!"
     },
     "topic": {
       "ru": "Рекомендация близким",

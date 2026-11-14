@@ -1,1 +1,117 @@
-{}
+{
+  "review-22": {
+    "src": "/reviews/review-22.webp",
+    "width": 515,
+    "height": 175
+  },
+  "review-21": {
+    "src": "/reviews/review-21.webp",
+    "width": 340,
+    "height": 135
+  },
+  "review-23": {
+    "src": "/reviews/review-23.webp",
+    "width": 365,
+    "height": 190
+  },
+  "review-20": {
+    "src": "/reviews/review-20.webp",
+    "width": 350,
+    "height": 145
+  },
+  "review-16": {
+    "src": "/reviews/review-16.webp",
+    "width": 345,
+    "height": 420
+  },
+  "review-17": {
+    "src": "/reviews/review-17.webp",
+    "width": 330,
+    "height": 360
+  },
+  "review-13": {
+    "src": "/reviews/review-13.webp",
+    "width": 295,
+    "height": 250
+  },
+  "review-14": {
+    "src": "/reviews/review-14.webp",
+    "width": 390,
+    "height": 352
+  },
+  "review-12": {
+    "src": "/reviews/review-12.webp",
+    "width": 375,
+    "height": 168
+  },
+  "review-19": {
+    "src": "/reviews/review-19.webp",
+    "width": 325,
+    "height": 96
+  },
+  "review-15": {
+    "src": "/reviews/review-15.webp",
+    "width": 315,
+    "height": 595
+  },
+  "review-11": {
+    "src": "/reviews/review-11.webp",
+    "width": 475,
+    "height": 118
+  },
+  "review-18": {
+    "src": "/reviews/review-18.webp",
+    "width": 330,
+    "height": 60
+  },
+  "review-01": {
+    "src": "/reviews/review-01.webp",
+    "width": 375,
+    "height": 251
+  },
+  "review-02": {
+    "src": "/reviews/review-02.webp",
+    "width": 475,
+    "height": 295
+  },
+  "review-08": {
+    "src": "/reviews/review-08.webp",
+    "width": 320,
+    "height": 250
+  },
+  "review-10": {
+    "src": "/reviews/review-10.webp",
+    "width": 297,
+    "height": 177
+  },
+  "review-04": {
+    "src": "/reviews/review-04.webp",
+    "width": 409,
+    "height": 176
+  },
+  "review-05": {
+    "src": "/reviews/review-05.webp",
+    "width": 475,
+    "height": 310
+  },
+  "review-09": {
+    "src": "/reviews/review-09.webp",
+    "width": 415,
+    "height": 270
+  },
+  "review-03": {
+    "src": "/reviews/review-03.webp",
+    "width": 300,
+    "height": 135
+  },
+  "review-06": {
+    "src": "/reviews/review-06.webp",
+    "width": 460,
+    "height": 128
+  },
+  "review-07": {
+    "src": "/reviews/review-07.webp",
+    "width": 475,
+    "height": 505
+  }
+}

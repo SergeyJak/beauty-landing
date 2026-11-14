@@ -4,7 +4,7 @@ import path from 'node:path'
 import records from '@/content/testimonials.json'
 import { getTestimonials, TESTIMONIAL_COPY } from '@/lib/testimonials'
 
- describe('client testimonials', () => {
+describe('client testimonials', () => {
   it('uses only anonymous client quotations with complete translations', () => {
     expect(new Set(records.map((record) => record.id)).size).toBe(records.length)
     for (const locale of ['ru', 'en', 'lv'] as const) {
@@ -24,6 +24,10 @@ import { getTestimonials, TESTIMONIAL_COPY } from '@/lib/testimonials'
       }
     }
   })
+  it('provides a prepared original for every published quotation', () => {
+    for (const review of getTestimonials('ru')) expect(review.image).toBeDefined()
+  })
+
   it('labels translations and retains the original discomfort caveat', () => {
     expect(TESTIMONIAL_COPY.en.translation).toBeTruthy()
     expect(TESTIMONIAL_COPY.lv.translation).toBeTruthy()
