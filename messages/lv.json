@@ -105,7 +105,7 @@
   "hero": {
     "eyebrow": "Sertificēta speciāliste • Elektroepilācija",
     "title": "Kas ir elektroepilācija?",
-    "description": "Elektroepilācija iedarbojas uz katru mata folikulu atsevišķi. Ilgstošam rezultātam parasti nepieciešams procedūru kurss.",
+    "description": "Elektroepilācija ir zinātniski apstiprināta metode matiņu noņemšanai UZ VISIEM LAIKIEM! Atšķirībā no lāzerepilācijas, fotoepilācijas, šugaringa un vaksācijas.",
     "primaryCTA": "Rakstīt WhatsApp",
     "secondaryCTA": "Kā tas darbojas?",
     "trustedBy": "Uzticas Rīgas klientes",
@@ -129,12 +129,15 @@
     },
     "methodMore": "Vairāk par metodi",
     "methodPoints": [
-      "Piemērota dažādiem ādas toņiem un visu krāsu matiņiem, arī gaišiem, rudiem un sirmiem.",
-      "Piemērota dažādas struktūras un biezuma matiņiem. Katru apstrādes zonu speciāliste izvērtē individuāli.",
-      "Atšķirībā no vaksācijas un šugaringa, veiksmīga folikula apstrāde var apturēt mata augšanu no tā. Lāzerepilāciju un fotoepilāciju parasti raksturo kā ilgstošu matiņu daudzuma samazināšanu.",
-      "Pirms pieraksta pārrunājiet ar speciālisti tetovētu zonu apstrādi un iespējamās kontrindikācijas.",
-      "Procedūra notiek atbilstoši profesionālajiem standartiem un ņemot vērā ādas īpatnības. Iespējams īslaicīgs apsārtums un citas reakcijas.",
-      "Ilgstošs rezultāts var mazināt nepieciešamību regulāri noņemt matiņus; kursa izmaksas atkarīgas no zonas un procedūru skaita."
+      "Pamatojoties uz klīniskajiem pētījumiem, oficiālā zinātne ir atzinusi elektroepilāciju par vienīgo metodi matiņu noņemšanai UZ VISIEM LAIKIEM!!!\nApzīmējums “permanent hair removal” (matiņu noņemšana uz visiem laikiem) ir tikai elektroepilācijai, savukārt fotoepilāciju un lāzerepilāciju apzīmē kā “permanent hair reduction” (matiņu daudzuma samazināšanu).",
+      "Elektroepilācija neiemidzina matiņu uz noteiktu laiku, bet noņem to neatgriezeniski.",
+      "Elektroepilāciju var veikt visiem ādas fototipiem bez izņēmuma!",
+      "Elektroepilācija iedarbojas uz jebkādiem matiņiem: pūku, cietiem, hormonāliem, termināliem un stiegrainiem, neatkarīgi no krāsas — rudiem, blondiem, sirmiem, bezkrāsainiem — un struktūras: sprogainiem, viļņainiem, taisniem vai afro tipa.",
+      "Elektroepilāciju drīkst veikt uz tetovējumiem (atšķirībā no lāzera).",
+      "Elektroepilācija ir droša profesionālas elektroepilācijas speciālistes prasmīgās rokās.",
+      "Elektroepilāciju var veikt pilnīgi jebkurā ķermeņa vietā bez ierobežojumiem.",
+      "No pirmā acu uzmetiena elektroepilācija var šķist dārga, bet vairāku gadu laikā tā var izrādīties pat ekonomiskāka par vaksāciju un šugaringu.",
+      "Pēc elektroepilācijas kursa jūs iegūsiet ideāli gludu ādu bez iekaisumiem un ieaugušiem matiņiem, mazāku svīšanu un pārliecību jebkurā situācijā!!"
     ]
   },
   "whyElectrolysis": {

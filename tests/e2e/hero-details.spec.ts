@@ -14,7 +14,7 @@ test('method details are available on the first screen in each language', async 
     await toggle.click()
     const section = page.locator('details').filter({ has: toggle })
     await expect(section).toHaveAttribute('open', '')
-    await expect(section.locator('li')).toHaveCount(6)
+    await expect(section.locator('li')).toHaveCount(9)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
     await toggle.click()
     await expect(section).not.toHaveAttribute('open', '')
