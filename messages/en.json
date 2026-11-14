@@ -29,7 +29,7 @@
   },
   "expertise": {
     "eyebrow": "Studio Standards",
-    "title": "Professional Excellence in Permanent Hair Removal",
+    "title": "Professional Electrolysis",
     "description": "I combine technical precision with a personal, caring approach to deliver the highest standard of electrolysis in Riga.",
     "certified": {
       "title": "Certified Electrologist",
@@ -41,7 +41,7 @@
     },
     "experience": {
       "title": "Professional Experience",
-      "description": "Specializing exclusively in permanent hair removal with a focus on client comfort."
+      "description": "Specializing in electrolysis with a focus on client comfort."
     },
     "consultation": {
       "title": "Personal Consultation",
@@ -103,9 +103,9 @@
     }
   },
   "hero": {
-    "eyebrow": "Certified Electrologist • Permanent hair removal",
+    "eyebrow": "Certified specialist • Electrolysis",
     "title": "What is electrolysis?",
-    "description": "Electrolysis treats each hair follicle individually and can provide permanent hair removal. A course of treatments is usually needed.",
+    "description": "Electrolysis treats each hair follicle individually. A course of treatments is usually needed for lasting results.",
     "primaryCTA": "Message on WhatsApp",
     "secondaryCTA": "Learn How It Works",
     "trustedBy": "Trusted by Riga clients",
@@ -216,13 +216,13 @@
   },
   "benefits": {
     "eyebrow": "Advantages",
-    "title": "Benefits of Permanent Hair Removal",
+    "title": "Benefits of Electrolysis",
     "description": "Electrolysis treats individual hair follicles. Discover the method and our personal approach.",
     "items": [
       {
         "id": "permanent",
         "icon": "✓",
-        "title": "Truly Permanent",
+        "title": "Long-lasting results",
         "description": "A successfully treated follicle can stop producing hair."
       },
       {
@@ -519,12 +519,12 @@
   "faq": {
     "eyebrow": "Electrolysis FAQ — Riga",
     "title": "Everything you need to know.",
-    "description": "Answers to common questions about the treatment, results, and permanent removal.",
+    "description": "Answers to common questions about electrolysis and your visit.",
     "items": [
       {
         "id": "1",
-        "question": "Is electrolysis really permanent?",
-        "answer": "Electrolysis can provide permanent hair removal. A course of treatments is usually needed; its length depends on the area and individual factors."
+        "question": "What results can I expect from electrolysis?",
+        "answer": "Electrolysis treats individual hair follicles. A course of treatments is usually needed; its length depends on the area and individual factors."
       },
       {
         "id": "2",
@@ -554,15 +554,15 @@
     ],
     "cta": {
       "title": "Ready to start your journey?",
-      "description": "Contact me for a consultation or to answer any questions about permanent hair removal."
+      "description": "Contact me for a consultation or to ask questions about electrolysis."
     }
   },
   "contact": {
     "eyebrow": "Location",
     "title": "Crystal E Studio in Riga",
-    "description": "A private studio with a calm atmosphere. Contact me to schedule your consultation or ask any questions about permanent hair removal.",
+    "description": "A private studio with a calm atmosphere. Contact me to schedule a consultation or ask questions about electrolysis.",
     "follow": "Follow Me",
-    "whatsappMessage": "Hello! I would like to learn about permanent hair removal with electrolysis at Crystal E Studio.",
+    "whatsappMessage": "Hello! I would like to learn about electrolysis at Crystal E Studio.",
     "social": [
       {
         "id": "whatsapp",
@@ -657,7 +657,7 @@
     }
   },
   "footer": {
-    "description": "Certified electrolysis specialist in Riga. Private studio for permanent hair removal.",
+    "description": "Certified electrolysis specialist in Riga. Personal care in a private studio.",
     "quickLinks": "Quick Links",
     "services": "Areas",
     "followUs": "Follow Me",
@@ -705,14 +705,14 @@
     }
   },
   "metadata": {
-    "title": "Crystal E Studio | Permanent Hair Removal Riga",
-    "description": "Certified electrolysis in Riga for permanent hair removal. Personal care in a private studio, suitable for all hair colours and a wide range of skin tones.",
+    "title": "Crystal E Studio | Electrolysis Riga",
+    "description": "Electrolysis in Riga. Personal care in a private studio, suitable for all hair colours and a wide range of skin tones.",
     "keywords": [
       "electrolysis Riga",
-      "permanent hair removal Riga",
+      "electrolysis Riga",
       "Crystal E Studio",
       "certified electrologist Riga",
-      "permanent hair removal Latvia"
+      "electrolysis Latvia"
     ]
   },
   "trust": {
@@ -724,7 +724,7 @@
       },
       {
         "id": "proven",
-        "label": "Proven permanent method"
+        "label": "Professional electrolysis"
       },
       {
         "id": "private",

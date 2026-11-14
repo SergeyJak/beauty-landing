@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description =
     saved?.seoDescription ||
     metadata?.description ||
-    'Certified electrolysis specialist for permanent facial and bikini hair removal in Riga'
+    'Certified electrolysis specialist in Riga'
 
   const baseUrl = getBaseUrl()
   const canonicalUrl = `${baseUrl}/${locale}`
