@@ -27,7 +27,7 @@ const faqItems: FAQItem[] = [
     id: '3',
     question: 'How many sessions will I need?',
     answer:
-      'Most clients need 6-12 sessions spread over 6-12 months. This is because only hair in the active growth phase (Anagen) can be treated permanently. Spacing allows new hairs to enter the growth phase.',
+      'The number of sessions depends on the treatment area, hair growth and individual factors. Your specialist will discuss a plan with you.',
   },
   {
     id: '4',
@@ -45,7 +45,7 @@ const faqItems: FAQItem[] = [
     id: '6',
     question: 'Can electrolysis work on all skin types and hair colors?',
     answer:
-      'Yes. Unlike laser hair removal, electrolysis works on all skin types (fair to very dark) and all hair colors (including blonde, red, gray, and white). This makes it the most inclusive permanent hair removal method.',
+      'Electrolysis can be used on different skin tones and hair colours, including blonde, red, grey and white hair.',
   },
 ]
 

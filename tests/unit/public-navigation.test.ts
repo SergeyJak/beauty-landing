@@ -17,7 +17,6 @@ function renderNavigation(locale: Locale) {
 describe('public navigation', () => {
   it.each(['lv', 'ru', 'en'] as const)('uses existing localized destinations in %s', (locale) => {
     const html = renderNavigation(locale)
-    expect(html).toContain(`href="/${locale}#comparison"`)
     expect(html).toContain(`href="/${locale}/gallery"`)
     expect(html).toContain(`href="/${locale}#benefits"`)
     expect(html).toContain(`href="/${locale}#faq"`)

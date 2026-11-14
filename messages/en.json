@@ -207,7 +207,7 @@
   "benefits": {
     "eyebrow": "Advantages",
     "title": "Benefits of Permanent Hair Removal",
-    "description": "Discover why electrolysis is the preferred choice for lasting results and safety.",
+    "description": "Electrolysis treats individual hair follicles. Discover the method and our personal approach.",
     "items": [
       {
         "id": "permanent",
@@ -225,7 +225,7 @@
         "id": "allHairColors",
         "icon": "◼",
         "title": "All Hair Colors",
-        "description": "Effective on blonde, red, white, and dark hair, even colors that laser can't treat."
+        "description": "Works with light, red, grey and dark hair."
       },
       {
         "id": "precision",
@@ -250,7 +250,7 @@
       "title": "Results for Your Life",
       "items": [
         "No more daily hair removal routines",
-        "Say goodbye to razor burns and ingrown hairs",
+        "Aftercare can help reduce the chance of ingrown hairs",
         "Ideal for bikini line, face, and sensitive areas",
         "Treatment customized to your hair growth cycle"
       ]
@@ -268,7 +268,7 @@
         },
         {
           "phase": "Follow-up Sessions",
-          "duration": "Typically 6-12 months"
+          "duration": "An individual schedule"
         },
         {
           "phase": "Permanent Results",
@@ -387,7 +387,7 @@
       {
         "number": "03",
         "title": "Treatment",
-        "description": "A fine probe is gently inserted into each follicle. A quick pulse of energy destroys the follicle's ability to grow hair.",
+        "description": "A fine probe delivers a precise impulse to the hair follicle.",
         "details": [
           "Precise insertion",
           "Energy pulse applied",
@@ -418,8 +418,7 @@
       "permanentTitle": "Why results can be permanent",
       "permanentDescription": "Electrolysis targets the structures responsible for hair production. Successful treatment can prevent a treated follicle from producing hair again.",
       "permanentItems": [
-        "Biological permanence",
-        "Scientifically proven"
+        "Individual treatment plan"
       ]
     },
     "timeline": {
@@ -515,7 +514,7 @@
       {
         "id": "1",
         "question": "Is electrolysis really permanent?",
-        "answer": "Yes. Electrolysis can permanently remove unwanted hair. Because hair grows in cycles, several sessions are usually needed to treat hairs as they become active."
+        "answer": "Electrolysis can provide permanent hair removal. A course of treatments is usually needed; its length depends on the area and individual factors."
       },
       {
         "id": "2",
@@ -738,5 +737,38 @@
       "title": "Book your consultation in Riga",
       "description": "Turn visible progress into lasting confidence with a personal treatment plan."
     }
+  },
+  "treatmentAdvice": {
+    "eyebrow": "Before and after your visit",
+    "title": "Preparation and aftercare",
+    "description": "A few simple steps can help you prepare and care for your skin. We will discuss advice tailored to you at your consultation.",
+    "groups": [
+      {
+        "title": "Preparing for your appointment",
+        "items": [
+          "Grow hair to approximately 3–5 mm so it can be grasped with tweezers.",
+          "Arrive with clean skin, without cosmetics or deodorant on the treatment area.",
+          "Discuss your previous hair removal methods and when to stop using them with your specialist in advance.",
+          "Avoid tanning and sunbeds before your visit; let your specialist know if your skin is irritated or broken."
+        ]
+      },
+      {
+        "title": "After your treatment",
+        "items": [
+          "Keep the skin clean, avoid touching the area with unwashed hands and do not pick any scabs.",
+          "Avoid overheating, friction, swimming pools and intense exercise while the skin recovers; ask your specialist about timing.",
+          "Protect treated skin from the sun with SPF 30–50; protect your face year-round.",
+          "Avoid cosmetics and deodorant on irritated skin; discuss suitable products and when to use them with your specialist."
+        ]
+      },
+      {
+        "title": "When to ask for advice",
+        "items": [
+          "Before booking, tell your specialist about pregnancy, a pacemaker or other implanted device, medical conditions, medicines, metal allergies, broken skin and a tendency to scar.",
+          "Depending on your circumstances, advice from your doctor may be needed; suitability is assessed individually.",
+          "Seek medical advice if pain or swelling increases, or if you develop pus or a fever after treatment."
+        ]
+      }
+    ]
   }
 }

@@ -69,7 +69,7 @@ test.describe('public mobile smoke', () => {
     const selectors = [
       page.getByTestId('hero-stat-card').first(),
       page.getByTestId('expertise-standards-card'),
-      page.getByTestId('electrolysis-standard-card'),
+      page.locator('#treatment-advice details').first(),
     ]
 
     for (const card of selectors) {

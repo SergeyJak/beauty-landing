@@ -1,9 +1,8 @@
 import Hero from '@/components/sections/Hero'
 import TrustStrip from '@/components/TrustStrip'
-import ClinicalComparison from '@/components/sections/ClinicalComparison'
 import Benefits from '@/components/sections/Benefits'
-import HairGrowthPhases from '@/components/sections/HairGrowthPhases'
 import HowItWorks from '@/components/sections/HowItWorks'
+import TreatmentAdvice from '@/components/sections/TreatmentAdvice'
 import Expertise from '@/components/sections/Expertise'
 import ClientTestimonials from '@/components/sections/ClientTestimonials'
 import FAQ from '@/components/sections/FAQ'
@@ -33,10 +32,9 @@ export default async function Home({ params }: Props) {
       />
       <TrustStrip />
       <Expertise />
-      <ClinicalComparison />
       <Benefits />
-      <HairGrowthPhases />
       <HowItWorks />
+      <TreatmentAdvice />
       {isValidLocale(locale) && <ClientTestimonials locale={locale} />}
       <FAQ />
       <Contact />
