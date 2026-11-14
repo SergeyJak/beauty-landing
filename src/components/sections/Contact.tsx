@@ -35,7 +35,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-ivory py-20 md:py-32">
+    <section id="contact" className="bg-ivory py-12 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={t('contact.eyebrow')}
