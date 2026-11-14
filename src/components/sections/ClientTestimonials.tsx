@@ -5,10 +5,10 @@ import type { Locale } from '@/lib/i18n'
 export default function ClientTestimonials({ locale }: { locale: Locale }) {
   const copy = TESTIMONIAL_COPY[locale]
   return (
-    <section id="client-reviews" aria-labelledby="client-reviews-title" className="bg-soft-beige py-16 md:py-24">
+    <section id="client-reviews" aria-labelledby="client-reviews-title" className="scroll-mt-24 bg-soft-beige py-16 md:py-24">
       <div className="section-container">
-        <div className="mb-10 max-w-3xl">
-          <p className="eyebrow mb-4 text-primary/75">{copy.eyebrow}</p>
+        <div className="mb-9 max-w-3xl md:mb-12">
+          <p className="eyebrow mb-4 flex items-center gap-3 text-primary/75"><span aria-hidden="true" className="h-px w-8 bg-accent" />{copy.eyebrow}</p>
           <h2 id="client-reviews-title" className="section-heading mb-5 text-primary">{copy.title}</h2>
           <p className="text-base leading-relaxed text-primary/85">{copy.description}</p>
         </div>
