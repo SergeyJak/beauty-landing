@@ -39,7 +39,7 @@ export default function TestimonialCards({ reviews, copy }: {
           <button type="button" onClick={() => { setImageFailed(false); setSelected(review) }}
             aria-haspopup="dialog"
             aria-label={`${copy.original}: ${review.topic}`}
-            className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary underline decoration-accent/60 underline-offset-4 transition-colors hover:text-clay focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+            className="ml-auto inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary underline decoration-accent/60 underline-offset-4 transition-colors hover:text-clay focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
             {copy.original}<span aria-hidden="true">↗</span>
           </button>
         )}
