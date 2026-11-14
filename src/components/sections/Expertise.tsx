@@ -5,7 +5,7 @@ import { Check, Shield, GraduationCap, Microscope } from 'lucide-react'
 import SectionHeader from '@/components/SectionHeader'
 import Card from '@/components/Card'
 import { useLanguage } from '@/lib/LanguageContext'
-import specialistPhoto from '@/components/foto/340949596_3542884339364963_3036902857413467716_n.jpg'
+import specialistPhoto from '@/components/foto/kristina.webp'
 
 export default function Expertise() {
   const { t, list } = useLanguage()
@@ -96,8 +96,11 @@ export default function Expertise() {
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm grayscale-[0.5] hover:grayscale-0 transition-all duration-700">
               <img 
                 src={specialistPhoto.src} 
-                alt={t('hero.sidecard.specialist')} 
-                className="h-full w-full object-cover"
+                alt={t('hero.sidecard.portraitAlt')}
+                width={specialistPhoto.width}
+                height={specialistPhoto.height}
+                loading="lazy"
+                className="h-full w-full object-cover object-[50%_10%]"
               />
             </div>
           </div>

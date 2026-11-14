@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import OptimizedImage from '@/components/OptimizedImage'
 import { SOCIAL_LINKS } from '@/lib/constants'
 import { useLanguage } from '@/lib/LanguageContext'
-import specialistPhoto from '@/components/foto/340949596_3542884339364963_3036902857413467716_n.jpg'
+import specialistPhoto from '@/components/foto/kristina.webp'
 
 const HERO_IMAGE =
   'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=2100&h=1300&fit=crop&q=80'
@@ -168,7 +168,7 @@ export default function Hero({ title, description }: HeroProps) {
             <div className="relative aspect-[4/5] w-full overflow-hidden">
               <OptimizedImage
                 src={specialistPhoto}
-                alt={t('hero.sidecard.imageAlt')}
+                alt={t('hero.sidecard.portraitAlt')}
                 fill
                 sizes="(max-width: 1024px) 0vw, 400px"
                 className="object-cover"
