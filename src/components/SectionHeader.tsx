@@ -29,12 +29,12 @@ export default function SectionHeader({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      className={cn("mb-16 md:mb-24", className)}
+      className={cn("mb-8 md:mb-24", className)}
     >
       {align === 'center' ? (
         <div className="text-center">
-          <motion.p variants={revealItem} className={cn("eyebrow mb-5", eyebrowClass)}>{eyebrow}</motion.p>
-          <motion.h2 variants={revealItem} className={cn("section-heading mb-8", titleClass)}>{title}</motion.h2>
+          <motion.p variants={revealItem} className={cn("eyebrow mb-3 md:mb-5", eyebrowClass)}>{eyebrow}</motion.p>
+          <motion.h2 variants={revealItem} className={cn("section-heading mb-4 md:mb-8", titleClass)}>{title}</motion.h2>
           {description && (
             <motion.p variants={revealItem} className={cn("mx-auto max-w-2xl subheading", descriptionClass)}>
               {description}
@@ -43,14 +43,14 @@ export default function SectionHeader({
         </div>
       ) : align === 'left' ? (
         <div>
-          <motion.p variants={revealItem} className={cn("eyebrow mb-5", eyebrowClass)}>{eyebrow}</motion.p>
-          <motion.h2 variants={revealItem} className={cn("section-heading mb-8", titleClass)}>{title}</motion.h2>
+          <motion.p variants={revealItem} className={cn("eyebrow mb-3 md:mb-5", eyebrowClass)}>{eyebrow}</motion.p>
+          <motion.h2 variants={revealItem} className={cn("section-heading mb-4 md:mb-8", titleClass)}>{title}</motion.h2>
           {description && <motion.p variants={revealItem} className={cn("max-w-2xl subheading", descriptionClass)}>{description}</motion.p>}
         </div>
       ) : (
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+        <div className="grid gap-3 md:gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <div>
-            <motion.p variants={revealItem} className={cn("eyebrow mb-5", eyebrowClass)}>{eyebrow}</motion.p>
+            <motion.p variants={revealItem} className={cn("eyebrow mb-3 md:mb-5", eyebrowClass)}>{eyebrow}</motion.p>
             <motion.h2 variants={revealItem} className={cn("section-heading", titleClass)}>{title}</motion.h2>
           </div>
           {description && (

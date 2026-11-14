@@ -34,7 +34,7 @@ export default function Expertise() {
   ]
 
   return (
-    <section className="bg-ivory py-20 md:py-32 overflow-hidden">
+    <section className="bg-ivory py-12 md:py-32 overflow-hidden">
       <div className="section-container">
         <SectionHeader
           eyebrow={t('expertise.eyebrow')}
@@ -43,7 +43,7 @@ export default function Expertise() {
           align="center"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
           {expertiseItems.map((item, index) => (
             <motion.div
               key={index}
@@ -52,11 +52,11 @@ export default function Expertise() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
             >
-              <Card className="h-full border-none bg-soft-beige/50 p-8 hover:bg-white dark:hover:bg-secondary hover:shadow-xl transition-all duration-500">
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-sm bg-accent/10 text-accent">
+              <Card className="h-full border-none bg-soft-beige/50 p-4 md:p-8 hover:bg-white dark:hover:bg-secondary hover:shadow-xl transition-all duration-500">
+                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-sm bg-accent/10 text-accent md:mb-6 md:h-12 md:w-12">
                   {item.icon}
                 </div>
-                <h3 className="mb-4 font-serif text-xl font-bold text-primary tracking-tight">
+                <h3 className="mb-2 md:mb-4 font-serif text-xl font-bold text-primary tracking-tight">
                   {item.title}
                 </h3>
                 <p className="body-small text-primary/90 leading-relaxed">
@@ -72,19 +72,19 @@ export default function Expertise() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           data-testid="expertise-standards-card"
-          className="mt-20 relative p-8 md:p-16 border border-primary/10 bg-white dark:bg-secondary shadow-2xl overflow-hidden"
+          className="mt-8 md:mt-20 relative p-5 md:p-16 border border-primary/10 bg-white dark:bg-secondary shadow-2xl overflow-hidden"
         >
           <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
           <div className="absolute bottom-0 left-0 -ml-16 -mb-16 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
           
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
               <span className="eyebrow text-accent mb-4 block">{t('expertise.medicalStandards.eyebrow')}</span>
-              <h3 className="section-heading text-4xl mb-6 text-primary">{t('expertise.medicalStandards.title')}</h3>
-              <p className="body-base text-primary/95 mb-8 leading-relaxed">
+              <h3 className="section-heading text-4xl mb-3 md:mb-6 text-primary">{t('expertise.medicalStandards.title')}</h3>
+              <p className="body-base text-primary/95 mb-4 md:mb-8 leading-relaxed">
                 {t('expertise.medicalStandards.description')}
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-2 md:space-y-4">
                 {(list<string>('expertise.medicalStandards.points') || []).map((point, i) => (
                   <li key={i} className="flex items-center gap-3 body-small font-bold text-primary">
                     <div className="h-1.5 w-1.5 rounded-full bg-accent" />

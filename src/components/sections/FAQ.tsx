@@ -65,7 +65,7 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="bg-soft-beige py-20 md:py-32">
+    <section id="faq" className="bg-soft-beige py-12 md:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={t('faq.eyebrow')}
@@ -86,7 +86,7 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleAccordion(item.id)}
-                className="flex w-full items-center justify-between px-2 py-6 text-left transition-colors hover:bg-ivory/45 focus-visible:bg-ivory/45 md:px-4"
+                className="flex w-full items-center justify-between px-2 py-4 md:py-6 text-left transition-colors hover:bg-ivory/45 focus-visible:bg-ivory/45 md:px-4"
                 aria-expanded={activeId === item.id}
                 aria-controls={`faq-answer-${item.id}`}
               >
