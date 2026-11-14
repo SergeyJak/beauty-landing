@@ -15,6 +15,7 @@ export default function Header() {
   const { locale, t } = useLanguage()
   const loginLabel = locale === 'ru' ? 'Войти' : locale === 'en' ? 'Login' : 'Ieiet'
   const galleryLabel = locale === 'ru' ? 'Галерея' : locale === 'en' ? 'Gallery' : 'Galerija'
+  const reviewsLabel = locale === 'ru' ? 'Отзывы' : locale === 'en' ? 'Reviews' : 'Atsauksmes'
   const loginHref = `/login?lang=${locale}&next=/admin`
 
   const navLinks = [
@@ -22,6 +23,7 @@ export default function Header() {
     { key: 'header.navigation.benefits', href: `/${locale}#benefits` },
     { key: 'header.navigation.howWorks', href: `/${locale}#how-it-works` },
     { key: null, label: galleryLabel, href: `/${locale}/gallery` },
+    { key: null, label: reviewsLabel, href: `/${locale}#client-reviews` },
     { key: 'header.navigation.faq', href: `/${locale}#faq` },
     { key: 'header.navigation.contact', href: `/${locale}#contact` },
   ]
@@ -68,7 +70,7 @@ export default function Header() {
             </div>
           </Link>
 
-          <div className="hidden xl:flex items-center space-x-10">
+          <div className="hidden xl:flex items-center gap-4 2xl:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -133,7 +135,7 @@ export default function Header() {
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 220 }}
               data-testid="mobile-menu-panel"
-              className="fixed top-0 right-0 z-[100] w-full max-w-xs bg-white dark:bg-secondary shadow-[-30px_0_90px_rgba(23,19,15,0.25)] dark:shadow-[-30px_0_90px_rgba(0,0,0,0.45)] flex flex-col"
+              className="fixed top-0 right-0 z-[100] max-h-[100dvh] w-full max-w-xs overflow-y-auto bg-white dark:bg-secondary shadow-[-30px_0_90px_rgba(23,19,15,0.25)] dark:shadow-[-30px_0_90px_rgba(0,0,0,0.45)] flex flex-col"
             >
               <div className="flex items-center justify-between px-6 py-4 border-b border-primary/10 flex-shrink-0">
                 <span className="font-serif text-lg text-primary">
