@@ -165,13 +165,13 @@ export default function Hero({ title, description }: HeroProps) {
 
         <motion.div variants={itemVariants} className="hidden lg:block">
           <div className="premium-sheen relative ml-auto max-w-sm border border-ivory/70 bg-ivory/78 p-4 shadow-[0_35px_120px_rgba(45,42,40,0.24)] backdrop-blur">
-            <div className="relative aspect-[4/5] w-full overflow-hidden">
+            <div className="relative aspect-[1200/1657] w-full overflow-hidden">
               <OptimizedImage
                 src={specialistPhoto}
                 alt={t('hero.sidecard.portraitAlt')}
                 fill
                 sizes="(max-width: 1024px) 0vw, 400px"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <div className="flex items-center justify-between px-2 pt-4">

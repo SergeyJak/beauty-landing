@@ -93,14 +93,14 @@ export default function Expertise() {
                 ))}
               </ul>
             </div>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm grayscale-[0.5] hover:grayscale-0 transition-all duration-700">
+            <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-sm grayscale-[0.5] hover:grayscale-0 transition-all duration-700">
               <img 
                 src={specialistPhoto.src} 
                 alt={t('hero.sidecard.portraitAlt')}
                 width={specialistPhoto.width}
                 height={specialistPhoto.height}
                 loading="lazy"
-                className="h-full w-full object-cover object-[50%_10%]"
+                className="block h-auto w-full"
               />
             </div>
           </div>
