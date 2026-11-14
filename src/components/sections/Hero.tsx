@@ -9,6 +9,15 @@ import specialistPhoto from '@/components/foto/kristina.webp'
 const HERO_IMAGE =
   'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=2100&h=1300&fit=crop&q=80'
 
+const previousDefaultDescriptions = new Set([
+  'Электроэпиляция воздействует на каждый волосяной фолликул отдельно и может обеспечить перманентное удаление волос. Для результата обычно требуется курс процедур.',
+  'Electrolysis treats each hair follicle individually and can provide permanent hair removal. A course of treatments is usually needed.',
+  'Elektroepilācija iedarbojas uz katru mata folikulu atsevišķi un var nodrošināt permanentu matiņu noņemšanu. Parasti nepieciešams procedūru kurss.',
+  'Электроэпиляция воздействует на каждый волосяной фолликул отдельно. Для устойчивого результата обычно требуется курс процедур.',
+  'Electrolysis treats each hair follicle individually. A course of treatments is usually needed for lasting results.',
+  'Elektroepilācija iedarbojas uz katru mata folikulu atsevišķi. Ilgstošam rezultātam parasti nepieciešams procedūru kurss.',
+])
+
 type HeroProps = {
   title?: string
   description?: string
@@ -16,6 +25,7 @@ type HeroProps = {
 
 export default function Hero({ title, description }: HeroProps) {
   const { t, list } = useLanguage()
+  const heroDescription = description && !previousDefaultDescriptions.has(description) ? description : t('hero.description')
   const methodPoints = list<string>('hero.methodPoints')
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -73,7 +83,7 @@ export default function Hero({ title, description }: HeroProps) {
             variants={itemVariants}
             className="mb-4 max-w-2xl text-base leading-relaxed text-primary/80 md:text-lg md:leading-relaxed"
           >
-            {description || t('hero.description')}
+            {heroDescription}
           </motion.p>
 
           <motion.div variants={itemVariants} className="mb-6 max-w-2xl">
@@ -81,7 +91,7 @@ export default function Hero({ title, description }: HeroProps) {
               <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 text-sm font-semibold text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary [&::-webkit-details-marker]:hidden">
                 {t('hero.methodMore')}<span aria-hidden="true" className="text-xl text-accent group-open:rotate-45">+</span>
               </summary>
-              <ul className="space-y-3 border-t border-primary/10 py-4 text-sm leading-6 text-primary/90">
+              <ul className="space-y-3 whitespace-pre-line border-t border-primary/10 py-4 text-sm leading-6 text-primary/90">
                 {methodPoints.map((point) => <li key={point} className="flex gap-3"><span aria-hidden="true" className="text-accent">•</span><span>{point}</span></li>)}
               </ul>
             </details>
