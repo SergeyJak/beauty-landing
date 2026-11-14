@@ -1,0 +1,347 @@
+[
+  {
+    "id": "review-01",
+    "sourceNumber": 1,
+    "featured": false,
+    "text": {
+      "ru": "Никакого дискомфорта не было, следовала инструкции. Кожа отлично реагировала на саму процедуру. И заживление проходит хорошо.",
+      "en": "There was no discomfort; I followed the instructions. My skin responded very well to the procedure, and healing is going well.",
+      "lv": "Diskomforta nebija, ievēroju norādījumus. Āda ļoti labi reaģēja uz procedūru, un dzīšana norit labi."
+    },
+    "topic": {
+      "ru": "Заживление",
+      "en": "Healing",
+      "lv": "Dzīšana"
+    }
+  },
+  {
+    "id": "review-02",
+    "sourceNumber": 2,
+    "featured": true,
+    "text": {
+      "ru": "Вы очень аккуратный и внимательный мастер! А самый большой бонус, что вы очень позитивный мастер, теперь я только к вам!",
+      "en": "You are such a careful and attentive specialist! The biggest bonus is your positive attitude. From now on, I’m only coming to you!",
+      "lv": "Jūs esat ļoti rūpīga un uzmanīga speciāliste! Un vislielākais pluss ir jūsu pozitīvā attieksme. Turpmāk nākšu tikai pie jums!"
+    },
+    "topic": {
+      "ru": "Внимательное отношение",
+      "en": "Thoughtful care",
+      "lv": "Rūpīga attieksme"
+    }
+  },
+  {
+    "id": "review-03",
+    "sourceNumber": 3,
+    "featured": false,
+    "text": {
+      "ru": "Ощущения интересные во время электроэпиляции. Но не скажу что прям больно как пишут, покалывания как бы, но комфортно даже без анестезии.",
+      "en": "Electrolysis feels unusual. I wouldn’t say it really hurts as people write; it’s more like tingling, but comfortable even without anaesthesia.",
+      "lv": "Elektroepilācijas laikā ir interesantas sajūtas. Neteiktu, ka tiešām sāp, kā mēdz rakstīt; drīzāk tirpst, bet ir komfortabli pat bez anestēzijas."
+    },
+    "topic": {
+      "ru": "Ощущения",
+      "en": "Treatment experience",
+      "lv": "Sajūtas procedūras laikā"
+    }
+  },
+  {
+    "id": "review-04",
+    "sourceNumber": 4,
+    "featured": true,
+    "text": {
+      "ru": "Покраснение ушло после ночи. Волос реально стало после 3-х процедур меньше, а те что есть тоньше идут.",
+      "en": "The redness was gone after the night. After three treatments there really is less hair, and what does grow is finer.",
+      "lv": "Pēc nakts apsārtums bija pārgājis. Pēc trim procedūrām matiņu tiešām ir mazāk, un tie, kas aug, ir plānāki."
+    },
+    "topic": {
+      "ru": "Первые изменения",
+      "en": "Early changes",
+      "lv": "Pirmās pārmaiņas"
+    }
+  },
+  {
+    "id": "review-05",
+    "sourceNumber": 5,
+    "featured": false,
+    "text": {
+      "ru": "В первую очередь от того на сколько быстро и за разговорами незаметно прошла сегодня процедура! Результат после нескольких встреч на столько ощутимый, что я твой постоянный клиент на веки вечные.",
+      "en": "First of all, today’s procedure went so quickly and almost unnoticed while we chatted! The results after several visits are so noticeable that I’m your regular client for ever.",
+      "lv": "Vispirms — šodien procedūra sarunājoties pagāja tik ātri un nemanāmi! Pēc vairākām tikšanās reizēm rezultāts ir tik jūtams, ka būšu tava pastāvīgā kliente uz mūžiem."
+    },
+    "topic": {
+      "ru": "Результат и атмосфера",
+      "en": "Results and atmosphere",
+      "lv": "Rezultāts un atmosfēra"
+    }
+  },
+  {
+    "id": "review-06",
+    "sourceNumber": 6,
+    "featured": false,
+    "text": {
+      "ru": "Зажило всё быстро и хорошо. Никакого дискомфорта не было. Спасибо и хорошего дня.",
+      "en": "Everything healed quickly and well. There was no discomfort. Thank you, and have a good day.",
+      "lv": "Viss sadzija ātri un labi. Diskomforta nebija. Paldies un jauku dienu!"
+    },
+    "topic": {
+      "ru": "Повторная запись",
+      "en": "Coming back",
+      "lv": "Atkārtots apmeklējums"
+    }
+  },
+  {
+    "id": "review-07",
+    "sourceNumber": 7,
+    "featured": false,
+    "text": {
+      "ru": "Вообще всё идеально как мне кажется, ничего не болит я очень довольна. Уже жду с нетерпением когда мы всё отработаем.",
+      "en": "Everything seems perfect to me, nothing hurts, and I’m very happy. I can’t wait until we’ve treated everything.",
+      "lv": "Man šķiet, ka viss ir ideāli, nekas nesāp, un esmu ļoti apmierināta. Ar nepacietību gaidu, kad būsim visu apstrādājušas."
+    },
+    "topic": {
+      "ru": "Довольна результатом",
+      "en": "Happy with the result",
+      "lv": "Prieks par rezultātu"
+    }
+  },
+  {
+    "id": "review-08",
+    "sourceNumber": 8,
+    "featured": true,
+    "text": {
+      "ru": "По началу был стресс, что будет больно, но оказалось не так страшно. После эпиляции делала всё по твоим рекомендациям и кожа быстро пришла в себя.",
+      "en": "At first I was worried it would hurt, but it wasn’t so scary. After treatment I followed all your recommendations, and my skin recovered quickly.",
+      "lv": "Sākumā baidījos, ka sāpēs, bet nebija tik traki. Pēc epilācijas ievēroju visus tavus ieteikumus, un āda ātri atguvās."
+    },
+    "topic": {
+      "ru": "Первое впечатление",
+      "en": "First impressions",
+      "lv": "Pirmais iespaids"
+    }
+  },
+  {
+    "id": "review-09",
+    "sourceNumber": 9,
+    "featured": false,
+    "text": {
+      "ru": "Покраснение прошло в тот же вечер и никаких следов не осталось! На следующий день были просто гладкие ножки. Процедура была очень комфортна!",
+      "en": "The redness went away that same evening, and no marks remained! The next day my legs were simply smooth. The procedure was very comfortable!",
+      "lv": "Apsārtums pārgāja jau tajā pašā vakarā, un pēdas nepalika! Nākamajā dienā kājas bija vienkārši gludas. Procedūra bija ļoti komfortabla!"
+    },
+    "topic": {
+      "ru": "Комфорт процедуры",
+      "en": "Comfort during treatment",
+      "lv": "Komforts procedūras laikā"
+    }
+  },
+  {
+    "id": "review-10",
+    "sourceNumber": 10,
+    "featured": false,
+    "text": {
+      "ru": "Советую только Crystal Estudio. Очень аккуратный мастер.",
+      "en": "I only recommend Crystal Estudio. A very careful specialist.",
+      "lv": "Iesaku tikai Crystal Estudio. Ļoti rūpīga speciāliste."
+    },
+    "topic": {
+      "ru": "Рекомендация",
+      "en": "Recommendation",
+      "lv": "Ieteikums"
+    }
+  },
+  {
+    "id": "review-11",
+    "sourceNumber": 11,
+    "featured": true,
+    "text": {
+      "ru": "Дома посмотрела, вы реально убрали все бесячие волоски, даже пух тот большой. Идеально, спасибо!",
+      "en": "I looked at home, and you really removed all those annoying hairs, even that long fuzz. Perfect, thank you!",
+      "lv": "Mājās apskatījos — jūs tiešām noņēmāt visus tos kaitinošos matiņus, pat tās garās pūciņas. Ideāli, paldies!"
+    },
+    "topic": {
+      "ru": "Тщательная работа",
+      "en": "Thorough work",
+      "lv": "Rūpīgs darbs"
+    }
+  },
+  {
+    "id": "review-12",
+    "sourceNumber": 12,
+    "featured": false,
+    "text": {
+      "ru": "Очень чистая работа. Так тщательно мне не проходили бикини в прошлом месте.",
+      "en": "Such thorough work. At the previous place, my bikini area wasn’t treated this carefully.",
+      "lv": "Ļoti rūpīgs darbs. Iepriekšējā vietā bikini zonu tik rūpīgi neapstrādāja."
+    },
+    "topic": {
+      "ru": "Тщательная обработка",
+      "en": "Careful treatment",
+      "lv": "Rūpīga apstrāde"
+    }
+  },
+  {
+    "id": "review-13",
+    "sourceNumber": 13,
+    "featured": false,
+    "text": {
+      "ru": "Я очень рада что попала именно к тебе! После процедуры чувствую себя мега прекрасно! Спасибо тебе огромное за твои старания и за такую кропотливую работу!",
+      "en": "I’m so glad I came to you! I feel wonderful after the procedure! Thank you so much for your effort and such meticulous work!",
+      "lv": "Ļoti priecājos, ka nonācu tieši pie tevis! Pēc procedūras jūtos brīnišķīgi! Milzīgs paldies par tavām pūlēm un tik rūpīgo darbu!"
+    },
+    "topic": {
+      "ru": "Бережное отношение",
+      "en": "Gentle care",
+      "lv": "Saudzīga attieksme"
+    }
+  },
+  {
+    "id": "review-14",
+    "sourceNumber": 14,
+    "featured": false,
+    "text": {
+      "ru": "Итак, мои ощущения: абсолютно комфортно, не больно, даже лазером в некоторые моменты было гораздо больнее и неприятнее. Единственный минус — долго лежишь, затекают ноги. Но это тоже не страшно, т.к. периодически всё-таки можно ворочаться. После процедуры тоже все отлично, отека нет, ничего пока не беспокоит (спец. средства после электроэпиляции наношу исправно).",
+      "en": "My experience: completely comfortable, not painful; at times laser treatment was much more painful and unpleasant. The only downside is lying down for so long that your legs get stiff. But that is not so bad either, because you can change position from time to time. Everything is fine after the procedure too: no swelling, and nothing is bothering me so far. I’m consistently applying the special aftercare products.",
+      "lv": "Manas sajūtas: pilnīgi komfortabli, nesāpīgi; ar lāzeru dažbrīd bija daudz sāpīgāk un nepatīkamāk. Vienīgais mīnuss — ilgi jāguļ, un kājas notirpst. Bet arī tas nav tik traki, jo laiku pa laikam var mainīt pozu. Arī pēc procedūras viss ir labi: tūskas nav, pagaidām nekas netraucē. Speciālos kopšanas līdzekļus pēc elektroepilācijas lietoju rūpīgi."
+    },
+    "topic": {
+      "ru": "Личный опыт",
+      "en": "Personal experience",
+      "lv": "Personīgā pieredze"
+    }
+  },
+  {
+    "id": "review-15",
+    "sourceNumber": 15,
+    "featured": true,
+    "text": {
+      "ru": "Всегда убираешь идеально до последнего волоска! Спасибо тебе огромное за твой труд и за такое внимательное и бережное отношение!",
+      "en": "You always remove everything perfectly, down to the last hair! Thank you so much for your work and such attentive, gentle care!",
+      "lv": "Tu vienmēr visu noņem ideāli, līdz pēdējam matiņam! Milzīgs paldies par tavu darbu un tik uzmanīgu un saudzīgu attieksmi!"
+    },
+    "topic": {
+      "ru": "Забота о деталях",
+      "en": "Attention to detail",
+      "lv": "Uzmanība detaļām"
+    }
+  },
+  {
+    "id": "review-16",
+    "sourceNumber": 16,
+    "featured": false,
+    "text": {
+      "ru": "Хочу тебя поблагодарить за твоё мастерство. Была у тебя на электроэпиляции и получила удовольствие. Огромное тебе спасибо за твоё мастерство и приятное время провождение в твоём обществе.",
+      "en": "I want to thank you for your skill. I came to you for electrolysis and enjoyed it. Thank you so much for your expertise and the lovely time spent with you.",
+      "lv": "Gribu pateikties par tavu meistarību. Biju pie tevis uz elektroepilāciju un guvu prieku. Milzīgs paldies par tavu prasmi un patīkamo kopā pavadīto laiku."
+    },
+    "topic": {
+      "ru": "Мастерство",
+      "en": "Professional skill",
+      "lv": "Meistarība"
+    }
+  },
+  {
+    "id": "review-17",
+    "sourceNumber": 17,
+    "featured": false,
+    "text": {
+      "ru": "За губы отдельное большое спасибо, я не ожидала, что настолько хорошо будут себя чувствовать. Так приятно себя видеть без усов. Ты супер аккуратный мастер, спасибо большое!",
+      "en": "A special thank you for my upper lip; I didn’t expect it to feel so good. It’s lovely to see myself without that hair. You’re such a careful specialist, thank you!",
+      "lv": "Īpašs paldies par virslūpu — negaidīju, ka jutīšos tik labi. Ir tik patīkami sevi redzēt bez ūsiņām. Tu esi ļoti rūpīga speciāliste, liels paldies!"
+    },
+    "topic": {
+      "ru": "После процедуры",
+      "en": "After treatment",
+      "lv": "Pēc procedūras"
+    }
+  },
+  {
+    "id": "review-18",
+    "sourceNumber": 18,
+    "featured": false,
+    "text": {
+      "ru": "Ты — волшебница! Такой результат с усами — браво! Вообще как будто так всегда и было! Никаких проблем.",
+      "en": "You’re a magician! What a result with my upper lip — bravo! It feels as though it has always been this way. No problems at all.",
+      "lv": "Tu esi burve! Tāds rezultāts ar ūsiņām — bravo! It kā tā vienmēr būtu bijis. Nekādu problēmu."
+    },
+    "topic": {
+      "ru": "Верхняя губа",
+      "en": "Upper lip",
+      "lv": "Virslūpa"
+    }
+  },
+  {
+    "id": "review-19",
+    "sourceNumber": 19,
+    "featured": false,
+    "text": {
+      "ru": "Отек еще есть, но убрано идеально, ничего под лампой не блестит.",
+      "en": "There is still some swelling, but the hair removal is perfect; nothing catches the light under the lamp.",
+      "lv": "Tūska vēl ir, bet matiņi noņemti ideāli — zem lampas nekas nespīd."
+    },
+    "topic": {
+      "ru": "Индивидуальный опыт",
+      "en": "Individual experience",
+      "lv": "Individuāla pieredze"
+    }
+  },
+  {
+    "id": "review-20",
+    "sourceNumber": 20,
+    "featured": false,
+    "text": {
+      "ru": "Кристиночка, спасибо тебе огромное! Ребенок аж подпрыгивал от счастья! Ты фея! Тебе бесконечное спасибо!",
+      "en": "Thank you so much! My child was literally jumping with happiness! You’re a fairy! Endless thanks to you!",
+      "lv": "Milzīgs paldies! Bērns pat lēkāja no prieka! Tu esi feja! Bezgalīgs paldies tev!"
+    },
+    "topic": {
+      "ru": "Рекомендация близким",
+      "en": "Recommending to loved ones",
+      "lv": "Ieteikums tuviniekiem"
+    }
+  },
+  {
+    "id": "review-21",
+    "sourceNumber": 21,
+    "featured": false,
+    "text": {
+      "ru": "Хочу сказать спасибо за процедуру. У меня впервые на подбородке нормальная кожа после.",
+      "en": "I want to thank you for the procedure. For the first time, the skin on my chin feels normal afterwards.",
+      "lv": "Gribu pateikt paldies par procedūru. Pirmo reizi pēc tās zoda āda ir normāla."
+    },
+    "topic": {
+      "ru": "Восстановление кожи",
+      "en": "Skin recovery",
+      "lv": "Ādas atjaunošanās"
+    }
+  },
+  {
+    "id": "review-22",
+    "sourceNumber": 22,
+    "featured": false,
+    "text": {
+      "ru": "Ты так все бережно и с заботой делаешь! Лучший мастер, кто бьет током любя!",
+      "en": "You do everything so gently and with such care! The best specialist at giving electric shocks with love!",
+      "lv": "Tu visu dari tik saudzīgi un ar rūpēm! Labākā speciāliste, kas ar mīlestību sit ar strāvu!"
+    },
+    "topic": {
+      "ru": "Забота",
+      "en": "Care",
+      "lv": "Rūpes"
+    }
+  },
+  {
+    "id": "review-23",
+    "sourceNumber": 23,
+    "featured": true,
+    "text": {
+      "ru": "Все было хорошо. Даже потерялась во времени и отдохнула. 3 часа пролетели. Благодарю.",
+      "en": "Everything was good. I even lost track of time and relaxed. Three hours flew by. Thank you.",
+      "lv": "Viss bija labi. Pat pazaudēju laika izjūtu un atpūtos. Trīs stundas paskrēja. Paldies."
+    },
+    "topic": {
+      "ru": "Время для себя",
+      "en": "Time for myself",
+      "lv": "Laiks sev"
+    }
+  }
+]

@@ -405,3 +405,6 @@ nav {
 .admin-accent {
   color: var(--admin-accent);
 }
+
+/* Keep the document width stable when a native review dialog locks scrolling. */
+html { scrollbar-gutter: stable; }
