@@ -29,7 +29,7 @@
   },
   "expertise": {
     "eyebrow": "Studijas standarti",
-    "title": "Profesionālā izcilība permanentajā matu noņemšanā",
+    "title": "Profesionāla elektroepilācija",
     "description": "Es apvienoju tehnisko precizitāti ar personīgu un rūpīgu pieeju, lai nodrošinātu augstāko elektrolīzes standartu Rīgā.",
     "certified": {
       "title": "Sertificēta speciāliste",
@@ -41,7 +41,7 @@
     },
     "experience": {
       "title": "Profesionālā pieredze",
-      "description": "Specializējos tikai permanentajā matu noņemšanā, liekot uzsvaru uz klienta komfortu."
+      "description": "Specializējos elektroepilācijā, pievēršot uzmanību klienta komfortam."
     },
     "consultation": {
       "title": "Personīga konsultācija",
@@ -103,9 +103,9 @@
     }
   },
   "hero": {
-    "eyebrow": "Sertificēta speciāliste • Permanenta noņemšana",
+    "eyebrow": "Sertificēta speciāliste • Elektroepilācija",
     "title": "Kas ir elektroepilācija?",
-    "description": "Elektroepilācija iedarbojas uz katru mata folikulu atsevišķi un var nodrošināt permanentu matiņu noņemšanu. Parasti nepieciešams procedūru kurss.",
+    "description": "Elektroepilācija iedarbojas uz katru mata folikulu atsevišķi. Ilgstošam rezultātam parasti nepieciešams procedūru kurss.",
     "primaryCTA": "Rakstīt WhatsApp",
     "secondaryCTA": "Kā tas darbojas?",
     "trustedBy": "Uzticas Rīgas klientes",
@@ -216,13 +216,13 @@
   },
   "benefits": {
     "eyebrow": "Priekšrocības",
-    "title": "Ieguvumi no permanentās noņemšanas",
+    "title": "Elektroepilācijas priekšrocības",
     "description": "Elektroepilācija iedarbojas uz atsevišķiem mata folikuliem. Uzziniet par metodi un individuālu pieeju.",
     "items": [
       {
         "id": "permanent",
         "icon": "✓",
-        "title": "Patiesi permanents",
+        "title": "Ilgstošs rezultāts",
         "description": "Veiksmīgi apstrādāts folikuls var pārstāt veidot jaunu matu."
       },
       {
@@ -523,8 +523,8 @@
     "items": [
       {
         "id": "1",
-        "question": "Vai elektrolīzes rezultāts var būt permanents?",
-        "answer": "Elektroepilācija var nodrošināt permanentu matiņu noņemšanu. Parasti nepieciešams procedūru kurss, kura ilgums atkarīgs no zonas un individuāliem faktoriem."
+        "question": "Kādu rezultātu var sagaidīt no elektroepilācijas?",
+        "answer": "Elektroepilācija iedarbojas uz atsevišķiem mata folikuliem. Parasti nepieciešams procedūru kurss, kura ilgums atkarīgs no zonas un individuāliem faktoriem."
       },
       {
         "id": "2",
@@ -554,7 +554,7 @@
     ],
     "cta": {
       "title": "Gatavi sākt?",
-      "description": "Sazinieties ar mani, lai pieteiktos konsultācijai vai uzdotu jautājumus par permanentu matu noņemšanu."
+      "description": "Sazinieties ar mani, lai pieteiktos konsultācijai vai uzdotu jautājumus par elektroepilāciju."
     }
   },
   "contact": {
@@ -562,7 +562,7 @@
     "title": "Crystal E Studio Rīgā",
     "description": "Privāta studija ar mierīgu atmosfēru. Sazinieties ar mani, lai pieteiktos vizītei.",
     "follow": "Sekojiet man",
-    "whatsappMessage": "Labdien! Vēlos uzzināt vairāk par permanento noņemšanu Crystal E Studio.",
+    "whatsappMessage": "Labdien! Vēlos uzzināt vairāk par elektroepilāciju Crystal E Studio.",
     "social": [
       {
         "id": "whatsapp",
@@ -657,7 +657,7 @@
     }
   },
   "footer": {
-    "description": "Sertificēta elektrolīzes speciāliste Rīgā. Privāta studija permanentai matu noņemšanai.",
+    "description": "Sertificēta elektroepilācijas speciāliste Rīgā. Individuāla pieeja privātā studijā.",
     "copyright": "© {year} Crystal E Studio. Visas tiesības aizsargātas.",
     "followUs": "Sekojiet man",
     "quickLinks": "Ātrās saites",
@@ -703,13 +703,13 @@
   },
   "metadata": {
     "title": "Crystal E Studio | Elektrolīze Rīgā",
-    "description": "Sertificēta elektrolīze Rīgā permanentai matu noņemšanai. Individuāla pieeja privātā studijā, piemērota visu krāsu matiem un dažādiem ādas toņiem.",
+    "description": "Elektroepilācija Rīgā. Individuāla pieeja privātā studijā, piemērota visu krāsu matiem un dažādiem ādas toņiem.",
     "keywords": [
       "elektrolīze Rīgā",
-      "permanenta matu noņemšana Rīgā",
+      "elektroepilācija Rīgā",
       "Crystal E Studio",
       "sertificēts elektrolīzes speciālists Rīgā",
-      "permanenta matu noņemšana Latvijā"
+      "elektroepilācija Latvijā"
     ]
   },
   "trust": {
