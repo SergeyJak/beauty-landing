@@ -3,28 +3,43 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from '@/components/Button'
-import { cn } from '@/lib/utils'
+import { initializeAnalytics, type AnalyticsConfig } from '@/lib/analytics'
 import { useLanguage } from '@/lib/LanguageContext'
 
-export default function CookieConsent() {
+export default function CookieConsent({
+  googleAnalyticsId,
+  facebookPixelId,
+}: AnalyticsConfig) {
   const { t } = useLanguage()
   const [isVisible, setIsVisible] = useState(false)
+  const [consent, setConsent] = useState<string | null>(null)
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent')
-    if (!consent) {
-      const timer = setTimeout(() => setIsVisible(true), 2000)
-      return () => clearTimeout(timer)
+    let stored: string | null = null
+    try {
+      stored = localStorage.getItem('cookie-consent')
+    } catch {
+      // If storage is blocked, ask for consent for this session.
     }
+    if (stored === 'all' || stored === 'essential') {
+      setConsent(stored)
+      return
+    }
+    const timer = setTimeout(() => setIsVisible(true), 2000)
+    return () => clearTimeout(timer)
   }, [])
 
-  const acceptAll = () => {
-    localStorage.setItem('cookie-consent', 'all')
-    setIsVisible(false)
-  }
+  useEffect(() => {
+    initializeAnalytics(consent, { googleAnalyticsId, facebookPixelId })
+  }, [consent, googleAnalyticsId, facebookPixelId])
 
-  const declineAll = () => {
-    localStorage.setItem('cookie-consent', 'essential')
+  const saveConsent = (value: 'all' | 'essential') => {
+    try {
+      localStorage.setItem('cookie-consent', value)
+    } catch {
+      // The user's choice still applies to this session.
+    }
+    setConsent(value)
     setIsVisible(false)
   }
 
@@ -55,7 +70,7 @@ export default function CookieConsent() {
               <Button 
                 variant="outline" 
                 size="sm" 
-                onClick={declineAll}
+                onClick={() => saveConsent('essential')}
                 className="flex-1 md:flex-none border-primary/10"
               >
                 {t('common.decline') || 'Decline'}
@@ -63,7 +78,7 @@ export default function CookieConsent() {
               <Button 
                 variant="secondary" 
                 size="sm" 
-                onClick={acceptAll}
+                onClick={() => saveConsent('all')}
                 className="flex-1 md:flex-none"
               >
                 {t('common.acceptAll') || 'Accept All'}

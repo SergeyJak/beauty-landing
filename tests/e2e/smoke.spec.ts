@@ -239,7 +239,7 @@ test.describe('seo and conversion smoke', () => {
     expect(instagramHref?.startsWith('https://')).toBeTruthy()
   })
 
-  test('missing analytics IDs do not emit placeholder tracking scripts', async ({ page }) => {
+  test('tracking markup does not contain placeholder identifiers', async ({ page }) => {
     await page.goto('/en')
 
     await expect(page.locator('script[src*="GA_ID"]')).toHaveCount(0)

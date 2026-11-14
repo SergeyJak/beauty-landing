@@ -1,4 +1,5 @@
-import { MongoClient, ObjectId } from 'mongodb'
+import { ObjectId } from 'mongodb'
+import { getMongoClient } from '@/lib/mongodb'
 import type { Locale } from '@/lib/i18n'
 
 export type GalleryCategory = {
@@ -16,20 +17,8 @@ type CategoryDocument = Omit<GalleryCategory, 'id' | 'createdAt'> & {
 const DB_NAME = process.env.MONGODB_DB || 'beauty_prod'
 const COLLECTION = 'gallery_categories'
 
-declare global {
-  // eslint-disable-next-line no-var
-  var __beautyMongoClientPromise: Promise<MongoClient> | undefined
-}
-
 async function getDb() {
-  const uri = process.env.MONGODB_URI
-  if (!uri) throw new Error('MONGODB_URI is not configured')
-
-  if (!global.__beautyMongoClientPromise) {
-    global.__beautyMongoClientPromise = new MongoClient(uri).connect()
-  }
-
-  const client = await global.__beautyMongoClientPromise
+  const client = await getMongoClient()
   return client.db(DB_NAME)
 }
 

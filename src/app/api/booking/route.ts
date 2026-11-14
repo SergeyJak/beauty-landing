@@ -27,11 +27,17 @@ async function sendTelegramMessage(message: string) {
         parse_mode: 'HTML',
       }),
     })
-    return response.ok
+    if (!response.ok) return false
+    const result: { ok?: boolean } = await response.json()
+    return result.ok === true
   } catch (error) {
     console.error('Telegram error:', error)
     return false
   }
+}
+
+function escapeHtml(value: string) {
+  return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
 export async function POST(request: NextRequest) {
@@ -56,15 +62,21 @@ export async function POST(request: NextRequest) {
     const message = `
 <b>🆕 New Booking Request</b>
 <b>Locale:</b> ${locale.toUpperCase()}
-<b>Name:</b> ${body.name}
-<b>Phone:</b> ${body.phone}
-<b>Service:</b> ${body.service}
-<b>Email:</b> ${body.email || 'N/A'}
-<b>Comment:</b> ${body.comment || 'None'}
+<b>Name:</b> ${escapeHtml(body.name)}
+<b>Phone:</b> ${escapeHtml(body.phone)}
+<b>Service:</b> ${escapeHtml(body.service)}
+<b>Email:</b> ${escapeHtml(body.email || 'N/A')}
+<b>Comment:</b> ${escapeHtml(body.comment || 'None')}
 <b>Time:</b> ${new Date().toLocaleString()}
     `.trim()
 
-    await sendTelegramMessage(message)
+    const delivered = await sendTelegramMessage(message)
+    if (!delivered) {
+      return NextResponse.json(
+        { error: t(translations, 'booking.api.failed') },
+        { status: 502 }
+      )
+    }
 
     console.log('📋 New Booking Request:', {
       timestamp: new Date().toISOString(),

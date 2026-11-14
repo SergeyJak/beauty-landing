@@ -5,6 +5,7 @@ import Benefits from '@/components/sections/Benefits'
 import HairGrowthPhases from '@/components/sections/HairGrowthPhases'
 import HowItWorks from '@/components/sections/HowItWorks'
 import Expertise from '@/components/sections/Expertise'
+import ClientTestimonials from '@/components/sections/ClientTestimonials'
 import FAQ from '@/components/sections/FAQ'
 import Contact from '@/components/sections/Contact'
 import FloatingButtons from '@/components/FloatingButtons'
@@ -36,6 +37,7 @@ export default async function Home({ params }: Props) {
       <Benefits />
       <HairGrowthPhases />
       <HowItWorks />
+      {isValidLocale(locale) && <ClientTestimonials locale={locale} />}
       <FAQ />
       <Contact />
       <FloatingButtons />
