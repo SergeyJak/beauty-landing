@@ -61,8 +61,8 @@
   },
   "review-18": {
     "src": "/reviews/review-18.webp",
-    "width": 330,
-    "height": 60
+    "width": 588,
+    "height": 835
   },
   "review-01": {
     "src": "/reviews/review-01.webp",
@@ -88,11 +88,6 @@
     "src": "/reviews/review-04.webp",
     "width": 409,
     "height": 176
-  },
-  "review-05": {
-    "src": "/reviews/review-05.webp",
-    "width": 475,
-    "height": 310
   },
   "review-09": {
     "src": "/reviews/review-09.webp",

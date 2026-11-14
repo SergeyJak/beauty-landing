@@ -30,6 +30,21 @@
     }
   },
   {
+    "id": "review-18",
+    "sourceNumber": 18,
+    "featured": true,
+    "text": {
+      "ru": "Ты — волшебница! Такой результат с усами — браво!",
+      "en": "You’re a magician! What a result with my upper lip — bravo!",
+      "lv": "Tu esi burve! Tāds rezultāts ar ūsiņām — bravo!"
+    },
+    "topic": {
+      "ru": "Верхняя губа",
+      "en": "Upper lip",
+      "lv": "Virslūpa"
+    }
+  },
+  {
     "id": "review-03",
     "sourceNumber": 3,
     "featured": false,
@@ -57,21 +72,6 @@
       "ru": "Первые изменения",
       "en": "Early changes",
       "lv": "Pirmās pārmaiņas"
-    }
-  },
-  {
-    "id": "review-05",
-    "sourceNumber": 5,
-    "featured": false,
-    "text": {
-      "ru": "В первую очередь от того на сколько быстро и за разговорами незаметно прошла сегодня процедура! Результат после нескольких встреч на столько ощутимый, что я твой постоянный клиент на веки вечные.",
-      "en": "First of all, today’s procedure went so quickly and almost unnoticed while we chatted! The results after several visits are so noticeable that I’m your regular client for ever.",
-      "lv": "Vispirms — šodien procedūra sarunājoties pagāja tik ātri un nemanāmi! Pēc vairākām tikšanās reizēm rezultāts ir tik jūtams, ka būšu tava pastāvīgā kliente uz mūžiem."
-    },
-    "topic": {
-      "ru": "Результат и атмосфера",
-      "en": "Results and atmosphere",
-      "lv": "Rezultāts un atmosfēra"
     }
   },
   {
@@ -107,7 +107,7 @@
   {
     "id": "review-08",
     "sourceNumber": 8,
-    "featured": true,
+    "featured": false,
     "text": {
       "ru": "По началу был стресс, что будет больно, но оказалось не так страшно. После эпиляции делала всё по твоим рекомендациям и кожа быстро пришла в себя.",
       "en": "At first I was worried it would hurt, but it wasn’t so scary. After treatment I followed all your recommendations, and my skin recovered quickly.",
@@ -252,21 +252,6 @@
       "ru": "После процедуры",
       "en": "After treatment",
       "lv": "Pēc procedūras"
-    }
-  },
-  {
-    "id": "review-18",
-    "sourceNumber": 18,
-    "featured": false,
-    "text": {
-      "ru": "Ты — волшебница! Такой результат с усами — браво!",
-      "en": "You’re a magician! What a result with my upper lip — bravo!",
-      "lv": "Tu esi burve! Tāds rezultāts ar ūsiņām — bravo!"
-    },
-    "topic": {
-      "ru": "Верхняя губа",
-      "en": "Upper lip",
-      "lv": "Virslūpa"
     }
   },
   {
