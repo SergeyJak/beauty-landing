@@ -104,8 +104,8 @@
   },
   "hero": {
     "eyebrow": "Sertificēta speciāliste • Permanenta noņemšana",
-    "title": "Permanenta matu noņemšana ar elektrolīzi.",
-    "description": "Elektrolīze apstrādā katru folikulu individuāli un var nodrošināt permanentu nevēlamo matu noņemšanu neatkarīgi no matu krāsas. Individuāla pieeja privātā studijā Rīgā.",
+    "title": "Kas ir elektroepilācija?",
+    "description": "Elektroepilācija iedarbojas uz katru mata folikulu atsevišķi un var nodrošināt permanentu matiņu noņemšanu. Parasti nepieciešams procedūru kurss.",
     "primaryCTA": "Rakstīt WhatsApp",
     "secondaryCTA": "Kā tas darbojas?",
     "trustedBy": "Uzticas Rīgas klientes",
@@ -125,7 +125,16 @@
       "location": "Rīga",
       "specialist": "Sertificēta speciāliste",
       "imageAlt": "Elektrolīzes procedūra"
-    }
+    },
+    "methodMore": "Vairāk par metodi",
+    "methodPoints": [
+      "Piemērota dažādiem ādas toņiem un visu krāsu matiņiem, arī gaišiem, rudiem un sirmiem.",
+      "Piemērota dažādas struktūras un biezuma matiņiem. Katru apstrādes zonu speciāliste izvērtē individuāli.",
+      "Atšķirībā no vaksācijas un šugaringa, veiksmīga folikula apstrāde var apturēt mata augšanu no tā. Lāzerepilāciju un fotoepilāciju parasti raksturo kā ilgstošu matiņu daudzuma samazināšanu.",
+      "Pirms pieraksta pārrunājiet ar speciālisti tetovētu zonu apstrādi un iespējamās kontrindikācijas.",
+      "Procedūra notiek atbilstoši profesionālajiem standartiem un ņemot vērā ādas īpatnības. Iespējams īslaicīgs apsārtums un citas reakcijas.",
+      "Ilgstošs rezultāts var mazināt nepieciešamību regulāri noņemt matiņus; kursa izmaksas atkarīgas no zonas un procedūru skaita."
+    ]
   },
   "whyElectrolysis": {
     "eyebrow": "Salīdzinājums",

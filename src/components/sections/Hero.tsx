@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import OptimizedImage from '@/components/OptimizedImage'
 import { SOCIAL_LINKS } from '@/lib/constants'
-import { useT } from '@/lib/LanguageContext'
+import { useLanguage } from '@/lib/LanguageContext'
 import specialistPhoto from '@/components/foto/340949596_3542884339364963_3036902857413467716_n.jpg'
 
 const HERO_IMAGE =
@@ -15,7 +15,8 @@ type HeroProps = {
 }
 
 export default function Hero({ title, description }: HeroProps) {
-  const t = useT()
+  const { t, list } = useLanguage()
+  const methodPoints = list<string>('hero.methodPoints')
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -47,7 +48,7 @@ export default function Hero({ title, description }: HeroProps) {
           sizes="100vw"
           className="object-cover object-center motion-safe:animate-slow-zoom"
         />
-        <div className="absolute inset-0 bg-[rgba(255,255,255,0.84)] md:bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_40%,rgba(255,255,255,0.3)_70%,rgba(45,42,40,0.15)_100%)] dark:bg-[rgba(20,19,18,0.82)] md:dark:bg-[linear-gradient(90deg,rgba(20,19,18,0.98)_0%,rgba(20,19,18,0.94)_40%,rgba(20,19,18,0.36)_72%,rgba(45,42,40,0.42)_100%)]" />
+        <div className="absolute inset-0 bg-[rgba(255,255,255,0.72)] md:bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_40%,rgba(255,255,255,0.3)_70%,rgba(45,42,40,0.15)_100%)] dark:bg-[rgba(20,19,18,0.82)] md:dark:bg-[linear-gradient(90deg,rgba(20,19,18,0.98)_0%,rgba(20,19,18,0.94)_40%,rgba(20,19,18,0.36)_72%,rgba(45,42,40,0.42)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ivory via-ivory/60 to-transparent dark:from-ivory dark:via-ivory/58" />
         <div className="absolute right-[8%] top-28 hidden h-[68%] w-px bg-accent/35 lg:block" />
       </div>
@@ -70,10 +71,21 @@ export default function Hero({ title, description }: HeroProps) {
 
           <motion.p
             variants={itemVariants}
-            className="mb-8 max-w-2xl text-base leading-relaxed text-primary/80 md:text-lg md:leading-relaxed"
+            className="mb-4 max-w-2xl text-base leading-relaxed text-primary/80 md:text-lg md:leading-relaxed"
           >
             {description || t('hero.description')}
           </motion.p>
+
+          <motion.div variants={itemVariants} className="mb-6 max-w-2xl">
+            <details className="group rounded-xl border border-primary/15 bg-ivory/85 px-4 backdrop-blur-sm sm:px-5">
+              <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 text-sm font-semibold text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary [&::-webkit-details-marker]:hidden">
+                {t('hero.methodMore')}<span aria-hidden="true" className="text-xl text-accent group-open:rotate-45">+</span>
+              </summary>
+              <ul className="space-y-3 border-t border-primary/10 py-4 text-sm leading-6 text-primary/90">
+                {methodPoints.map((point) => <li key={point} className="flex gap-3"><span aria-hidden="true" className="text-accent">•</span><span>{point}</span></li>)}
+              </ul>
+            </details>
+          </motion.div>
 
           <motion.div variants={itemVariants} className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-stretch">
             <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto sm:min-w-[16rem]">
