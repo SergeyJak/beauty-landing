@@ -207,7 +207,7 @@
   "benefits": {
     "eyebrow": "Priekšrocības",
     "title": "Ieguvumi no permanentās noņemšanas",
-    "description": "Atklājiet, kāpēc elektrolīze ir labākā izvēle ilgstošiem rezultātiem.",
+    "description": "Elektroepilācija iedarbojas uz atsevišķiem mata folikuliem. Uzziniet par metodi un individuālu pieeju.",
     "items": [
       {
         "id": "permanent",
@@ -250,7 +250,7 @@
       "title": "Rezultāti Jūsu dzīvei",
       "items": [
         "Vairs nekādas ikdienas skūšanās",
-        "Atvadieties no ieaugušiem matiem",
+        "Kopšana var palīdzēt mazināt ieaugušu matiņu iespēju",
         "Ideāli sejai un jutīgām zonām",
         "Individuāla pieeja katram klientam"
       ]
@@ -268,7 +268,7 @@
         },
         {
           "phase": "Atkārtotas sesijas",
-          "duration": "Parasti 6-12 mēneši"
+          "duration": "Individuāls grafiks"
         },
         {
           "phase": "Rezultāts",
@@ -418,8 +418,7 @@
       "permanentTitle": "Kāpēc rezultāts var būt permanents",
       "permanentDescription": "Elektrolīze mērķē uz struktūrām, kas atbild par mata augšanu. Veiksmīga apstrāde var novērst jauna mata augšanu no konkrētā folikula.",
       "permanentItems": [
-        "Bioloģisks pastāvīgums",
-        "Zinātniski pierādīts"
+        "Individuāls procedūru plāns"
       ]
     },
     "timeline": {
@@ -515,7 +514,7 @@
       {
         "id": "1",
         "question": "Vai elektrolīzes rezultāts var būt permanents?",
-        "answer": "Jā. Elektrolīze var nodrošināt permanentu nevēlamo matu noņemšanu. Tā kā mati aug cikliski, parasti nepieciešamas vairākas procedūras, lai apstrādātu matus to aktīvajā fāzē."
+        "answer": "Elektroepilācija var nodrošināt permanentu matiņu noņemšanu. Parasti nepieciešams procedūru kurss, kura ilgums atkarīgs no zonas un individuāliem faktoriem."
       },
       {
         "id": "2",
@@ -738,5 +737,38 @@
       "title": "Piesakieties konsultācijai Rīgā",
       "description": "Pārvērtiet redzamo progresu ilgstošā pārliecībā ar individuālu procedūru plānu."
     }
+  },
+  "treatmentAdvice": {
+    "eyebrow": "Pirms un pēc apmeklējuma",
+    "title": "Sagatavošanās un kopšana",
+    "description": "Daži ieteikumi palīdzēs sagatavoties procedūrai un saudzīgi kopt ādu pēc tās. Individuālus ieteikumus pārrunāsim konsultācijā.",
+    "groups": [
+      {
+        "title": "Kā sagatavoties",
+        "items": [
+          "Ataudzējiet matiņus aptuveni līdz 3–5 mm, lai tos varētu satvert ar pinceti.",
+          "Ierodieties ar tīru ādu, bez kosmētikas un dezodoranta apstrādājamajā zonā.",
+          "Iepriekš pārrunājiet ar speciālisti izmantotās matiņu noņemšanas metodes un kad tās pārtraukt.",
+          "Pirms apmeklējuma izvairieties no sauļošanās un solārija; informējiet speciālisti, ja āda ir kairināta vai bojāta."
+        ]
+      },
+      {
+        "title": "Pēc procedūras",
+        "items": [
+          "Uzturiet ādu tīru, neaiztieciet apstrādāto zonu ar nemazgātām rokām un nenoplēsiet krevelītes.",
+          "Kamēr āda atjaunojas, izvairieties no pārkaršanas, berzes, baseina un intensīva sporta; par termiņiem jautājiet speciālistei.",
+          "Aizsargājiet apstrādāto ādu no saules ar SPF 30–50; seju aizsargājiet visu gadu.",
+          "Uz kairinātas ādas nelietojiet kosmētiku vai dezodorantu; kopšanas līdzekļus un to lietošanas laiku pārrunājiet ar speciālisti."
+        ]
+      },
+      {
+        "title": "Kad nepieciešama konsultācija",
+        "items": [
+          "Pirms pieraksta informējiet speciālisti par grūtniecību, elektrokardiostimulatoru vai citu implantētu ierīci, slimībām, medikamentiem, metālu alerģiju, ādas bojājumiem un noslieci uz rētām.",
+          "Atkarībā no situācijas var būt nepieciešams ārstējošā ārsta padoms; procedūras piemērotību izvērtē individuāli.",
+          "Ja pēc procedūras pastiprinās sāpes vai tūska, parādās strutas vai temperatūra, vērsieties pie ārsta."
+        ]
+      }
+    ]
   }
 }

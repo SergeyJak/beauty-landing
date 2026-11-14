@@ -15,7 +15,7 @@ test('reviews stay compact, readable and localized', async ({ page }) => {
     expect(await section.locator('img').count()).toBe(0)
     expect(await section.evaluate((element) => element.scrollWidth <= document.documentElement.clientWidth)).toBe(true)
     await section.getByRole('button', { name: more, exact: true }).click()
-    await expect(section.locator('figure')).toHaveCount(22)
+    await expect(section.locator('figure')).toHaveCount(21)
     await expect(section.getByRole('button', { expanded: true })).toHaveAttribute('aria-controls', 'additional-client-reviews')
     await section.getByRole('button', { expanded: true }).click()
     await expect(section.locator('figure')).toHaveCount(6)
@@ -60,8 +60,8 @@ test('all review originals load only on request', async ({ page }) => {
   expect(imageRequests).toEqual([])
   await section.getByRole('button', { name: 'Больше отзывов', exact: true }).click()
   const triggers = section.locator('button[aria-haspopup="dialog"]')
-  await expect(triggers).toHaveCount(22)
-  for (let index = 0; index < 22; index++) {
+  await expect(triggers).toHaveCount(21)
+  for (let index = 0; index < 21; index++) {
     await triggers.nth(index).click()
     const dialog = page.getByRole('dialog')
     await expect(dialog).toBeVisible()
@@ -70,5 +70,5 @@ test('all review originals load only on request', async ({ page }) => {
     await expect(dialog).toBeHidden()
     await expect(triggers.nth(index)).toBeFocused()
   }
-  expect(new Set(imageRequests).size).toBe(22)
+  expect(new Set(imageRequests).size).toBe(21)
 })

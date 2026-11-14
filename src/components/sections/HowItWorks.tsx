@@ -9,8 +9,6 @@ export default function HowItWorks() {
   const steps = list<any>('howItWorks.steps')
   const methodItems = list<string>('howItWorks.science.methodItems')
   const permanentItems = list<string>('howItWorks.science.permanentItems')
-  const timeline = list<any>('howItWorks.timeline.items')
-  const aftercare = list<any>('howItWorks.aftercare.items')
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,10 +65,7 @@ export default function HowItWorks() {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.6, delay: 0.7 }} className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
-          <InfoList title={t('howItWorks.timeline.title')} items={timeline} primaryKey="time" secondaryKey="action" />
-          <InfoList title={t('howItWorks.aftercare.title')} items={aftercare} primaryKey="tip" secondaryKey="desc" />
-        </motion.div>
+
       </div>
     </section>
   )
@@ -89,25 +84,6 @@ function ScienceColumn({ title, description, items }: { title: string; descripti
           </li>
         ))}
       </ul>
-    </div>
-  )
-}
-
-function InfoList({ title, items, primaryKey, secondaryKey }: { title: string; items: any[]; primaryKey: string; secondaryKey: string }) {
-  return (
-    <div className="rounded-lg bg-soft-beige/50 p-8">
-      <h4 className="mb-6 font-serif text-2xl text-primary">{title}</h4>
-      <div className="space-y-4">
-        {items.map((item) => (
-          <div key={item[primaryKey]} className="flex items-start gap-4">
-            <div className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-accent" />
-            <div>
-              <p className="font-semibold text-primary">{item[primaryKey]}</p>
-              <p className="text-sm text-primary/60">{item[secondaryKey]}</p>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   )
 }
