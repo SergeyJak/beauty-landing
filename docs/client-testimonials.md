@@ -54,4 +54,4 @@ This branch is stacked on `fix/review-findings` (PR #19), which has not been mer
 - Full real-image Chromium suite: 41 passed, 3 viewport-specific skips. All 23 originals load on both mobile and desktop, no originals are requested initially, and keyboard focus containment, Escape/close and focus restoration passed.
 - The source archive and untouched screenshots are not committed or served by the application.
 
-Review 05 was removed at the studio’s request. Review 18 includes the consented before-and-after close-up of the upper lip, cropped to exclude identifying facial features and unrelated replies.
+Reviews 05 and 14 were removed at the studio’s request; review 14 contained a comparison with another hair-removal method. Review 18 includes the consented before-and-after close-up of the upper lip, cropped to exclude identifying facial features and unrelated replies.
