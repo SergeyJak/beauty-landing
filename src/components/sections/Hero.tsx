@@ -65,7 +65,7 @@ export default function Hero({ title, description }: HeroProps) {
             <span className="eyebrow text-accent">{t('hero.eyebrow')}</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="hero-heading mb-6 max-w-4xl tracking-tighter">
+          <motion.h1 variants={itemVariants} className="section-heading mb-6 max-w-4xl tracking-tighter">
             {title || t('hero.title')}
           </motion.h1>
 
