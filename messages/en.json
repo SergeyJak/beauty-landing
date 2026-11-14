@@ -104,8 +104,8 @@
   },
   "hero": {
     "eyebrow": "Certified Electrologist • Permanent hair removal",
-    "title": "Permanent hair removal with electrolysis.",
-    "description": "Electrolysis treats individual follicles and can permanently remove unwanted hair across all hair colours. Personalised treatment in a private Riga studio.",
+    "title": "What is electrolysis?",
+    "description": "Electrolysis treats each hair follicle individually and can provide permanent hair removal. A course of treatments is usually needed.",
     "primaryCTA": "Message on WhatsApp",
     "secondaryCTA": "Learn How It Works",
     "trustedBy": "Trusted by Riga clients",
@@ -125,7 +125,16 @@
       "location": "Riga",
       "specialist": "Certified specialist",
       "imageAlt": "Electrolysis treatment"
-    }
+    },
+    "methodMore": "More about electrolysis",
+    "methodPoints": [
+      "Suitable for different skin tones and hair colours, including blonde, red and grey.",
+      "Works with different hair textures and thicknesses. The specialist assesses each treatment area individually.",
+      "Unlike waxing and sugaring, successful treatment of a follicle can stop that follicle producing hair. Laser and photoepilation are generally described as methods of long-term hair reduction.",
+      "Discuss treatment over tattoos and any contraindications with your specialist before booking.",
+      "Treatment follows professional standards and is tailored to your skin. Temporary redness and other reactions are possible.",
+      "Long-term results may reduce the need for regular hair removal; the cost depends on the area and number of sessions."
+    ]
   },
   "whyElectrolysis": {
     "eyebrow": "How It Compares",

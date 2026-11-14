@@ -16,7 +16,7 @@ test('localized treatment information and navigation are available without unrel
     await expect(section.locator('li').first()).toBeVisible()
     await expect(section.locator('summary')).toHaveText(first + '+')
     await page.locator('#client-reviews').getByRole('button', { name: more, exact: true }).click()
-    await expect(page.locator('main')).not.toContainText(/laser|лазер|lāzer|anagen|анаген|anagēn/i)
+    await expect(page.locator('main')).not.toContainText(/anagen|анаген|anagēn/i)
     await expect(page.locator('a[href$="#comparison"]')).toHaveCount(0)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   }
