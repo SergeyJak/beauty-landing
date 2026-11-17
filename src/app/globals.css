@@ -414,7 +414,7 @@ html { scrollbar-gutter: stable; }
 .site-wallpaper,
 .hero-wallpaper {
   background-color: #fff7f0;
-  background-image: url('/backgrounds/sveta-desktop.svg');
+  background-image: url('/backgrounds/sveta-desktop.webp');
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -425,16 +425,16 @@ html { scrollbar-gutter: stable; }
 .dark .site-wallpaper,
 .dark .hero-wallpaper {
   background-color: rgb(var(--color-ivory));
-  background-image: linear-gradient(rgba(20, 19, 18, .74), rgba(20, 19, 18, .74)), url('/backgrounds/sveta-desktop.svg');
+  background-image: linear-gradient(rgba(20, 19, 18, .74), rgba(20, 19, 18, .74)), url('/backgrounds/sveta-desktop.webp');
 }
 @media (max-width: 767px) {
   .site-wallpaper,
   .hero-wallpaper {
-    background-image: url('/backgrounds/sveta-mobile.svg');
+    background-image: url('/backgrounds/sveta-mobile.webp');
     background-position: center top;
   }
   .dark .site-wallpaper,
   .dark .hero-wallpaper {
-    background-image: linear-gradient(rgba(20, 19, 18, .78), rgba(20, 19, 18, .78)), url('/backgrounds/sveta-mobile.svg');
+    background-image: linear-gradient(rgba(20, 19, 18, .78), rgba(20, 19, 18, .78)), url('/backgrounds/sveta-mobile.webp');
   }
 }
