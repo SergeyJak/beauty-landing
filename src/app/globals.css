@@ -6,11 +6,11 @@
   color-scheme: light;
   --color-primary: 45 42 40;
   --color-secondary: 250 248 246;
-  --color-accent: 172 145 110;
-  --color-soft-beige: 248 245 242;
+  --color-accent: 167 91 69;
+  --color-soft-beige: 252 242 235;
   --color-warm-gray: 160 150 140;
   --color-ivory: 255 255 255;
-  --color-champagne: 200 180 155;
+  --color-champagne: 221 162 139;
   --color-text-light: 100 95 90;
   --color-success: 114 169 96;
   --color-medical: 41 84 122;
@@ -20,7 +20,7 @@
   color-scheme: dark;
   --color-primary: 240 238 235;
   --color-secondary: 35 33 31;
-  --color-accent: 195 165 130;
+  --color-accent: 222 154 124;
   --color-soft-beige: 50 47 44;
   --color-warm-gray: 120 110 100;
   --color-ivory: 20 19 18;
@@ -408,3 +408,33 @@ nav {
 
 /* Keep the document width stable when a native review dialog locks scrolling. */
 html { scrollbar-gutter: stable; }
+
+/* Sveta studio: responsive warm abstract background.
+   Kept on the public content only; login and admin stay untouched. */
+.site-wallpaper,
+.hero-wallpaper {
+  background-color: #fff7f0;
+  background-image: url('/backgrounds/sveta-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.hero-wallpaper {
+  isolation: isolate;
+}
+.dark .site-wallpaper,
+.dark .hero-wallpaper {
+  background-color: rgb(var(--color-ivory));
+  background-image: linear-gradient(rgba(20, 19, 18, .74), rgba(20, 19, 18, .74)), url('/backgrounds/sveta-desktop.svg');
+}
+@media (max-width: 767px) {
+  .site-wallpaper,
+  .hero-wallpaper {
+    background-image: url('/backgrounds/sveta-mobile.svg');
+    background-position: center top;
+  }
+  .dark .site-wallpaper,
+  .dark .hero-wallpaper {
+    background-image: linear-gradient(rgba(20, 19, 18, .78), rgba(20, 19, 18, .78)), url('/backgrounds/sveta-mobile.svg');
+  }
+}
