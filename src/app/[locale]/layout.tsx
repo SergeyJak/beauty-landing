@@ -122,7 +122,7 @@ export default async function LocaleLayout({
   return (
     <LanguageProvider initialLocale={locale} initialTranslations={translations}>
       <Header />
-      <main id="main-content" className="site-wallpaper relative min-h-screen pt-20 lg:pt-28">
+      <main id="main-content" className="relative min-h-screen pt-20 lg:pt-28">
         <ErrorBoundary>
           {children}
         </ErrorBoundary>
